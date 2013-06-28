@@ -1,0 +1,11 @@
+# ---- language-env DON'T MODIFY THIS LINE!
+set convert-meta off
+set meta-flag on
+set output-meta on
+# BS/C-h でカーソルの前の文字、DEL でカーソル位置の文字が消えるようにする
+# krxvt でのみ有効。kterm ではうまく設定できない。
+"\e[3~": delete-char
+Del: backward-delete-char
+Control-h: backward-delete-char
+Tab: complete
+# ---- language-env end DON'T MODIFY THIS LINE!

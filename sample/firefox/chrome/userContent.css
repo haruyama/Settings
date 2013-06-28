@@ -1,0 +1,16 @@
+@-moz-document domain(mail.google.com) {
+        /* 本文 */
+        body div.ii {
+                font-family: monospace !important;
+                font-size: 100% !important;
+                line-height: 120%; !important;
+                width: 78ex !important;
+        }
+
+        /* 送信フォーム */
+        body textarea.Ak {
+                font-family: monospace !important;
+                font-size: 100% !important;
+                line-height: 120%; !important;
+        }
+}

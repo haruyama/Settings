@@ -1,0 +1,35 @@
+(setq skk-large-jisyo "/usr/share/skk/SKK-JISYO.L")
+(setq skk-japanese-message-and-error t)
+(setq skk-keep-record t)
+;(setq skk-dabbrev-like-completion t)
+
+;(setq skk-auto-okuri-process t)
+
+(setq skk-date-ad t)
+(setq skk-number-style nil)
+
+(setq skk-rom-kana-rule-list
+  (nconc skk-rom-kana-rule-list
+   '((";" nil nil)
+    (":" nil nil)
+    ("?" nil nil)
+    ("!" nil nil)
+    ("." nil nil)
+    ("," nil nil)
+    ("(" nil nil)
+    (")" nil nil))))
+
+;(setq skk-isearch-start-mode 'latin)
+(setq skk-japanese-message-and-error t)
+(setq skk-show-annotation t)
+(setq skk-egg-like-newline t)
+;(setq skk-auto-insert-paren t)
+(setq skk-dcomp-activate t)
+(setq skk-henkan-strict-okuri-precedence t)
+(setq skk-auto-okuri-process t)
+(setq skk-share-private-jisyo t)
+(setq skk-delete-implies-kakutei nil)
+(setq skk-auto-okuri-process t)
+(setq skk-dcomp-activate t)
+(setq-default skk-kutouten-type 'en)
+;(setq skk-kakutei-when-unique-candidate t)

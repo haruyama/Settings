@@ -1,0 +1,11 @@
+[user]
+        name = HARUYAMA Seigo
+        email = haruyama@unixuser.org
+[alias]
+        co = checkout
+        st = status
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[core]
+        excludesfile = /home/haruyama/.gitignore_global
+[color]
+        ui = auto

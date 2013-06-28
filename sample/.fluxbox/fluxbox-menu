@@ -1,0 +1,580 @@
+# This is an automatically generated file.
+# Please see <file:/usr/share/doc/menu/README> for information.
+
+# to use your own menu, copy this to ~/.fluxbox/menu, then edit
+# ~/.fluxbox/init and change the session.menuFile path to ~/.fluxbox/menu
+
+[begin] (Fluxbox)
+
+# Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)
+
+   [submenu] (Wine) {}
+      [submenu] (.) {}
+         [exec] (Application Uninstaller) {wine 'c:\\windows\\uninstall.exe' } <>
+         [exec] (Control Panel) {wine 'c:\\windows\\system\\control.exe' } <>
+         [exec] (Explorer) {wine 'C:\\windows\\explorer.exe' } </home/haruyama/.menu/icons/Explorer.xpm>
+         [exec] (Task Manager) {wine 'c:\\windows\\system\\taskmgr.exe' } <>
+         [exec] (Wine Configuration) {wine 'c:\\windows\\winecfg.exe' } <>
+      [end]
+      [submenu] (Programs) {}
+         [submenu] (Accesories) {}
+            [exec] (Mine Sweeper) {wine 'c:\\windows\\winmine.exe' } <>
+            [exec] (Notepad) {wine 'c:\\windows\\notepad.exe' } <>
+            [exec] (Registry Editor) {wine 'c:\\windows\\regedit.exe' } <>
+         [end]
+      [end]
+   [end]
+   [submenu] (X端末) {}
+      [exec] (Eterm) {/usr/bin/Eterm} <>
+      [exec] (Gnome Terminal) {/usr/bin/gnome-terminal} </usr/share/pixmaps/gnome-terminal.xpm>
+      [exec] (Kanji Terminal) {/usr/X11R6/bin/kterm} <>
+      [exec] (pterm) {/usr/bin/pterm} <>
+      [exec] (XTerm) {xterm} <>
+      [exec] (XTerm (Unicode\)) {uxterm} <>
+   [end]
+   [submenu] (アプリケーション) {}
+      [submenu] (エディタ) {}
+         [exec] (bvi) { x-terminal-emulator -T "bvi" -e /usr/bin/bvi} <>
+         [exec] (Emacs 21 (text\)) { x-terminal-emulator -T "Emacs 21 (text)" -e /usr/bin/emacs21 -nw} </usr/share/emacs/21.4/etc/gnu-32x32.xpm>
+         [exec] (Emacs 21 (X11\)) {/usr/bin/emacs21 -i} </usr/share/emacs/21.4/etc/gnu-32x32.xpm>
+         [exec] (Nano) { x-terminal-emulator -T "Nano" -e /bin/nano} </usr/share/nano/nano-menu.xpm>
+         [exec] (Openoffice.org From Template) {/usr/bin/oofromtemplate} </usr/share/icons/hicolor/32x32/apps/ooo_template.xpm>
+         [exec] (Openoffice.org HTML Document) {/usr/bin/ooweb} </usr/share/icons/hicolor/32x32/apps/ooo_web.xpm>
+         [exec] (Openoffice.org Writer) {/usr/bin/oowriter} </usr/share/icons/hicolor/32x32/apps/ooo_writer.xpm>
+         [exec] (Xedit) {xedit} <>
+         [exec] (XEmacs21-mule) {/usr/bin/xemacs21-mule} <>
+      [end]
+      [submenu] (エミュレータ) {}
+         [exec] (gsnes9x) {/usr/bin/GSnes9x} </usr/share/pixmaps/gsnes9x-icon.xpm>
+         [exec] (ZSNES) {/usr/bin/zsnes} </usr/share/pixmaps/zsnes.xpm>
+      [end]
+      [submenu] (グラフィック) {}
+         [exec] (Bitmap) {bitmap} <>
+         [exec] (Dia) {/usr/bin/dia-normal} </usr/share/pixmaps/dia_menu.xpm>
+         [exec] (Openoffice.org Draw) {/usr/bin/oodraw} </usr/share/icons/hicolor/32x32/apps/ooo_draw.xpm>
+         [exec] (Openoffice.org Impress) {/usr/bin/ooimpress} </usr/share/icons/hicolor/32x32/apps/ooo_impress.xpm>
+      [end]
+      [submenu] (サウンド) {}
+         [exec] (AlsaPlayer) {/usr/bin/alsaplayer -i gtk} <>
+         [exec] (gmix (Gnome 2.0 Mixer\)) {/usr/bin/gnome-volume-control} </usr/share/pixmaps/gnome-mixer.xpm>
+         [exec] (gnome-cd (Gnome 2.0 CD Player\)) {/usr/bin/gnome-cd} </usr/share/pixmaps/gnome-cd.xpm>
+         [exec] (grecord (GNOME 2.0 Recorder\)) {/usr/bin/gnome-sound-recorder} </usr/share/pixmaps/gnome-grecord.xpm>
+         [exec] (grip) {/usr/bin/grip} <>
+         [exec] (Rhythmbox) {/usr/bin/rhythmbox} </usr/share/pixmaps/rhythmbox.xpm>
+         [exec] (Sound Juicer) {/usr/bin/sound-juicer} <>
+         [exec] (TiMidity++) {timidity -ia} <>
+         [exec] (vumeter (Gnome 2.0 Volume Meter\)) {/usr/bin/vumeter} </usr/share/pixmaps/gnome-vumeter.xpm>
+         [exec] (wmix) {/usr/bin/X11/wmix} <>
+         [exec] (wmXMMS) {/usr/bin/wmxmms} </usr/share/pixmaps/wmxmms_32.xpm>
+         [exec] (XMMS) {/usr/bin/xmms} </usr/share/pixmaps/xmms.xpm>
+      [end]
+      [submenu] (シェル) {}
+         [exec] (Bash) { x-terminal-emulator -T "Bash" -e /bin/bash --login} <>
+         [exec] (Sh) { x-terminal-emulator -T "Sh" -e /bin/sh --login} <>
+         [exec] (tcsh) { x-terminal-emulator -T "tcsh" -e /bin/tcsh} <>
+         [exec] (Zsh) { x-terminal-emulator -T "Zsh" -e /bin/zsh4} <>
+      [end]
+      [submenu] (システム) {}
+         [exec] (aptitude) { x-terminal-emulator -T "aptitude" -e /usr/bin/aptitude} <>
+         [exec] (bbkeys) {/usr/bin/bbkeys} <>
+         [exec] (DSL/PPPoE configuration tool) { x-terminal-emulator -T "DSL/PPPoE configuration tool" -e /usr/sbin/pppoeconf} </usr/share/pixmaps/pppoeconf.xpm>
+         [submenu] (Gnome) {}
+            [exec] (Gnome Control Center) {/usr/bin/gnome-control-center} </usr/share/pixmaps/control-center2.xpm>
+         [end]
+         [exec] (Openoffice.org Printer Administration) {/usr/bin/oopadmin} </usr/share/icons/hicolor/32x32/apps/ooo_setup.xpm>
+         [exec] (Openoffice.org Setup) {/usr/lib/openoffice/program/setup} </usr/share/icons/hicolor/32x32/apps/ooo_setup.xpm>
+         [exec] (pstree) { x-terminal-emulator -T "pstree" -e /usr/bin/pstree.x11} </usr/share/pixmaps/pstree16.xpm>
+         [exec] (Task selector) { x-terminal-emulator -T "Task selector" -e /usr/sbin/su-to-root -c /usr/bin/tasksel} <>
+         [exec] (TeXconfig) { x-terminal-emulator -T "TeXconfig" -e /usr/bin/texconfig} <>
+         [exec] (Top) { x-terminal-emulator -T "Top" -e /usr/bin/top} <>
+         [exec] (Xconsole) {xconsole} <>
+         [exec] (Xload) {xload} <>
+         [exec] (Xvidtune) {xvidtune} <>
+         [submenu] (管理) {}
+            [exec] (alsaconf) { x-terminal-emulator -T "alsaconf" -e /usr/sbin/su-to-root -p root -c /usr/sbin/alsaconf} <>
+            [exec] (Lilo-config) { x-terminal-emulator -T "Lilo-config" -e /usr/sbin/su-to-root -p root -c /usr/sbin/liloconfig} </usr/share/pixmaps/lilo-term.xpm>
+            [exec] (pppconfig) { x-terminal-emulator -T "pppconfig" -e /usr/sbin/su-to-root -p root -c /usr/sbin/pppconfig} <>
+         [end]
+      [end]
+      [submenu] (ツール) {}
+         [exec] (bbpager) {/usr/bin/bbpager} <>
+         [exec] (Editres) {editres} <>
+         [exec] (fluxconf) {/usr/bin/fluxconf} <>
+         [exec] (fluxkeys) {/usr/bin/fluxkeys} <>
+         [exec] (fluxmenu) {/usr/bin/fluxmenu} <>
+         [exec] (GTK+ 1.2 Theme Switch) {/usr/bin/switch} <>
+         [exec] (GTK+ 2.0 Theme Switch) {/usr/bin/switch2} <>
+         [exec] (JPilot) {/usr/bin/jpilot} </usr/share/pixmaps/jpilot.xpm>
+         [exec] (KNotes) {/usr/bin/knotes} <>
+         [exec] (Multisync) {/usr/bin/multisync} <>
+         [exec] (Oclock) {oclock} <>
+         [exec] (sumika) {/usr/bin/sumika} <>
+         [exec] (TeXfind) {/usr/bin/texfind} <>
+         [exec] (uim-im-switcher-gtk) {/usr/bin/uim-im-switcher-gtk} <>
+         [exec] (uim-pref-gtk) {/usr/bin/uim-pref-gtk} <>
+         [exec] (uim-toolbar-gtk) {/usr/bin/uim-toolbar-gtk} <>
+         [exec] (unclutter - start) {unclutter} <>
+         [exec] (unclutter - stop) {killall -TERM unclutter} <>
+         [exec] (USB View) {/usr/bin/usbview} <>
+         [exec] (wmbutton) {/usr/bin/wmbutton} <>
+         [exec] (wmPinboard) {/usr/bin/wmpinboard} <>
+         [exec] (wmxres) {/usr/bin/wmxres} <>
+         [exec] (X cd-roast) {/usr/bin/xcdroast} </usr/share/pixmaps/xcdroast.xpm>
+         [exec] (X Window Snapshot) {xwd | xwud} <>
+         [exec] (Xclipboard) {xclipboard} <>
+         [exec] (Xclock (analog\)) {xclock -analog} <>
+         [exec] (Xclock (digital\)) {xclock -digital -update 1} <>
+         [exec] (Xcutsel) {xcutsel} <>
+         [exec] (Xev) {x-terminal-emulator -e xev} <>
+         [exec] (Xfontsel) {xfontsel} <>
+         [exec] (Xkill) {xkill} <>
+         [exec] (Xmag) {xmag} <>
+         [exec] (XpostIt!) {/usr/X11R6/bin/xpostit} <>
+         [exec] (Xrefresh) {xrefresh} <>
+      [end]
+      [submenu] (テキスト) {}
+         [exec] (Fortune) {sh -c 'while /usr/games/fortune | col -x | xmessage -center -buttons OK:1,Another:0 -default OK -file - ; do :; done'} <>
+      [end]
+      [submenu] (データベース) {}
+         [exec] (MySQL Administrator) {/usr/bin/mysql-admin} </usr/share/pixmaps/mysql_admin.xpm>
+         [exec] (MySQL Query Browser) {/usr/bin/mysql-query-browser} </usr/share/pixmaps/mysql_query_browser.xpm>
+      [end]
+      [submenu] (ネット) {}
+         [exec] (Lynx) { x-terminal-emulator -T "Lynx" -e /usr/bin/lynx} <>
+         [exec] (Minicom) { x-terminal-emulator -T "Minicom" -e /usr/bin/minicom} <>
+         [exec] (Minicom (X11\)) {/usr/bin/xminicom} <>
+         [exec] (Mozilla Firefox) {firefox} </usr/share/pixmaps/mozilla-firefox.xpm>
+         [exec] (Mozilla Thunderbird) {mozilla-thunderbird} </usr/share/pixmaps/mozilla-thunderbird-menu.xpm>
+         [exec] (ncftp) { x-terminal-emulator -T "ncftp" -e /usr/bin/ncftp3} <>
+         [exec] (PuTTY) {/usr/bin/putty} <>
+         [exec] (Telnet) { x-terminal-emulator -T "Telnet" -e /usr/bin/telnet} <>
+         [exec] (w3m) { x-terminal-emulator -T "w3m" -e /usr/bin/w3m /usr/share/doc/w3m/MANUAL.html} <>
+         [exec] (X Chat) {/usr/bin/xchat} </usr/share/icons/xchat_mini.xpm>
+         [exec] (Xbiff) {xbiff} <>
+      [end]
+      [submenu] (ビュワー) {}
+         [exec] (GV) {/usr/bin/gv} </usr/share/pixmaps/mini-gv.xpm>
+         [exec] (ImageMagick) {/usr/bin/display} <>
+         [exec] (MPlayer) {/usr/bin/gmplayer < /dev/null} </usr/share/pixmaps/mplayer.xpm>
+         [exec] (Xditview) {xditview} <>
+         [exec] (XDvi) {/usr/bin/xdvi} <>
+         [exec] (xine media player) {/usr/bin/xine} </usr/share/pixmaps/xine.xpm>
+         [exec] (Xpdf) {/usr/bin/xpdf} </usr/share/pixmaps/xpdf.xpm>
+      [end]
+      [submenu] (プログラミング) {}
+         [exec] (autoproject) { x-terminal-emulator -T "autoproject" -e /usr/bin/autoproject} <>
+         [exec] (BeanShell (text\)) { x-terminal-emulator -T "BeanShell (text)" -e /usr/bin/bsh} <>
+         [exec] (BeanShell (windowed\)) {/usr/bin/xbsh} <>
+         [exec] (GDB) { x-terminal-emulator -T "GDB" -e /usr/bin/gdb} <>
+         [exec] (Guile 1.6) { x-terminal-emulator -T "Guile 1.6" -e /usr/bin/guile-1.6} <>
+         [exec] (Python (v2.1\)) { x-terminal-emulator -T "Python (v2.1)" -e /usr/bin/python2.1} </usr/share/pixmaps/python2.1-32.xpm>
+         [exec] (Python (v2.3\)) { x-terminal-emulator -T "Python (v2.3)" -e /usr/bin/python2.3} </usr/share/pixmaps/python2.3-32.xpm>
+         [exec] (Tclsh8.4) { x-terminal-emulator -T "Tclsh8.4" -e /usr/bin/tclsh8.4} <>
+         [exec] (TkWish8.4) {x-terminal-emulator -e /usr/bin/wish8.4} <>
+      [end]
+      [submenu] (技術) {}
+         [exec] (Oregano) {/usr/bin/oregano} <>
+         [exec] (TkGate) {/usr/bin/tkgate} <>
+      [end]
+      [submenu] (教育) {}
+         [exec] (Arithmetic Quiz) { x-terminal-emulator -T "Arithmetic Quiz" -e sh -c '/usr/games/arithmetic;echo PRESS ENTER;read line'} <>
+      [end]
+      [submenu] (数学) {}
+         [exec] (bc) { x-terminal-emulator -T "bc" -e /usr/bin/bc} <>
+         [exec] (dc) { x-terminal-emulator -T "dc" -e /usr/bin/dc} <>
+         [exec] (Openoffice.org Calc) {/usr/bin/oocalc} </usr/share/icons/hicolor/32x32/apps/ooo_calc.xpm>
+         [exec] (Openoffice.org Math) {/usr/bin/oomath} </usr/share/icons/hicolor/32x32/apps/ooo_math.xpm>
+         [exec] (Xcalc) {xcalc} <>
+      [end]
+   [end]
+   [submenu] (ウィンドウマネージャ) {}
+      [restart] (Blackbox)  {/usr/bin/blackbox}
+      [restart] (FluxBox)  {/usr/bin/fluxbox}
+      [restart] (Twm)  {twm}
+   [end]
+   [submenu] (ゲーム) {}
+      [submenu] (おもちゃ) {}
+         [exec] (Rain) { x-terminal-emulator -T "Rain" -e /usr/games/rain} <>
+         [exec] (Xeyes) {xeyes} <>
+         [exec] (Xlogo) {xlogo} <>
+      [end]
+      [submenu] (アーケード) {}
+         [exec] (Robots) { x-terminal-emulator -T "Robots" -e /usr/games/robots} <>
+         [exec] (Snake) { x-terminal-emulator -T "Snake" -e sh -c '/usr/games/snake;echo PRESS ENTER;read line'} <>
+         [exec] (Star Trek) { x-terminal-emulator -T "Star Trek" -e /usr/games/trek} <>
+         [exec] (Worm) { x-terminal-emulator -T "Worm" -e sh -c '/usr/games/worm;echo PRESS ENTER;read line'} <>
+      [end]
+      [submenu] (アドベンチャー) {}
+         [exec] (Battlestar) { x-terminal-emulator -T "Battlestar" -e sh -c '/usr/games/battlestar;echo PRESS ENTER;read line'} <>
+         [exec] (Hack) { x-terminal-emulator -T "Hack" -e /usr/games/hack} <>
+         [exec] (Hunt the Wumpus) { x-terminal-emulator -T "Hunt the Wumpus" -e /usr/games/wump} <>
+         [exec] (Phantasia) { x-terminal-emulator -T "Phantasia" -e /usr/games/phantasia} <>
+         [exec] (Rogue) { x-terminal-emulator -T "Rogue" -e /usr/games/rogue} <>
+         [exec] (アドベンチャー) { x-terminal-emulator -T "アドベンチャー" -e /usr/games/adventure} <>
+      [end]
+      [submenu] (カードゲーム) {}
+         [exec] (Canfield) { x-terminal-emulator -T "Canfield" -e /usr/games/canfield} <>
+         [exec] (Cribbage) { x-terminal-emulator -T "Cribbage" -e /usr/games/cribbage} <>
+         [exec] (Go Fish) { x-terminal-emulator -T "Go Fish" -e sh -c '/usr/games/go-fish;echo;echo PRESS ENTER;read line'} <>
+         [exec] (Mille Bornes) { x-terminal-emulator -T "Mille Bornes" -e /usr/games/mille} <>
+         [exec] (Spider) {/usr/games/spider} </usr/share/pixmaps/Spider32x32.xpm>
+      [end]
+      [submenu] (テトリス似ゲーム) {}
+         [exec] (Bsd Tetris) { x-terminal-emulator -T "Bsd Tetris" -e sh -c '/usr/games/tetris-bsd;echo;echo PRESS ENTER;read line'} <>
+      [end]
+      [submenu] (パズル) {}
+         [exec] (Boggle) { x-terminal-emulator -T "Boggle" -e /usr/games/boggle} <>
+         [exec] (Hangman) { x-terminal-emulator -T "Hangman" -e /usr/games/hangman} <>
+      [end]
+      [submenu] (ボードゲーム) {}
+         [exec] (Backgammon) { x-terminal-emulator -T "Backgammon" -e /usr/games/backgammon -pb} <>
+         [exec] (Gomoku) { x-terminal-emulator -T "Gomoku" -e /usr/games/gomoku} <>
+         [exec] (Monopoly) { x-terminal-emulator -T "Monopoly" -e /usr/games/monop} <>
+      [end]
+      [submenu] (戦略ゲーム) {}
+         [exec] (Air Traffic Controller) { x-terminal-emulator -T "Air Traffic Controller" -e sh -c '/usr/games/atc ; echo;echo PRESS ENTER;read line'} <>
+         [exec] (Sail) { x-terminal-emulator -T "Sail" -e /usr/games/sail} <>
+      [end]
+   [end]
+   [submenu] (ヘルプ) {}
+      [exec] (Info) { x-terminal-emulator -T "Info" -e info} <>
+      [exec] (Texdoctk) {/usr/bin/texdoctk} <>
+      [exec] (TeXshow) {/usr/bin/texshow} <>
+      [exec] (Xman) {xman} <>
+   [end]
+   [submenu] (画面) {}
+      [submenu] (ルートウィンドウ) {}
+         [exec] (Xsetroot) {xsetroot} <>
+      [end]
+      [submenu] (ロック) {}
+         [submenu] (Assorted) {}
+            [exec] (Ball) {/usr/X11R6/bin/xlock -remote -nice 19 -mode ball} <>
+            [exec] (Blot) {/usr/X11R6/bin/xlock -remote -nice 19 -mode blot} <>
+            [exec] (Bounce) {/usr/X11R6/bin/xlock -remote -nice 19 -mode bounce} <>
+            [exec] (Bubble) {/usr/X11R6/bin/xlock -remote -nice 19 -mode bubble} <>
+            [exec] (Clock) {/usr/X11R6/bin/xlock -remote -nice 19 -mode clock} <>
+            [exec] (Crystal) {/usr/X11R6/bin/xlock -remote -nice 19 -mode crystal} <>
+            [exec] (Daisy) {/usr/X11R6/bin/xlock -remote -nice 19 -mode daisy} <>
+            [exec] (Dclock) {/usr/X11R6/bin/xlock -remote -nice 19 -mode dclock} <>
+            [exec] (Decay) {/usr/X11R6/bin/xlock -remote -nice 19 -mode decay} <>
+            [exec] (Deco) {/usr/X11R6/bin/xlock -remote -nice 19 -mode deco} <>
+            [exec] (Eyes) {/usr/X11R6/bin/xlock -remote -nice 19 -mode eyes +trackmouse} <>
+            [exec] (Eyesptr) {/usr/X11R6/bin/xlock -remote -nice 19 -mode eyes -trackmouse} <>
+            [exec] (Goop) {/usr/X11R6/bin/xlock -remote -nice 19 -mode goop} <>
+            [exec] (Juggle) {/usr/X11R6/bin/xlock -remote -nice 19 -mode juggle} <>
+            [exec] (Marquee) {/usr/X11R6/bin/xlock -remote -nice 19 -mode marquee} <>
+            [exec] (Matrix) {/usr/X11R6/bin/xlock -remote -nice 19 -mode matrix} <>
+            [exec] (Munch) {/usr/X11R6/bin/xlock -remote -nice 19 -mode munch} <>
+            [exec] (Nose) {/usr/X11R6/bin/xlock -remote -nice 19 -mode nose} <>
+            [exec] (Pacman) {/usr/X11R6/bin/xlock -remote -nice 19 -mode pacman} <>
+            [exec] (Pyro) {/usr/X11R6/bin/xlock -remote -nice 19 -mode pyro +use3d} <>
+            [exec] (Pyro3d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode pyro -use3d} <>
+            [exec] (Roll) {/usr/X11R6/bin/xlock -remote -nice 19 -mode roll} <>
+            [exec] (Slip) {/usr/X11R6/bin/xlock -remote -nice 19 -mode slip} <>
+            [exec] (Solitare) {/usr/X11R6/bin/xlock -remote -nice 19 -mode solitare +trackmouse} <>
+            [exec] (Solitareptr) {/usr/X11R6/bin/xlock -remote -nice 19 -mode solitare -trackmouse} <>
+            [exec] (Starfish) {/usr/X11R6/bin/xlock -remote -nice 19 -mode starfish -install} <>
+            [exec] (Swarm) {/usr/X11R6/bin/xlock -remote -nice 19 -mode swarm +trackmouse} <>
+            [exec] (Swarmptr) {/usr/X11R6/bin/xlock -remote -nice 19 -mode swarm -trackmouse} <>
+            [exec] (Swirl) {/usr/X11R6/bin/xlock -remote -nice 19 -mode swirl -install} <>
+            [exec] (T3d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode t3d} <>
+            [exec] (Tetris) {/usr/X11R6/bin/xlock -remote -nice 19 -mode tetris} <>
+            [exec] (Tube) {/usr/X11R6/bin/xlock -remote -nice 19 -mode tube -install} <>
+            [exec] (Worm) {/usr/X11R6/bin/xlock -remote -nice 19 -mode worm +use3d} <>
+            [exec] (Worm3d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode worm -use3d} <>
+            [exec] (Xcl) {/usr/X11R6/bin/xlock -remote -nice 19 -mode xcl} <>
+            [exec] (Xjack) {/usr/X11R6/bin/xlock -remote -nice 19 -mode xjack} <>
+         [end]
+         [submenu] (Automata) {}
+            [exec] (Ant) {/usr/X11R6/bin/xlock -remote -nice 19 -mode ant -neighbors 4 +truchet} <>
+            [exec] (Ant Truchet) {/usr/X11R6/bin/xlock -remote -nice 19 -mode ant -neighbors 4 -truchet} <>
+            [exec] (Ant3d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode ant3d} <>
+            [exec] (Bee) {/usr/X11R6/bin/xlock -remote -nice 19 -mode ant -neighbors 6 +truchet} <>
+            [exec] (Bee Truchet) {/usr/X11R6/bin/xlock -remote -nice 19 -mode ant -neighbors 6 -truchet} <>
+            [exec] (Bug) {/usr/X11R6/bin/xlock -remote -nice 19 -mode bug} <>
+            [exec] (Demon) {/usr/X11R6/bin/xlock -remote -nice 19 -mode demon} <>
+            [exec] (Dilemma) {/usr/X11R6/bin/xlock -remote -nice 19 -mode dilemma} <>
+            [exec] (Life) {/usr/X11R6/bin/xlock -remote -nice 19 -mode life} <>
+            [exec] (Life Callahan) {/usr/X11R6/bin/xlock -remote -nice 19 -mode life -callahan -size 7} <>
+            [exec] (Life1d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode life1d} <>
+            [exec] (Life3d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode life3d} <>
+            [exec] (Loop) {/usr/X11R6/bin/xlock -remote -nice 19 -mode loop} <>
+            [exec] (Petri) {/usr/X11R6/bin/xlock -remote -nice 19 -mode petri} <>
+            [exec] (Random) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist allautomata -fullrandom -neighbors 0} <>
+            [exec] (Voters) {/usr/X11R6/bin/xlock -remote -nice 19 -mode voters} <>
+            [exec] (Wator) {/usr/X11R6/bin/xlock -remote -nice 19 -mode wator} <>
+            [exec] (Wire) {/usr/X11R6/bin/xlock -remote -nice 19 -mode wire} <>
+         [end]
+         [submenu] (Fractal) {}
+            [exec] (Coral) {/usr/X11R6/bin/xlock -remote -nice 19 -mode coral} <>
+            [exec] (Discrete) {/usr/X11R6/bin/xlock -remote -nice 19 -mode discrete} <>
+            [exec] (Dragon) {/usr/X11R6/bin/xlock -remote -nice 19 -mode dragon} <>
+            [exec] (Drift) {/usr/X11R6/bin/xlock -remote -nice 19 -mode drift -fullrandom} <>
+            [exec] (Euler2d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode euler2d} <>
+            [exec] (Flame) {/usr/X11R6/bin/xlock -remote -nice 19 -mode flame} <>
+            [exec] (Flow) {/usr/X11R6/bin/xlock -remote -nice 19 -mode flow} <>
+            [exec] (Forest) {/usr/X11R6/bin/xlock -remote -nice 19 -mode forest} <>
+            [exec] (Hop) {/usr/X11R6/bin/xlock -remote -nice 19 -mode hop -fullrandom} <>
+            [exec] (IFS) {/usr/X11R6/bin/xlock -remote -nice 19 -mode ifs} <>
+            [exec] (Julia) {/usr/X11R6/bin/xlock -remote -nice 19 -mode julia +trackmouse} <>
+            [exec] (Juliaptr) {/usr/X11R6/bin/xlock -remote -nice 19 -mode julia -trackmouse} <>
+            [exec] (Kumppa) {/usr/X11R6/bin/xlock -remote -nice 19 -mode kumppa} <>
+            [exec] (Lightning) {/usr/X11R6/bin/xlock -remote -nice 19 -mode lightning} <>
+            [exec] (Lyapunov) {/usr/X11R6/bin/xlock -remote -nice 19 -mode lyapunov -install} <>
+            [exec] (Mandelbrot) {/usr/X11R6/bin/xlock -remote -nice 19 -mode mandelbrot -install} <>
+            [exec] (Mountain) {/usr/X11R6/bin/xlock -remote -nice 19 -mode mountain} <>
+            [exec] (Random) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist allfractal -fullrandom} <>
+            [exec] (Sierpinski) {/usr/X11R6/bin/xlock -remote -nice 19 -mode sierpinski} <>
+            [exec] (Strange) {/usr/X11R6/bin/xlock -remote -nice 19 -mode strange} <>
+            [exec] (Thornbird) {/usr/X11R6/bin/xlock -remote -nice 19 -mode thornbird} <>
+            [exec] (Triangle) {/usr/X11R6/bin/xlock -remote -nice 19 -mode triangle} <>
+            [exec] (Turtle) {/usr/X11R6/bin/xlock -remote -nice 19 -mode turtle} <>
+            [exec] (Vines) {/usr/X11R6/bin/xlock -remote -nice 19 -mode vines} <>
+         [end]
+         [submenu] (Geometry) {}
+            [exec] (Apollonian) {/usr/X11R6/bin/xlock -remote -nice 19 -mode apollonian} <>
+            [exec] (Braid) {/usr/X11R6/bin/xlock -remote -nice 19 -mode braid} <>
+            [exec] (Fadeplot) {/usr/X11R6/bin/xlock -remote -nice 19 -mode fadeplot} <>
+            [exec] (Helix) {/usr/X11R6/bin/xlock -remote -nice 19 -mode helix -fullrandom} <>
+            [exec] (Hyper) {/usr/X11R6/bin/xlock -remote -nice 19 -mode hyper} <>
+            [exec] (Ico) {/usr/X11R6/bin/xlock -remote -nice 19 -mode ico} <>
+            [exec] (Kaleid) {/usr/X11R6/bin/xlock -remote -nice 19 -mode kaleid} <>
+            [exec] (Laser) {/usr/X11R6/bin/xlock -remote -nice 19 -mode laser} <>
+            [exec] (Lisa) {/usr/X11R6/bin/xlock -remote -nice 19 -mode lisa} <>
+            [exec] (Lissie) {/usr/X11R6/bin/xlock -remote -nice 19 -mode lissie} <>
+            [exec] (Penrose) {/usr/X11R6/bin/xlock -remote -nice 19 -mode penrose +ammann} <>
+            [exec] (Penrose Ammann) {/usr/X11R6/bin/xlock -remote -nice 19 -mode penrose -ammann} <>
+            [exec] (Petal) {/usr/X11R6/bin/xlock -remote -nice 19 -mode petal} <>
+            [exec] (Polyominoes) {/usr/X11R6/bin/xlock -remote -nice 19 -mode polyominoes} <>
+            [exec] (Qix) {/usr/X11R6/bin/xlock -remote -nice 19 -mode qix +complete} <>
+            [exec] (Qix complete) {/usr/X11R6/bin/xlock -remote -nice 19 -mode qix -complete} <>
+            [exec] (Random) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist allgeometry -fullrandom} <>
+            [exec] (Rotor) {/usr/X11R6/bin/xlock -remote -nice 19 -mode rotor} <>
+            [exec] (Shape) {/usr/X11R6/bin/xlock -remote -nice 19 -mode shape} <>
+            [exec] (Sphere) {/usr/X11R6/bin/xlock -remote -nice 19 -mode sphere} <>
+            [exec] (Spiral) {/usr/X11R6/bin/xlock -remote -nice 19 -mode spiral} <>
+            [exec] (Spline) {/usr/X11R6/bin/xlock -remote -nice 19 -mode spline} <>
+            [exec] (Tik_Tak) {/usr/X11R6/bin/xlock -remote -nice 19 -mode tik_tak} <>
+         [end]
+         [submenu] (MarqueeMessage) {}
+            [exec] (Back Soon) {/usr/X11R6/bin/xlock -remote -nice 19 -mode marquee -message "$LOGNAME will be back soon."} <>
+            [exec] (Overnight) {/usr/X11R6/bin/xlock -remote -nice 19 -mode marquee -message "$LOGNAME will be back in the morning."} <>
+            [exec] (Rude) {/usr/X11R6/bin/xlock -remote -nice 19 -mode marquee -message "$LOGNAME not here, please go away!"} <>
+         [end]
+         [submenu] (NoseMessage) {}
+            [exec] (Back Soon) {/usr/X11R6/bin/xlock -remote -nice 19 -mode nose -message "$LOGNAME will be back soon."} <>
+            [exec] (Overnight) {/usr/X11R6/bin/xlock -remote -nice 19 -mode nose -message "$LOGNAME will be back in the morning."} <>
+            [exec] (Rude) {/usr/X11R6/bin/xlock -remote -nice 19 -mode nose -message "$LOGNAME not here, please go away!"} <>
+         [end]
+         [submenu] (Space) {}
+            [exec] (Bouboule) {/usr/X11R6/bin/xlock -remote -nice 19 -mode bouboule +use3d} <>
+            [exec] (Bouboule3d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode bouboule -use3d} <>
+            [exec] (Galaxy) {/usr/X11R6/bin/xlock -remote -nice 19 -mode galaxy} <>
+            [exec] (Grav) {/usr/X11R6/bin/xlock -remote -nice 19 -mode grav +trail +decay} <>
+            [exec] (Grav Decay) {/usr/X11R6/bin/xlock -remote -nice 19 -mode grav -decay} <>
+            [exec] (Grav Trail) {/usr/X11R6/bin/xlock -remote -nice 19 -mode grav -trail} <>
+            [exec] (Random Space) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist allspace} <>
+            [exec] (Rock) {/usr/X11R6/bin/xlock -remote -nice 19 -mode star -rock} <>
+            [exec] (Space) {/usr/X11R6/bin/xlock -remote -nice 19 -mode space} <>
+            [exec] (Star) {/usr/X11R6/bin/xlock -remote -nice 19 -mode star +rock +use3d +trek 0} <>
+            [exec] (Star Trek) {/usr/X11R6/bin/xlock -remote -nice 19 -mode star -trek 100} <>
+            [exec] (Star3d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode star -use3d} <>
+            [exec] (World) {/usr/X11R6/bin/xlock -remote -nice 19 -mode world} <>
+         [end]
+         [submenu] (Special) {}
+            [exec] (Blank) {/usr/X11R6/bin/xlock -remote -nice 19 -mode blank} <>
+            [exec] (Bomb) {/usr/X11R6/bin/xlock -remote -nice 19 -mode bomb} <>
+            [exec] (Random 3d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist all3d -use3d -fullrandom} <>
+            [exec] (Random all) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist all -fullrandom -neighbors 0} <>
+            [exec] (Random nice) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist allnice -fullrandom -neighbors 0} <>
+            [exec] (Random ptr) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist allmouse -trackmouse -fullrandom} <>
+            [exec] (Random standard) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist all-allgl -fullrandom -neighbors 0} <>
+            [exec] (Random write) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist allwrite -install -fullrandom} <>
+            [exec] (Transparent) {/usr/X11R6/bin/xlock -remote -nice 19 -mode blank -geometry 1x1 -enablesaver} <>
+         [end]
+         [submenu] (XjackMessage) {}
+            [exec] (Crazy Boy) {/usr/X11R6/bin/xlock -remote -nice 19 -mode xjack -message "All work and no play makes $LOGNAME a dull boy."} <>
+            [exec] (Crazy Girl) {/usr/X11R6/bin/xlock -remote -nice 19 -mode xjack -message "All work and no play makes $LOGNAME a dull girl."} <>
+         [end]
+         [submenu] (XPM) {}
+            [exec] (Bat) {/usr/X11R6/bin/xlock -remote -nice 19 -mode bat} <>
+            [exec] (Flag) {/usr/X11R6/bin/xlock -remote -nice 19 -mode flag} <>
+            [exec] (Image) {/usr/X11R6/bin/xlock -remote -nice 19 -mode image} <>
+            [exec] (Life) {/usr/X11R6/bin/xlock -remote -nice 19 -mode life} <>
+            [exec] (Life1d) {/usr/X11R6/bin/xlock -remote -nice 19 -mode life1d} <>
+            [exec] (Maze) {/usr/X11R6/bin/xlock -remote -nice 19 -mode maze} <>
+            [exec] (Puzzle) {/usr/X11R6/bin/xlock -remote -nice 19 -mode puzzle} <>
+            [exec] (Random) {/usr/X11R6/bin/xlock -remote -nice 19 -mode random -modelist allxpm -fullrandom} <>
+         [end]
+      [end]
+      [submenu] (保存) {}
+         [submenu] (Assorted) {}
+            [exec] (Ball) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode ball} <>
+            [exec] (Blot) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode blot} <>
+            [exec] (Bounce) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode bounce} <>
+            [exec] (Bubble) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode bubble} <>
+            [exec] (Clock) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode clock} <>
+            [exec] (Crystal) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode crystal} <>
+            [exec] (Daisy) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode daisy} <>
+            [exec] (Dclock) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode dclock} <>
+            [exec] (Decay) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode decay} <>
+            [exec] (Deco) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode deco} <>
+            [exec] (Eyes) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode eyes +trackmouse} <>
+            [exec] (Eyesptr) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode eyes -trackmouse} <>
+            [exec] (Goop) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode goop} <>
+            [exec] (Juggle) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode juggle} <>
+            [exec] (Marquee) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode marquee} <>
+            [exec] (Matrix) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode matrix} <>
+            [exec] (Munch) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode munch} <>
+            [exec] (Nose) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode nose} <>
+            [exec] (Pacman) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode pacman} <>
+            [exec] (Pyro) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode pyro +use3d} <>
+            [exec] (Pyro3d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode pyro -use3d} <>
+            [exec] (Roll) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode roll} <>
+            [exec] (Slip) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode slip} <>
+            [exec] (Solitare) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode solitare +trackmouse} <>
+            [exec] (Solitareptr) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode solitare -trackmouse} <>
+            [exec] (Starfish) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode starfish -install} <>
+            [exec] (Swarm) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode swarm +trackmouse} <>
+            [exec] (Swarmptr) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode swarm -trackmouse} <>
+            [exec] (Swirl) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode swirl -install} <>
+            [exec] (T3d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode t3d} <>
+            [exec] (Tetris) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode tetris} <>
+            [exec] (Tube) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode tube -install} <>
+            [exec] (Worm) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode worm +use3d} <>
+            [exec] (Worm3d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode worm -use3d} <>
+            [exec] (Xcl) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode xcl} <>
+            [exec] (Xjack) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode xjack} <>
+         [end]
+         [submenu] (Automata) {}
+            [exec] (Ant) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode ant -neighbors 4 +truchet} <>
+            [exec] (Ant Truchet) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode ant -neighbors 4 -truchet} <>
+            [exec] (Ant3d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode ant3d} <>
+            [exec] (Bee) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode ant -neighbors 6 +truchet} <>
+            [exec] (Bee Truchet) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode ant -neighbors 6 -truchet} <>
+            [exec] (Bug) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode bug} <>
+            [exec] (Demon) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode demon} <>
+            [exec] (Dilemma) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode dilemma} <>
+            [exec] (Life) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode life} <>
+            [exec] (Life Callahan) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode life -callahan -size 7} <>
+            [exec] (Life1d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode life1d} <>
+            [exec] (Life3d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode life3d} <>
+            [exec] (Loop) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode loop} <>
+            [exec] (Petri) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode petri} <>
+            [exec] (Random) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist allautomata -fullrandom -neighbors 0} <>
+            [exec] (Voters) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode voters} <>
+            [exec] (Wator) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode wator} <>
+            [exec] (Wire) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode wire} <>
+         [end]
+         [exec] (Beforelight) {beforelight} <>
+         [submenu] (Fractal) {}
+            [exec] (Coral) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode coral} <>
+            [exec] (Discrete) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode discrete} <>
+            [exec] (Dragon) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode dragon} <>
+            [exec] (Drift) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode drift -fullrandom} <>
+            [exec] (Euler2d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode euler2d} <>
+            [exec] (Flame) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode flame} <>
+            [exec] (Flow) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode flow} <>
+            [exec] (Forest) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode forest} <>
+            [exec] (Hop) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode hop -fullrandom} <>
+            [exec] (IFS) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode ifs} <>
+            [exec] (Julia) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode julia +trackmouse} <>
+            [exec] (Juliaptr) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode julia -trackmouse} <>
+            [exec] (Kumppa) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode kumppa} <>
+            [exec] (Lightning) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode lightning} <>
+            [exec] (Lyapunov) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode lyapunov -install} <>
+            [exec] (Mandelbrot) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode mandelbrot -install} <>
+            [exec] (Mountain) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode mountain} <>
+            [exec] (Random) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist allfractal -fullrandom} <>
+            [exec] (Sierpinski) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode sierpinski} <>
+            [exec] (Strange) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode strange} <>
+            [exec] (Thornbird) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode thornbird} <>
+            [exec] (Triangle) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode triangle} <>
+            [exec] (Turtle) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode turtle} <>
+            [exec] (Vines) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode vines} <>
+         [end]
+         [submenu] (Geometry) {}
+            [exec] (Apollonian) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode apollonian} <>
+            [exec] (Braid) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode braid} <>
+            [exec] (Fadeplot) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode fadeplot} <>
+            [exec] (Helix) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode helix -fullrandom} <>
+            [exec] (Hyper) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode hyper} <>
+            [exec] (Ico) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode ico} <>
+            [exec] (Kaleid) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode kaleid} <>
+            [exec] (Laser) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode laser} <>
+            [exec] (Lisa) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode lisa} <>
+            [exec] (Lissie) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode lissie} <>
+            [exec] (Penrose) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode penrose +ammann} <>
+            [exec] (Penrose Ammann) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode penrose -ammann} <>
+            [exec] (Petal) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode petal} <>
+            [exec] (Polyominoes) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode polyominoes} <>
+            [exec] (Qix) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode qix +complete} <>
+            [exec] (Qix complete) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode qix -complete} <>
+            [exec] (Random) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist allgeometry} <>
+            [exec] (Rotor) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode rotor} <>
+            [exec] (Shape) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode shape} <>
+            [exec] (Sphere) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode sphere} <>
+            [exec] (Spiral) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode spiral} <>
+            [exec] (Spline) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode spline} <>
+            [exec] (Tik_Tak) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode tik_tak} <>
+         [end]
+         [submenu] (MarqueeMessage) {}
+            [exec] (Available) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode marquee -message "Hey, I'm available now!"} <>
+            [exec] (Brilliant!) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode marquee -message "WOW! $LOGNAME, You're Brilliant!"} <>
+            [exec] (Love You) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode marquee -message "You know, I Love You $LOGNAME."} <>
+         [end]
+         [submenu] (NoseMessage) {}
+            [exec] (Available) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode nose -message "Hey, I'm available now!"} <>
+            [exec] (Brilliant!) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode nose -message "WOW! $LOGNAME, You're Brilliant!"} <>
+            [exec] (Love You) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode nose -message "You know, I Love You $LOGNAME."} <>
+         [end]
+         [submenu] (Space) {}
+            [exec] (Bouboule) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode bouboule +use3d} <>
+            [exec] (Bouboule3d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode bouboule -use3d} <>
+            [exec] (Galaxy) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode galaxy} <>
+            [exec] (Grav) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode grav +trail +decay} <>
+            [exec] (Grav Decay) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode grav -decay} <>
+            [exec] (Grav Trail) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode grav -trail} <>
+            [exec] (Random Space) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist allspace} <>
+            [exec] (Rock) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode star -rock} <>
+            [exec] (Scooter) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode scooter} <>
+            [exec] (Space) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode space} <>
+            [exec] (Star) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode star +rock +use3d +trek 0} <>
+            [exec] (Star Trek) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode star -trek 100} <>
+            [exec] (Star3d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode star -use3d} <>
+            [exec] (World) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode world} <>
+         [end]
+         [submenu] (Special) {}
+            [exec] (Blank) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode blank} <>
+            [exec] (Bomb) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode bomb} <>
+            [exec] (Random 3d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist all3d -use3d -fullrandom} <>
+            [exec] (Random all) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist all -fullrandom -neighbors 0} <>
+            [exec] (Random nice) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist allnice -fullrandom -neighbors 0} <>
+            [exec] (Random ptr) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist allmouse -trackmouse -fullrandom} <>
+            [exec] (Random standard) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist all-allgl -fullrandom -neighbors 0} <>
+            [exec] (Random write) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist allwrite -fullrandom} <>
+         [end]
+         [submenu] (XPM) {}
+            [exec] (Bat) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode bat} <>
+            [exec] (Flag) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode flag} <>
+            [exec] (Image) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode image} <>
+            [exec] (Life) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode life} <>
+            [exec] (Life1d) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode life1d} <>
+            [exec] (Maze) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode maze} <>
+            [exec] (Puzzle) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode puzzle} <>
+            [exec] (Random) {/usr/X11R6/bin/xlock -remote -nice 19 -nolock -mode random -modelist allxpm -fullrandom} <>
+         [end]
+      [end]
+   [end]
+
+   [config] (Configuration)
+   [submenu] (Styles) {}
+      [stylesdir] (/usr/share/fluxbox/styles)
+      [stylesdir] (~/.fluxbox/styles)
+   [end]
+   [workspaces] (Workspaces)
+   [reconfig] (Reconfigure)
+   [restart] (Restart)
+   [exit] (Exit)
+
+[end]

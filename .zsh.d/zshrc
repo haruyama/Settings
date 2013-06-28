@@ -1,0 +1,148 @@
+# based on http://www.clear-code.com/blog/2011/9/5.html
+bindkey -e
+
+setopt auto_menu auto_cd correct auto_name_dirs auto_remove_slash
+setopt extended_history hist_ignore_dups hist_ignore_space
+setopt inc_append_history
+setopt hist_ignore_all_dups
+setopt noflowcontrol NO_BG_NICE
+setopt pushd_ignore_dups rm_star_silent sun_keyboard_hack
+setopt list_types always_last_prompt
+setopt cdable_vars sh_word_split auto_param_keys
+setopt APPEND_HISTORY AUTO_LIST BANG_HIST auto_pushd NO_LIST_BEEP no_hup no_check_jobs
+setopt ignoreeof
+setopt print_eight_bit
+setopt long_list_jobs 
+setopt NO_CLOBBER
+setopt rc_quotes
+setopt prompt_subst prompt_percent transient_rprompt
+cdpath=(~)
+function chpwd_print() {
+if [ x"$DISPLAY" != x"" ]
+then print -Pn "\e]2; [%m] : %~\a"
+fi
+}
+#chpwd_print
+#function chpwd { chpwd_print }
+typeset -ga chpwd_functions
+chpwd_print
+chpwd_functions+=dirs
+chpwd_functions+=chpwd_print
+
+HISTSIZE=10000000
+SAVEHIST=$HISTSIZE
+HISTFILE="$HOME/.zhistory"
+
+function history-all { history -E 1 }
+
+
+if type ruby > /dev/null 2>&1; then
+        _cache_hosts=(`ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
+fi
+
+
+fpath=($HOME/.zsh.d/packages/zsh-completions/src $fpath)
+autoload -U compinit
+compinit
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:default' list-colors ""
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
+zstyle ':completion:*' completer \
+        _oldlist _complete _match _history _ignored _approximate _prefix
+zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' verbose yes
+zstyle ':completion:sudo:*' environ PATH="$SUDO_PATH:$PATH"
+setopt complete_in_word
+#setopt glob_complete
+setopt hist_expand
+setopt no_beep
+setopt numeric_glob_sort
+setopt magic_equal_subst
+setopt extended_glob
+#setopt mark_dirs
+
+REPORTTIME=3
+
+#watch="all"
+#log
+
+WORDCHARS=${WORDCHARS:s,/,,}
+
+alias -g L="|& $PAGER"
+alias -g G='| grep -a'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g S='| sed'
+alias -g W='| wc'
+alias ls='ls -F --color=auto'
+alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
+alias env_EUC='env LANG=ja_JP.eucJP LC_ALL=ja_JP.eucJP'
+alias env_UTF-8='env LANG=ja_JP.UTF-8 LC_ALL=ja_JP.UTF-8'
+alias env_SJIS='env LANG=ja_JP.SJIS LC_ALL=ja_JP.SJIS'
+
+export RSYNC_RSH=ssh
+export SUDO_PROMPT="sudo_password: "
+
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward
+
+autoload -Uz add-zsh-hook
+autoload -Uz colors
+colors
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' enable git svn hg bzr
+zstyle ':vcs_info:*' formats '(%s)-[%b]'
+zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
+zstyle ':vcs_info:bzr:*' use-simple true
+
+autoload -Uz is-at-least
+if is-at-least 4.3.10; then
+        # この check-for-changes が今回の設定するところ
+        zstyle ':vcs_info:git:*' check-for-changes true
+        zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
+        zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
+        zstyle ':vcs_info:git:*' formats '(%s)-[%b] %c%u'
+        zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
+fi
+
+function _update_vcs_info_msg() {
+psvar=()
+LANG=en_US.UTF-8 vcs_info
+[[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+psvar[2]=$(_git_not_pushed)
+}
+
+function _git_not_pushed() {
+if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
+        head="$(git rev-parse HEAD)"
+        for x in $(git rev-parse --remotes)
+        do
+                if [ "$head" = "$x" ]; then
+                        return 0
+                fi
+        done
+        echo "?"
+fi
+return 0
+}
+
+add-zsh-hook precmd _update_vcs_info_msg
+RPROMPT="%1(v|%F{green}%1v%2v%f|)"
+PROMPT='%{[$[32+$RANDOM % 5]m%}%n@%m:%~%%%{[m%}%u '
+
+function rfc(){ command wget -q -O- http://www.ietf.org/rfc/rfc$1.txt | lv }
+
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+
+if [ -f $HOME/.zsh.d/packages/z/z.sh ]; then
+        . $HOME/.zsh.d/packages/z/z.sh
+        function precmd () {
+        _z --add "$(pwd -P)"
+}
+fi

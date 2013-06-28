@@ -1,0 +1,1 @@
+../vimperator-plugins/copy.js

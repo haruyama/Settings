@@ -1,0 +1,1 @@
+../vimperator-plugins/happy_hacking_vimperator.js

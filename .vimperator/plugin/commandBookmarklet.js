@@ -1,0 +1,1 @@
+../vimperator-plugins/commandBookmarklet.js

@@ -1,0 +1,13 @@
+[ui]
+username = HARUYAMA Seigo <haruyama@unixuser.org>
+merge = vimdiff
+verbose = true
+
+[extensions]
+color =
+eol =
+fetch =
+rebase =
+mq =
+transplant =
+record =

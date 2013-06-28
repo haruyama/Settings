@@ -1,0 +1,8 @@
+[general]
+stylesheets="ja"
+compressed=false
+header=
+footer=
+fit_mode="shrink"
+break_level=0
+default_dpi=94
