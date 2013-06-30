@@ -8,7 +8,7 @@ function! SyntaxCheckers_clojure_nrepl_IsAvailable()
 endfunction
 
 function! SyntaxCheckers_clojure_nrepl_GetLocList()
-    let filename = expand('%')
+    let filename = substitute(expand('%'), getcwd() . '/', '', '')
     let prefix = matchstr(filename, "^\\(src\\|test\\)/")
     if empty(prefix)
         return []
