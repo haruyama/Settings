@@ -27,8 +27,8 @@ augroup my_template
       let ns = substitute(ns, '.*test\.', '', '')
       let target_ns = substitute(ns, '-test$', '', '')
       call append(0, '(ns ' . ns)
-      call append(1, '  (:require [clojure.test :refer :all])')
-      call append(2, '  (:require [' . target_ns . ' :refer :all]))')
+      call append(1, '  (:use clojure.test)')
+      call append(2, '  (:require [' . target_ns . ']))')
       call append(3, '')
       call cursor(3, 0)
     else
