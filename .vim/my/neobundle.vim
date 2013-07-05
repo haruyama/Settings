@@ -57,6 +57,8 @@ NeoBundle 'hrsh7th/vim-versions'
 NeoBundle 'superbrothers/vim-vimperator'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'haruyama/vim-matchopen'
+NeoBundle 'gregsexton/gitv',
+      \ { 'depends' : 'fugitive.vim'}
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
