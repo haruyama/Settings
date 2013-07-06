@@ -60,6 +60,9 @@ NeoBundle 'haruyama/vim-matchopen'
 NeoBundle 'gregsexton/gitv',
       \ { 'depends' : 'fugitive.vim'}
 
+NeoBundle 'kien/rainbow_parentheses.vim'
+
+
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
       \   "filetypes": ["clojure", "java"],
