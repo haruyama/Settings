@@ -36,7 +36,9 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet.git'
+NeoBundle 'Shougo/neosnippet'
+
+NeoBundle 'honza/vim-snippets'
 
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'h1mesuke/unite-outline'
