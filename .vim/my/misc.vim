@@ -88,3 +88,10 @@ augroup my_rainbow_parentheses
   au Syntax * RainbowParenthesesLoadSquare
   au Syntax * RainbowParenthesesLoadBraces
 augroup END
+
+"http://cohama.hateblo.jp/entry/20121017/1350482411
+let g:endwise_no_mappings = 1
+augroup my_endwise_with_smartinput
+  autocmd!
+  autocmd FileType lua,ruby,sh,zsh,vb,vbnet,aspvbs,vim imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
+augroup END
