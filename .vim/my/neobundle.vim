@@ -39,14 +39,12 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 
 NeoBundle 'honza/vim-snippets'
-
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 't9md/vim-textmanip'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'eagletmt/unite-haddock'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'kmnk/vim-unite-giti.git'
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -62,7 +60,6 @@ NeoBundle 'haruyama/vim-matchopen'
 NeoBundle 'gregsexton/gitv'
 
 NeoBundle 'kien/rainbow_parentheses.vim'
-
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
@@ -83,12 +80,21 @@ NeoBundleLazy 'liquidz/lein-vim', {
       \   "filetypes": ["clojure"],
       \ }}
 
+NeoBundleLazy "elixir-lang/vim-elixir", {
+      \ "autoload": {
+      \   "filetypes": ["elixir"],
+      \ }}
+
 NeoBundleLazy 'jimenezrick/vimerl', {
       \ "autoload": {
       \   "filetypes": ["erlang"],
       \ }}
 
 NeoBundleLazy 'ujihisa/neco-ghc', {
+      \ "autoload": {
+      \   "filetypes": ["haskell"],
+      \ }}
+NeoBundleLazy 'eagletmt/unite-haddock' , {
       \ "autoload": {
       \   "filetypes": ["haskell"],
       \ }}
@@ -144,11 +150,6 @@ NeoBundleLazy 'haruyama/scheme.vim', {
 NeoBundleLazy "vim-pandoc/vim-pandoc", {
       \ "autoload": {
       \   "filetypes": ["text", "pandoc", "markdown", "rst", "textile"],
-      \ }}
-
-NeoBundleLazy "elixir-lang/vim-elixir", {
-      \ "autoload": {
-      \   "filetypes": ["elixir"],
       \ }}
 
 "NeoBundle 'airblade/vim-gitgutter'

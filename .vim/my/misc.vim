@@ -81,13 +81,13 @@ vnoremap <silent> <CR> :VimShellSendStringAndMove<CR>
 let g:vimfiler_as_default_explorer = 1
 hi MatchParen cterm=underline ctermbg=NONE gui=underline guibg=NONE
 
-augroup my_rainbow_parentheses
-  autocmd!
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-augroup END
+"augroup my_rainbow_parentheses
+"  autocmd!
+"  au VimEnter * RainbowParenthesesToggle
+"  au Syntax * RainbowParenthesesLoadRound
+"  au Syntax * RainbowParenthesesLoadSquare
+"  au Syntax * RainbowParenthesesLoadBraces
+"augroup END
 
 "http://cohama.hateblo.jp/entry/20121017/1350482411
 let g:endwise_no_mappings = 1
