@@ -59,8 +59,7 @@ NeoBundle 'hrsh7th/vim-versions'
 NeoBundle 'superbrothers/vim-vimperator'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'haruyama/vim-matchopen'
-NeoBundle 'gregsexton/gitv',
-      \ { 'depends' : 'fugitive.vim'}
+NeoBundle 'gregsexton/gitv'
 
 NeoBundle 'kien/rainbow_parentheses.vim'
 
@@ -121,11 +120,11 @@ NeoBundleLazy 'vim-perl/vim-perl', {
 
 NeoBundleLazy 'tpope/gem-ctags', {
       \ "autoload": {
-      \   "filetypes": ["perl"],
+      \   "filetypes": ["ruby"],
       \ }}
 NeoBundleLazy 'tpope/vim-bundler', {
       \ "autoload": {
-      \   "filetypes": ["perl"],
+      \   "filetypes": ["ruby"],
       \ }}
 NeoBundleLazy 'tpope/vim-rake', {
       \ "autoload": {
@@ -145,6 +144,11 @@ NeoBundleLazy 'haruyama/scheme.vim', {
 NeoBundleLazy "vim-pandoc/vim-pandoc", {
       \ "autoload": {
       \   "filetypes": ["text", "pandoc", "markdown", "rst", "textile"],
+      \ }}
+
+NeoBundleLazy "elixir-lang/vim-elixir", {
+      \ "autoload": {
+      \   "filetypes": ["elixir"],
       \ }}
 
 "NeoBundle 'airblade/vim-gitgutter'
