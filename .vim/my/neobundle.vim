@@ -121,11 +121,11 @@ NeoBundleLazy 'vim-perl/vim-perl', {
 
 NeoBundleLazy 'tpope/gem-ctags', {
       \ "autoload": {
-      \   "filetypes": ["perl"],
+      \   "filetypes": ["ruby"],
       \ }}
 NeoBundleLazy 'tpope/vim-bundler', {
       \ "autoload": {
-      \   "filetypes": ["perl"],
+      \   "filetypes": ["ruby"],
       \ }}
 NeoBundleLazy 'tpope/vim-rake', {
       \ "autoload": {
