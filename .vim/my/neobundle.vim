@@ -58,8 +58,7 @@ NeoBundle 'superbrothers/vim-vimperator'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'haruyama/vim-matchopen'
 NeoBundle 'gregsexton/gitv'
-
-NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'amdt/vim-niji'
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {

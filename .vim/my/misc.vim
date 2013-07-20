@@ -95,3 +95,5 @@ augroup my_endwise_with_smartinput
   autocmd!
   autocmd FileType lua,ruby,sh,zsh,vb,vbnet,aspvbs,vim imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
 augroup END
+
+let g:niji_matching_filetypes = ['lisp', 'scheme']
