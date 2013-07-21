@@ -40,21 +40,20 @@ NeoBundle 'Shougo/neosnippet'
 
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 't9md/vim-textmanip'
+"NeoBundle 'h1mesuke/unite-outline'
+"NeoBundle 'sjl/gundo.vim'
+"NeoBundle 't9md/vim-textmanip'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'kmnk/vim-unite-giti.git'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+"NeoBundle 'majutsushi/tagbar'
+"NeoBundle 'kmnk/vim-unite-giti.git'
+"NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'haruyama/EnhCommentify.vim'
-NeoBundle 'haruyama/gtags.vim'
+"NeoBundle 'haruyama/gtags.vim'
 "NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'kablamo/vim-git-log'
-NeoBundle 'hrsh7th/vim-versions'
-NeoBundle 'superbrothers/vim-vimperator'
+"NeoBundle 'kablamo/vim-git-log'
+"NeoBundle 'hrsh7th/vim-versions'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'haruyama/vim-matchopen'
 NeoBundle 'gregsexton/gitv'
@@ -151,8 +150,12 @@ NeoBundleLazy "vim-pandoc/vim-pandoc", {
       \   "filetypes": ["text", "pandoc", "markdown", "rst", "textile"],
       \ }}
 
+NeoBundleLazy 'superbrothers/vim-vimperator', {
+      \ "autoload": {
+      \   "filetypes": ["vimperator"],
+      \ }}
+
 "NeoBundle 'airblade/vim-gitgutter'
-"NeoBundle 'haruyama/jump2clj.vim'
 "NeoBundle 'glidenote/memolist.vim'
 
 filetype plugin indent on
