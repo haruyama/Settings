@@ -13,13 +13,13 @@ NeoBundle 'surround.vim'
 NeoBundle 'eregex.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'errormarker.vim'
-NeoBundle 'thermometer'
+"NeoBundle 'thermometer'
 NeoBundle 'fugitive.vim'
 "NeoBundle 'coq-syntax'
 NeoBundle 'neco-look'
-NeoBundle 'matchit.zip'
-NeoBundle 'multvals.vim'
-NeoBundle 'genutils'
+"NeoBundle 'matchit.zip'
+"NeoBundle 'multvals.vim'
+"NeoBundle 'genutils'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'thinca/vim-quickrun'
@@ -50,7 +50,7 @@ NeoBundle 'kmnk/vim-unite-giti.git'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'haruyama/EnhCommentify.vim'
 NeoBundle 'haruyama/gtags.vim'
-NeoBundle 'Lokaltog/vim-easymotion'
+"NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'kablamo/vim-git-log'
 NeoBundle 'hrsh7th/vim-versions'
@@ -74,10 +74,10 @@ NeoBundleLazy 'thinca/vim-ft-clojure', {
       \ "autoload": {
       \   "filetypes": ["clojure"],
       \ }}
-NeoBundleLazy 'liquidz/lein-vim', {
-      \ "autoload": {
-      \   "filetypes": ["clojure"],
-      \ }}
+"NeoBundleLazy 'liquidz/lein-vim', {
+"      \ "autoload": {
+"      \   "filetypes": ["clojure"],
+"      \ }}
 
 NeoBundleLazy "elixir-lang/vim-elixir", {
       \ "autoload": {
