@@ -1,4 +1,3 @@
 all:
-	rm -rf ~/.vim/neobundle.vim.git
+	rm -rf ~/.vim/bundle/neobundle.vim
 	git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-	mkdir ~/.vim/history
