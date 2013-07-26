@@ -1,5 +1,3 @@
-.vim/.VimballRecord
-.vim/neobundle.vim.git
 .vim/history/*
 .vim/bundle/*
 .emacs.d/ac-comphist.dat
@@ -9,15 +7,13 @@
 .emacs.d/session.*
 .riece/save
 .riece/log
-**/.git
 *.swp
 *.log
 *~
 *.so
 *.o
 a.out
-**/.netrwhist
-en.utf-8.add*
+.vim/.netrwhist
 .zsh.d/packages/*
 .lein/self-installs
 .lein/repl-history
