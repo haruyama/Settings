@@ -15,6 +15,6 @@ nnoremap <buffer> <silent> ,f :!perldoc -f <cword><Enter>
 
 "setl path+=lib
 "setl isfname-=-
-noremap gf :call Jump2pm('sp')<ENTER>
+noremap <buffer> gf :call Jump2pm('sp')<ENTER>
 let &cpo = s:save_cpo
 unlet s:save_cpo

@@ -8,9 +8,9 @@ set tabstop=4 softtabstop=4 bs=2
 set wildmenu wildmode=list:longest
 set textwidth=0
 set foldmethod=indent
-if executable("ag")
-  set grepprg=ag\ -a
-endif
+"if executable("ag")
+"  set grepprg=ag\ -a
+"endif
 set clipboard& clipboard+=autoselect
 "set clipboard& clipboard+=unnamed
 if has('unnamedplus')
