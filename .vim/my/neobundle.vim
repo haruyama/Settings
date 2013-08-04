@@ -35,7 +35,11 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/neocomplcache'
+if (v:version >= 703) && (has('if_lua') || has('patch885'))
+  NeoBundle 'Shougo/neocomplete'
+else
+  NeoBundle 'Shougo/neocomplcache'
+endif
 NeoBundle 'Shougo/neosnippet'
 
 NeoBundle 'honza/vim-snippets'
