@@ -1,14 +1,22 @@
 autocmd!
 
+if has('lua') && ( v:version > 703 || (v:version == 703 && has('patch885')))
+  let g:my_use_neocomplete = 1
+else 
+  let g:my_use_neocomplete = 0
+endif
+
 source $HOME/.vim/my/neobundle.vim
 
 source $HOME/.vim/my/basic.vim
 source $HOME/.vim/my/template.vim
-if (v:version >= 703) && (has('if_lua') || has('patch885'))
+
+if g:my_use_neocomplete
   source $HOME/.vim/my/neocomplete.vim
 else
   source $HOME/.vim/my/neocomplcache.vim
 endif
+
 source $HOME/.vim/my/neosnippet.vim
 source $HOME/.vim/my/tabularize.vim
 source $HOME/.vim/my/gitgrep.vim
