@@ -94,6 +94,11 @@ NeoBundleLazy 'jimenezrick/vimerl', {
       \   "filetypes": ["erlang"],
       \ }}
 
+NeoBundleLazy 'kongo2002/fsharp-vim', {
+      \ "autoload": {
+      \   "filetypes": ["fsharp"],
+      \ }}
+
 NeoBundleLazy 'ujihisa/neco-ghc', {
       \ "autoload": {
       \   "filetypes": ["haskell"],
