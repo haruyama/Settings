@@ -35,7 +35,13 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/neocomplcache'
+
+if g:my_use_neocomplete
+  NeoBundle 'Shougo/neocomplete'
+else
+  NeoBundle 'Shougo/neocomplcache'
+endif
+
 NeoBundle 'Shougo/neosnippet'
 
 NeoBundle 'honza/vim-snippets'
@@ -86,6 +92,11 @@ NeoBundleLazy "elixir-lang/vim-elixir", {
 NeoBundleLazy 'jimenezrick/vimerl', {
       \ "autoload": {
       \   "filetypes": ["erlang"],
+      \ }}
+
+NeoBundleLazy 'kongo2002/fsharp-vim', {
+      \ "autoload": {
+      \   "filetypes": ["fsharp"],
       \ }}
 
 NeoBundleLazy 'ujihisa/neco-ghc', {
