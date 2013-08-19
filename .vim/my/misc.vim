@@ -98,4 +98,4 @@ augroup END
 
 let g:niji_matching_filetypes = ['lisp', 'scheme']
 
-vnoremap <silent> <Enter> :EasyAlign<cr>
+vnoremap <silent> <Leader>a :EasyAlign<cr>
