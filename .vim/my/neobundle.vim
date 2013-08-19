@@ -65,6 +65,8 @@ NeoBundle 'haruyama/vim-matchopen'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'amdt/vim-niji'
 
+NeoBundle 'junegunn/vim-easy-align'
+
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
       \   "filetypes": ["clojure", "java"],

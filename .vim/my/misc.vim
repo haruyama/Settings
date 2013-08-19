@@ -97,3 +97,5 @@ augroup my_endwise_with_smartinput
 augroup END
 
 let g:niji_matching_filetypes = ['lisp', 'scheme']
+
+vnoremap <silent> <Enter> :EasyAlign<cr>
