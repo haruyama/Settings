@@ -3,16 +3,11 @@ set ai
 set backup
 set history=100
 set ruler showcmd showmode incsearch ignorecase smartcase expandtab number modeline shiftround infercase hidden
-"set virtualedit=all
 set tabstop=4 softtabstop=4 bs=2
 set wildmenu wildmode=list:longest
 set textwidth=0
 set foldmethod=indent
-"if executable("ag")
-"  set grepprg=ag\ -a
-"endif
 set clipboard& clipboard+=autoselect
-"set clipboard& clipboard+=unnamed
 if has('unnamedplus')
   set clipboard& clipboard+=unnamedplus
 else
@@ -34,10 +29,6 @@ let g:netrw_liststyle=1
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
-endif
-
-if has("gui_running")
-  let g:Powerline_symbols = 'fancy'
 endif
 
 set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,default,latin
