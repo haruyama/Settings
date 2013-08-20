@@ -66,6 +66,7 @@ NeoBundle 'gregsexton/gitv'
 NeoBundle 'amdt/vim-niji'
 
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'bling/vim-airline'
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
