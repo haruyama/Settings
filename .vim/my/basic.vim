@@ -40,7 +40,7 @@ if has("gui_running")
   let g:Powerline_symbols = 'fancy'
 endif
 
-set fileencodings=utf-8,euc-jp,cp932,iso-2022-jp
+set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,default,latin
 set fileformats=unix,dos,mac
 
 " □とか○の文字があってもカーソル位置がずれないようにする
