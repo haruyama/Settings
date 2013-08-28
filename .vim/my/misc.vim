@@ -79,7 +79,7 @@ vnoremap <silent> ,s :VimShellSendString<CR>
 vnoremap <silent> <CR> :VimShellSendStringAndMove<CR>
 
 let g:vimfiler_as_default_explorer = 1
-hi MatchParen cterm=underline ctermbg=darkgrey gui=underline guibg=NONE
+hi MatchParen term=underline ctermfg=black ctermbg=yellow gui=underline guifg=black guibg=yellow
 
 "augroup my_rainbow_parentheses
 "  autocmd!
