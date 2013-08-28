@@ -1,11 +1,20 @@
 [user]
-        name = HARUYAMA Seigo
-        email = haruyama@unixuser.org
+	name = HARUYAMA Seigo
+	email = haruyama@unixuser.org
 [alias]
-        co = checkout
-        st = status
-        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	co = checkout
+	st = status --short --branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [core]
-        excludesfile = /home/haruyama/.gitignore_global
+	excludesfile = /home/haruyama/.gitignore_global
 [color]
-        ui = auto
+	ui = auto
+[push]
+	default = matching
+[url "git@github.com:"]
+	pushinsteadof = "git://github.com/"
+	pushinsteadof = "https://github.com/"
+[diff]
+	algorithm = histogram
+[rebase]
+	autosquash = true
