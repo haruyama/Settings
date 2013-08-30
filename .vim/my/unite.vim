@@ -9,6 +9,7 @@ nnoremap <silent> ,uu :<C-u>Unite buffer file_mru tab<CR>
 nnoremap <silent> ,uo :<C-u>Unite outline<CR>
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file file/new<CR>
 nnoremap <silent> ,ug :<C-u>Unite grep:%<CR>
+nnoremap <silent> ,uq :<C-u>Unite -no-quit -direction=botright quickfix location_list<CR>
 
 call unite#custom_default_action('file', 'above')
 call unite#custom_default_action('file_mru', 'above')

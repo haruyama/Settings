@@ -64,6 +64,9 @@ NeoBundle 'amdt/vim-niji'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'osyo-manga/unite-quickfix'
+NeoBundle 'violetyk/gitquick.vim'
+
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
