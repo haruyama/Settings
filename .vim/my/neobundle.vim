@@ -13,12 +13,8 @@ NeoBundle 'surround.vim'
 NeoBundle 'eregex.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'errormarker.vim'
-"NeoBundle 'thermometer'
 NeoBundle 'fugitive.vim'
 NeoBundle 'neco-look'
-"NeoBundle 'matchit.zip'
-"NeoBundle 'multvals.vim'
-"NeoBundle 'genutils'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'thinca/vim-quickrun'
@@ -45,22 +41,14 @@ NeoBundle 'Shougo/neosnippet'
 
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'h1mesuke/vim-alignta'
-"NeoBundle 'h1mesuke/unite-outline'
-"NeoBundle 'sjl/gundo.vim'
-"NeoBundle 't9md/vim-textmanip'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/syntastic'
-"NeoBundle 'majutsushi/tagbar'
-"NeoBundle 'kmnk/vim-unite-giti.git'
-"NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'haruyama/EnhCommentify.vim'
-"NeoBundle 'haruyama/gtags.vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'haruyama/vim-matchopen'
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'amdt/vim-niji'
-
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'rhysd/clever-f.vim'
@@ -71,7 +59,7 @@ NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
-      \   "filetypes": ["clojure", "java"],
+      \   "filetypes": ["clojure", "java", "scala"],
       \ }}
 
 NeoBundleLazy 'tpope/vim-fireplace', {
@@ -170,6 +158,12 @@ NeoBundleLazy 'superbrothers/vim-vimperator', {
       \   "filetypes": ["vimperator"],
       \ }}
 
-"NeoBundle 'glidenote/memolist.vim'
+"NeoBundle 'h1mesuke/unite-outline'
+"NeoBundle 't9md/vim-textmanip'
+"NeoBundle 'sjl/gundo.vim'
+"NeoBundle 'majutsushi/tagbar'
+"NeoBundle 'kmnk/vim-unite-giti.git'
+"NeoBundle 'nathanaelkane/vim-indent-guides'
+"NeoBundle 'haruyama/gtags.vim'
 
 filetype plugin indent on
