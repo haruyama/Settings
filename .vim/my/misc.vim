@@ -54,3 +54,5 @@ let g:niji_matching_filetypes = ['lisp', 'scheme']
 vnoremap <silent> <Leader>a :EasyAlign<cr>
 
 let g:syntastic_always_populate_loc_list=1
+
+let g:gitgutter_enabled = 0

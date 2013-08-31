@@ -66,6 +66,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'osyo-manga/unite-quickfix'
 NeoBundle 'violetyk/gitquick.vim'
+NeoBundle 'airblade/vim-gitgutter'
 
 
 NeoBundleLazy 'tpope/vim-classpath', {
@@ -169,7 +170,6 @@ NeoBundleLazy 'superbrothers/vim-vimperator', {
       \   "filetypes": ["vimperator"],
       \ }}
 
-"NeoBundle 'airblade/vim-gitgutter'
 "NeoBundle 'glidenote/memolist.vim'
 
 filetype plugin indent on
