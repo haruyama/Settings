@@ -10,7 +10,7 @@ let g:SimpleJsIndenter_BriefMode = 1
 
 augroup after_ftplugin_javascript
   autocmd!
-  autocmd BufWritePre *.js call RTrim()
+  autocmd BufWritePre *.js :RTrim
 augroup END
 
 let &cpo = s:save_cpo

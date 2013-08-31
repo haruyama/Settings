@@ -20,7 +20,7 @@ setl formatoptions-=o " ノーマルモードで o や O をした時に # を�
 
 augroup after_ftplugin_python
   autocmd!
-  autocmd BufWritePre *.py call RTrim()
+  autocmd BufWritePre *.py :RTrim
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo

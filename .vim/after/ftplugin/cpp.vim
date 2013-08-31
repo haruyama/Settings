@@ -15,7 +15,7 @@ setl suffixesadd=.hpp,.cpp
 
 augroup after_ftplugin_cpp
   autocmd!
-  autocmd BufWritePre  *.{cc,cpp} call RTrim()
+  autocmd BufWritePre *.{cc,cpp} :RTrim
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo

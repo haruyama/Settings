@@ -13,7 +13,7 @@ function! s:RTrim()
   call setpos('.', s:cursor)
 endfunction
 
-command! Rtrim :call s:RTrim()
+command! RTrim :call s:RTrim()
 
 function! s:VimShellSendStringAndMove(line1, line2, string)
   let string = join(getline(a:line1, a:line2), "\<LF>")

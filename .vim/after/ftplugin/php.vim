@@ -12,7 +12,7 @@ noremap <Leader>d :call PhpDoc()<CR>
 
 augroup after_ftplugin_php
   autocmd!
-  autocmd BufWritePre *.php call RTrim()
+  autocmd BufWritePre *.php :RTrim
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo

@@ -11,7 +11,7 @@ setl omnifunc=ccomplete#Complete
 
 augroup after_ftplugin_c
   autocmd!
-  autocmd BufWritePre  *.{c,h} call RTrim()
+  autocmd BufWritePre *.{c,h} :RTrim
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo

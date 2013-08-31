@@ -15,7 +15,7 @@ setl path+=src/main/scala/**,src/test/scala/**,src/scala/**,test/scala/**
 setl suffixesadd+=.scala
 augroup after_ftplugin_scala
   autocmd!
-  autocmd BufWritePre *.scala call RTrim()
+  autocmd BufWritePre *.scala :RTrim
 augroup END
 
 let b:scommenter_class_author='HARUYAMA Seigo'
