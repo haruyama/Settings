@@ -18,11 +18,9 @@ else
 endif
 
 source $HOME/.vim/my/neosnippet.vim
-source $HOME/.vim/my/tabularize.vim
-source $HOME/.vim/my/gitgrep.vim
-source $HOME/.vim/my/misc.vim
-source $HOME/.vim/my/textmanip.vim
 source $HOME/.vim/my/unite.vim
+source $HOME/.vim/my/command.vim
+source $HOME/.vim/my/misc.vim
 
 if filereadable(expand('~/.vimrc.local'))
   source $HOME/.vimrc.local
