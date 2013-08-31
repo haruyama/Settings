@@ -5,6 +5,8 @@ let b:did_after_ftplugin_java = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+setl include=^\s*import
+setl includeexpr=substitute(substitute(v:fname,'\\.','/','g'),';','','g')
 setl path+=src/main/java/**,src/test/java/**,src/java/**,src/test/**,src/core/**
 
 let java_highlight_all=1

@@ -6,8 +6,12 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 setl ts=2 sw=2 sts=2 expandtab
-command! SbtVimShell execute ":VimShellInteractive sbt"
+command! SbtVimShellInteractive execute ":VimShellInteractive sbt"
+
+setl include=^\s*import
+setl includeexpr=substitute(substitute(v:fname,'\\.','/','g'),';','','g')
 setl path+=src/main/scala/**,src/test/scala/**,src/scala/**,test/scala/**
+
 setl suffixesadd+=.scala
 augroup after_ftplugin_scala
   autocmd!

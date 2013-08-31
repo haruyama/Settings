@@ -4,12 +4,6 @@ set omnifunc=syntaxcomplete#Complete
 let g:yankring_history_dir            = $HOME . '/.vim/history'
 let g:yankring_manual_clipboard_check = 1
 
-augroup my_import
-  autocmd!
-  autocmd BufRead,BufNewFile *.{java,scala} setl include=^#\s*import
-  autocmd BufRead,BufNewFile *.{java,scala} setl includeexpr=substitute(v:fname,'\\.','/','g')
-augroup END
-
 map gf <C-W>f
 
 augroup vimrc_auto_mkdir
