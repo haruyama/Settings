@@ -36,13 +36,6 @@ let g:vimfiler_as_default_explorer = 1
 "hi MatchParen term=underline ctermfg=black ctermbg=yellow gui=underline guifg=black guibg=yellow
 hi MatchParen term=bold,reverse cterm=bold,reverse gui=bold,reverse
 
-"http://cohama.hateblo.jp/entry/20121017/1350482411
-let g:endwise_no_mappings = 1
-augroup my_endwise_with_smartinput
-  autocmd!
-  autocmd FileType lua,elixir,ruby,sh,zsh,vb,vbnet,aspvbs,vim,c,cpp,xdefaults imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
-augroup END
-
 let g:niji_matching_filetypes = ['lisp', 'scheme']
 
 vnoremap <silent> <Leader>a :EasyAlign<cr>
