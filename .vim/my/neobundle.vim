@@ -53,7 +53,6 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-template'
-NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'violetyk/gitquick.vim'
 
