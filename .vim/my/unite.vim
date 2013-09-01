@@ -7,7 +7,7 @@ nnoremap <silent> ,uc :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ug :<C-u>Unite grep:%<CR>
 
 nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
-nnoremap <silent> ,uo :<C-u>Unite outline<CR>
+nnoremap <silent> ,uo :<C-u>Unite -no-quit -vertical -winwidth=30 -direction=botright outline<CR>
 
 nnoremap <silent> ,uq :<C-u>Unite -no-quit -direction=botright quickfix location_list<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
