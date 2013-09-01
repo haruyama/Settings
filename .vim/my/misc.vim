@@ -40,7 +40,7 @@ hi MatchParen term=bold,reverse cterm=bold,reverse gui=bold,reverse
 let g:endwise_no_mappings = 1
 augroup my_endwise_with_smartinput
   autocmd!
-  autocmd FileType lua,ruby,sh,zsh,vb,vbnet,aspvbs,vim imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
+  autocmd FileType lua,elixir,ruby,sh,zsh,vb,vbnet,aspvbs,vim,c,cpp,xdefaults imap <buffer> <CR> <CR><Plug>DiscretionaryEnd
 augroup END
 
 let g:niji_matching_filetypes = ['lisp', 'scheme']
