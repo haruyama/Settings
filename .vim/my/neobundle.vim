@@ -15,10 +15,7 @@ NeoBundle 'YankRing.vim'
 NeoBundle 'errormarker.vim'
 NeoBundle 'fugitive.vim'
 NeoBundle 'neco-look'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-qfreplace'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'thinca/vim-template'
+
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
@@ -39,23 +36,26 @@ endif
 
 NeoBundle 'Shougo/neosnippet'
 
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'haruyama/EnhCommentify.vim'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'haruyama/vim-matchopen'
-NeoBundle 'gregsexton/gitv'
-NeoBundle 'amdt/vim-niji'
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'rhysd/clever-f.vim'
-NeoBundle 'osyo-manga/unite-quickfix'
-NeoBundle 'violetyk/gitquick.vim'
 NeoBundle 'airblade/vim-gitgutter'
-
+NeoBundle 'amdt/vim-niji'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'gregsexton/gitv'
+NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'haruyama/EnhCommentify.vim'
+NeoBundle 'haruyama/vim-matchopen'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'kana/vim-smartinput'
+NeoBundle 'osyo-manga/unite-quickfix'
+NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-template'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'violetyk/gitquick.vim'
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
@@ -158,7 +158,6 @@ NeoBundleLazy 'superbrothers/vim-vimperator', {
       \   "filetypes": ["vimperator"],
       \ }}
 
-"NeoBundle 'h1mesuke/unite-outline'
 "NeoBundle 't9md/vim-textmanip'
 "NeoBundle 'sjl/gundo.vim'
 "NeoBundle 'majutsushi/tagbar'
