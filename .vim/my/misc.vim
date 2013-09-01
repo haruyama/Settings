@@ -33,8 +33,8 @@ let g:ref_clojure_precode = '(use ''[clojure.repl :only (doc find-doc)])'
 let g:ref_javadoc_path    = '/usr/share/doc/openjdk-7-jre-headless/'
 
 let g:vimfiler_as_default_explorer = 1
-"hi MatchParen term=underline ctermfg=black ctermbg=yellow gui=underline guifg=black guibg=yellow
-hi MatchParen term=bold,reverse cterm=bold,reverse gui=bold,reverse
+hi MatchParen term=underline ctermfg=black ctermbg=lightgray gui=underline guifg=black guibg=yellow
+"hi MatchParen term=bold,reverse cterm=bold,reverse gui=bold,reverse
 
 let g:niji_matching_filetypes = ['lisp', 'scheme']
 
