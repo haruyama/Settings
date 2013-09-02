@@ -9,12 +9,8 @@ endif
 NeoBundle 'Shougo/neobundle.vim'
 
 NeoBundle 'paredit.vim'
-NeoBundle 'surround.vim'
-NeoBundle 'eregex.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'errormarker.vim'
-NeoBundle 'fugitive.vim'
-NeoBundle 'neco-look'
 
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
@@ -48,13 +44,22 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'osyo-manga/unite-quickfix'
+NeoBundle 'othree/eregex.vim'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-template'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'ujihisa/neco-look'
 NeoBundle 'violetyk/gitquick.vim'
+
+NeoBundleLazy 'mattn/excitetranslate-vim', {
+      \ 'depends': 'mattn/webapi-vim',
+      \ 'autoload' : { 'commands': ['ExciteTranslate']}
+      \ }
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
