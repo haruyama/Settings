@@ -4,7 +4,9 @@ set omnifunc=syntaxcomplete#Complete
 let g:yankring_history_dir            = $HOME . '/.vim/history'
 let g:yankring_manual_clipboard_check = 1
 
-map gf <C-W>f
+nnoremap gf <C-W>f
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
 augroup vimrc_auto_mkdir
   autocmd!

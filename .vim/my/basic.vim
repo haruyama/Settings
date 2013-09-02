@@ -1,7 +1,7 @@
 set nocompatible
 set ai
 set backup
-set history=100
+set history=500
 set ruler showcmd showmode incsearch ignorecase smartcase expandtab number modeline shiftround infercase hidden
 set tabstop=4 softtabstop=4 bs=2
 set wildmenu
