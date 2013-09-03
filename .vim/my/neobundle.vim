@@ -12,6 +12,15 @@ NeoBundle 'paredit.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'errormarker.vim'
 
+if g:my_use_neocomplete
+  NeoBundle 'Shougo/neocomplete'
+else
+  NeoBundle 'Shougo/neocomplcache'
+endif
+
+NeoBundle 'Shougo/neosnippet'
+
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
@@ -21,21 +30,11 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
-
-if g:my_use_neocomplete
-  NeoBundle 'Shougo/neocomplete'
-else
-  NeoBundle 'Shougo/neocomplcache'
-endif
-
-NeoBundle 'Shougo/neosnippet'
 
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'amdt/vim-niji'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'gregsexton/gitv'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'haruyama/EnhCommentify.vim'
@@ -44,21 +43,30 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'osyo-manga/unite-quickfix'
-NeoBundle 'othree/eregex.vim'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-template'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/neco-look'
-NeoBundle 'violetyk/gitquick.vim'
+
+NeoBundleLazy 'gregsexton/gitv', {
+      \ 'autoload' : { 'commands': ['Gitv']}
+      \ }
 
 NeoBundleLazy 'mattn/excitetranslate-vim', {
       \ 'depends': 'mattn/webapi-vim',
       \ 'autoload' : { 'commands': ['ExciteTranslate']}
+      \ }
+
+NeoBundleLazy 'thinca/vim-ref', {
+      \ 'autoload' : { 'commands': ['Ref']}
+      \ }
+
+NeoBundleLazy 'violetyk/gitquick.vim', {
+      \ 'autoload' : { 'commands': ['Gitquick']}
       \ }
 
 NeoBundleLazy 'tpope/vim-classpath', {
@@ -168,5 +176,6 @@ NeoBundleLazy 'superbrothers/vim-vimperator', {
 "NeoBundle 'kmnk/vim-unite-giti.git'
 "NeoBundle 'nathanaelkane/vim-indent-guides'
 "NeoBundle 'haruyama/gtags.vim'
+"NeoBundle 'othree/eregex.vim'
 
 filetype plugin indent on
