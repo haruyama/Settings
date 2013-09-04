@@ -5,6 +5,7 @@ let g:yankring_history_dir            = $HOME . '/.vim/history'
 let g:yankring_manual_clipboard_check = 1
 
 nnoremap gf <C-W>f
+vnoremap gf <C-W>f
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
