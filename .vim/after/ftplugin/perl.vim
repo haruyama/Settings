@@ -13,8 +13,15 @@ let g:syntastic_perl_lib_path = './lib'
 
 nnoremap <buffer> <silent> ,f :!perldoc -f <cword><Enter>
 
-"setl path+=lib
-"setl isfname-=-
+augroup after_ftplugin_perl
+  autocmd!
+  autocmd BufWritePre *.{pl,pm,t} :RTrim
+augroup END
+
+setl path+=lib;/,t/lib;/,t/inc;/
+setl suffixesadd=.pm
+
 noremap <buffer> gf :call Jump2pm('sp')<ENTER>
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
