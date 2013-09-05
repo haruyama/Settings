@@ -1,13 +1,21 @@
 source $VIMRUNTIME/macros/matchit.vim
 set omnifunc=syntaxcomplete#Complete
 
-let g:yankring_history_dir            = $HOME . '/.vim/history'
-let g:yankring_manual_clipboard_check = 1
-
 nnoremap gf <C-W>f
 vnoremap gf <C-W>f
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+nnoremap <C-]> g<C-]>
+
+nnoremap <SID>(toggle-number)         :<C-u>set number!<CR>
+nnoremap <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
+nnoremap <SID>(toggle-paste)          :<C-u>set paste!<CR>
+
+nmap <Leader>1 <SID>(toggle-number)
+nmap <Leader>2 <SID>(toggle-relativenumber)
+nmap <Leader>3 <SID>(toggle-paste)
+
+vnoremap <silent> <Leader>a :EasyAlign<cr>
 
 augroup vimrc_auto_mkdir
   autocmd!
@@ -20,30 +28,24 @@ augroup vimrc_auto_mkdir
   endfunction
 augroup END
 
-let g:template_vim_template_dir  = $HOME . '/.vim/template'
-let g:template_vim_template_dirs = [$HOME . '/.vim/template']
+hi MatchParen term=underline ctermfg=black ctermbg=lightgray gui=underline guifg=black guibg=yellow
 
-nnoremap <SID>(toggle-number)         :<C-u>set number!<CR>
-nnoremap <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
-nnoremap <SID>(toggle-paste)          :<C-u>set paste!<CR>
+let g:eregex_default_enable = 0
 
-nmap <Leader>1 <SID>(toggle-number)
-nmap <Leader>2 <SID>(toggle-relativenumber)
-nmap <Leader>3 <SID>(toggle-paste)
+let g:gitgutter_enabled = 0
+
+let g:niji_matching_filetypes = ['lisp', 'scheme']
 
 let g:ref_clojure_cmd     = ['lein', 'trampoline', 'run', '-m', 'clojure.main']
 let g:ref_clojure_precode = '(use ''[clojure.repl :only (doc find-doc)])'
 let g:ref_javadoc_path    = '/usr/share/doc/openjdk-7-jre-headless/'
 
+let g:syntastic_always_populate_loc_list = 1
+
+let g:template_vim_template_dir  = $HOME . '/.vim/template'
+let g:template_vim_template_dirs = [$HOME . '/.vim/template']
+
 let g:vimfiler_as_default_explorer = 1
-hi MatchParen term=underline ctermfg=black ctermbg=lightgray gui=underline guifg=black guibg=yellow
-"hi MatchParen term=bold,reverse cterm=bold,reverse gui=bold,reverse
 
-let g:niji_matching_filetypes = ['lisp', 'scheme']
-
-vnoremap <silent> <Leader>a :EasyAlign<cr>
-
-let g:syntastic_always_populate_loc_list=1
-
-let g:gitgutter_enabled = 0
-let g:eregex_default_enable = 0
+let g:yankring_history_dir            = $HOME . '/.vim/history'
+let g:yankring_manual_clipboard_check = 1
