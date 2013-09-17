@@ -17,6 +17,8 @@ nmap <Leader>3 <SID>(toggle-paste)
 
 vnoremap <silent> <Leader>a :EasyAlign<cr>
 
+nnoremap <silent> <C-l> :<C-u>nohlsearch<cr><C-l>
+
 augroup vimrc_auto_mkdir
   autocmd!
   autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
