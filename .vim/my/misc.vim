@@ -1,8 +1,8 @@
 source $VIMRUNTIME/macros/matchit.vim
 set omnifunc=syntaxcomplete#Complete
 
-nnoremap gf <C-W>f
-vnoremap gf <C-W>f
+"nnoremap gf <C-W>f
+"vnoremap gf <C-W>f
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 nnoremap <C-]> g<C-]>
