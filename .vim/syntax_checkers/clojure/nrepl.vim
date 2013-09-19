@@ -23,14 +23,15 @@ function! SyntaxCheckers_clojure_nrepl_GetLocList()
         return []
     endif
 
+
     if get(response, 'err', '') !=# ''
         let makeprg = syntastic#makeprg#build({
                     \ 'exe': 'echo',
-                    \ 'fname': shellescape(substitute(response.err, 'compiling:(', 'compiling:(' . prefix, 'g')),
+                    \ 'fname': shellescape(substitute(substitute(response.err, 'compiling:(', '(' . prefix, 'g'), "\n", '', 'g')),
                     \ 'filetype': 'clojure',
                     \ 'subchecker': 'nrepl' })
 
-        let errorformat = 'CompilerException java.lang.RuntimeException: %m\, compiling:(%f:%l:%c) '
+        let errorformat = 'CompilerException java.lang.RuntimeException: %m\, (%f:%l:%c) '
         return SyntasticMake({
                     \ 'makeprg': makeprg,
                     \ 'errorformat': errorformat,})
