@@ -38,6 +38,13 @@ let g:gitgutter_enabled = 0
 
 let g:niji_matching_filetypes = ['lisp', 'scheme']
 
+let g:quickrun_config = {
+\    "octave" : {
+\       "command" : "octave",
+\       "cmdopt"  : "--silent",
+\   },
+\}
+
 let g:ref_clojure_cmd     = ['lein', 'trampoline', 'run', '-m', 'clojure.main']
 let g:ref_clojure_precode = '(use ''[clojure.repl :only (doc find-doc)])'
 let g:ref_javadoc_path    = '/usr/share/doc/openjdk-7-jre-headless/'

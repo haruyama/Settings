@@ -129,6 +129,11 @@ NeoBundleLazy 'Simple-Javascript-Indenter', {
       \   "filetypes": ["javascript"],
       \ }}
 
+NeoBundleLazy 'quangquach/octave.vim--', {
+      \ "autoload": {
+      \   "filetypes": ["octave"],
+      \ }}
+
 NeoBundleLazy 'nakatakeshi/jump2pm.vim.git', {
       \ "autoload": {
       \   "filetypes": ["perl"],
