@@ -13,10 +13,10 @@ let g:syntastic_perl_lib_path = './lib'
 
 nnoremap <buffer> <silent> ,f :!perldoc -f <cword><Enter>
 
-augroup after_ftplugin_perl
-  autocmd!
-  autocmd BufWritePre *.{pl,pm,t} :RTrim
-augroup END
+"augroup after_ftplugin_perl
+"  autocmd!
+"  autocmd BufWritePre *.{pl,pm,t} :RTrim
+"augroup END
 
 setl path+=lib;/,t/lib;/,t/inc;/
 setl suffixesadd=.pm
