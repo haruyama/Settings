@@ -5,7 +5,7 @@ let b:did_after_ftplugin_clojure = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-setl tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
+setl tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab
 
 if executable('lein') && filereadable('project.clj')
   let b:is_lein_available = 1
