@@ -58,7 +58,7 @@ NeoBundleLazy 'gregsexton/gitv', {
       \ }
 
 NeoBundleLazy 'mattn/excitetranslate-vim', {
-      \ 'depends': 'mattn/webapi-vim',
+      \ 'depends' : 'mattn/webapi-vim',
       \ 'autoload' : { 'commands': ['ExciteTranslate']}
       \ }
 

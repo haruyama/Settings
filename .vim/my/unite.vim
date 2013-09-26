@@ -4,6 +4,8 @@ nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mr
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uc :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 
+nnoremap <silent> ,ue :<C-u>Unite file_rec/async:!<CR>
+
 nnoremap <silent> ,ug :<C-u>Unite grep:%<CR>
 
 nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
