@@ -10,7 +10,7 @@
 [color]
 	ui = auto
 [push]
-	default = matching
+	default = simple
 [url "git@github.com:"]
 	pushinsteadof = "git://github.com/"
 	pushinsteadof = "https://github.com/"

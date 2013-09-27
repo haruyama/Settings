@@ -28,4 +28,3 @@ function! CustomQuickFix(makeprg, errorformat)
   setl nolazyredraw
   redraw!
 endfunction
-
