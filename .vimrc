@@ -2,7 +2,7 @@ autocmd!
 
 if has('lua') && ( v:version > 703 || (v:version == 703 && has('patch885')))
   let g:my_use_neocomplete = 1
-else 
+else
   let g:my_use_neocomplete = 0
 endif
 

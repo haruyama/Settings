@@ -171,6 +171,12 @@ NeoBundleLazy "vim-pandoc/vim-pandoc", {
       \   "filetypes": ["text", "pandoc", "markdown", "rst", "textile"],
       \ }}
 
+NeoBundleLazy 'dbakker/vim-lint', {
+      \ 'depends' : 'scrooloose/syntastic',
+      \ "autoload": {
+      \   "filetypes": ["vimperator"],
+      \ }}
+
 NeoBundleLazy 'superbrothers/vim-vimperator', {
       \ "autoload": {
       \   "filetypes": ["vimperator"],
