@@ -15,7 +15,7 @@ nmap <Leader>1 <SID>(toggle-number)
 nmap <Leader>2 <SID>(toggle-relativenumber)
 nmap <Leader>3 <SID>(toggle-paste)
 
-vnoremap <silent> <Leader>a :EasyAlign<cr>
+xnoremap <silent> <Leader>a :EasyAlign<cr>
 
 nnoremap <silent> <C-l> :<C-u>nohlsearch<cr><C-l>
 

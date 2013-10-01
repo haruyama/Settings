@@ -24,5 +24,5 @@ endfunction
 
 command! -range -nargs=? VimShellSendStringAndMove call s:VimShellSendStringAndMove(<line1>, <line2>, <q-args>)
 
-vnoremap <silent> ,s   :VimShellSendString<CR>
-vnoremap <silent> <CR> :VimShellSendStringAndMove<CR>
+xnoremap <silent> ,s   :VimShellSendString<CR>
+xnoremap <silent> <CR> :VimShellSendStringAndMove<CR>
