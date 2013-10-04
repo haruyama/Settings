@@ -135,10 +135,7 @@ NeoBundleLazy 'quangquach/octave.vim--', {
       \   "filetypes": ["octave"],
       \ }}
 
-NeoBundleLazy 'nakatakeshi/jump2pm.vim.git', {
-      \ "autoload": {
-      \   "filetypes": ["perl"],
-      \ }}
+NeoBundle 'nakatakeshi/jump2pm.vim.git'
 NeoBundleLazy 'vim-perl/vim-perl', {
       \ "autoload": {
       \   "filetypes": ["perl"],
