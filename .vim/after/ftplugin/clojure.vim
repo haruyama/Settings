@@ -32,8 +32,7 @@ endfunction
 command! Kibit call s:run_kibit()
 
 augroup after_ftplugin_clojure
-  autocmd!
-  autocmd BufWritePre *.{clj,cljs} :RTrim
+  autocmd! BufWritePre <buffer> :RTrim
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo

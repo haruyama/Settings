@@ -10,8 +10,7 @@ setl ts=2 sw=2 sts=2 expandtab
 setl omnifunc=ccomplete#Complete
 
 augroup after_ftplugin_c
-  autocmd!
-  autocmd BufWritePre *.{c,h} :RTrim
+  autocmd! BufWritePre <buffer> :RTrim
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo
