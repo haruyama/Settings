@@ -5,7 +5,7 @@
                    [lein-localrepo "0.5.2"]
                    [lein-kibit "0.0.8"]
                    [lein-pprint   "1.1.1"]
-                   [lein-try "0.3.1"] ]
+                   [lein-try "0.3.2"] ]
          :search-page-size 30
          ; :repl-options  {:prompt  (fn  [ns]  (str "your command, master? "))}
          :jvm-opts ["-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]}}
