@@ -16,5 +16,13 @@ let java_space_errors=1
 let java_allow_cpp_keywords=1
 
 setl ts=2 sw=2 sts=2 expandtab
+
+"augroup after_ftplugin_java
+"  function! s:set_syntastic_java_javac_options()
+"    let g:syntastic_java_javac_options = '-Xlint -cp ' . classpath#from_vim(&path)
+"  endfunction
+"  autocmd! BufWritePre <buffer> call s:set_syntastic_java_javac_options()
+"augroup END
+
 let &cpo = s:save_cpo
 unlet s:save_cpo

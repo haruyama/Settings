@@ -6,8 +6,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 augroup after_ftplugin_scheme
-  autocmd!
-  autocmd FileType scheme :let is_gauche=1
+  autocmd! FileType scheme :let is_gauche=1
 augroup END
 
 if exists('*PareditInitBuffer')

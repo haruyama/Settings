@@ -14,8 +14,7 @@ setl path+=src;/,inc;/,include;/
 setl suffixesadd=.hpp,.cpp
 
 augroup after_ftplugin_cpp
-  autocmd!
-  autocmd BufWritePre *.{cc,cpp} :RTrim
+  autocmd! BufWritePre <buffer> :RTrim
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo

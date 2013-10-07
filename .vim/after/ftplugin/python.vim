@@ -19,8 +19,7 @@ setl formatoptions-=r " 挿入モードで改行した時に # を自動挿入�
 setl formatoptions-=o " ノーマルモードで o や O をした時に # を自動挿入しない
 
 augroup after_ftplugin_python
-  autocmd!
-  autocmd BufWritePre *.py :RTrim
+  autocmd BufWritePre <buffer> :RTrim
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo

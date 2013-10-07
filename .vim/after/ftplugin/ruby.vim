@@ -12,16 +12,15 @@ setl omnifunc=rubycomplete#Complete
 setl formatoptions-=r " 挿入モードで改行した時に # を自動挿入しない
 setl formatoptions-=o " ノーマルモードで o や O をした時に # を自動挿入しない
 
-let g:rails_level=4
-let g:rails_default_file="app/controllers/application.rb"
-let g:rails_default_database="sqlite3"
+"let g:rails_level=4
+"let g:rails_default_file="app/controllers/application.rb"
+"let g:rails_default_database="sqlite3"
 
 augroup after_ftplugin_ruby
-  autocmd!
-  autocmd BufWritePre *.rb :RTrim
-  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+  autocmd! BufWritePre <buffer> :RTrim
+  autocmd! FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+  autocmd! FileType ruby,eruby let g:rubycomplete_rails = 1
+  autocmd! FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 augroup END
 
 if executable("rvm")

@@ -10,8 +10,7 @@ setl tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab
 setl omnifunc=syntaxcomplete#Complete
 
 augroup after_ftplugin_octave
-  autocmd!
-  autocmd BufWritePre *.{m,oct} :RTrim
+  autocmd! BufWritePre <buffer> :RTrim
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo

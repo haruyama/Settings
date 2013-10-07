@@ -9,8 +9,7 @@ setl tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
 let g:SimpleJsIndenter_BriefMode = 1
 
 augroup after_ftplugin_javascript
-  autocmd!
-  autocmd BufWritePre *.js :RTrim
+  autocmd! BufWritePre <buffer> :RTrim
 augroup END
 
 let &cpo = s:save_cpo
