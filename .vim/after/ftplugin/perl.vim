@@ -20,7 +20,8 @@ nnoremap <buffer> <silent> ,f :!perldoc -f <cword><Enter>
 setl path+=lib;/,t/lib;/,t/inc;/
 setl suffixesadd=.pm
 
-"noremap <buffer> gf :call Jump2pm('sp')<ENTER>
+nnoremap <buffer> gf :call Jump2pm('sp')<ENTER>
+xnoremap <buffer> gf :call Jump2pmV('sp')<ENTER>
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
