@@ -30,7 +30,8 @@ augroup vimrc_auto_mkdir
   endfunction
 augroup END
 
-hi MatchParen term=underline ctermfg=black ctermbg=lightgray gui=underline guifg=black guibg=yellow
+"hi MatchParen cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
+hi MatchParen cterm=underline ctermfg=white ctermbg=darkred gui=underline guifg=black guibg=yellow
 
 let g:eregex_default_enable = 0
 
