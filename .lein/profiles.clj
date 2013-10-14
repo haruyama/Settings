@@ -8,4 +8,6 @@
                    [lein-try "0.3.2"] ]
          :search-page-size 30
          ; :repl-options  {:prompt  (fn  [ns]  (str "your command, master? "))}
-         :jvm-opts ["-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]}}
+         :jvm-opts ["-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]
+;         :jvm-opts [] ; for grenchman
+         }}
