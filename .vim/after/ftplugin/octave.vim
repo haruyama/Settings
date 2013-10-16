@@ -8,6 +8,7 @@ set cpo&vim
 setl tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab
 
 setl omnifunc=syntaxcomplete#Complete
+call vimshell#set_dictionary_helper(g:vimshell_interactive_interpreter_commands, 'octave', 'octave -q')
 
 augroup after_ftplugin_octave
   autocmd! BufWritePre <buffer> :RTrim
