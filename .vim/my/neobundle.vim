@@ -46,7 +46,6 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'osyo-manga/unite-quickfix'
 NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-template'
 NeoBundle 'tpope/vim-fugitive'
@@ -85,10 +84,6 @@ NeoBundleLazy 'thinca/vim-ft-clojure', {
       \ "autoload": {
       \   "filetypes": ["clojure"],
       \ }}
-"NeoBundleLazy 'liquidz/lein-vim', {
-"      \ "autoload": {
-"      \   "filetypes": ["clojure"],
-"      \ }}
 
 NeoBundleLazy "elixir-lang/vim-elixir", {
       \ "autoload": {
@@ -123,7 +118,6 @@ NeoBundleLazy 'pekepeke/ref-javadoc', {
       \ "autoload": {
       \   "filetypes": ["java"],
       \ }}
-
 
 NeoBundleLazy 'Simple-Javascript-Indenter', {
       \ "autoload": {
