@@ -100,6 +100,11 @@ NeoBundleLazy 'kongo2002/fsharp-vim', {
       \   "filetypes": ["fsharp"],
       \ }}
 
+NeoBundleLazy 'Blackrush/vim-gocode', {
+      \ "autoload": {
+      \   "filetypes": ["go"],
+      \ }}
+
 NeoBundleLazy 'ujihisa/neco-ghc', {
       \ "autoload": {
       \   "filetypes": ["haskell"],
