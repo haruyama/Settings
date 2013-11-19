@@ -9,7 +9,8 @@ endif
 NeoBundle 'Shougo/neobundle.vim'
 
 NeoBundle 'paredit.vim'
-NeoBundle 'YankRing.vim'
+"NeoBundle 'YankRing.vim'
+NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'errormarker.vim'
 
 if g:my_use_neocomplete
