@@ -1,4 +1,4 @@
-{:user {:plugins [[lein-ancient    "0.5.2"]
+{:user {:plugins [[lein-ancient    "0.5.4"]
                   [lein-bikeshed   "0.1.3"]
                   [lein-cloverage  "1.0.2"]
                   [lein-difftest   "2.0.0"]
@@ -7,7 +7,7 @@
                   [lein-marginalia "0.7.1"]
                   [lein-kibit      "0.0.8"]
                   [lein-pprint     "1.1.1"]
-                  [lein-try        "0.4.0"]
+                  [lein-try        "0.4.1"]
                   [lein-typed      "0.3.1"]
                   [perforate       "0.3.3"]]
          :search-page-size 30
