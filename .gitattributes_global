@@ -1,0 +1,11 @@
+*.c      diff=cpp
+*.cpp    diff=cpp
+*.csharp diff=csharp
+*.html   diff=html
+*.java   diff=java
+*.m      diff=matlab
+*.oct    diff=matlab
+*.perl   diff=perl
+*.php    diff=php
+*.rb     diff=ruby
+*.tex    diff=tex
