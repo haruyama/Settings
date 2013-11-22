@@ -7,7 +7,7 @@ function! SyntaxCheckers_clojure_nrepl_IsAvailable()
     return executable('lein') && filereadable('project.clj')
 endfunction
 
-function! SyntaxCheckers_clojure_nrepl_GetLocList()
+function! SyntaxCheckers_clojure_nrepl_GetLocList() dict
     let filename = substitute(expand('%'), getcwd() . '/', '', '')
     let prefix = matchstr(filename, "^\\(src\\|test\\)/")
     if empty(prefix)
@@ -24,7 +24,7 @@ function! SyntaxCheckers_clojure_nrepl_GetLocList()
     endif
 
     if get(response, 'err', '') !=# ''
-        let makeprg = syntastic#makeprg#build({
+        let makeprg = self.makeprgBuild({
                     \ 'exe': 'echo',
                     \ 'fname': shellescape(substitute(substitute(response.err, 'compiling:(', '(' . prefix, 'g'), "\n", '', 'g')),
                     \ 'filetype': 'clojure',
