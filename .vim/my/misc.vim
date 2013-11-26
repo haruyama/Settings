@@ -51,6 +51,8 @@ let g:ref_clojure_precode = '(use ''[clojure.repl :only (doc find-doc)])'
 let g:ref_javadoc_path    = '/usr/share/doc/openjdk-7-jre-headless/'
 
 let g:syntastic_always_populate_loc_list = 1
+" http://stackoverflow.com/questions/18270355/how-to-ignore-angular-directive-lint-error-with-vim-and-syntastic
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 let g:template_vim_template_dir  = $HOME . '/.vim/template'
 let g:template_vim_template_dirs = [$HOME . '/.vim/template']
