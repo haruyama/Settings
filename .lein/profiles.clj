@@ -10,7 +10,7 @@
                   [lein-try        "0.4.1"]
                   [lein-typed      "0.3.1"]
                   [perforate       "0.3.3"]]
-         :search-page-size 30
-         ; :repl-options  {:prompt  (fn  [ns]  (str "your command, master? "))}
-         :jvm-opts ["-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]
-         }}
+        :search-page-size 30
+        :dependencies [[org.clojure/tools.namespace "0.2.4"]
+                       [jonase/kibit "0.0.8"]]
+        :jvm-opts ["-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]}}
