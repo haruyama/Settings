@@ -14,7 +14,7 @@
 *.o
 a.out
 .vim/.netrwhist
-.zsh.d/packages/*
+.zsh.d/antigen
 .lein/self-installs
 .lein/repl-history
 .vimperator/info

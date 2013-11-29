@@ -40,8 +40,6 @@ if type ruby > /dev/null 2>&1; then
         _cache_hosts=(`ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
 fi
 
-
-fpath=($HOME/.zsh.d/packages/zsh-completions/src $fpath)
 autoload -U compinit
 compinit
 zstyle ':completion:*' format '%B%d%b'
@@ -278,9 +276,4 @@ function rfc(){ command wget -q -O- http://www.ietf.org/rfc/rfc$1.txt | lv }
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
-if [ -f $HOME/.zsh.d/packages/z/z.sh ]; then
-        . $HOME/.zsh.d/packages/z/z.sh
-        function precmd () {
-        _z --add "$(pwd -P)"
-}
-fi
+source ~/.zsh.d/plugins

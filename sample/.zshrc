@@ -1,7 +1,5 @@
 source ~/.zsh.d/zshrc
 
-source ~/.zsh.d/config/packages.zsh
-
 #export DEBIAN_BUILDARCH=i686
 alias emacs='env XMODIFIERS= GTK_IM_MODULE= emacs'
 
