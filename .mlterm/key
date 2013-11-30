@@ -1,0 +1,13 @@
+# Shift+space=XIM_OPEN
+# UNUSED=XIM_CLOSE
+# Control+backslash=EXT_KBD
+# Control+F1=OPEN_SCREEN
+Control+Shift+T=OPEN_PTY
+Control+2=NEXT_PTY
+Control+1=PREV_PTY
+# Shift+Prior=PAGE_UP
+# Shift+Up=SCROLL_UP
+# Shift+Insert=INSERT_SELECTION
+# UNUSED=INIT_PARSER
+# UNUSED=EXIT_PROGRAM
+# Control+F2="HELO WORLD"
