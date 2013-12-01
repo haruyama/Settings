@@ -2,13 +2,10 @@
 ;; $Id: sample.dot.liece.in,v 1.1.1.1 1999/05/26 03:17:55 daiki Exp $
 
 (setq riece-server-alist
-      '(("localhost" :host "localhost" :port 6700 :nickname "haruyama" :coding iso-2022-jp)))
+      '(("local" :host "localhost" :service 6700 :nickname "haruyama" :coding utf-8)))
       ;'(("freenode" :host "irc.freenode.net" :nickname "haruyama" :coding utf-8)))
 ;; IRC Servers
-;(setq liece-server "irc.kyoto.wide.ad.jp")
-;(setq liece-server "irc.dti.ne.jp")
-;(setq liece-server "irc.tokyo.wide.ad.jp:6663")
-(setq riece-server "localhost:6700")
+(setq riece-server "local")
 ;(setq riece-server "freenode")
 
 ;; Port number of IRC Servers (default: 6667)
@@ -39,7 +36,7 @@
 (setq riece-window-style-directory "/usr/share/emacs/site-lisp/riece/styles")
 ;(setq riece-intl-catalogue-directory "/usr/local/share/riece/po")
 ;(setq riece-window-style-directory "/usr/local/share/riece/styles")
-(setq riece-window-default-style "top")
+(setq riece-window-default-style "top-left")
 
 ;; Highlighten IRC buffers.
 (setq riece-highlight-mode t)
@@ -47,7 +44,7 @@
 ;; following regular expression would be emphasized by colouring.
 (setq riece-highlight-pattern
       (regexp-opt
-       '("BSD" "emacs" "linux")))
+       '("春山" "haruyama")))
 
 ;; Channels we want to join startup time.
 ;(setq riece-startup-channel-list
@@ -87,10 +84,10 @@
 
 ;;; Automatic invisible.
 (add-hook 'riece-after-001-hook
-       	  (function (lambda (prefix rest)
-		      (riece-send
-		       "MODE %s +i" riece-real-nickname)
-		      nil)))
+          (function (lambda (prefix rest)
+                      (riece-send
+                        "MODE %s +i" riece-real-nickname)
+                      nil)))
 
 ;;; For SKK users :)
 (add-to-list 'riece-addons 'riece-skk-kakutei)
