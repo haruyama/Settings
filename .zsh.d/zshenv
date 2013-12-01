@@ -45,9 +45,6 @@ else
         alias lv="$PAGER"
 fi
 
-if type ggrep > /dev/null 2>&1; then
-        alias grep=ggrep
-fi
 export GREP_OPTIONS
 GREP_OPTIONS="--binary-files=without-match"
 GREP_OPTIONS="--directories=recurse $GREP_OPTIONS"
@@ -62,10 +59,3 @@ fi
 if grep --help | grep -q -- --color; then
         GREP_OPTIONS="--color=auto $GREP_OPTIONS"
 fi
-
-email_files=(~/.zsh.d/email(N-.)
-~/.email(N-.))
-for email_file in ${email_files}; do
-        export EMAIL=$(cat "$email_file")
-        break
-done
