@@ -1,12 +1,22 @@
 # vim: filetype=zsh
+
 if [ ! -f ~/.zsh.d/antigen/antigen.zsh ]; then
     git clone https://github.com/zsh-users/antigen.git ~/.zsh.d/antigen || exit
 fi
 source ~/.zsh.d/antigen/antigen.zsh
 
-antigen-bundle zsh-users/zsh-completions
-fpath=(~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions.git/src/ $fpath)
-# rm -f ~/.zcompdump; compinit
+antigen-bundles <<EOBUNDLES
+
+zsh-users/zsh-completions src
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting
+
+EOBUNDLES
 
 antigen-bundle rupa/z
-. ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-rupa-SLASH-z.git/z.sh
+add-zsh-hook precmd _z_precmd
+function _z_precmd {
+_z --add "$PWD"
+}
+
+antigen-apply
