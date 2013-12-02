@@ -46,5 +46,3 @@
            ;; car が nil だったらそれを消す。
            (null (car buffer-undo-list)) )
     (setq buffer-undo-list (cdr buffer-undo-list)) ))
-
-
