@@ -1,21 +1,44 @@
 # based on http://www.clear-code.com/blog/2011/9/5.html
 bindkey -e
 
-setopt auto_menu auto_cd correct auto_name_dirs auto_remove_slash
-setopt extended_history hist_ignore_dups hist_ignore_space
-setopt inc_append_history
-setopt hist_ignore_all_dups
-setopt noflowcontrol NO_BG_NICE
-setopt pushd_ignore_dups rm_star_silent sun_keyboard_hack
-setopt list_types always_last_prompt
-setopt cdable_vars sh_word_split auto_param_keys
-setopt APPEND_HISTORY AUTO_LIST BANG_HIST auto_pushd NO_LIST_BEEP no_hup no_check_jobs
+setopt always_last_prompt
+setopt append_history
+setopt auto_list auto_pushd auto_menu auto_cd auto_name_dirs auto_remove_slash auto_param_keys
+setopt bang_hist
+setopt cdable_vars
+setopt complete_in_word
+setopt correct
+setopt equals
+setopt extended_glob
+setopt extended_history
+setopt hash_cmds
+setopt hist_ignore_all_dups hist_ignore_dups hist_ignore_space hist_no_store hist_expand hist_reduce_blanks
 setopt ignoreeof
-setopt print_eight_bit
+setopt inc_append_history
+setopt list_packed list_types
 setopt long_list_jobs
-setopt NO_CLOBBER
+setopt magic_equal_subst
+setopt multios
+setopt no_beep
+setopt no_clobber
+setopt no_list_beep no_hup no_check_jobs
+setopt no_flow_control no_bg_nice
+setopt notify
+setopt numeric_glob_sort
+setopt path_dirs
+setopt print_eight_bit
+setopt prompt_subst prompt_percent
+setopt pushd_ignore_dups pushd_to_home
 setopt rc_quotes
-setopt prompt_subst prompt_percent transient_rprompt
+setopt rm_star_silent
+setopt short_loops
+setopt sh_word_split
+setopt transient_rprompt
+#setopt mark_dirs
+#setopt glob_complete
+#setopt no_unset
+#setopt sun_keyboard_hack
+
 cdpath=(~)
 function chpwd_print() {
 if [ x"$DISPLAY" != x"" ]
@@ -48,16 +71,7 @@ zstyle ':completion:*:default' list-colors ""
 zstyle ':completion:*' completer _oldlist _complete _match _history _ignored _approximate _prefix
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' verbose yes
-zstyle ':completion:sudo:*' environ PATH="$SUDO_PATH:$PATH"
-setopt complete_in_word
-#setopt glob_complete
-setopt hist_expand
-setopt no_beep
-setopt numeric_glob_sort
-setopt magic_equal_subst
-setopt extended_glob
-#setopt mark_dirs
-
+#zstyle ':completion:sudo:*' environ PATH="$SUDO_PATH:$PATH"
 REPORTTIME=3
 
 WORDCHARS=${WORDCHARS:s,/,,}
