@@ -41,8 +41,8 @@ setopt transient_rprompt
 
 cdpath=(~)
 function chpwd_print() {
-if [ x"$DISPLAY" != x"" ]
-then print -Pn "\e]2; [%m] : %~\a"
+if [ x"$DISPLAY" != x"" ]; then 
+        print -Pn "\e]2; [%m] : %~\a"
 fi
 }
 typeset -ga chpwd_functions
@@ -215,7 +215,6 @@ fi
             hook_com[misc]+="(m${nomerged})"
     fi
     }
-
 
     # stash 件数表示
     #
