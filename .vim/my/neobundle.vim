@@ -13,15 +13,6 @@ NeoBundle 'paredit.vim'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'errormarker.vim'
 
-if g:my_use_neocomplete
-  NeoBundle 'Shougo/neocomplete'
-else
-  NeoBundle 'Shougo/neocomplcache'
-endif
-
-NeoBundle 'Shougo/neosnippet'
-
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
@@ -30,8 +21,43 @@ NeoBundle 'Shougo/vimproc', {
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/vimfiler'
+
+if g:my_use_neocomplete
+  NeoBundleLazy 'Shougo/neocomplete', {
+        \   'depends' : ['Shougo/neosnippet', 'Shougo/context_filetype.vim'],
+        \   'vim_version' : '7.3.885',
+        \   'autoload' : {
+        \       'insert' : 1,
+        \   }
+        \ }
+else
+  NeoBundleLazy 'Shougo/neocomplcache', {
+        \   'depends' : ['Shougo/neosnippet'],
+        \   'autoload' : {
+        \       'insert' : 1,
+        \   }
+        \}
+endif
+
+NeoBundleLazy 'Shougo/vimfiler', {
+      \   'depends' : ['Shougo/unite.vim'],
+      \   'autoload' : {
+      \       'commands' : [ 'VimFilerTab', 'VimFiler', 'VimFilerExplorer', 'VimFilerBufferDir' ],
+      \       'mappings' : ['<Plug>(vimfiler_switch)'],
+      \       'explorer' : 1,
+      \   }
+      \}
+
+NeoBundleLazy 'Shougo/vimshell', {
+      \ 'depends' : ['Shougo/vimproc'],
+      \ 'autoload' : {
+      \   'commands' : [{ 'name' : 'VimShell',
+      \                   'complete' : 'customlist,vimshell#complete'},
+      \                 'VimShellExecute', 'VimShellInteractive',
+      \                 'VimShellTerminal', 'VimShellPop'],
+      \   'mappings' : ['<Plug>(vimshell_switch)']
+      \ }}
+
 
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'amdt/vim-niji'
@@ -41,6 +67,8 @@ NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'haruyama/EnhCommentify.vim'
 NeoBundle 'haruyama/vim-matchopen'
 NeoBundle 'honza/vim-snippets'
+NeoBundle 'joker1007/vim-ruby-heredoc-syntax'
+NeoBundle 'joker1007/vim-markdown-quote-syntax'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'mattn/emmet-vim'
