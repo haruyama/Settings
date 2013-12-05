@@ -99,6 +99,11 @@ NeoBundleLazy 'violetyk/gitquick.vim', {
       \ 'autoload' : { 'commands': ['Gitquick']}
       \ }
 
+NeoBundleLazy 'chochos/ceylon-vim', {
+      \ "autoload": {
+      \   "filetypes": ["ceylon"],
+      \ }}
+
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
       \   "filetypes": ["clojure", "java", "scala"],
