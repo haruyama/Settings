@@ -82,6 +82,12 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/neco-look'
 
+NeoBundle 'syngan/vim-vimlint', {
+    \ 'depends' : 'ynkdir/vim-vimlparser',
+    \ 'autoload' : {
+    \ 'functions' : 'vimlint#vimlint'}}
+
+
 NeoBundleLazy 'gregsexton/gitv', {
       \ 'autoload' : { 'commands': ['Gitv']}
       \ }
@@ -204,7 +210,7 @@ NeoBundleLazy "vim-pandoc/vim-pandoc", {
 NeoBundleLazy 'dbakker/vim-lint', {
       \ 'depends' : 'scrooloose/syntastic',
       \ "autoload": {
-      \   "filetypes": ["vimperator"],
+      \   "filetypes": ["vim"],
       \ }}
 
 NeoBundleLazy 'superbrothers/vim-vimperator', {
