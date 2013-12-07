@@ -9,8 +9,6 @@ endif
 NeoBundle 'Shougo/neobundle.vim'
 
 NeoBundle 'paredit.vim'
-"NeoBundle 'YankRing.vim'
-NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'errormarker.vim'
 
 NeoBundle 'Shougo/vimproc', {
@@ -81,6 +79,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/neco-look'
+NeoBundle 'LeafCage/yankround.vim'
 
 NeoBundle 'syngan/vim-vimlint', {
     \ 'depends' : 'ynkdir/vim-vimlparser',
@@ -217,13 +216,5 @@ NeoBundleLazy 'superbrothers/vim-vimperator', {
       \ "autoload": {
       \   "filetypes": ["vimperator"],
       \ }}
-
-"NeoBundle 't9md/vim-textmanip'
-"NeoBundle 'sjl/gundo.vim'
-"NeoBundle 'majutsushi/tagbar'
-"NeoBundle 'kmnk/vim-unite-giti.git'
-"NeoBundle 'nathanaelkane/vim-indent-guides'
-"NeoBundle 'haruyama/gtags.vim'
-"NeoBundle 'othree/eregex.vim'
 
 filetype plugin indent on
