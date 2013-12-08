@@ -20,7 +20,8 @@
 (setq find-file-existing-other-name t)
 (display-time)
 
-(setq-default tab-width 2)
+;(setq-default tab-width 2)
+(setq-default tab-width 2 indent-tabs-mode nil)
 
 (setq gc-cons-threshold (* 10 gc-cons-threshold))
 (setq message-log-max 10000)
