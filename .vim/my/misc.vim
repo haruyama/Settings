@@ -44,6 +44,10 @@ let g:quickrun_config = {
 \       "command" : "octave",
 \       "cmdopt"  : "--silent",
 \   },
+\    "ceylon" : {
+\       "command" : "ceylon",
+\       "cmdopt"  : "compile",
+\   },
 \}
 
 let g:ref_clojure_cmd     = ['lein', 'trampoline', 'run', '-m', 'clojure.main']
