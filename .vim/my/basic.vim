@@ -15,10 +15,7 @@ else
   set clipboard& clipboard+=unnamed
 endif
 set completeopt& completeopt+=longest
-"set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).','.&ff.','.&ft.']'}%=%{fugitive#statusline()}\ %l,%c%V%8p
 set backspace=indent,start,eol
-"set listchars=tab:»-,trail:_,precedes:<,extends:>,nbsp:%
-"set listchars=tab:»-,trail:_,extends:»,precedes:«,nbsp:%,eol:$
 set listchars=tab:»-,trail:_,extends:»,precedes:«,nbsp:%
 set laststatus=2
 set list
@@ -35,7 +32,6 @@ endif
 set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,default,latin
 set fileformats=unix,dos,mac
 
-" □とか○の文字があってもカーソル位置がずれないようにする
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
