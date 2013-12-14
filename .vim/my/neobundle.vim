@@ -139,7 +139,8 @@ NeoBundleLazy 'kongo2002/fsharp-vim', {
       \   "filetypes": ["fsharp"],
       \ }}
 
-NeoBundleLazy 'Blackrush/vim-gocode', {
+"NeoBundleLazy 'Blackrush/vim-gocode', {
+NeoBundleLazy 'jnwhiteh/vim-golang', {
       \ "autoload": {
       \   "filetypes": ["go"],
       \ }}
