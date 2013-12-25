@@ -7,3 +7,17 @@ set output-meta on
 Del: backward-delete-char
 Control-h: backward-delete-char
 Tab: complete
+
+$if mysql
+"\C-xd": "show databases;"
+"\C-xt": "show tables;"
+"\C-xu": "select user,host,password from mysql.user order by user,host;"
+"\C-xb": "select user,host,db       from mysql.db   order by user,host;"
+"\C-xc": "show create table TN\\G"
+"\C-xn": "select count(*) from ;"
+"\C-xv": "show variables like '%%';"
+"\C-xs": "show slave status\\G"
+"\C-xm": "show master status\\G"
+"\C-xp": "show full processlist;"
+"\C-xa": "show table status like 'TN'\\G"
+$endif
