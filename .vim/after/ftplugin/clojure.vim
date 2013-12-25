@@ -9,7 +9,7 @@ setl tabstop=2 shiftwidth=2 softtabstop=2 smarttab expandtab
 
 if executable('lein') && filereadable('project.clj')
   let b:is_lein_available = 1
-  call vimshell#util#set_dictionary_helper(g:vimshell_interactive_interpreter_commands, 'clojure', 'lein repl')
+"  call vimshell#util#set_dictionary_helper(g:vimshell_interactive_interpreter_commands, 'clojure', 'lein repl')
 endif
 
 if exists('*PareditInitBuffer')
