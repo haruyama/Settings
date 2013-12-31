@@ -56,7 +56,6 @@ NeoBundleLazy 'Shougo/vimshell', {
       \   'mappings' : ['<Plug>(vimshell_switch)']
       \ }}
 
-
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'amdt/vim-niji'
 NeoBundle 'bling/vim-airline'
@@ -65,8 +64,6 @@ NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'haruyama/EnhCommentify.vim'
 NeoBundle 'haruyama/vim-matchopen'
 NeoBundle 'honza/vim-snippets'
-"NeoBundle 'joker1007/vim-ruby-heredoc-syntax'
-"NeoBundle 'joker1007/vim-markdown-quote-syntax'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'mattn/emmet-vim'
@@ -81,14 +78,20 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'LeafCage/yankround.vim'
 
-NeoBundle 'syngan/vim-vimlint', {
-    \ 'depends' : 'ynkdir/vim-vimlparser',
-    \ 'autoload' : {
-    \ 'functions' : 'vimlint#vimlint'}}
-
+NeoBundle 'osyo-manga/vim-precious', {
+      \   'depends' : ['Shougo/context_filetype.vim'],
+      \ }
 
 NeoBundleLazy 'gregsexton/gitv', {
       \ 'autoload' : { 'commands': ['Gitv']}
+      \ }
+
+NeoBundleLazy 'tyru/capture.vim' , {
+      \ 'autoload' : { 'commands': ['Capture']}
+      \ }
+
+NeoBundleLazy 'thinca/vim-prettyprint', {
+      \ 'autoload' : { 'commands': ['PP']}
       \ }
 
 NeoBundleLazy 'mattn/excitetranslate-vim', {
