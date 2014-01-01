@@ -84,7 +84,8 @@ NeoBundle 'osyo-manga/vim-precious', {
 
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'osyo-manga/vim-textobj-multiblock'
-NeoBundle "osyo-manga/vim-textobj-multitextobj"
+NeoBundle 'osyo-manga/vim-textobj-multitextobj'
+NeoBundle 'sgur/vim-textobj-parameter'
 
 NeoBundleLazy 'gregsexton/gitv', {
       \ 'autoload' : { 'commands': ['Gitv']}
