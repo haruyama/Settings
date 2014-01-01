@@ -31,7 +31,7 @@ augroup vimrc_auto_mkdir
 augroup END
 
 "hi MatchParen cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
-hi MatchParen cterm=underline ctermfg=white ctermbg=darkred gui=underline guifg=black guibg=yellow
+hi MatchParen cterm=bold,underline ctermfg=black ctermbg=LightGrey gui=bold,underline guifg=black guibg=yellow
 
 let g:eregex_default_enable = 0
 
@@ -71,3 +71,28 @@ nmap P <Plug>(yankround-P)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 let g:yankround_max_history = 50
+
+let g:textobj_multiblock_blocks = [
+\   [ '(', ')' ],
+\   [ '[', ']' ],
+\   [ '{', '}' ],
+\]
+
+" とりあえず、i だけを設定
+" textobj-mutiblock と i"、i' を組み合わせる
+let g:textobj_multitextobj_textobjects_i = [
+\   "\<Plug>(textobj-multiblock-i)",
+\   'i"',
+\   "i'",
+\]
+
+let g:textobj_multitextobj_textobjects_a = [
+\   "\<Plug>(textobj-multiblock-a)",
+\   'a"',
+\   "a'",
+\]
+
+omap ib <Plug>(textobj-multitextobj-i)
+xmap ib <Plug>(textobj-multitextobj-i)
+omap ab <Plug>(textobj-multitextobj-a)
+xmap ab <Plug>(textobj-multitextobj-a)
