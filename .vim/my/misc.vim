@@ -96,3 +96,6 @@ omap ib <Plug>(textobj-multitextobj-i)
 xmap ib <Plug>(textobj-multitextobj-i)
 omap ab <Plug>(textobj-multitextobj-a)
 xmap ab <Plug>(textobj-multitextobj-a)
+
+let g:pandoc_no_folding = 1
+let g:pandoc_use_conceal = 0
