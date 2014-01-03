@@ -24,4 +24,7 @@
 //user_pref("content.notify.interval", 750000);
 //user_pref("content.switch.threshold", 750000);
 
+user_pref("browser.startup.page", 3);
+user_pref("browser.tabs.onTop", false);
 user_pref("browser.urlbar.trimURLs", false);
+user_pref("network.cookie.cookieBehavior", 1);
