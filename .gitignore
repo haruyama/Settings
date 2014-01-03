@@ -16,6 +16,7 @@
 .vim/.netrwhist
 .vim/bundle/*
 .vim/history/*
+.vim/spell
 .vimperator/info
 .zsh.d/antigen
 a.out
