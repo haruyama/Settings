@@ -162,7 +162,7 @@ NeoBundleLazy 'eagletmt/unite-haddock' , {
       \   "filetypes": ["haskell"],
       \ }}
 
-NeoBundleLazy 'html5.vim', {
+NeoBundleLazy 'othree/html5.vim', {
       \ "autoload": {
       \   "filetypes": ["html"],
       \ }}
