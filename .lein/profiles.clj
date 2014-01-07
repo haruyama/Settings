@@ -24,7 +24,7 @@
                       (vinyasa.inject/inject 'clojure.core
                                              '[[vinyasa.inject [inject inject]]
                                                [vinyasa.pull [pull pull]]
-                                               [vinyasa.lein [lein lein]]
+;                                               [vinyasa.lein [lein lein]]
                                                [clojure.tools.namespace.repl [refresh refresh]]
                                                [clojure.pprint [pprint >pprint]]
                                                [io.aviso.binary [write-binary >bin]]])
