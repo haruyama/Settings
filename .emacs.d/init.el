@@ -177,3 +177,8 @@
 (autoload 'riece "riece" nil t)
 
 (setq inferior-lisp-program "clisp")
+
+;; http://www.emacswiki.org/emacs/SavePlace
+(when (require 'saveplace nil t)
+  (setq-default save-place t)
+  (setq save-place-file "~/.emacs.d/saved-places"))
