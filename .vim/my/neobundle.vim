@@ -78,9 +78,11 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'LeafCage/yankround.vim'
 
-NeoBundle 'osyo-manga/vim-precious', {
-      \   'depends' : ['Shougo/context_filetype.vim'],
-      \ }
+if v:version > 702
+  NeoBundle 'osyo-manga/vim-precious', {
+        \   'depends' : ['Shougo/context_filetype.vim'],
+        \ }
+endif
 
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'osyo-manga/vim-textobj-multiblock'
