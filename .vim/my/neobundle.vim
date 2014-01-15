@@ -56,6 +56,8 @@ NeoBundleLazy 'Shougo/vimshell', {
       \   'mappings' : ['<Plug>(vimshell_switch)']
       \ }}
 
+NeoBundle 'Shougo/neosnippet-snippets'
+
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'amdt/vim-niji'
 NeoBundle 'bling/vim-airline'
