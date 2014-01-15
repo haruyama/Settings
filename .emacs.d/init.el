@@ -182,3 +182,5 @@
 (when (require 'saveplace nil t)
   (setq-default save-place t)
   (setq save-place-file "~/.emacs.d/saved-places"))
+
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
