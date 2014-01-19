@@ -186,9 +186,14 @@ NeoBundleLazy 'quangquach/octave.vim--', {
       \   "filetypes": ["octave"],
       \ }}
 
-NeoBundleLazy 'haruyama/jump2pm.vim', {
+"NeoBundleLazy 'haruyama/jump2pm.vim', {
+"      \ "autoload": {
+"      \   "filetypes": ["perl", "yaml"],
+"      \ }}
+
+NeoBundleLazy 'arnaud-lb/vim-php-namespace', {
       \ "autoload": {
-      \   "filetypes": ["perl", "yaml"],
+      \   "filetypes": ["php"],
       \ }}
 
 NeoBundleLazy 'tpope/gem-ctags', {

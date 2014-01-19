@@ -10,6 +10,10 @@ setl omnifunc=phpcomplete#CompletePHP
 
 noremap <Leader>d :call PhpDoc()<CR>
 
+setl path+=src;/,lib;/,test;/,vendor;/
+setl includeexpr=substitute(substitute(v:fname,'::.*$','',''),'\\\','/','g')
+setl suffixesadd=.php
+
 augroup after_ftplugin_php
   autocmd! BufWritePre <buffer> :RTrim
 augroup END
