@@ -7,8 +7,15 @@ set cpo&vim
 
 setl ts=4 sw=4 sts=4 expandtab
 setl omnifunc=phpcomplete#CompletePHP
+setl tags+=./tags.vendors,tags.vendors
 
 noremap <Leader>d :call PhpDoc()<CR>
+
+inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>u :call PhpInsertUse()<CR>
+
+inoremap <Leader>e <C-O>:call PhpExpandClass()<CR>
+noremap <Leader>e :call PhpExpandClass()<CR>
 
 setl path+=src;/,lib;/,test;/,vendor;/
 setl includeexpr=substitute(substitute(v:fname,'::.*$','',''),'\\\','/','g')

@@ -8,6 +8,7 @@ endif
 
 NeoBundle 'Shougo/neobundle.vim'
 
+NeoBundle 'AutoTag'
 NeoBundle 'paredit.vim'
 NeoBundle 'errormarker.vim'
 
