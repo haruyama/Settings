@@ -19,7 +19,11 @@ noremap <Leader>e :call PhpExpandClass()<CR>
 
 setl path+=src;/,lib;/,test;/,vendor;/
 setl includeexpr=substitute(substitute(v:fname,'::.*$','',''),'\\\','/','g')
-setl suffixesadd=.php
+
+if !exists('g:neocomplcache_delimiter_patterns')
+  let g:neocomplete#delimiter_patterns = {}
+endif
+let g:neocomplete#delimiter_patterns['php'] = []
 
 augroup after_ftplugin_php
   autocmd! BufWritePre <buffer> :RTrim
