@@ -15,19 +15,19 @@
                   [perforate       "0.3.3"]]
         :search-page-size 30
         :dependencies [[org.clojure/tools.namespace "0.2.4"]
-                       [im.chit/vinyasa "0.1.8"]
+;                       [im.chit/vinyasa "0.1.8"]
                        [io.aviso/pretty "0.1.8"]
                        [jonase/kibit "0.0.8"]
                        [spyscope "0.1.4"]]
         :injections  [(require 'spyscope.core)
-                      (require 'vinyasa.inject)
-                      (vinyasa.inject/inject 'clojure.core
-                                             '[[vinyasa.inject [inject inject]]
-                                               [vinyasa.pull [pull pull]]
-;                                               [vinyasa.lein [lein lein]]
-                                               [clojure.tools.namespace.repl [refresh refresh]]
-                                               [clojure.pprint [pprint >pprint]]
-                                               [io.aviso.binary [write-binary >bin]]])
+;                      (require 'vinyasa.inject)
+;                      (vinyasa.inject/inject 'clojure.core
+;                                             '[[vinyasa.inject [inject inject]]
+;                                               [vinyasa.pull [pull pull]]
+                                ;               [vinyasa.lein [lein lein]]
+;                                               [clojure.tools.namespace.repl [refresh refresh]]
+;                                               [clojure.pprint [pprint >pprint]]
+;                                               [io.aviso.binary [write-binary >bin]]])
                       (require 'io.aviso.repl
                                'clojure.repl
                                'clojure.main)
