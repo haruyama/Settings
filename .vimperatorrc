@@ -1,10 +1,5 @@
 set visualbell
 set hlsearch
-imap <C-f> <Right>
-cmap <C-f> <Right>
-imap <C-n> <Down>
-cmap <C-n> <Down>
-cmap <C-p> <Up>
 set ignorecase
 set focuscontent
 set complete=sl
@@ -13,6 +8,16 @@ set showstatuslinks=1
 set noinsertmode
 
 set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
+
+noremap <C-h> <CR>
+inoremap <C-b> <Left>
+cnoremap <C-b> <Left>
+inoremap <C-f> <Right>
+cnoremap <C-f> <Right>
+inoremap <C-n> <Down>
+cnoremap <C-n> <Down>
+inoremap <C-p> <Up>
+cnoremap <C-p> <Up>
 
 javascript <<EOM
 liberator.globalVariables.copy_templates = [
