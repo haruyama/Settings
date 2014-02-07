@@ -12,6 +12,7 @@
 .lein/repl-history
 .lein/self-installs
 .mlterm/comphist
+.mlterm/challenge
 .riece/log
 .riece/save
 .vim/.netrwhist
