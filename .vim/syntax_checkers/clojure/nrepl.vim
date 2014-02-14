@@ -16,7 +16,8 @@ function! SyntaxCheckers_clojure_nrepl_GetLocList() dict
 
     let template = '(require ''clojure.tools.namespace) (require ''clojure.test) (let [namespaces (clojure.tools.namespace/find-namespaces-in-dir (java.io.File. "%s"))] (doseq [ns namespaces] (prn ns) (require ns :reload) (if (re-find #"-test\z" (name ns)) (clojure.test/run-tests ns) (let [test-ns (symbol (str (name ns) "-test"))] (prn test-ns) (require test-ns :reload) (clojure.test/run-tests test-ns)))))'
     let exp      = printf(template, escape(filename, '"\'))
-    let response = fireplace#client().eval(exp, {'session': 1})
+"    let response = fireplace#client().eval(exp, {'session': 1})
+    let response = fireplace#client().eval(exp, {})
 
     if type(response) == type(0)
         echo 'error on fireplace#client().eval()'
@@ -31,6 +32,7 @@ function! SyntaxCheckers_clojure_nrepl_GetLocList() dict
                     \ 'subchecker': 'nrepl' })
 
         let errorformat = 'CompilerException %m\, (%f:%l:%c) '
+"        let errorformat = '%m\, (%f:%l:%c) '
 
         return SyntasticMake({
                     \ 'makeprg': makeprg,
