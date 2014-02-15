@@ -24,15 +24,16 @@ function! SyntaxCheckers_clojure_nrepl_GetLocList() dict
         return []
     endif
 
-    if get(response, 'err', '') !=# ''
+    if has_key(response, 'stacktrace')
+        let err = substitute(response.out, '\e\[[0-9;]\+[mK]', '', 'g')
+        let err = substitute(err, '\e\[[mK]', '', 'g')
+        let error_message = matchstr(err, 'CompilerException: .\+)')
         let makeprg = self.makeprgBuild({
                     \ 'exe': 'echo',
-                    \ 'fname': shellescape(substitute(substitute(response.err, 'compiling:(', '(' . prefix, 'g'), "\n", '', 'g')),
+                    \ 'fname': shellescape(substitute(error_message, 'compiling:(', '(' . prefix, 'g')),
                     \ 'filetype': 'clojure',
                     \ 'subchecker': 'nrepl' })
-
-        let errorformat = 'CompilerException %m\, (%f:%l:%c) '
-"        let errorformat = '%m\, (%f:%l:%c) '
+        let errorformat = 'CompilerException:\ %m\ (%f:%l:%c)'
 
         return SyntasticMake({
                     \ 'makeprg': makeprg,
