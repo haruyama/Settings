@@ -36,4 +36,4 @@ if exists('&ambiwidth')
   set ambiwidth=double
 endif
 
-set completeopt=menu,preview
+set completeopt=menuone
