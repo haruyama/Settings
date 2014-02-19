@@ -188,11 +188,6 @@ NeoBundleLazy 'quangquach/octave.vim--', {
       \   "filetypes": ["octave"],
       \ }}
 
-"NeoBundleLazy 'haruyama/jump2pm.vim', {
-"      \ "autoload": {
-"      \   "filetypes": ["perl", "yaml"],
-"      \ }}
-
 NeoBundleLazy 'arnaud-lb/vim-php-namespace', {
       \ "autoload": {
       \   "filetypes": ["php"],
