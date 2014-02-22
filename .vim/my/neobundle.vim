@@ -7,6 +7,7 @@ if has('vim_starting')
 endif
 
 NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neomru.vim'
 
 NeoBundle 'AutoTag'
 NeoBundle 'paredit.vim'
