@@ -27,6 +27,7 @@ liberator.globalVariables.copy_templates = [
 { label: 'markdown'    , value: '[%TITLE%](%URL%)'            , map: ',ym' } ,
 { label: 'anchor'      , value: '<a href="%URL%">%TITLE%</a>' , map: ',ya' } ,
 { label: 'redmine'     , value: '"%TITLE%":%URL%'             , map: ',yr' } ,
+{ label: 'rst'         , value: '`%TITLE% <%URL%>`_'         , map: ',yt' } ,
 ];
 EOM
 "{ label: 'confluence'  , value: '[%TITLE%|%URL%]'             , map: ',yc' } ,
