@@ -9,6 +9,7 @@ set cpo&vim
 setl autoindent
 setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 setl tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
+
 setl omnifunc=pythoncomplete#Complete
 
 let python_highlight_all=1
