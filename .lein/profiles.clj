@@ -1,10 +1,10 @@
-{:user {:plugins [[codox "0.6.6"]
+{:user {:plugins [[codox "0.6.7"]
                   [jonase/eastwood "0.1.0"]
                   [lein-ancient    "0.5.4"]
                   [lein-bikeshed   "0.1.6"]
                   [lein-cloverage  "1.0.2"]
                   [lein-difftest   "2.0.0"]
-                  [lein-exec "0.3.1"]
+                  [lein-exec "0.3.2"]
                   [lein-licenses   "0.1.1"]
                   [lein-localrepo  "0.5.3"]
                   [lein-marginalia "0.7.1"]
@@ -18,7 +18,7 @@
         :search-page-size 30
         :dependencies [[org.clojure/tools.namespace "0.2.4"]
 ;                       [im.chit/vinyasa "0.1.8"]
-                       [io.aviso/pretty "0.1.8"]
+                       [io.aviso/pretty "0.1.9"]
                        [jonase/kibit "0.0.8"]
                        [spyscope "0.1.4"]]
         :injections  [(require 'spyscope.core)
