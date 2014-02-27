@@ -15,7 +15,7 @@ let java_highlight_debug=1
 let java_space_errors=1
 let java_allow_cpp_keywords=1
 
-setl ts=2 sw=2 sts=2 expandtab
+setl ts=4 sw=4 sts=4 expandtab
 
 "augroup after_ftplugin_java
 "  function! s:set_syntastic_java_javac_options()
