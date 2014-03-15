@@ -13,12 +13,12 @@
                   [lein-kibit      "0.0.8"]
                   [lein-pprint     "1.1.1"]
                   [lein-try        "0.4.1"]
-                  [lein-typed      "0.3.2"]
+                  [lein-typed      "0.3.3"]
                   [perforate       "0.3.3"]]
         :search-page-size 30
         :dependencies [[org.clojure/tools.namespace "0.2.4"]
 ;                       [im.chit/vinyasa "0.1.8"]
-                       [io.aviso/pretty "0.1.9"]
+                       [io.aviso/pretty "0.1.10"]
                        [jonase/kibit "0.0.8"]
                        [spyscope "0.1.4"]]
         :injections  [(require 'spyscope.core)
