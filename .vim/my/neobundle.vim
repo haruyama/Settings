@@ -119,10 +119,10 @@ NeoBundleLazy 'violetyk/gitquick.vim', {
       \ 'autoload' : { 'commands': ['Gitquick']}
       \ }
 
-NeoBundleLazy 'chochos/ceylon-vim', {
-      \ "autoload": {
-      \   "filetypes": ["ceylon"],
-      \ }}
+"NeoBundleLazy 'chochos/ceylon-vim', {
+"      \ "autoload": {
+"      \   "filetypes": ["ceylon"],
+"      \ }}
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
@@ -134,10 +134,21 @@ NeoBundleLazy 'tpope/vim-fireplace', {
       \   "filetypes": ["clojure"],
       \ }}
 
-NeoBundleLazy 'thinca/vim-ft-clojure', {
+NeoBundleLazy 'guns/vim-clojure-static', {
       \ "autoload": {
       \   "filetypes": ["clojure"],
       \ }}
+
+NeoBundleLazy 'guns/vim-clojure-highlight', {
+      \ "autoload": {
+      \   "filetypes": ["clojure"],
+      \ }}
+
+
+"NeoBundleLazy 'thinca/vim-ft-clojure', {
+"      \ "autoload": {
+"      \   "filetypes": ["clojure"],
+"      \ }}
 
 NeoBundleLazy "elixir-lang/vim-elixir", {
       \ "autoload": {
@@ -184,6 +195,11 @@ NeoBundleLazy 'Simple-Javascript-Indenter', {
       \   "filetypes": ["javascript"],
       \ }}
 
+NeoBundleLazy 'plasticboy/vim-markdown', {
+      \ "autoload": {
+      \   "filetypes": ["markdown"],
+      \ }}
+
 NeoBundleLazy 'quangquach/octave.vim--', {
       \ "autoload": {
       \   "filetypes": ["octave"],
@@ -217,10 +233,10 @@ NeoBundleLazy 'haruyama/scheme.vim', {
       \   "filetypes": ["scheme"],
       \ }}
 
-NeoBundleLazy "vim-pandoc/vim-pandoc", {
-      \ "autoload": {
-      \   "filetypes": ["text", "pandoc", "markdown", "rst", "textile"],
-      \ }}
+"NeoBundleLazy "vim-pandoc/vim-pandoc", {
+"      \ "autoload": {
+"      \   "filetypes": ["text", "pandoc", "rst", "textile"],
+"      \ }}
 
 NeoBundleLazy 'dbakker/vim-lint', {
       \ 'depends' : 'scrooloose/syntastic',
