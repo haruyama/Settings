@@ -22,15 +22,6 @@ setl includeexpr=substitute(substitute(v:fname,'/.*$','',''),'\\.','/','g')
 setl path+=src;/,test;/
 setl suffixesadd=.clj,.cljs
 
-"function! s:run_kibit()
-"  if !exists('b:is_lein_available')
-"    return
-"  endif
-"  call fireplace#session_eval('(require ''kibit.driver)(kibit.driver/run {:source-path "src"})')
-"endfunction
-
-"command! Kibit call s:run_kibit()
-
 augroup after_ftplugin_clojure
   autocmd! BufWritePre <buffer> :RTrim
 augroup END
