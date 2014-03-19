@@ -1,5 +1,10 @@
-/*global jQuery, $ */
-/*jslint white: true, onevar: true, undef: true, newcap: true, nomen: false, regexp: true, plusplus: true, bitwise: true, browser: true, devel: true, maxerr: 50, indent: 2 */
-/*global Buffer: false, clearInterval: false, clearTimeout: false, console: false, global: false, module: false, process: false, querystring: false, require: false, setInterval: false, setTimeout: false, util: false, __filename: false, __dirname: false */
-
-/* vim: set ft=javascript: */
+{
+  "evil":false,
+  "indent":2,
+  "vars":true,
+  "passfail":false,
+  "plusplus":false,
+  "white":false,
+  "predef":"d3",
+  "unparam":true
+}
