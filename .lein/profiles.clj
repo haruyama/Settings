@@ -8,8 +8,6 @@
                   [lein-licenses   "0.1.1"]
                   [lein-localrepo  "0.5.3"]
                   [lein-marginalia "0.7.1"]
-                  [lein-midje      "3.1.3"]
-                  [lein-midje-doc  "0.0.18"]
                   [lein-kibit      "0.0.8"]
                   [lein-pprint     "1.1.1"]
                   [lein-try        "0.4.1"]
