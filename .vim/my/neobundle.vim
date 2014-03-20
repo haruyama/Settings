@@ -123,6 +123,11 @@ NeoBundleLazy 'violetyk/gitquick.vim', {
 "      \ "autoload": {
 "      \   "filetypes": ["ceylon"],
 "      \ }}
+"
+NeoBundleLazy 'kchmck/vim-coffee-script', {
+      \ "autoload": {
+      \   "filetypes": ["coffee"],
+      \ }}
 
 NeoBundleLazy 'tpope/vim-classpath', {
       \ "autoload": {
@@ -143,12 +148,6 @@ NeoBundleLazy 'guns/vim-clojure-highlight', {
       \ "autoload": {
       \   "filetypes": ["clojure"],
       \ }}
-
-
-"NeoBundleLazy 'thinca/vim-ft-clojure', {
-"      \ "autoload": {
-"      \   "filetypes": ["clojure"],
-"      \ }}
 
 NeoBundleLazy "elixir-lang/vim-elixir", {
       \ "autoload": {
