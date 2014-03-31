@@ -6,5 +6,6 @@
   "plusplus":false,
   "white":false,
   "predef":"d3",
+  "predef":"angular",
   "unparam":true
 }
