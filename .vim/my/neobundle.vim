@@ -149,6 +149,11 @@ NeoBundleLazy 'guns/vim-clojure-highlight', {
       \   "filetypes": ["clojure"],
       \ }}
 
+NeoBundleLazy 'aohta/blockdiag.vim', {
+      \ "autoload": {
+      \   "filetypes": ["diag"],
+      \ }}
+
 NeoBundleLazy "elixir-lang/vim-elixir", {
       \ "autoload": {
       \   "filetypes": ["elixir"],
