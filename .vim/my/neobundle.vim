@@ -199,6 +199,11 @@ NeoBundleLazy 'Simple-Javascript-Indenter', {
       \   "filetypes": ["javascript"],
       \ }}
 
+NeoBundleLazy 'groenewege/vim-less', {
+      \ "autoload": {
+      \   "filetypes": ["less"],
+      \ }}
+
 NeoBundleLazy 'plasticboy/vim-markdown', {
       \ "autoload": {
       \   "filetypes": ["markdown"],
@@ -237,10 +242,10 @@ NeoBundleLazy 'haruyama/scheme.vim', {
       \   "filetypes": ["scheme"],
       \ }}
 
-"NeoBundleLazy "vim-pandoc/vim-pandoc", {
-"      \ "autoload": {
-"      \   "filetypes": ["text", "pandoc", "rst", "textile"],
-"      \ }}
+NeoBundleLazy 'evidens/vim-twig', {
+      \ "autoload": {
+      \   "filetypes": ["twig"],
+      \ }}
 
 NeoBundleLazy 'dbakker/vim-lint', {
       \ 'depends' : 'scrooloose/syntastic',
