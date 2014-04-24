@@ -5,3 +5,10 @@ MethodLength:
   Enabled: true
   CountComments: false # count full line comments?
   Max: 50
+
+CyclomaticComplexity:
+  Max: 10
+
+ClassLength:
+  CountComments: false # count full line comments?
+  Max: 200
