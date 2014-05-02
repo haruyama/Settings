@@ -99,12 +99,3 @@ xmap ab <Plug>(textobj-multitextobj-a)
 
 let g:pandoc_no_folding = 1
 let g:pandoc_use_conceal = 0
-
-let g:startify_custom_header =
-  \ map(split(system('date'), '\n'), '"   ". v:val') + ['','']
-
-autocmd VimEnter *
-      \ if !argc() |
-      \ Startify |
-      \ execute "normal \<c-w>w" |
-      \ endif
