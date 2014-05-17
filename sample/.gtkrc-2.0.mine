@@ -2,6 +2,7 @@ gtk-key-theme-name = "Emacs"
 #gtk-font-name = "Sazanami Gothic 12"
 gtk-font-name = "VL PGothic 12"
 #gtk-font-name = "Ricty 12"
+gtk-can-change-accels=1
 
 include "/usr/share/themes/Emacs/gtk-2.0-key/gtkrc"
 include "/usr/share/themes/Adwaita/gtk-2.0/gtkrc"
