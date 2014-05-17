@@ -5,6 +5,6 @@
   "passfail":false,
   "plusplus":false,
   "white":false,
-  "predef":"angular,beforeEach,d3,describe,expect,inject,it",
+  "predef":"window,angular,beforeEach,d3,describe,expect,inject,it,jQuery,history,URI,location,browser",
   "unparam":true
 }
