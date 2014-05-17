@@ -6,6 +6,9 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle'))
 endif
 
+NeoBundle 'subosito/vim-256colors'
+colorscheme jellybeans
+
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neomru.vim'
 

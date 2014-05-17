@@ -37,3 +37,4 @@ if exists('&ambiwidth')
 endif
 
 set completeopt=menuone
+set t_Co=256
