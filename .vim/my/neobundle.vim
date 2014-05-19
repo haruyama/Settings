@@ -7,7 +7,7 @@ if has('vim_starting')
 endif
 
 NeoBundle 'subosito/vim-256colors'
-colorscheme jellybeans
+colorscheme oceanblack256
 
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neomru.vim'
