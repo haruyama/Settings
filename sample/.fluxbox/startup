@@ -18,6 +18,8 @@
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
 
+export VTE_CJK_WIDTH=1
+
 pkill notification-daemon
 /usr/lib/notification-daemon/notification-daemon &
 
