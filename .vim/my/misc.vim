@@ -31,7 +31,7 @@ augroup vimrc_auto_mkdir
 augroup END
 
 "hi MatchParen cterm=underline ctermfg=NONE ctermbg=NONE gui=underline guifg=NONE guibg=NONE
-hi MatchParen cterm=bold,underline ctermfg=black ctermbg=DarkMagenta gui=bold,underline guifg=black guibg=yellow
+"hi MatchParen cterm=bold,underline ctermfg=black ctermbg=DarkMagenta gui=bold,underline guifg=black guibg=yellow
 
 let g:eregex_default_enable = 0
 
