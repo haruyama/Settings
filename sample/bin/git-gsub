@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+
+require 'shellwords'
+
+from, to, path, = ARGV
+
+target_files = (`/usr/bin/git grep -l #{from.shellescape} #{path ? path.shellescape : ''}`).each_line.map(&:chomp).join ' '
+
+system %|/bin/sed -i s/#{from.shellescape}/#{to.shellescape}/g #{target_files}|
