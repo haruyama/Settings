@@ -20,10 +20,13 @@ noremap <Leader>e :call PhpExpandClass()<CR>
 setl path+=src;/,lib;/,test;/,vendor;/
 setl includeexpr=substitute(substitute(v:fname,'::.*$','',''),'\\\','/','g')
 
-if !exists('g:neocomplcache_delimiter_patterns')
+if !exists('g:neocomplete#delimiter_patterns')
   let g:neocomplete#delimiter_patterns = {}
 endif
 let g:neocomplete#delimiter_patterns['php'] = []
+
+let g:syntastic_php_phpcs_args='--report=csv --standard=PSR2'
+let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
 
 augroup after_ftplugin_php
   autocmd! BufWritePre <buffer> :RTrim
