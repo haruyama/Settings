@@ -50,7 +50,7 @@ chpwd_print
 chpwd_functions+=dirs
 chpwd_functions+=chpwd_print
 
-HISTSIZE=10000000
+HISTSIZE=1000000
 SAVEHIST=$HISTSIZE
 HISTFILE="$HOME/.zhistory"
 
