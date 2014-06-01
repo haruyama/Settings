@@ -259,4 +259,9 @@ NeoBundleLazy 'superbrothers/vim-vimperator', {
       \   "filetypes": ["vimperator"],
       \ }}
 
+NeoBundleLazy 'stephpy/vim-yaml', {
+      \ "autoload": {
+      \   "filetypes": ["yaml"],
+      \ }}
+
 filetype plugin indent on
