@@ -101,3 +101,5 @@ let g:pandoc_no_folding = 1
 let g:pandoc_use_conceal = 0
 
 colorscheme wombat256
+
+let g:vimshell_interactive_update_time = 500
