@@ -127,8 +127,8 @@
     (set-mouse-color "maroon4")
     (set-cursor-color "wheat4")
     ;;モードライン
-    (set-face-foreground 'modeline "wheat1")
-    (set-face-background 'modeline "navy")
+    ;(set-face-foreground 'modeline "wheat1")
+    ;(set-face-background 'modeline "navy")
     (set-scroll-bar-mode 'left)
 
     (setq initial-frame-alist
