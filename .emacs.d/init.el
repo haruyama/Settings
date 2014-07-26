@@ -153,7 +153,7 @@
          try-complete-lisp-symbol-partially
          try-complete-lisp-symbol))
 
-(add-to-list 'load-path "~/elisp")
+(add-to-list 'load-path "~/.emacs.d/elisp")
 
 (load "HS_gosh")
 (load "HS_skk-setup")
