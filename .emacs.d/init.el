@@ -5,6 +5,9 @@
 (auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-complile-exclude-files-regexp "/junk/")
@@ -77,10 +80,7 @@
 (set-face-background 'flymake-errline "red4")
 (set-face-background 'flymake-warnline "dark slate blue")
 
-(when
-  (load
-    (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
+(package-initialize)
 
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
