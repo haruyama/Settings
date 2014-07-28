@@ -105,23 +105,24 @@
                             ac-source-words-in-all-buffer))
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  '(blink-cursor-mode nil)
-  '(column-number-mode t)
-  '(display-time-mode t)
-  '(inhibit-startup-screen t)
-  '(riece-desktop-notify-message-function (quote riece-message-text))
-  '(show-paren-mode t)
-  '(tool-bar-mode nil))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
+ '(column-number-mode t)
+ '(display-time-mode t)
+ '(inhibit-startup-screen t)
+ '(mime-view-type-subtype-score-alist (quote (((text . enriched) . 3) ((text . richtext) . 2) ((text . plain) . 4) ((text . html) . mime-view-text/html-entity-score) (multipart . mime-view-multipart-entity-score))))
+ '(riece-desktop-notify-message-function (quote riece-message-text))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 139 :width normal :foundry "unknown" :family "VL Gothic")))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 139 :width normal :foundry "unknown" :family "VL Gothic")))))
 
 (if (boundp 'window-system)
   (progn
