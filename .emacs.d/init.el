@@ -85,6 +85,7 @@
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 (add-to-list 'ac-modes 'text-mode)
+(add-to-list 'ac-modes 'oz-mode)
 (setq ac-ignore-case t)
 (setq ac-use-menu-map t)
 ;; デフォルトで設定済み
