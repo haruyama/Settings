@@ -1,0 +1,2 @@
+event=button/battery BAT 00000080 00000000 K
+action=/etc/acpi/tosh-brightness.sh down
