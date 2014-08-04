@@ -2,7 +2,6 @@
 bindkey -e
 
 setopt always_last_prompt
-setopt append_history
 setopt auto_list auto_pushd auto_menu auto_cd auto_name_dirs auto_remove_slash auto_param_keys
 setopt bang_hist
 setopt cdable_vars
@@ -31,6 +30,7 @@ setopt prompt_subst prompt_percent
 setopt pushd_ignore_dups pushd_to_home
 setopt rc_quotes
 setopt rm_star_silent
+setopt share_history
 setopt short_loops
 setopt sh_word_split
 setopt transient_rprompt
