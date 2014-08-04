@@ -5,6 +5,9 @@
 (auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-complile-exclude-files-regexp "/junk/")
@@ -77,14 +80,12 @@
 (set-face-background 'flymake-errline "red4")
 (set-face-background 'flymake-warnline "dark slate blue")
 
-(when
-  (load
-    (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
+(package-initialize)
 
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 (add-to-list 'ac-modes 'text-mode)
+(add-to-list 'ac-modes 'oz-mode)
 (setq ac-ignore-case t)
 (setq ac-use-menu-map t)
 ;; デフォルトで設定済み
@@ -104,23 +105,24 @@
                             ac-source-words-in-all-buffer))
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  '(blink-cursor-mode nil)
-  '(column-number-mode t)
-  '(display-time-mode t)
-  '(inhibit-startup-screen t)
-  '(riece-desktop-notify-message-function (quote riece-message-text))
-  '(show-paren-mode t)
-  '(tool-bar-mode nil))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
+ '(column-number-mode t)
+ '(display-time-mode t)
+ '(inhibit-startup-screen t)
+ '(mime-view-type-subtype-score-alist (quote (((text . enriched) . 3) ((text . richtext) . 2) ((text . plain) . 4) ((text . html) . mime-view-text/html-entity-score) (multipart . mime-view-multipart-entity-score))))
+ '(riece-desktop-notify-message-function (quote riece-message-text))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
-  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 139 :width normal :foundry "unknown" :family "VL Gothic")))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 139 :width normal :foundry "unknown" :family "VL Gothic")))))
 
 (if (boundp 'window-system)
   (progn
@@ -153,7 +155,7 @@
          try-complete-lisp-symbol-partially
          try-complete-lisp-symbol))
 
-(add-to-list 'load-path "~/elisp")
+(add-to-list 'load-path "~/.emacs.d/elisp")
 
 (load "HS_gosh")
 (load "HS_skk-setup")
