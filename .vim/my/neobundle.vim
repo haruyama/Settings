@@ -171,7 +171,13 @@ NeoBundleLazy 'kongo2002/fsharp-vim', {
       \ }}
 
 "NeoBundleLazy 'Blackrush/vim-gocode', {
-NeoBundleLazy 'jnwhiteh/vim-golang', {
+"NeoBundleLazy 'jnwhiteh/vim-golang', {
+NeoBundleLazy 'fatih/vim-go', {
+      \ "autoload": {
+      \   "filetypes": ["go"],
+      \ }}
+
+NeoBundleLazy 'rhysd/vim-go-impl', {
       \ "autoload": {
       \   "filetypes": ["go"],
       \ }}
@@ -250,6 +256,11 @@ NeoBundleLazy 'derekwyatt/vim-scala', {
 NeoBundleLazy 'haruyama/scheme.vim', {
       \ "autoload": {
       \   "filetypes": ["scheme"],
+      \ }}
+
+NeoBundleLazy 'cespare/vim-toml', {
+      \ 'autoload': {
+      \   'filetypes': ['toml'],
       \ }}
 
 NeoBundleLazy 'evidens/vim-twig', {

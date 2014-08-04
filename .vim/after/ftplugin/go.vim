@@ -9,5 +9,7 @@ setl tabstop=4 noexpandtab shiftwidth=4 softtabstop=4 smarttab
 let g:gocode_gofmt_tabs = ' -tabs=true'
 let g:gocode_gofmt_tabwidth = ' -tabwidth=4'
 
+let g:go_snippet_engine = 'neosnippet'
+
 let &cpo = s:save_cpo
 unlet s:save_cpo

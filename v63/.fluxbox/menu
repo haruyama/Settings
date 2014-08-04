@@ -1,0 +1,23 @@
+# This is an automatically generated file.
+# Please see <file:/usr/share/doc/menu/README> for information.
+
+# to use your own menu, copy this to ~/.fluxbox/menu, then edit
+# ~/.fluxbox/init and change the session.menuFile path to ~/.fluxbox/menu
+
+[begin] (fluxbox)
+
+#Automatically generated file. Do not edit (see /usr/doc/menu/html/index.html)
+
+   [exec] (Xfce4 Terminal) {/usr/bin/xfce4-terminal --hide-menubar}
+   [exec] (Gnome Terminal) {/usr/bin/gnome-terminal --hide-menubar}
+
+   [config] (Configuration)
+   [submenu] (Styles) {}
+      [stylesdir] (/usr/share/fluxbox/styles)
+      [stylesdir] (~/.fluxbox/styles)
+   [end]
+   [workspaces] (Workspaces)
+   [reconfig] (Reconfigure)
+   [restart] (Restart)
+   [exit] (Exit)
+[end]

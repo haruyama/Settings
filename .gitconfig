@@ -3,8 +3,8 @@
 	st = status --short --branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [core]
-	excludesfile = /home/haruyama/.gitignore_global
-	attributesfile = /home/haruyama/.gitattributes_global
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes_global
 [color]
 	ui = auto
 [push]
