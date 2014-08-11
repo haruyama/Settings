@@ -9,14 +9,6 @@ setl ts=4 sw=4 sts=4 expandtab
 setl omnifunc=phpcomplete#CompletePHP
 setl tags+=./tags.vendors,tags.vendors
 
-noremap <Leader>d :call PhpDoc()<CR>
-
-inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
-noremap <Leader>u :call PhpInsertUse()<CR>
-
-inoremap <Leader>e <C-O>:call PhpExpandClass()<CR>
-noremap <Leader>e :call PhpExpandClass()<CR>
-
 setl path+=src;/,lib;/,test;/,vendor;/
 setl includeexpr=substitute(substitute(v:fname,'::.*$','',''),'\\\','/','g')
 
@@ -27,6 +19,9 @@ let g:neocomplete#delimiter_patterns['php'] = []
 
 let g:syntastic_php_phpcs_args='--report=csv --standard=PSR2'
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
+
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <buffer> <Leader>d :call pdv#DocumentWithSnip()<CR>
 
 augroup after_ftplugin_php
   autocmd! BufWritePre <buffer> :RTrim

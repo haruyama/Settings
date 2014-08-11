@@ -26,6 +26,7 @@ setopt notify
 setopt numeric_glob_sort
 setopt path_dirs
 setopt print_eight_bit
+setopt printexitvalue
 setopt prompt_subst prompt_percent
 setopt pushd_ignore_dups pushd_to_home
 setopt rc_quotes
