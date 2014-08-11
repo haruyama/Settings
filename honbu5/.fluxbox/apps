@@ -1,0 +1,28 @@
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (name=Navigator) (class=Iceweasel) (role=browser)
+  [Head]	{2}
+  [Position]	(UPPERLEFT)	{-122 26}
+  [Sticky]	{yes}
+[end]
+[app] (name=gtodo) (class=Gtodo)
+  [Position]	(UPPERLEFT)	{-1 638}
+[end]
+[app] (name=Navigator) (class=Firefox-bin) (role=browser)
+  [Head]	{2}
+  [Sticky]	{yes}
+[end]
+[app] (name=rhythmbox) (class=Rhythmbox)
+  [Sticky]	{yes}
+[end]
+[app] (name=mikutter.rb) (class=Mikutter.rb)
+  [Sticky]	{yes}
+[end]
+[app] (name=tk #2) (class=Tk)
+  [Head]	{3}
+[end]
+[app] (name=tk #3) (class=Tk)
+  [Head]	{3}
+[end]
