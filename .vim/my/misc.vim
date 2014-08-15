@@ -100,6 +100,6 @@ xmap ab <Plug>(textobj-multitextobj-a)
 let g:pandoc_no_folding = 1
 let g:pandoc_use_conceal = 0
 
-colorscheme wombat256
+colorscheme wombat256mod
 
 let g:vimshell_interactive_update_time = 500
