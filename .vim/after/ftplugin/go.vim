@@ -11,5 +11,9 @@ let g:gocode_gofmt_tabwidth = ' -tabwidth=4'
 
 let g:go_snippet_engine = 'neosnippet'
 
+augroup after_ftplugin_go
+  autocmd! BufWritePre *_test.go :GoTest
+augroup END
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
