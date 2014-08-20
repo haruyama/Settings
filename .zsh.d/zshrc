@@ -11,7 +11,7 @@ setopt equals
 setopt extended_glob
 setopt extended_history
 setopt hash_cmds
-setopt hist_ignore_all_dups hist_ignore_dups hist_ignore_space hist_no_store hist_expand hist_reduce_blanks
+setopt hist_ignore_all_dups hist_ignore_dups hist_ignore_space hist_no_store hist_expand
 setopt ignoreeof
 setopt inc_append_history
 setopt list_packed list_types
