@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=nocaps
+Comment=Remap caps lock as control.
+Exec=/usr/bin/setxkbmap -option ctrl:nocaps
+Terminal=true
