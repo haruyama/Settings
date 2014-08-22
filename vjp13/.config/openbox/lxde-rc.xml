@@ -209,6 +209,19 @@
     <keybind key="C-Right">
       <action name="GoToDesktop"><to>right</to></action>
     </keybind>
+    <keybind key="W-l">
+      <action name="Execute">
+        <command>/usr/bin/xscreensaver-command -l</command>
+      </action>
+    </keybind>
+    <keybind key="W-m">
+      <action name="ToggleMaximizeFull" />
+    </keybind>
+    <keybind key="A-g">
+      <action name="Execute">
+        <command>/usr/bin/x-terminal-emulator</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>8</dragThreshold>
