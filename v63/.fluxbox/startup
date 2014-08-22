@@ -32,7 +32,7 @@ export VTE_CJK_WIDTH=1
 
 /usr/bin/xmodmap ~/.xmodmaprc
 /usr/bin/xkbset m
-/usr/bin/xkbset exp m
+/usr/bin/xkbset exp =m
 /usr/bin/X11/xset m 2 10
 
 pkill uim-xim

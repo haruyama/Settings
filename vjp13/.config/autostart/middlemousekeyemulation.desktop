@@ -2,5 +2,5 @@
 Encoding=UTF-8
 Name=middlemouse
 Comment=Emulate middle mouse key
-Exec=/bin/sh -c "/usr/bin/xmodmap -e 'keycode 101 = Pointer_Button2' && /usr/bin/xkbset m && /usr/bin/xkbset exp m && /usr/bin/X11/xset m 2 10"
+Exec=/bin/sh -c "/usr/bin/xmodmap -e 'keycode 101 = Pointer_Button2' && /usr/bin/xkbset m && /usr/bin/xkbset exp '=m' && /usr/bin/X11/xset m 2 10"
 Terminal=true
