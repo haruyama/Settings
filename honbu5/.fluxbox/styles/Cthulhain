@@ -101,9 +101,12 @@ window.frame.unfocus.color:		#5e6166
 
 ! ***** fonts *****
 !*.font:					-*-lucida-medium-r-*-*-*-100-*-*-*-*-*
+!*.font: -*-*-*-*-*-*-14-*-*-*-*-*-jisx0213.2004-1
+!*.font: -*-gothic-*-r-*-*-14-*-*-*-*-*-jisx0208.1990-*
+*.font: VL PGothic-10
 !menu.title.font: Comic Sans MS
 !window.font: aquafont
-*.font: aqua_pfont
+!*.font: aqua_pfont
     toolbar.justify:			center
     window.justify:			right
     menu.title.justify:			center
