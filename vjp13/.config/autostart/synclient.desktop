@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=synclient
+Comment=Disable tap2click
+Exec=/usr/bin/synclient MaxTapTime=0
+Terminal=true
