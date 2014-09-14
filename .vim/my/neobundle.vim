@@ -66,7 +66,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'amdt/vim-niji'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'h1mesuke/vim-alignta'
+"NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'haruyama/EnhCommentify.vim'
 NeoBundle 'haruyama/vim-matchopen'
@@ -122,109 +122,109 @@ NeoBundleLazy 'violetyk/gitquick.vim', {
       \ }
 
 "NeoBundleLazy 'chochos/ceylon-vim', {
-"      \ "autoload": {
-"      \   "filetypes": ["ceylon"],
+"      \ 'autoload': {
+"      \   'filetypes': ['ceylon'],
 "      \ }}
 "
 NeoBundleLazy 'kchmck/vim-coffee-script', {
-      \ "autoload": {
-      \   "filetypes": ["coffee"],
+      \ 'autoload': {
+      \   'filetypes': ['coffee'],
       \ }}
 
 NeoBundleLazy 'tpope/vim-classpath', {
-      \ "autoload": {
-      \   "filetypes": ["clojure", "java", "scala"],
+      \ 'autoload': {
+      \   'filetypes': ['clojure', 'java', 'scala'],
       \ }}
 
 NeoBundleLazy 'tpope/vim-fireplace', {
-      \ "autoload": {
-      \   "filetypes": ["clojure"],
+      \ 'autoload': {
+      \   'filetypes': ['clojure'],
       \ }}
 
 NeoBundleLazy 'guns/vim-clojure-static', {
-      \ "autoload": {
-      \   "filetypes": ["clojure"],
+      \ 'autoload': {
+      \   'filetypes': ['clojure'],
       \ }}
 
 NeoBundleLazy 'guns/vim-clojure-highlight', {
-      \ "autoload": {
-      \   "filetypes": ["clojure"],
+      \ 'autoload': {
+      \   'filetypes': ['clojure'],
       \ }}
 
 NeoBundleLazy 'aohta/blockdiag.vim', {
-      \ "autoload": {
-      \   "filetypes": ["diag"],
+      \ 'autoload': {
+      \   'filetypes': ['diag'],
       \ }}
 
-NeoBundleLazy "elixir-lang/vim-elixir", {
-      \ "autoload": {
-      \   "filetypes": ["elixir"],
+NeoBundleLazy 'elixir-lang/vim-elixir', {
+      \ 'autoload': {
+      \   'filetypes': ['elixir'],
       \ }}
 
 NeoBundleLazy 'jimenezrick/vimerl', {
-      \ "autoload": {
-      \   "filetypes": ["erlang"],
+      \ 'autoload': {
+      \   'filetypes': ['erlang'],
       \ }}
 
 NeoBundleLazy 'kongo2002/fsharp-vim', {
-      \ "autoload": {
-      \   "filetypes": ["fsharp"],
+      \ 'autoload': {
+      \   'filetypes': ['fsharp'],
       \ }}
 
 "NeoBundleLazy 'Blackrush/vim-gocode', {
 "NeoBundleLazy 'jnwhiteh/vim-golang', {
 NeoBundleLazy 'fatih/vim-go', {
-      \ "autoload": {
-      \   "filetypes": ["go"],
+      \ 'autoload': {
+      \   'filetypes': ['go'],
       \ }}
 
 NeoBundleLazy 'rhysd/vim-go-impl', {
-      \ "autoload": {
-      \   "filetypes": ["go"],
+      \ 'autoload': {
+      \   'filetypes': ['go'],
       \ }}
 
 NeoBundleLazy 'ujihisa/neco-ghc', {
-      \ "autoload": {
-      \   "filetypes": ["haskell"],
+      \ 'autoload': {
+      \   'filetypes': ['haskell'],
       \ }}
 NeoBundleLazy 'eagletmt/unite-haddock' , {
-      \ "autoload": {
-      \   "filetypes": ["haskell"],
+      \ 'autoload': {
+      \   'filetypes': ['haskell'],
       \ }}
 
 NeoBundleLazy 'othree/html5.vim', {
-      \ "autoload": {
-      \   "filetypes": ["html"],
+      \ 'autoload': {
+      \   'filetypes': ['html'],
       \ }}
 
 NeoBundleLazy 'pekepeke/ref-javadoc', {
-      \ "autoload": {
-      \   "filetypes": ["java"],
+      \ 'autoload': {
+      \   'filetypes': ['java'],
       \ }}
 
 NeoBundleLazy 'Simple-Javascript-Indenter', {
-      \ "autoload": {
-      \   "filetypes": ["javascript"],
+      \ 'autoload': {
+      \   'filetypes': ['javascript'],
       \ }}
 
 NeoBundleLazy 'groenewege/vim-less', {
-      \ "autoload": {
-      \   "filetypes": ["less"],
+      \ 'autoload': {
+      \   'filetypes': ['less'],
       \ }}
 
 NeoBundleLazy 'plasticboy/vim-markdown', {
-      \ "autoload": {
-      \   "filetypes": ["markdown"],
+      \ 'autoload': {
+      \   'filetypes': ['markdown'],
       \ }}
 
 NeoBundleLazy 'quangquach/octave.vim--', {
-      \ "autoload": {
-      \   "filetypes": ["octave"],
+      \ 'autoload': {
+      \   'filetypes': ['octave'],
       \ }}
 
 NeoBundleLazy 'arnaud-lb/vim-php-namespace', {
-      \ "autoload": {
-      \   "filetypes": ["php"],
+      \ 'autoload': {
+      \   'filetypes': ['php'],
       \ }}
 
 NeoBundleLazy 'tobyS/pdv', {
@@ -237,52 +237,52 @@ NeoBundle 'tobyS/vmustache'
 NeoBundle 'SirVer/ultisnips'
 
 NeoBundleLazy 'tpope/gem-ctags', {
-      \ "autoload": {
-      \   "filetypes": ["ruby"],
+      \ 'autoload': {
+      \   'filetypes': ['ruby'],
       \ }}
 NeoBundleLazy 'tpope/vim-bundler', {
-      \ "autoload": {
-      \   "filetypes": ["ruby"],
+      \ 'autoload': {
+      \   'filetypes': ['ruby'],
       \ }}
 NeoBundleLazy 'tpope/vim-rake', {
-      \ "autoload": {
-      \   "filetypes": ["ruby"],
+      \ 'autoload': {
+      \   'filetypes': ['ruby'],
       \ }}
 
 NeoBundleLazy 'derekwyatt/vim-scala', {
-      \ "autoload": {
-      \   "filetypes": ["scala"],
+      \ 'autoload': {
+      \   'filetypes': ['scala'],
       \ }}
 
 NeoBundleLazy 'haruyama/scheme.vim', {
-      \ "autoload": {
-      \   "filetypes": ["scheme"],
+      \ 'autoload': {
+      \   'filetypes': ['scheme'],
       \ }}
 
-NeoBundleLazy 'cespare/vim-toml', {
-      \ 'autoload': {
-      \   'filetypes': ['toml'],
-      \ }}
+"NeoBundleLazy 'cespare/vim-toml', {
+"      \ 'autoload': {
+"      \   'filetypes': ['toml'],
+"      \ }}
 
 NeoBundleLazy 'evidens/vim-twig', {
-      \ "autoload": {
-      \   "filetypes": ["twig"],
+      \ 'autoload': {
+      \   'filetypes': ['twig'],
       \ }}
 
 NeoBundleLazy 'dbakker/vim-lint', {
       \ 'depends' : 'scrooloose/syntastic',
-      \ "autoload": {
-      \   "filetypes": ["vim"],
+      \ 'autoload': {
+      \   'filetypes': ['vim'],
       \ }}
 
 NeoBundleLazy 'superbrothers/vim-vimperator', {
-      \ "autoload": {
-      \   "filetypes": ["vimperator"],
+      \ 'autoload': {
+      \   'filetypes': ['vimperator'],
       \ }}
 
 NeoBundleLazy 'mrk21/yaml-vim', {
-      \ "autoload": {
-      \   "filetypes": ["yaml"],
+      \ 'autoload': {
+      \   'filetypes': ['yaml'],
       \ }}
 
 filetype plugin indent on
