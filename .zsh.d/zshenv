@@ -8,6 +8,7 @@ path=(
 $HOME/.vim/bin(N-/)
 $HOME/.local/bin(N-/)
 $HOME/bin(N-/)
+$HOME/lib/Settings/bin(N-/)
 /usr/local/bin(N-/)
 /usr/local/sbin(N-/)
 /usr/bin(N-/)
