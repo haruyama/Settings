@@ -13,7 +13,7 @@ def node(doc, level)
       print "\n"
       print '# '
       nl = true
-    elsif level > 5
+    elsif level > 6
       next
     else
       print ' ' * ((level - 2) * 4)
