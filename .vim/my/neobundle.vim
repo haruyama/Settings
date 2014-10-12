@@ -1,13 +1,18 @@
-set nocompatible
 filetype off
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle'))
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+call neobundle#begin(expand('~/.vim/bundle/'))
+
 "NeoBundle 'subosito/vim-256colors'
-NeoBundle 'noah/vim256-color'
+NeoBundle 'noah/vim256-color', {
+      \ 'build' : {
+      \     'unix' : './update_links.sh',
+      \    },
+      \}
 
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neomru.vim'
@@ -284,5 +289,8 @@ NeoBundleLazy 'mrk21/yaml-vim', {
       \ 'autoload': {
       \   'filetypes': ['yaml'],
       \ }}
+
+
+call neobundle#end()
 
 filetype plugin indent on
