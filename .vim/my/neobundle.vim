@@ -14,7 +14,7 @@ NeoBundle 'noah/vim256-color', {
       \    },
       \}
 
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neomru.vim'
 
 NeoBundle 'AutoTag'
@@ -292,5 +292,7 @@ NeoBundleLazy 'mrk21/yaml-vim', {
 
 
 call neobundle#end()
+
+NeoBundleCheck
 
 filetype plugin indent on
