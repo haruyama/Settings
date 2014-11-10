@@ -31,8 +31,9 @@
 
 (setq wl-fcc "+fcc")
 (setq wl-expire-alist
-      '(("^\\+trash$"   (date 14) remove)
-                                        ;         ("^\\+fcc$"   (date 7) trash)
+ '(("^\\+trash$"   (date 14) remove)
+         ("^\\+spam$"   (date 60) remove)
+              ;         ("^\\+fcc$"   (date 7) trash)
         ))
 (add-hook 'wl-summary-prepared-pre-hook
           'wl-summary-expire)
