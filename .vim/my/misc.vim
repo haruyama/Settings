@@ -103,3 +103,7 @@ let g:pandoc_use_conceal = 0
 colorscheme wombat256mod
 
 let g:vimshell_interactive_update_time = 500
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
