@@ -1,0 +1,5 @@
+\timing on
+\set PROMPT1 '%[%033[1;33;40m%]%n@%/%R%[%033[0m%]%# '
+\pset border 2
+\pset null (null)
+\set ECHO_HIDDEN 1
