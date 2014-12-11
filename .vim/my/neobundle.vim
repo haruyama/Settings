@@ -89,7 +89,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'LeafCage/yankround.vim'
-"NeoBundle 'haya14busa/incsearch.vim'
+NeoBundle 'haya14busa/incsearch.vim'
 
 if v:version > 702
   NeoBundle 'osyo-manga/vim-precious', {
