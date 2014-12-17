@@ -18,7 +18,7 @@ command! RTrim :call s:RTrim()
 function! s:VimShellSendStringAndMove(line1, line2, string)
   let string = join(getline(a:line1, a:line2), "\<LF>")
   let string .= "\<LF>"
-  execute "VimShellSendString " . string
+  execute 'VimShellSendString ' . string
   call cursor(a:line2 + 1, 1)
 endfunction
 

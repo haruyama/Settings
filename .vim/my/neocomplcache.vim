@@ -7,7 +7,9 @@ let g:acp_enableAtStartup = 0
 
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-autocmd BufFilePost Manpageview* silent execute ":NeoComplCacheCachingBuffer"
+augroup my-neocomplcache
+  autocmd! BufFilePost Manpageview* silent execute ":NeoComplCacheCachingBuffer"
+augroup END
 
 "workaround for gvim
 let g:neocomplcache_enable_prefetch=1

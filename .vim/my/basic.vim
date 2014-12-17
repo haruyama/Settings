@@ -1,5 +1,5 @@
-set nocompatible
-set ai
+scriptencoding utf-8
+set autoindent
 set backup
 set history=500
 set ruler showcmd showmode incsearch ignorecase smartcase expandtab number modeline shiftround infercase hidden
@@ -8,23 +8,23 @@ set wildmenu
 set wildmode=longest:full
 set textwidth=0
 set foldmethod=indent
-set clipboard& clipboard+=autoselect
+set clipboard+=autoselect
 if has('unnamedplus')
-  set clipboard& clipboard+=unnamedplus
+  set clipboard+=unnamedplus
 else
-  set clipboard& clipboard+=unnamed
+  set clipboard+=unnamed
 endif
-set completeopt& completeopt+=longest
+set completeopt+=longest
 set backspace=indent,start,eol
 set listchars=tab:»-,trail:_,extends:»,precedes:«,nbsp:%
 set laststatus=2
 set list
-set matchpairs& matchpairs+=<:>
+set matchpairs+=<:>
 set nrformats-=octal
 let g:netrw_liststyle=1
 
 "set cmdheight=3
-if &t_Co > 2 || has("gui_running")
+if &t_Co > 2 || has('gui_running')
   syntax on
   set hlsearch
 endif

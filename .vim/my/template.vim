@@ -23,7 +23,7 @@ augroup my_template
     let ns = substitute(ns, '[\\/]', '.', 'g')
     let ns = substitute(ns, '_', '-', 'g')
 
-    if ns =~ '-test$'
+    if ns =~# '-test$'
       let ns = substitute(ns, '.*test\.', '', '')
       let target_ns = substitute(ns, '-test$', '', '')
       call append(0, '(ns ' . ns)
