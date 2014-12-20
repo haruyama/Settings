@@ -13,7 +13,7 @@ let g:go_snippet_engine = 'neosnippet'
 
 augroup after_ftplugin_go
   autocmd! BufWritePre *.go :GoImports
-  autocmd! BufWritePost *_test.go :GoTest
+"  autocmd! BufWritePost *_test.go :GoTest
 augroup END
 
 let &cpo = s:save_cpo
