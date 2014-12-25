@@ -255,6 +255,12 @@ NeoBundleLazy 'tpope/vim-rake', {
       \   'filetypes': ['ruby'],
       \ }}
 
+NeoBundleLazy 'wting/rust.vim', {
+      \ 'autoload': {
+      \   'filetypes': ['rust'],
+      \ }}
+
+
 NeoBundleLazy 'derekwyatt/vim-scala', {
       \ 'autoload': {
       \   'filetypes': ['scala'],
