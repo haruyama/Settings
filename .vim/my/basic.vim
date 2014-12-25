@@ -38,3 +38,7 @@ endif
 
 set completeopt=menuone
 set t_Co=256
+
+nnoremap Y y$
+set display=lastline
+set pumheight=11
