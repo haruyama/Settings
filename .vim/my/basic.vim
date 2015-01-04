@@ -22,6 +22,8 @@ set list
 set matchpairs+=<:>
 set nrformats-=octal
 let g:netrw_liststyle=1
+set noswapfile
+set nobackup
 
 "set cmdheight=3
 if &t_Co > 2 || has('gui_running')
