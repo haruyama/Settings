@@ -22,6 +22,7 @@ set list
 set matchpairs+=<:>
 set nrformats-=octal
 let g:netrw_liststyle=1
+set autoread
 set noswapfile
 set nobackup
 
