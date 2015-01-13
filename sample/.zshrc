@@ -8,7 +8,4 @@ alias tmux='tmux -2'
 #         export TERM=xterm-256color
 # fi
 
-#alias nave="$HOME/work/nave/nave.sh use latest"
-# eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-
 # [ -s $HOME/.pythonz/etc/bashrc ] && source $HOME/.pythonz/etc/bashrc
