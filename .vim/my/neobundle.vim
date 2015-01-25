@@ -71,7 +71,6 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'amdt/vim-niji'
 NeoBundle 'bling/vim-airline'
-"NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'haruyama/EnhCommentify.vim'
 NeoBundle 'haruyama/vim-matchopen'
@@ -101,6 +100,7 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'osyo-manga/vim-textobj-multiblock'
 NeoBundle 'osyo-manga/vim-textobj-multitextobj'
 NeoBundle 'sgur/vim-textobj-parameter'
+NeoBundle 'dietsche/vim-lastplace'
 
 NeoBundleLazy 'gregsexton/gitv', {
       \ 'autoload' : { 'commands': ['Gitv']}
@@ -177,8 +177,6 @@ NeoBundleLazy 'kongo2002/fsharp-vim', {
       \   'filetypes': ['fsharp'],
       \ }}
 
-"NeoBundleLazy 'Blackrush/vim-gocode', {
-"NeoBundleLazy 'jnwhiteh/vim-golang', {
 NeoBundleLazy 'fatih/vim-go', {
       \ 'autoload': {
       \   'filetypes': ['go'],
