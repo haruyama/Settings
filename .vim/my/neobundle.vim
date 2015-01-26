@@ -19,7 +19,6 @@ NeoBundle 'Shougo/neomru.vim'
 
 NeoBundle 'AutoTag'
 NeoBundle 'paredit.vim'
-NeoBundle 'errormarker.vim'
 
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
@@ -89,6 +88,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'haya14busa/incsearch.vim'
+NeoBundle 'mh21/errormarker.vim'
 
 if v:version > 702
   NeoBundle 'osyo-manga/vim-precious', {
