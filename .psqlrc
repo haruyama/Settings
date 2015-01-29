@@ -3,3 +3,8 @@
 \pset border 2
 \pset null (null)
 \set ECHO_HIDDEN 1
+\x auto
+\set VERBOSITY verbose
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups
+\set COMP_KEYWORD_CASE upper
