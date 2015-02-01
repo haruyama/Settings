@@ -4,7 +4,7 @@
 *.swp
 *~
 .emacs.d/ac-comphist.dat
-.emacs.d/auto-install/*.elc
+.emacs.d/elpa
 .emacs.d/auto-save-list
 .emacs.d/history
 .emacs.d/session.*

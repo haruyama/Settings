@@ -1,14 +1,49 @@
-;;auto-install
-(setq auto-install-directory "~/.emacs.d/auto-install/")
-(add-to-list 'load-path auto-install-directory)
-(require 'auto-install)
-(auto-install-update-emacswiki-package-name t)
-(auto-install-compatibility-setup)
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+
+(package-initialize)
+
+(require `cl)
+
+(defvar installing-package-list
+  '(auto-complete
+     auto-save-buffers-enhanced
+     auto-async-byte-compile
+     fuzzy
+     helm
+     helm-ls-git
+     magit
+     markdown-mode
+     recentf-ext
+     popup
+     session))
+
+(let ((not-installed
+        (loop for package in installing-package-list
+              when (not (package-installed-p package))
+              collect package)))
+  (when not-installed
+    (package-refresh-contents)
+    (dolist (package not-installed)
+      (package-install package))))
+
+(progn
+  (require 'helm-config)
+  (require 'helm-ls-git)
+  (helm-mode 1)
+
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)
+  (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+
+  (custom-set-variables
+    `(helm-truncate-lines t)))
+
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (require 'auto-async-byte-compile)
 (setq auto-async-byte-complile-exclude-files-regexp "/junk/")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
