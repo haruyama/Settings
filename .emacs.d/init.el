@@ -44,14 +44,14 @@
   (global-set-key (kbd "M-x") 'helm-M-x)
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
   (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+                                        ;(define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+  (define-key helm-read-file-map (kbd "C-h") 'delete-backward-char)
 
   (custom-set-variables
     `(helm-truncate-lines t)))
 
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (require 'auto-async-byte-compile)
-(setq auto-async-byte-complile-exclude-files-regexp "/junk/")
+(defvar auto-async-byte-complile-exclude-files-regexp "/junk/")
 (add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
 
 (blink-cursor-mode 0)
@@ -59,9 +59,11 @@
 (display-time-mode t)
 (global-font-lock-mode t)
 (line-number-mode t)
+
 (savehist-mode t)
 (setq-default save-place t)
 (show-paren-mode t)
+(defvar who-paren-style 'mixed)
 (transient-mark-mode t)
 
 (setq-default tab-width 2 indent-tabs-mode nil)
@@ -74,6 +76,7 @@
 (setq history-length 1000)
 (setq inhibit-default-init t)
 (setq large-file-warning-threshold (* 25 1024 1024))
+(setq make-backup-files nil)
 (setq message-log-max 10000)
 (setq next-line-add-newlines nil)
 (setq require-final-newline t)
@@ -92,19 +95,15 @@
 (setq uniquify-ignore-buffers-re "*[^*]+*")
 
 ;key binding
-(define-key global-map "\C-h" 'backward-delete-char)
-(define-key global-map "\C-x\C-b"  'electric-buffer-list) 
+(keyboard-translate ?\C-h ?\C-?)
+;(define-key global-map "\C-h" 'backward-delete-char)
+(define-key global-map "\C-x\C-b"  'electric-buffer-list)
 (define-key global-map "\C-x\C-m"  'newline-and-indent)
 (define-key ctl-x-map "L" 'goto-line)
 
-(setq pgp-version 'gpg)
-(setq mime-pgp-command "gpg")
-(setq pgg-default-scheme 'gpg pgg-scheme 'gpg)
-(setq pgg-cache-passphrase t)
-
 (recentf-mode)
-(setq recentf-max-saved-items 500)
-(setq recentf-exclude '("/TAGS$" "/var/tmp"))
+(defvar recentf-max-saved-items 500)
+(defvar recentf-exclude '("/TAGS$" "/var/tmp"))
 (require 'recentf-ext)
 (define-key global-map "\C-z"  'recentf-open-files)
 
@@ -156,7 +155,7 @@
     (set-mouse-color "maroon4")
     (set-cursor-color "wheat4")
     ;;モードライン
-    (set-scroll-bar-mode 'left)
+    (set-scroll-bar-mode 'right)
 
     (setq initial-frame-alist
           (append (list
@@ -184,40 +183,45 @@
 (load "HS_gosh")
 (load "HS_skk-setup")
 (load "text-adjust")
-(setq text-adjust-hankaku-except "　？！＠ー〜、，．。（）")
+(defvar text-adjust-hankaku-except "　？！＠ー〜, , . . （）")
 
 (autoload 'wl "wl" "Wanderlust" t)
 (autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
 (autoload 'wl-draft "wl" "Write draft with Wanderlust." t)
 (load "HS_mu-cite-setup")
 ;(load "HS_mailcrypt-setup")
-(setq wl-folder-notify-deleted t)
-(setq wl-folder-check-async t)
 
-(setq pgp-version 'gpg)
-(setq mime-pgp-command "gpg")
-(setq pgg-default-scheme 'gpg pgg-scheme 'gpg)
-(setq pgg-cache-passphrase t)
-(setq pgg-gpg-use-agent t)
+(defvar pgp-version 'gpg)
+(defvar mime-pgp-command "gpg")
+(defvar pgg-default-scheme 'gpg)
+(defvar pgg-scheme 'gpg)
+(defvar pgg-cache-passphrase t)
+(defvar pgg-gpg-use-agent t)
 
 (autoload 'riece "riece" nil t)
 
 ;; http://www.emacswiki.org/emacs/SavePlace
 (when (require 'saveplace nil t)
   (setq-default save-place t)
-  (setq save-place-file "~/.emacs.d/saved-places"))
+  (defvar save-place-file "~/.emacs.d/saved-places"))
 
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 (require 'paredit)
-(add-hook 'oz-mode-hook 'enable-paredit-mode)
-(add-hook 'clojure-mode-hook 'enable-paredit-mode)
-(add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook 'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           'enable-paredit-mode)
-
 (define-key paredit-mode-map (kbd "{") 'paredit-open-brace)
 (define-key paredit-mode-map (kbd "}") 'paredit-close-brace)
+
+(dolist (mode '(oz-mode
+                clojure-mode
+                emacs-lisp-mode
+                scheme-mode
+                eval-expression-minibuffer-setup
+                ielm-mode
+                lisp-mode
+                lisp-interaction-mode))
+  (add-hook (intern (format "%s-hook" mode))
+            '(lambda ()
+               (add-to-list (make-local-variable 'paredit-space-for-delimiter-predicates)
+                            (lambda (_ _) nil))
+               (enable-paredit-mode))))
+

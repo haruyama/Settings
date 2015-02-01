@@ -1,5 +1,8 @@
 ;; -*- mode: emacs-lisp; coding: euc-japan-unix -*-
 ;; vim: filetype=emacs-lisp
+(setq wl-folder-notify-deleted t)
+(setq wl-folder-check-async t)
+
 (setq wl-icon-directory "/usr/share/emacs/site-lisp/wl/etc/icons")
 ;; [[ SEMI ¤ÎÀßÄê ]]
 
