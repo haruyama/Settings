@@ -8,10 +8,12 @@
 (require `cl)
 
 (defvar installing-package-list
-  '(auto-complete
+  '(apel
+     auto-complete
      auto-save-buffers-enhanced
      auto-async-byte-compile
      ddskk
+     flim
      flymake
      fuzzy
      helm
@@ -21,6 +23,7 @@
      paredit
      popup
      recentf-ext
+     semi
      session
      wanderlust))
 
@@ -148,7 +151,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 139 :width normal :foundry "unknown" :family "VL Gothic")))))
 
-(if (boundp 'window-system)
+(if (display-graphic-p)
   (progn
     (set-mouse-color "maroon4")
     (set-cursor-color "wheat4")
