@@ -9,6 +9,7 @@
 .emacs.d/history
 .emacs.d/session.*
 .emacs.d/saved-places
+.emacs.d/**/*.elc
 .lein/repl-history
 .lein/self-installs
 .mlterm/comphist
