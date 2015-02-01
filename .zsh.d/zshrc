@@ -78,7 +78,7 @@ REPORTTIME=3
 WORDCHARS=${WORDCHARS:s,/,,}
 
 alias -g L="|& $PAGER"
-alias -g G='| grep -a'
+alias -g G='| /bin/grep -a --color=auto'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g S='| sed'
