@@ -3,6 +3,7 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+(require 'eieio)
 (package-initialize)
 
 (require `cl)
