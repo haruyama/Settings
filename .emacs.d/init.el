@@ -10,28 +10,28 @@
 
 (defvar installing-package-list
   '(apel
-     auto-complete
-     auto-save-buffers-enhanced
-     auto-async-byte-compile
-     ddskk
-     flim
-     flymake
-     fuzzy
-     helm
-     helm-ls-git
-     magit
-     markdown-mode
-     paredit
-     popup
-     recentf-ext
-     semi
-     session
-     wanderlust))
+    auto-complete
+    auto-save-buffers-enhanced
+    auto-async-byte-compile
+    ddskk
+    flim
+    flymake
+    fuzzy
+    helm
+    helm-ls-git
+    magit
+    markdown-mode
+    paredit
+    popup
+    recentf-ext
+    semi
+    session
+    wanderlust))
 
 (let ((not-installed
-        (loop for package in installing-package-list
-              when (not (package-installed-p package))
-              collect package)))
+       (loop for package in installing-package-list
+             when (not (package-installed-p package))
+             collect package)))
   (when not-installed
     (package-refresh-contents)
     (dolist (package not-installed)
@@ -49,7 +49,7 @@
   (define-key helm-read-file-map (kbd "C-h") 'delete-backward-char)
 
   (custom-set-variables
-    `(helm-truncate-lines t)))
+   `(helm-truncate-lines t)))
 
 (require 'auto-async-byte-compile)
 (defvar auto-async-byte-complile-exclude-files-regexp "/junk/")
@@ -86,8 +86,8 @@
 (defalias 'message-box 'message)
 
 (defadvice abort-recursive-edit (before minibuffer-save activate)
-           (when (eq (selected-window) (active-minibuffer-window))
-             (add-to-history minibuffer-history-variable (minibuffer-contents))))
+  (when (eq (selected-window) (active-minibuffer-window))
+    (add-to-history minibuffer-history-variable (minibuffer-contents))))
 
 (ffap-bindings)
 
@@ -95,9 +95,9 @@
 (setq uniquify-buffer-name-style `post-forward-angle-brackets)
 (setq uniquify-ignore-buffers-re "*[^*]+*")
 
-;key binding
+                                        ;key binding
 (keyboard-translate ?\C-h ?\C-?)
-;(define-key global-map "\C-h" 'backward-delete-char)
+                                        ;(define-key global-map "\C-h" 'backward-delete-char)
 (define-key global-map "\C-x\C-b"  'electric-buffer-list)
 (define-key global-map "\C-x\C-m"  'newline-and-indent)
 (define-key ctl-x-map "L" 'goto-line)
@@ -124,15 +124,15 @@
 
 ;; 整形済み
 (setq-default ac-sources '(ac-source-words-in-same-mode-buffers
-                            ac-source-filename
-                            ac-source-functions
-                            ac-source-yasnippet
-                            ac-source-variables
-                            ac-source-symbols
-                            ac-source-features
-                            ac-source-abbrev
-                            ac-source-dictionary
-                            ac-source-words-in-all-buffer))
+                           ac-source-filename
+                           ac-source-functions
+                           ac-source-yasnippet
+                           ac-source-variables
+                           ac-source-symbols
+                           ac-source-features
+                           ac-source-abbrev
+                           ac-source-dictionary
+                           ac-source-words-in-all-buffer))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -152,32 +152,32 @@
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 139 :width normal :foundry "unknown" :family "VL Gothic")))))
 
 (if (display-graphic-p)
-  (progn
-    (set-mouse-color "maroon4")
-    (set-cursor-color "wheat4")
-    ;;モードライン
-    (set-scroll-bar-mode 'right)
+    (progn
+      (set-mouse-color "maroon4")
+      (set-cursor-color "wheat4")
+      ;;モードライン
+      (set-scroll-bar-mode 'right)
 
-    (setq initial-frame-alist
-          (append (list
-                    '(width . 80) ;; ウィンドウ幅
-                    '(height . 40) ;; ウィンドウの高さ
-                    )
-                  initial-frame-alist))))
+      (setq initial-frame-alist
+            (append (list
+                     '(width . 80) ;; ウィンドウ幅
+                     '(height . 40) ;; ウィンドウの高さ
+                     )
+                    initial-frame-alist))))
 (setq default-frame-alist initial-frame-alist)
 
 (global-set-key "\M-/" 'hippie-expand)
 (setq hippie-expand-try-functions-list
       '(try-complete-file-name-partially
-         try-complete-file-name
-         try-expand-abbrev
-         try-expand-all-abbrevs
-         try-expand-list try-expand-line
-         try-expand-dabbrev
-         try-expand-dabbrev-all-buffers
-         try-expand-dabbrev-from-kill
-         try-complete-lisp-symbol-partially
-         try-complete-lisp-symbol))
+        try-complete-file-name
+        try-expand-abbrev
+        try-expand-all-abbrevs
+        try-expand-list try-expand-line
+        try-expand-dabbrev
+        try-expand-dabbrev-all-buffers
+        try-expand-dabbrev-from-kill
+        try-complete-lisp-symbol-partially
+        try-complete-lisp-symbol))
 
 (add-to-list 'load-path "~/.emacs.d/elisp")
 
@@ -190,7 +190,7 @@
 (autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
 (autoload 'wl-draft "wl" "Write draft with Wanderlust." t)
 (load "HS_mu-cite-setup")
-;(load "HS_mailcrypt-setup")
+                                        ;(load "HS_mailcrypt-setup")
 
 (defvar pgp-version 'gpg)
 (defvar mime-pgp-command "gpg")
@@ -209,9 +209,6 @@
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 (require 'paredit)
-(define-key paredit-mode-map (kbd "{") 'paredit-open-brace)
-(define-key paredit-mode-map (kbd "}") 'paredit-close-brace)
-
 (dolist (mode '(oz-mode
                 clojure-mode
                 emacs-lisp-mode
@@ -226,3 +223,7 @@
                             (lambda (_ _) nil))
                (enable-paredit-mode))))
 
+(add-hook 'oz-mode-hook
+          (progn
+            (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
+            (define-key paredit-mode-map (kbd "}") 'paredit-close-curly)))
