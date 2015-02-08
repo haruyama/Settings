@@ -231,14 +231,14 @@ NeoBundleLazy 'arnaud-lb/vim-php-namespace', {
       \   'filetypes': ['php'],
       \ }}
 
-NeoBundleLazy 'tobyS/pdv', {
-      \ 'autoload': {
-      \   'filetypes': ['php'],
-      \   'depends': ['tobyS/vmustache', 'SirVer/ultisnips'],
-      \ }}
+"NeoBundleLazy 'tobyS/pdv', {
+"      \ 'autoload': {
+"      \   'filetypes': ['php'],
+"      \   'depends': ['tobyS/vmustache', 'SirVer/ultisnips'],
+"      \ }}
 
-NeoBundle 'tobyS/vmustache'
-NeoBundle 'SirVer/ultisnips'
+"NeoBundle 'tobyS/vmustache'
+"NeoBundle 'SirVer/ultisnips'
 
 NeoBundleLazy 'tpope/gem-ctags', {
       \ 'autoload': {
