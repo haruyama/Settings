@@ -248,12 +248,12 @@
                 lisp-mode
                 lisp-interaction-mode))
   (add-hook (intern (format "%s-hook" mode))
-            '(lambda ()
-               (add-to-list (make-local-variable 'paredit-space-for-delimiter-predicates)
-                            (lambda (_ _) nil))
-               (enable-paredit-mode))))
+            (lambda ()
+              (add-to-list (make-local-variable 'paredit-space-for-delimiter-predicates)
+                           (lambda (_ _) nil))
+              (enable-paredit-mode))))
 
 (add-hook 'oz-mode-hook
-          (progn
+          (lambda ()
             (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
             (define-key paredit-mode-map (kbd "}") 'paredit-close-curly)))
