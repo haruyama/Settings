@@ -182,7 +182,8 @@
 (add-to-list 'load-path "~/.emacs.d/elisp")
 
 (load "HS_gosh")
-(load "HS_skk-setup")
+(when  (require 'skk nil t)
+  (load "HS_skk-setup"))
 (load "text-adjust")
 (defvar text-adjust-hankaku-except "　？！＠ー〜, , . . （）")
 
