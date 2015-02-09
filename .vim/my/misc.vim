@@ -105,12 +105,12 @@ colorscheme wombat256mod
 
 let g:vimshell_interactive_update_time = 500
 
-"augroup incsearch-keymap
-"  autocmd! VimEnter * call s:incsearch_keymap()
-"augroup END
-"function! s:incsearch_keymap()
-"  IncSearchNoreMap <CR> <CR>
-"endfunction
+augroup incsearch-keymap
+  autocmd! VimEnter * call s:incsearch_keymap()
+augroup END
+function! s:incsearch_keymap()
+  IncSearchNoreMap <C-h> <C-h>
+endfunction
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
