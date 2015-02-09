@@ -19,7 +19,6 @@ NeoBundle 'Shougo/neomru.vim'
 
 NeoBundle 'AutoTag'
 "NeoBundle 'paredit.vim'
-NeoBundle 'guns/vim-sexp'
 
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
@@ -90,6 +89,8 @@ NeoBundle 'ujihisa/neco-look'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'mh21/errormarker.vim'
+NeoBundle 'guns/vim-sexp'
+NeoBundle 'tpope/vim-repeat'
 
 if v:version > 702
   NeoBundle 'osyo-manga/vim-precious', {
