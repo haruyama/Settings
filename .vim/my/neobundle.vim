@@ -18,7 +18,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neomru.vim'
 
 NeoBundle 'AutoTag'
-NeoBundle 'paredit.vim'
+"NeoBundle 'paredit.vim'
+NeoBundle 'guns/vim-sexp'
 
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
