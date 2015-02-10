@@ -257,3 +257,5 @@
           (lambda ()
             (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
             (define-key paredit-mode-map (kbd "}") 'paredit-close-curly)))
+
+(require 'diff-mode)
