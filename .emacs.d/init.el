@@ -13,6 +13,7 @@
     auto-complete
     auto-save-buffers-enhanced
     auto-async-byte-compile
+    color-theme
     ddskk
     flim
     flymake
@@ -257,3 +258,6 @@
           (lambda ()
             (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
             (define-key paredit-mode-map (kbd "}") 'paredit-close-curly)))
+
+(require 'color-theme)
+(setq color-theme-is-global t)
