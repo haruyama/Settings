@@ -8,4 +8,3 @@ alias grep='/bin/grep --color=auto --exclude-dir=.libs --exclude-dir=.deps --exc
 # if [ x"$TERM" = x"xterm" ]; then
 #         export TERM=xterm-256color
 # fi
-
