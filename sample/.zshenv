@@ -1,10 +1,17 @@
 source ~/.zsh.d/zshenv
 
-# export SCALA_HOME=~/.svm/current/rt
-# export PATH=$SCALA_HOME/bin:$PATH
-
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
 
-# export PATH=$HOME/.nodebrew/current/bin:$PATH
+# path=($HOME/.nodebrew/current/bin(N-/) $path)
 
-typeset -U PATH
+# export SCALA_HOME=~/.svm/current/rt
+# path=($SCALA_HOME/bin(N-/) $path)
+
+# export GOPATH=$HOME/lib/Go
+# path=($GOPATH/bin(N-/) $path)
+
+# path=($HOME/.rbenv/shims(N-/) $HOME/.rbenv/bin(N-/) $path)
+# eval "$(rbenv init -)"
+
+# export VAGRANT_HOME=~/.vagrant.d
+# export VAGRANT_DEFAULT_PROVIDER=kvm
