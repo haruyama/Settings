@@ -90,6 +90,7 @@ NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'mh21/errormarker.vim'
 NeoBundle 'guns/vim-sexp'
+NeoBundle 'tpope/vim-sexp-mappings-for-regular-people'
 NeoBundle 'tpope/vim-repeat'
 
 if v:version > 702
