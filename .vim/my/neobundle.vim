@@ -208,7 +208,8 @@ NeoBundleLazy 'pekepeke/ref-javadoc', {
       \   'filetypes': ['java'],
       \ }}
 
-NeoBundleLazy 'Simple-Javascript-Indenter', {
+"NeoBundleLazy 'Simple-Javascript-Indenter', {
+NeoBundleLazy 'pangloss/vim-javascript', {
       \ 'autoload': {
       \   'filetypes': ['javascript'],
       \ }}
