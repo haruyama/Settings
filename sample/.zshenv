@@ -1,28 +1,17 @@
 source ~/.zsh.d/zshenv
 
-# if [ -f  $HOME/perl5/perlbrew/etc/bashrc ] ; then
-#         source $HOME/perl5/perlbrew/etc/bashrc
-# fi
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
 
-# if [ -f $HOME/.pythonbrew/etc/bashrc ] ; then
-#         source $HOME/.pythonbrew/etc/bashrc
-#         #eval "`pip completion --zsh`"
-# fi
-#
-
-# [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-#export PATH=$HOME/.pythonz/pythons/CPython-3.2.3/bin:$PATH
-# export PATH=$HOME/.pythonz/pythons/CPython-2.7.3/bin:$PATH
-
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# path=($HOME/.nodebrew/current/bin(N-/) $path)
 
 # export SCALA_HOME=~/.svm/current/rt
-# export PATH=$SCALA_HOME/bin:$PATH
+# path=($SCALA_HOME/bin(N-/) $path)
 
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# export GOPATH=$HOME/lib/Go
+# path=($GOPATH/bin(N-/) $path)
 
-# export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/jre/
+# path=($HOME/.rbenv/shims(N-/) $HOME/.rbenv/bin(N-/) $path)
+# eval "$(rbenv init -)"
 
-# export PATH=$HOME/.nodebrew/current/bin:$PATH
-# export PATH=$HOME/.denv/bin:$PATH
-# eval "$(denv init -)"
+# export VAGRANT_HOME=~/.vagrant.d
+# export VAGRANT_DEFAULT_PROVIDER=kvm
