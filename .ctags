@@ -15,3 +15,15 @@
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy)[ \t]*)*var[ \t]+([a-zA-Z0-9_]+)/\3/l,variables/
 --regex-scala=/^[ \t]*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
 --regex-php=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
+--langdef=nimd
+--langmap=nim:.nim
+--regex-nim=/(\w+)\*?\s*=\s*object/\1/t,class/
+--regex-nim=/(\w+)\*?\s*=\s*enum/\1/t,enum/
+--regex-nim=/(\w+)\*?\s*=\s*tuple/\1/t,tuple/
+--regex-nim=/(\w+)\*?\s*=\s*range/\1/t,subrange/
+--regex-nim=/(\w+)\*?\s*=\s*proc/\1/t,proctype/
+--regex-nim=/proc\s+(\w+)/\1/f,procedure/
+--regex-nim=/method\s+(\w+)/\1/f,method/
+--regex-nim=/proc\s+`([^`]+)`/\1/o,operator/
+--regex-nim=/template\s+(\w+)/\1/t,template/
+--regex-nim=/macro\s+(\w+)/\1/m,macro/
