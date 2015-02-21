@@ -225,6 +225,11 @@ NeoBundleLazy 'plasticboy/vim-markdown', {
       \   'filetypes': ['markdown'],
       \ }}
 
+NeoBundleLazy 'zah/nimrod.vim', {
+      \ 'autoload': {
+      \   'filetypes': ['nim'],
+      \ }}
+
 NeoBundleLazy 'quangquach/octave.vim--', {
       \ 'autoload': {
       \   'filetypes': ['octave'],
