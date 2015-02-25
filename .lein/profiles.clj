@@ -1,11 +1,12 @@
-{:user {:plugins [[codox           "0.8.10"]
+{:user {:plugins [[cider/cider-nrepl  "0.8.2"]
+                  [codox           "0.8.10"]
                   [jonase/eastwood "0.2.1"]
-                  [lein-ancient    "0.5.5"]
+                  [lein-ancient    "0.6.3"]
                   [lein-bikeshed   "0.2.0"]
                   [lein-cloverage  "1.0.2"]
                   [lein-difftest   "2.0.0"]
                   [lein-exec       "0.3.4"]
-                  [lein-licenses   "0.1.1"]
+                  [lein-licenses   "0.2.0"]
                   [lein-localrepo  "0.5.3"]
                   [lein-marginalia "0.8.0"]
                   [lein-kibit      "0.0.8"]
@@ -14,13 +15,9 @@
                   [lein-typed      "0.3.5"]
                   [perforate       "0.3.4"]]
         :search-page-size 30
-        :dependencies  [[org.clojure/tools.namespace "0.2.8"]
-                        [im.chit/vinyasa             "0.2.2"]
-                        [io.aviso/pretty             "0.1.13"]
+        :dependencies  [[org.clojure/tools.namespace "0.2.9"]
+                        [im.chit/vinyasa             "0.3.3"]
                         [jonase/kibit                "0.0.8"]
                         [spyscope                    "0.1.5"]]
         :injections  [(require 'spyscope.core)]
-        :repl-options {
-                       :nrepl-middleware [io.aviso.nrepl/pretty-middleware]
-                       }
         :jvm-opts ["-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]}}
