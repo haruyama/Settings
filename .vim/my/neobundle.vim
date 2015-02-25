@@ -92,6 +92,7 @@ NeoBundle 'mh21/errormarker.vim'
 NeoBundle 'guns/vim-sexp'
 NeoBundle 'tpope/vim-sexp-mappings-for-regular-people'
 NeoBundle 'tpope/vim-repeat'
+"NeoBundle 'tpope/vim-projectionist'
 
 if v:version > 702
   NeoBundle 'osyo-manga/vim-precious', {
@@ -140,15 +141,25 @@ NeoBundleLazy 'kchmck/vim-coffee-script', {
       \   'filetypes': ['coffee'],
       \ }}
 
-NeoBundleLazy 'tpope/vim-classpath', {
-      \ 'autoload': {
-      \   'filetypes': ['clojure', 'java', 'scala'],
-      \ }}
+"NeoBundleLazy 'tpope/vim-classpath', {
+"      \ 'autoload': {
+"      \   'filetypes': ['clojure', 'java', 'scala'],
+"      \ }}
+
+"NeoBundleLazy 'tpope/vim-dispatch', {
+"      \ 'autoload': {
+"      \   'filetypes': ['clojure'],
+"      \ }}
 
 NeoBundleLazy 'tpope/vim-fireplace', {
       \ 'autoload': {
       \   'filetypes': ['clojure'],
       \ }}
+
+"NeoBundleLazy 'tpope/vim-leiningen', {
+"      \ 'autoload': {
+"      \   'filetypes': ['clojure'],
+"      \ }}
 
 NeoBundleLazy 'guns/vim-clojure-static', {
       \ 'autoload': {
