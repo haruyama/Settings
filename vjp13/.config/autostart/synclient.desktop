@@ -2,5 +2,5 @@
 Encoding=UTF-8
 Name=synclient
 Comment=Disable tap2click
-Exec=/usr/bin/synclient MaxTapTime=0
+Exec=/usr/bin/synclient MaxTapTime=0 PalmDetect=1
 Terminal=true
