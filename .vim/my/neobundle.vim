@@ -68,7 +68,7 @@ NeoBundleLazy 'Shougo/vimshell', {
 NeoBundle 'Shougo/neosnippet-snippets'
 
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'amdt/vim-niji'
+NeoBundle 'raymond-w-ko/vim-niji'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'haruyama/EnhCommentify.vim'
