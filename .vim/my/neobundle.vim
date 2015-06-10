@@ -201,7 +201,7 @@ NeoBundleLazy 'rhysd/vim-go-impl', {
       \   'filetypes': ['go'],
       \ }}
 
-NeoBundleLazy 'ujihisa/neco-ghc', {
+NeoBundleLazy 'mkasa/neco-ghc-lushtags', {
       \ 'autoload': {
       \   'filetypes': ['haskell'],
       \ }}
