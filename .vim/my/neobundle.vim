@@ -92,6 +92,8 @@ NeoBundle 'mh21/errormarker.vim'
 NeoBundle 'guns/vim-sexp'
 NeoBundle 'tpope/vim-sexp-mappings-for-regular-people'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'rhysd/committia.vim'
+NeoBundle 'rhysd/vim-grammarous'
 "NeoBundle 'tpope/vim-projectionist'
 
 if v:version > 702
