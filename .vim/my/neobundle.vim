@@ -94,6 +94,7 @@ NeoBundle 'tpope/vim-sexp-mappings-for-regular-people'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'rhysd/vim-grammarous'
+NeoBundle 'majutsushi/tagbar'
 "NeoBundle 'tpope/vim-projectionist'
 
 if v:version > 702
