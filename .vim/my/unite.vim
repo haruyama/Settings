@@ -17,10 +17,10 @@ nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru tab<CR>
 
-call unite#custom_default_action('file',     'above')
-call unite#custom_default_action('file_mru', 'above')
-call unite#custom_default_action('file/new', 'above')
+call unite#custom#default_action('file',     'above')
+call unite#custom#default_action('file_mru', 'above')
+call unite#custom#default_action('file/new', 'above')
 
-call unite#custom_default_action('buffer',   'above')
-call unite#custom_default_action('tab',      'above')
-call unite#custom_default_action('bookmark', 'above')
+call unite#custom#default_action('buffer',   'above')
+call unite#custom#default_action('tab',      'above')
+call unite#custom#default_action('bookmark', 'above')

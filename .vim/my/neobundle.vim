@@ -15,6 +15,7 @@ NeoBundle 'noah/vim256-color', {
       \}
 
 NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 
 NeoBundle 'AutoTag'
