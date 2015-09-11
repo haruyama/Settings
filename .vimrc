@@ -20,6 +20,7 @@ endif
 source $HOME/.vim/my/neosnippet.vim
 source $HOME/.vim/my/unite.vim
 source $HOME/.vim/my/command.vim
+source $HOME/.vim/my/tagbar.vim
 source $HOME/.vim/my/misc.vim
 
 if filereadable(expand('~/.vimrc.local'))
