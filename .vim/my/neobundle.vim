@@ -67,6 +67,7 @@ NeoBundleLazy 'Shougo/vimshell', {
       \ }}
 
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/neco-syntax'
 
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'raymond-w-ko/vim-niji'
@@ -98,6 +99,7 @@ NeoBundle 'rhysd/vim-grammarous'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'jacquesbh/vim-showmarks'
 "NeoBundle 'tpope/vim-projectionist'
+NeoBundle 'rhysd/github-complete.vim'
 
 if v:version > 702
   NeoBundle 'osyo-manga/vim-precious', {
