@@ -19,14 +19,14 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 
 NeoBundle 'AutoTag'
-"NeoBundle 'paredit.vim'
 
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
-      \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
+      \     'windows' : 'tools\\update-dll-mingw',
       \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
+      \     'mac' : 'make',
+      \     'linux' : 'make',
+      \     'unix' : 'gmake',
       \    },
       \ }
 
@@ -227,7 +227,6 @@ NeoBundleLazy 'pekepeke/ref-javadoc', {
       \   'filetypes': ['java'],
       \ }}
 
-"NeoBundleLazy 'Simple-Javascript-Indenter', {
 NeoBundleLazy 'pangloss/vim-javascript', {
       \ 'autoload': {
       \   'filetypes': ['javascript'],
