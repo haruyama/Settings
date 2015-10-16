@@ -84,7 +84,7 @@ NeoBundle 'rhysd/clever-f.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-template'
-NeoBundle 'tpope/vim-fugitive'
+"NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/neco-look'
@@ -94,12 +94,12 @@ NeoBundle 'mh21/errormarker.vim'
 NeoBundle 'guns/vim-sexp'
 NeoBundle 'tpope/vim-sexp-mappings-for-regular-people'
 NeoBundle 'tpope/vim-repeat'
-NeoBundle 'rhysd/committia.vim'
+"NeoBundle 'rhysd/committia.vim'
 NeoBundle 'rhysd/vim-grammarous'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'jacquesbh/vim-showmarks'
 "NeoBundle 'tpope/vim-projectionist'
-NeoBundle 'rhysd/github-complete.vim'
+"NeoBundle 'rhysd/github-complete.vim'
 
 if v:version > 702
   NeoBundle 'osyo-manga/vim-precious', {
@@ -113,9 +113,9 @@ NeoBundle 'osyo-manga/vim-textobj-multitextobj'
 NeoBundle 'sgur/vim-textobj-parameter'
 NeoBundle 'dietsche/vim-lastplace'
 
-NeoBundleLazy 'gregsexton/gitv', {
-      \ 'autoload' : { 'commands': ['Gitv']}
-      \ }
+"NeoBundleLazy 'gregsexton/gitv', {
+"      \ 'autoload' : { 'commands': ['Gitv']}
+"      \ }
 
 NeoBundleLazy 'tyru/capture.vim' , {
       \ 'autoload' : { 'commands': ['Capture']}
@@ -134,9 +134,9 @@ NeoBundleLazy 'thinca/vim-ref', {
       \ 'autoload' : { 'commands': ['Ref']}
       \ }
 
-NeoBundleLazy 'violetyk/gitquick.vim', {
-      \ 'autoload' : { 'commands': ['Gitquick']}
-      \ }
+"NeoBundleLazy 'violetyk/gitquick.vim', {
+"      \ 'autoload' : { 'commands': ['Gitquick']}
+"      \ }
 
 "NeoBundleLazy 'chochos/ceylon-vim', {
 "      \ 'autoload': {
