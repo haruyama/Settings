@@ -7,6 +7,8 @@
 .emacs.d/elpa
 .emacs.d/auto-save-list
 .emacs.d/history
+.emacs.d/places
+.emacs.d/recentf
 .emacs.d/session.*
 .emacs.d/saved-places
 .emacs.d/**/*.elc
