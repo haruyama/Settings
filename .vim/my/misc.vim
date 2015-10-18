@@ -62,7 +62,7 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:template_vim_template_dir  = $HOME . '/.vim/template'
 let g:template_vim_template_dirs = [$HOME . '/.vim/template']
 
-let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_as_default_explorer = 0
 
 let g:yankring_history_dir            = $HOME . '/.vim/history'
 let g:yankring_manual_clipboard_check = 1
