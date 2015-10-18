@@ -52,7 +52,6 @@ NeoBundleLazy 'Shougo/vimfiler', {
       \   'autoload' : {
       \       'commands' : [ 'VimFilerTab', 'VimFiler', 'VimFilerExplorer', 'VimFilerBufferDir' ],
       \       'mappings' : ['<Plug>(vimfiler_switch)'],
-      \       'explorer' : 1,
       \   }
       \}
 
