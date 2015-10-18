@@ -47,14 +47,14 @@ else
         \}
 endif
 
-NeoBundleLazy 'Shougo/vimfiler', {
-      \   'depends' : ['Shougo/unite.vim'],
-      \   'autoload' : {
-      \       'commands' : [ 'VimFilerTab', 'VimFiler', 'VimFilerExplorer', 'VimFilerBufferDir' ],
-      \       'mappings' : ['<Plug>(vimfiler_switch)'],
-      \       'explorer' : 1,
-      \   }
-      \}
+"NeoBundleLazy 'Shougo/vimfiler', {
+"      \   'depends' : ['Shougo/unite.vim'],
+"      \   'autoload' : {
+"      \       'commands' : [ 'VimFilerTab', 'VimFiler', 'VimFilerExplorer', 'VimFilerBufferDir' ],
+"      \       'mappings' : ['<Plug>(vimfiler_switch)'],
+"      \       'explorer' : 1,
+"      \   }
+"      \}
 
 NeoBundleLazy 'Shougo/vimshell', {
       \ 'depends' : ['Shougo/vimproc'],
