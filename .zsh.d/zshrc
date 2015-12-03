@@ -269,4 +269,5 @@ function rfc(){ command wget -q -O- http://www.ietf.org/rfc/rfc$1.txt | lv }
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
-source ~/.zsh.d/plugins
+#source ~/.zsh.d/plugins
+source ~/.zsh.d/zplug

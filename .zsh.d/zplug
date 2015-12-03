@@ -1,0 +1,20 @@
+# vim: filetype=zsh
+
+if [ ! -f ~/.zplug/zplug ]; then
+    curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
+fi
+
+source ~/.zplug/zplug
+
+zplug "zsh-users/zsh-completions", of:src
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "rupa/z", of:z.sh
+
+zplug install
+zplug load
+
+add-zsh-hook precmd _z_precmd
+function _z_precmd {
+_z --add "$PWD"
+}
