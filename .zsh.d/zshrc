@@ -83,6 +83,7 @@ alias -g H='| head'
 alias -g T='| tail'
 alias -g S='| sed'
 alias -g W='| wc'
+alias -g F='| fzf'
 alias ls='ls -F --color=auto'
 alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 alias env_EUC='env LANG=ja_JP.eucJP LC_ALL=ja_JP.eucJP'
@@ -271,3 +272,4 @@ zle -N self-insert url-quote-magic
 
 #source ~/.zsh.d/plugins
 source ~/.zsh.d/zplug
+source ~/.zsh.d/fzf
