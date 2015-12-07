@@ -2,9 +2,6 @@
 # ---------
 if [[ ! "$PATH" == *$HOME/.fzf/bin* ]]; then
   export PATH="$PATH:$HOME/.fzf/bin"
-# Key bindings
-# ------------
-  source "$HOME/.fzf/shell/key-bindings.zsh"
   export FZF_DEFAULT_OPTS="--extended --cycle --ansi --select-1 --exit-0 --exact"
 # Auto-completion
 # ---------------
@@ -17,3 +14,6 @@ if [[ ! "$MANPATH" == *$HOME/.fzf/man* && -d "$HOME/.fzf/man" ]]; then
   export MANPATH="$MANPATH:$HOME/.fzf/man"
 fi
 
+# Key bindings
+# ------------
+[[ -f "$HOME/.fzf/shell/key-bindings.zsh" ]] && source "$HOME/.fzf/shell/key-bindings.zsh"
