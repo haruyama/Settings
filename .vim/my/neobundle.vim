@@ -7,12 +7,14 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
+" colorscheme
 "NeoBundle 'subosito/vim-256colors'
-NeoBundle 'noah/vim256-color', {
-      \ 'build' : {
-      \     'unix' : './update_links.sh',
-      \    },
-      \}
+"NeoBundle 'noah/vim256-color', {
+"      \ 'build' : {
+"      \     'unix' : 'git submodule foreach git pull && ./update_links.sh',
+"      \    },
+"      \}
+NeoBundle "sheerun/vim-wombat-scheme"
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'

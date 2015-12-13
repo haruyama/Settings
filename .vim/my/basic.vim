@@ -26,6 +26,7 @@ set autoread
 set noswapfile
 set nobackup
 
+set t_Co=256
 "set cmdheight=3
 if &t_Co > 2 || has('gui_running')
   syntax on
@@ -40,7 +41,6 @@ if exists('&ambiwidth')
 endif
 
 set completeopt=menuone
-set t_Co=256
 
 nnoremap Y y$
 set display=lastline
