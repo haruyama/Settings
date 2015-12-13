@@ -114,3 +114,8 @@ endfunction
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+
+augroup QuickFixCmd
+  autocmd! QuickFixCmdPost make,*grep* cwindow
+augroup END
