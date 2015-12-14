@@ -10,7 +10,6 @@ zplug "zsh-users/zsh-completions", of:src
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "rupa/z", of:z.sh
-zplug "rimraf/k"
 zplug "chrissicool/zsh-256color"
 
 zplug install
