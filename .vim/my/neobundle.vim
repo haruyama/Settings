@@ -14,7 +14,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 "      \     'unix' : 'git submodule foreach git pull && ./update_links.sh',
 "      \    },
 "      \}
-NeoBundle "sheerun/vim-wombat-scheme"
+NeoBundle "dsolstad/vim-wombat256i"
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
