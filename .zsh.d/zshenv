@@ -7,6 +7,7 @@ typeset -U path
 path=(
 $HOME/.vim/bin(N-/)
 $HOME/.local/bin(N-/)
+$HOME/.fzf/bin(N-/)
 $HOME/bin(N-/)
 $HOME/lib/Settings/bin(N-/)
 /usr/local/bin(N-/)
@@ -22,6 +23,7 @@ typeset -U manpath
 manpath=(
 $HOME/share/man(N-/)
 $HOME/man(N-/)
+$HOME/.fzf/man(N-/)
 /usr/local/man(N-/)
 /usr/local/share/man(N-/)
 /usr/share/man(N-/)

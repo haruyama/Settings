@@ -1,19 +1,11 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == *$HOME/.fzf/bin* ]]; then
-  export PATH="$PATH:$HOME/.fzf/bin"
-  export FZF_DEFAULT_OPTS="--extended --cycle --ansi --select-1 --exit-0 --exact"
-# Auto-completion
-# ---------------
-  [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
-fi
-
-# Man path
-# --------
-if [[ ! "$MANPATH" == *$HOME/.fzf/man* && -d "$HOME/.fzf/man" ]]; then
-  export MANPATH="$MANPATH:$HOME/.fzf/man"
-fi
+export FZF_DEFAULT_OPTS="--extended --cycle --ansi --select-1 --exit-0 --exact"
 
 # Key bindings
 # ------------
 [[ -f "$HOME/.fzf/shell/key-bindings.zsh" ]] && source "$HOME/.fzf/shell/key-bindings.zsh"
+
+# Auto-completion
+# ---------------
+  [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
