@@ -8,7 +8,7 @@
 
 #Automatically generated file. Do not edit (see /usr/doc/menu/html/index.html)
 
-   [exec] (Xfce4-Terminal) {/usr/bin/xfce4-terminal --hide-menubar}
+#   [exec] (Xfce4-Terminal) {/usr/bin/xfce4-terminal --hide-menubar}
    [exec] (Gnome Terminal) {/usr/bin/gnome-terminal --hide-menubar}
    [exec] (mlterm) {/usr/bin/mlterm}
 
