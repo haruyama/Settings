@@ -9,7 +9,6 @@ source ~/.zplug/zplug
 zplug "zsh-users/zsh-completions", of:src
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
-zplug "tarruda/zsh-autosuggestions"
 zplug "rupa/z", of:z.sh
 zplug "chrissicool/zsh-256color"
 
@@ -25,6 +24,10 @@ zmodload zsh/terminfo
 # bind P and N for EMACS mode
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
+
+# https://github.com/zsh-users/zsh-history-substring-search/issues/31
+zplug "tarruda/zsh-autosuggestions"
+zplug load
 
 zle-line-init() {
         zle autosuggest-start
