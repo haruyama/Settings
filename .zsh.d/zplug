@@ -24,12 +24,3 @@ zmodload zsh/terminfo
 # bind P and N for EMACS mode
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
-
-# https://github.com/zsh-users/zsh-history-substring-search/issues/31
-zplug "tarruda/zsh-autosuggestions"
-zplug load
-
-zle-line-init() {
-        zle autosuggest-start
-}
-zle -N zle-line-init
