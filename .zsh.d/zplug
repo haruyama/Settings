@@ -8,7 +8,6 @@ source ~/.zplug/zplug
 
 zplug "zsh-users/zsh-completions", of:src
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
 zplug "rupa/z", of:z.sh
 zplug "chrissicool/zsh-256color"
 
@@ -19,8 +18,3 @@ add-zsh-hook precmd _z_precmd
 function _z_precmd {
 _z --add "$PWD"
 }
-
-zmodload zsh/terminfo
-# bind P and N for EMACS mode
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
