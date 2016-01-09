@@ -6,6 +6,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes_global
+	quotepath = false
 [color]
 	ui = auto
 [push]
