@@ -9,10 +9,12 @@ set wildmode=longest:full
 set textwidth=0
 set foldmethod=indent
 set clipboard+=autoselect
-if has('unnamedplus')
-  set clipboard+=unnamedplus
-else
-  set clipboard+=unnamed
+if has('clipboard')
+  if has('unnamedplus')
+    set clipboard=unnamed,unnamedplus
+  else
+    set clipboard=unnamed
+  endif
 endif
 set completeopt+=longest
 set backspace=indent,start,eol
@@ -25,6 +27,11 @@ let g:netrw_liststyle=1
 set autoread
 set noswapfile
 set nobackup
+set viewoptions=folds,options,cursor,unix,slash
+set iskeyword-=.
+set iskeyword-=#
+set iskeyword-=-
+
 
 set t_Co=256
 "set cmdheight=3
