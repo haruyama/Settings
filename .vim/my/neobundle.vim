@@ -204,11 +204,6 @@ NeoBundleLazy 'fatih/vim-go', {
       \   'filetypes': ['go'],
       \ }}
 
-NeoBundleLazy 'rhysd/vim-go-impl', {
-      \ 'autoload': {
-      \   'filetypes': ['go'],
-      \ }}
-
 NeoBundleLazy 'mkasa/neco-ghc-lushtags', {
       \ 'autoload': {
       \   'filetypes': ['haskell'],
