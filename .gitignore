@@ -22,6 +22,7 @@
 .vim/bundle/*
 .vim/history/*
 .vim/spell
+.vim/view/
 .vimperator/info
 .zsh.d/antigen
 a.out
