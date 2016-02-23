@@ -32,6 +32,12 @@ set iskeyword-=.
 set iskeyword-=#
 set iskeyword-=-
 
+set ttyfast
+set lazyredraw
+
+set report=0
+set synmaxcol=200
+
 
 set t_Co=256
 "set cmdheight=3
