@@ -3,6 +3,7 @@
 	co = checkout
 	st = status --short --branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	upll = pull
 [core]
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes_global
