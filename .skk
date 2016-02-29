@@ -17,7 +17,9 @@
     ("." nil nil)
     ("," nil nil)
     ("(" nil nil)
-    (")" nil nil))))
+    (")" nil nil)
+    ("http://" "l" "http://")
+    ("https://" "l" "https://"))))
 
 ;(setq skk-isearch-start-mode 'latin)
 (setq skk-japanese-message-and-error t)
