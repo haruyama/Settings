@@ -119,3 +119,20 @@ map g/ <Plug>(incsearch-stay)
 augroup QuickFixCmd
   autocmd! QuickFixCmdPost make,*grep* cwindow
 augroup END
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>f :TestFile<CR>
+nmap <silent> <leader>s :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+let test#python#pytest#options = {
+  \ 'nearest': '-v',
+  \ 'file':    '-v',
+  \ 'suite':   '-v',
+\}
+let test#go#gotest#options = {
+  \ 'nearest': '-v',
+  \ 'file':    '-v',
+  \ 'suite':   '-v',
+\}
