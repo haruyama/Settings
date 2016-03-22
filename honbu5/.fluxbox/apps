@@ -26,3 +26,9 @@
 [app] (name=tk #3) (class=Tk)
   [Head]	{3}
 [end]
+[app] (name=slack) (class=Slack) (role=browser-window)
+  [Sticky]	{yes}
+[end]
+[app] (name=Navigator) (class=Firefox) (role=browser)
+  [Workspace]	{1}
+[end]
