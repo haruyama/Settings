@@ -30,4 +30,6 @@
   [Sticky]	{yes}
 [end]
 [app] (name=Navigator) (class=Firefox) (role=browser)
+  [Workspace]	{0}
+  [Sticky]	{yes}
 [end]
