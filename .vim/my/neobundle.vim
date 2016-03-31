@@ -16,6 +16,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 "      \}
 NeoBundle "dsolstad/vim-wombat256i"
 
+let g:loaded_matchparen = 1
+
+NeoBundle 'itchyny/vim-parenmatch'
+
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
