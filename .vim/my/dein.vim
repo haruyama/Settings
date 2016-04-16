@@ -32,6 +32,6 @@ call dein#save_state()
 
 filetype plugin indent on
 
-if !has('vim_starting') && dein#check_install()
+if dein#check_install()
   call dein#install()
 endif
