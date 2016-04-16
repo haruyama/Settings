@@ -181,6 +181,9 @@ repo = 'rhysd/vim-grammarous'
 
 [[plugins]]
 repo = 'majutsushi/tagbar'
+hook_add = '''
+source ~/.vim/my/plugins/tagbar.vim
+'''
 
 [[plugins]]
 repo = 'janko-m/vim-test'
