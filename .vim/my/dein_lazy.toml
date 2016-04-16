@@ -1,0 +1,74 @@
+[[plugins]]
+repo = 'Shougo/vimfiler'
+depends = ['Shougo/unite.vim'],
+on_cmd = [ 'VimFilerTab', 'VimFiler', 'VimFilerExplorer', 'VimFilerBufferDir' ]
+on_map = ['<Plug>(vimfiler_switch)']
+
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+on_map = [['n', '<Plug>']]
+on_cmd = [ 'VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTerminal', 'VimShellPop']
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+on_ft = ['clojure ']
+
+[[plugins]]
+repo = 'tpope/vim-fireplace'
+on_ft = ['clojure ']
+
+[[plugins]]
+repo = 'guns/vim-clojure-static'
+on_ft = ['clojure ']
+
+[[plugins]]
+repo = 'guns/vim-clojure-highlight'
+on_ft = ['clojure ']
+
+[[plugins]]
+repo = 'aohta/blockdiag.vim',
+on_ft = ['diag']
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+
+[[plugins]]
+repo = 'othree/html5.vim'
+on_ft = ['html']
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['makrdown', 'mkd']
+
+[[plugins]]
+repo = 'tpope/gem-ctags'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'tpope/vim-bundler'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'tpope/vim-rake'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'haruyama/scheme.vim'
+on_ft = ['scheme']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]]
+repo = 'superbrothers/vim-vimperator'
+on_ft = ['vimperator']
+
+[[plugins]]
+repo = 'mrk21/yaml-vim'
+on_ft = ['yaml']

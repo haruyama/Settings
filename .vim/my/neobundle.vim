@@ -292,10 +292,10 @@ NeoBundleLazy 'haruyama/scheme.vim', {
       \   'filetypes': ['scheme'],
       \ }}
 
-"NeoBundleLazy 'cespare/vim-toml', {
-"      \ 'autoload': {
-"      \   'filetypes': ['toml'],
-"      \ }}
+NeoBundleLazy 'cespare/vim-toml', {
+      \ 'autoload': {
+      \   'filetypes': ['toml'],
+      \ }}
 
 NeoBundleLazy 'evidens/vim-twig', {
       \ 'autoload': {
