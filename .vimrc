@@ -6,7 +6,8 @@ else
   let g:my_use_neocomplete = 0
 endif
 
-source $HOME/.vim/my/neobundle.vim
+" source $HOME/.vim/my/neobundle.vim
+source $HOME/.vim/my/dein.vim
 
 source $HOME/.vim/my/basic.vim
 source $HOME/.vim/my/template.vim
