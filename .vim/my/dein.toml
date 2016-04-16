@@ -18,6 +18,10 @@ hook_post_update = '''
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+hook_source = '''
+source ~/.vim/my/plugins/unite.vim
+'''
 
 [[plugins]]
 repo = 'bling/vim-airline'
@@ -36,29 +40,17 @@ repo = 'Shougo/neomru.vim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+hook_source = '''
+source ~/.vim/my/plugins/unite.vim
+'''
 
 [[plugins]]
 repo = 'AutoTag'
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-depends = ['Shougo/neosnippet', 'Shougo/context_filetype.vim']
-
-[[plugins]]
 repo = 'Shougo/neosnippet'
-hook_add = '''
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"
-" " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-" " For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet/autoload/neosnippet/'
+hook_source = '''
+source ~/.vim/my/plugins/neosnippet.vim
 '''
 
 [[plugins]]
@@ -213,7 +205,7 @@ let test#go#gotest#options = {
 
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
-depends = ['Shougo/context_filetype.vim']
+depends = ['context_filetype.vim']
 
 [[plugins]]
 repo = 'kana/vim-textobj-user'

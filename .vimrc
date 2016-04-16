@@ -6,8 +6,6 @@ source $HOME/.vim/my/dein.vim
 source $HOME/.vim/my/basic.vim
 source $HOME/.vim/my/template.vim
 
-source $HOME/.vim/my/neocomplete.vim
-source $HOME/.vim/my/unite.vim
 source $HOME/.vim/my/command.vim
 source $HOME/.vim/my/tagbar.vim
 "source $HOME/.vim/my/mark.vim

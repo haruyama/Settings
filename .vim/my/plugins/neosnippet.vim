@@ -9,4 +9,4 @@ smap <expr><TAB> neosnippet#expandable() ?  "\<Plug>(neosnippet_expand_or_jump)"
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet/autoload/neosnippet/'
+let g:neosnippet#snippets_directory='~/.cache/dein/repos/github.com/Shougo/neosnippet/autoload/neosnippet/'

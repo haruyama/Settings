@@ -1,6 +1,16 @@
 [[plugins]]
+repo = 'Shougo/neocomplete.vim'
+depends = ['neosnippet', 'context_filetype.vim']
+if = "has('lua')"
+on_i = 1
+hook_source = '''
+let g:neocomplete#enable_at_startup = 1
+source ~/.vim/my/plugins/neocomplete.vim
+'''
+
+[[plugins]]
 repo = 'Shougo/vimfiler'
-depends = ['Shougo/unite.vim'],
+depends = ['unite.vim'],
 on_cmd = [ 'VimFilerTab', 'VimFiler', 'VimFilerExplorer', 'VimFilerBufferDir' ]
 on_map = ['<Plug>(vimfiler_switch)']
 

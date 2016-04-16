@@ -17,6 +17,6 @@ depends = ['Shougo/context_filetype.vim']
 if = "has('nvim')"
 on_i = 1
 hook_source = '''
-  let g:deoplete#enable_at_startup = 1
-  source ~/.vim/rc/plugins/deoplete.rc.vim
+let g:deoplete#enable_at_startup = 1
+source ~/.vim/my/plugins/deoplete.rc.vim
 '''
