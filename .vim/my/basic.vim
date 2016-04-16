@@ -8,7 +8,6 @@ set wildmenu
 set wildmode=list:longest,full
 set textwidth=0
 set foldmethod=indent
-set clipboard+=autoselect
 if has('clipboard')
   if has('unnamedplus')
     set clipboard=unnamed,unnamedplus
