@@ -8,6 +8,11 @@ on_map = ['<Plug>(vimfiler_switch)']
 repo = 'Shougo/vimshell.vim'
 on_map = [['n', '<Plug>']]
 on_cmd = [ 'VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTerminal', 'VimShellPop']
+hook_add = '''
+let g:vimfiler_as_default_explorer = 0
+let g:vimshell_interactive_update_time = 500
+
+'''
 
 [[plugins]]
 repo = 'tpope/vim-dispatch'
