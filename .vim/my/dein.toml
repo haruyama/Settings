@@ -224,3 +224,6 @@ repo = 'sgur/vim-textobj-parameter'
 
 [[plugins]]
 repo = 'dietsche/vim-lastplace'
+
+[[plugins]]
+repo = 'simeji/winresizer'
