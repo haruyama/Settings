@@ -24,7 +24,7 @@ source ~/.vim/my/plugins/unite.vim
 '''
 
 [[plugins]]
-repo = 'bling/vim-airline'
+repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 repo = 'dsolstad/vim-wombat256i'
