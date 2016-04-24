@@ -5,6 +5,8 @@ update:
 init:
 	ln -fs ~/lib/Settings/.[A-Z0-9a-z]* ~/
 	rm ~/.git
+	[ -e ~/.ssh ] || mkdir -m=700 ~/.ssh
+	touch ~/.ssh/config
 	cp ~/lib/Settings/sample/.zshenv ~
 	cp ~/lib/Settings/sample/.zshrc ~
 	[ -d ~/.fzf ] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
