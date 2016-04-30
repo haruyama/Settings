@@ -6,9 +6,9 @@ fi
 
 source ~/.zplug/zplug
 
-zplug "zsh-users/zsh-completions", of:src
+zplug "zsh-users/zsh-completions", use:src
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "rupa/z", of:z.sh
+zplug "rupa/z", use:z.sh
 zplug "chrissicool/zsh-256color"
 
 zplug install
