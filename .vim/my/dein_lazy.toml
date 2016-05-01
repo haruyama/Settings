@@ -77,6 +77,10 @@ repo = 'tpope/vim-rake'
 on_ft = ['ruby']
 
 [[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
+[[plugins]]
 repo = 'haruyama/scheme.vim'
 on_ft = ['scheme']
 
