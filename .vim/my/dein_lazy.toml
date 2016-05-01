@@ -81,6 +81,14 @@ repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
 
 [[plugins]]
+repo = 'racer-rust/vim-racer'
+on_ft = ['rust']
+hook_source = '''
+set hidden
+let g:racer_cmd = expand('~/.cargo/bin/racer')
+'''
+
+[[plugins]]
 repo = 'haruyama/scheme.vim'
 on_ft = ['scheme']
 
