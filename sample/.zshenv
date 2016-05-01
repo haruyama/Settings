@@ -20,3 +20,4 @@ source ~/.zsh.d/zshenv
 # export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # path=($HOME/.cargo/bin(N-/) $path)
+# export RUST_SRC_PATH=$HOME/src/Rust/rust/src
