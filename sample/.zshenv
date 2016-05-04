@@ -1,6 +1,6 @@
 source ~/.zsh.d/zshenv
 
-# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/
+# export JAVA_HOME=/usr/lib/jvm/java-9-openjdk-amd64/
 
 # path=($HOME/.nodebrew/current/bin(N-/) $path)
 
@@ -13,5 +13,11 @@ source ~/.zsh.d/zshenv
 # path=($HOME/.rbenv/shims(N-/) $HOME/.rbenv/bin(N-/) $path)
 # eval "$(rbenv init -)"
 
+# path=($HOME/src/Nim/nim/bin(N-/) $path)
+# path=($HOME/.nimble/bin(N-/) $path)
+
 # export VAGRANT_HOME=~/.vagrant.d
-# export VAGRANT_DEFAULT_PROVIDER=kvm
+# export VAGRANT_DEFAULT_PROVIDER=libvirt
+
+# path=($HOME/.cargo/bin(N-/) $path)
+# export RUST_SRC_PATH=$HOME/src/Rust/rust/src

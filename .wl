@@ -26,7 +26,7 @@
 
 (setq wl-default-spec "+")
 (setq wl-smtp-posting-server "mail.queen-ml.org")
-                                        ;(setq wl-smtp-posting-port 25)
+;; (setq wl-smtp-posting-port 25)
 (setq wl-smtp-connection-type "ssl")
 (setq wl-smtp-posting-port 587)
 (setq wl-smtp-posting-user "haruyama")
@@ -34,9 +34,9 @@
 
 (setq wl-fcc "+fcc")
 (setq wl-expire-alist
- '(("^\\+trash$"   (date 14) remove)
-         ("^\\+spam$"   (date 60) remove)
-              ;         ("^\\+fcc$"   (date 7) trash)
+      '(("^\\+trash$"   (date 14) remove)
+        ("^\\+spam$"   (date 60) remove)
+        ;;         ("^\\+fcc$"   (date 7) trash)
         ))
 (add-hook 'wl-summary-prepared-pre-hook
           'wl-summary-expire)
@@ -107,10 +107,11 @@
         (fj us-ascii iso-2022-jp iso-2022-jp-2)
         (none)))
 
-                                        ;(setq message-locale-default 'none)
+
+;;(setq message-locale-default 'none)
 (setq message-locale-default 'fj)
-                                        ;(setq message-locale-default nil)
-                                        ;(setq message-locale-default 'en)
+;;(setq message-locale-default nil)
+;;(setq message-locale-default 'en)
 
 (setq wl-template-alist
       '(("default"
@@ -164,7 +165,7 @@
          (setq ad-return-value (my-mime-decode-filename ad-return-value)))))
 
   (defadvice mime-entity-fetch-field
-    (after mime-decode-entity activate)
+      (after mime-decode-entity activate)
     "MIME decode fetched field of entity."
     (if ad-return-value
         (setq ad-return-value (eword-decode-string (namajis-decode ad-return-value)))))
@@ -193,7 +194,7 @@
      "kakasi" t t t "-rk" "-Ha" "-Ka" "-Ja" "-Ea" "-ka")
     (buffer-string)))
 
-                                        ;添付ファイルのmimeデコード(らしい)
+;;添付ファイルのmimeデコード(らしい)
 (eval-after-load "mime"
   '(defadvice mime-entity-filename (around mime-decode activate)
      ad-do-it
@@ -211,7 +212,7 @@
 
 (setq elmo-msgdb-extra-fields
       '("x-ml-name"
-                                        ;        "reply-to"
+        ;;        "reply-to"
         "sender"
         "mailing-list"
                                         ;        "newsgroups"
@@ -222,20 +223,13 @@
 (setq wl-refile-rule-alist
       '(
         ("Delivered-To"
-         ("mailing list bugtraq@securityfocus.com" . "+ml/bugtraq")
          ("mailing list secureshell@securityfocus.com" . "+ml/secureshell")
-
          )
         ("Sender"
          ("owner-openssh-unix-dev@mindrot.org" . "+ml/openssh-unix-dev")
          ("anthy-dev-bounces@lists.sourceforge.jp". "+ml/anthy-dev")
-         ("uim-admin@pdx.freedesktop.org" . "+ml/uim")
-         ("uim-bounces@freedesktop.org" . "+ml/uim")
-         ("uim-bounces@lists.freedesktop.org" . "+ml/uim")
          )
         ("To"
-         ("gotensita@queen-ml.org" . "+ml/gotensita")
-         ("gotensita-admin@queen-ml.org" . "+ml/gotensita-admin")
          ("queen-ml-admin@queen-ml.org" ."+ml/queen-ml-admin")
          ("queen-ml@queen-ml.org" ."+ml/queen-ml")
          ("daibo99@freeml.com" ."+ml/daibo")
@@ -245,8 +239,6 @@
          ("ssh@clinet.fi" ."+ml/openssh-unix-dev")
          ("openssh-unix-announce@mindrot.org" ."+ml/openssh-unix-announce")
          ("openssh-unix-announce@shitei.mindrot.org" ."+ml/openssh-unix-announce")
-         ("ids-talk@netarc.jp" . "+ml/ids-talk")
-         ("BUGTRAQ@SECURITYFOCUS.COM" . "+ml/bugtraq")
          ("memo@memo.st.ryukoku.ac.jp" . "+ml/security_hole-memo")
          ("weekly@freeml.com"  . "+trash")
          ("users-info@freeml.com" ."+trash")
@@ -257,7 +249,6 @@
          ("members-ml@unixuser.org" . "+ml/unixuser")
          ("ruby-list@ruby-lang.org" . "+ml/ruby-list")
          ("ruby-ext@ruby-lang.org" . "+ml/ruby-ext")
-         ("secureshell@securityfocus.com" . "+ml/secureshell")
          ("ssh-admin@koka-in.org" . "+ml/ssh-admin@koka-in.org")
          )
         ("Cc"
@@ -292,43 +283,43 @@
 
 ;; [[ spam 用の設定 ]]
 
-                                        ; バックエンドに bogofilter を使う事を設定
+;; バックエンドに bogofilter を使う事を設定
 
-                                        ; サマリバッファで `o' (wl-summary-refile) した時, *最初*に spam かど
-                                        ; うかを判定する様にする
-                                        ;(unless (memq 'wl-refile-guess-by-spam wl-refile-guess-functions)
-                                        ;  (setq wl-refile-guess-functions
-                                        ;       (cons #'wl-refile-guess-by-spam
-                                        ;             wl-refile-guess-functions)))
+;; サマリバッファで `o' (wl-summary-refile) した時, *最初*に spam かど
+;; うかを判定する様にする
+;;(unless (memq 'wl-refile-guess-by-spam wl-refile-guess-functions)
+;;  (setq wl-refile-guess-functions
+;;       (cons #'wl-refile-guess-by-spam
+;;             wl-refile-guess-functions)))
 
 
-                                        ; refile-rule を優先したい場合 (spamfilter-wl.el や bogofilter-wl.el
-                                        ; と同じ設定) は, こっちの設定を有効にする
-                                        ;(unless (memq 'wl-refile-guess-by-spam wl-auto-refile-guess-functions)
-                                        ;  (setq wl-auto-refile-guess-functions
-                                        ;       (append wl-auto-refile-guess-functions
-                                        ;               '(wl-refile-guess-by-spam))))
+;; refile-rule を優先したい場合 (spamfilter-wl.el や bogofilter-wl.el
+;; と同じ設定) は, こっちの設定を有効にする
+;;(unless (memq 'wl-refile-guess-by-spam wl-auto-refile-guess-functions)
+;;  (setq wl-auto-refile-guess-functions
+;;       (append wl-auto-refile-guess-functions
+;;               '(wl-refile-guess-by-spam))))
 
-                                        ; wl-spam-auto-check-folder-regexp-list に合致するフォルダに移動した
-                                        ; 時に spam かどうかチェックする
-                                        ;(add-hook 'wl-summary-prepared-pre-hook #'wl-summary-auto-check-spam)
+;; wl-spam-auto-check-folder-regexp-list に合致するフォルダに移動した
+;; 時に spam かどうかチェックする
+;;(add-hook 'wl-summary-prepared-pre-hook #'wl-summary-auto-check-spam)
 
-                                        ; refile の実行時に学習させる為の設定
-                                        ; 以下の設定をしたからと言って常に学習する訳ではありません. 詳しくは,
-                                        ; wl-spam.el の wl-spam-undecided-folder-regexp-list と
-                                        ; wl-spam-ignored-folder-regexp-list の docstring を参照して下さい.
-                                        ;(let ((actions wl-summary-mark-action-list)
-                                        ;      action)
-                                        ;  (while actions
-                                        ;    (setq action  (car actions)
-                                        ;         actions (cdr actions))
-                                        ;    (when (eq (wl-summary-action-symbol action) 'refile)
-                                        ;      (setcar (nthcdr 4 action) 'wl-summary-exec-action-refile-with-register)
-                                        ;      (setq actions nil))))
+;; refile の実行時に学習させる為の設定
+;; 以下の設定をしたからと言って常に学習する訳ではありません. 詳しくは,
+;; wl-spam.el の wl-spam-undecided-folder-regexp-list と
+;; wl-spam-ignored-folder-regexp-list の docstring を参照して下さい.
+;;(let ((actions wl-summary-mark-action-list)
+;;      action)
+;;  (while actions
+;;    (setq action  (car actions)
+;;         actions (cdr actions))
+;;    (when (eq (wl-summary-action-symbol action) 'refile)
+;;      (setcar (nthcdr 4 action) 'wl-summary-exec-action-refile-with-register)
+;;      (setq actions nil))))
 
-                                        ;(setq elmo-msgdb-default-type 'standard
-                                        ;      elmo-msgdb-convert-type 'auto)
-                                        ;(setq wl-use-flag-folder-help-echot)
+;;(setq elmo-msgdb-default-type 'standard
+;;      elmo-msgdb-convert-type 'auto)
+;;(setq wl-use-flag-folder-help-echot)
 
 (require 'wl-spam)
 (require 'spamfilter)
@@ -342,8 +333,8 @@
 (setq elmo-spam-spamfilter-corpus-filename "~/.elmo/.spamfilter")
 
 ;; リファイル実行時に、コーパス登録を行わずに無視するフォルダのリスト
-                                        ;(setq spamf-wl-ignore-register-folder-names '("+trash" "+yuzin" "+ml" "+queue" "+draft"))
-                                        ;(setq wl-spam-ignored-folder-regexp-list '("\\+trash" "\\+yuzin" "\\+ml" "\\+queue" "\\+draft"))
+;;(setq spamf-wl-ignore-register-folder-names '("+trash" "+yuzin" "+ml" "+queue" "+draft"))
+;;(setq wl-spam-ignored-folder-regexp-list '("\\+trash" "\\+yuzin" "\\+ml" "\\+queue" "\\+draft"))
 (add-hook 'wl-hook
           #'(lambda ()
               ;; ChaSen を使う場合
@@ -359,16 +350,16 @@
         ;;; tokenizer の指定
 
 ;; ChaSen を使う場合
-                                        ; (setq spamf-file-for-each-function   #'chasen-file-for-each)
-                                        ; (setq spamf-buffer-for-each-function #'chasen-buffer-for-each)
-                                        ; (setq spamf-string-for-each-function #'chasen-string-for-each)
-                                        ; (setq spamf-tokenize-file-function   #'chasen-tokenize-file)
-                                        ; (setq spamf-tokenize-buffer-function #'chasen-tokenize-buffer)
-                                        ; (setq spamf-tokenize-string-function #'chasen-tokenize-string)
+;; (setq spamf-file-for-each-function   #'chasen-file-for-each)
+;; (setq spamf-buffer-for-each-function #'chasen-buffer-for-each)
+;; (setq spamf-string-for-each-function #'chasen-string-for-each)
+;; (setq spamf-tokenize-file-function   #'chasen-tokenize-file)
+;; (setq spamf-tokenize-buffer-function #'chasen-tokenize-buffer)
+;; (setq spamf-tokenize-string-function #'chasen-tokenize-string)
 ;; chasen-process-send-string-limit より容量が大きいテキストは同期プロセスを使う
-                                        ; (setq chasen-process-send-string-limit (* 1024 2))
+;; (setq chasen-process-send-string-limit (* 1024 2))
 
-                                        ; bigram を使う場合
+;; bigram を使う場合
 (setq spamf-file-for-each-function   #'jtoken-bigram-file-for-each)
 (setq spamf-buffer-for-each-function #'jtoken-bigram-buffer-for-each)
 (setq spamf-string-for-each-function #'jtoken-bigram-string-for-each)
@@ -377,25 +368,25 @@
 (setq spamf-tokenize-string-function #'jtoken-bigram-tokenize-string)
 
 ;; block を使う場合
-                                        ; (setq spamf-file-for-each-function   #'jtoken-block-file-for-each)
-                                        ; (setq spamf-buffer-for-each-function #'jtoken-block-buffer-for-each)
-                                        ; (setq spamf-string-for-each-function #'jtoken-block-string-for-each)
-                                        ; (setq spamf-tokenize-file-function   #'jtoken-block-tokenize-file)
-                                        ; (setq spamf-tokenize-buffer-function #'jtoken-block-tokenize-buffer)
-                                        ; (setq spamf-tokenize-string-function #'jtoken-block-tokenize-string)
-                                        ;(setq elmo-split-folder "&haruyama/apop@mail.queen-ml.org:110")
-                                        ;(setq elmo-split-rule
-                                        ;      '(((spamfilter) "+spam") ; SPAM は `+spam' へ
-                                        ;              (t "&haruyama/apop@mail.queen-ml.org:110")))         ; それ以外は `+inbox' へ
+;; (setq spamf-file-for-each-function   #'jtoken-block-file-for-each)
+;; (setq spamf-buffer-for-each-function #'jtoken-block-buffer-for-each)
+;; (setq spamf-string-for-each-function #'jtoken-block-string-for-each)
+;; (setq spamf-tokenize-file-function   #'jtoken-block-tokenize-file)
+;; (setq spamf-tokenize-buffer-function #'jtoken-block-tokenize-buffer)
+;; (setq spamf-tokenize-string-function #'jtoken-block-tokenize-string)
+;;(setq elmo-split-folder "&haruyama/apop@mail.queen-ml.org:110")
+;;(setq elmo-split-rule
+;;      '(((spamfilter) "+spam") ; SPAM は `+spam' へ
+;;              (t "&haruyama/apop@mail.queen-ml.org:110")))         ; それ以外は `+inbox' へ
 
 
 
 ;; サマリバッファで `o' (wl-summary-refile) した時, *最初*に spam かど
 ;; うかを判定する様にする
-                                        ;(unless (memq 'wl-refile-guess-by-spam wl-refile-guess-functions)
-                                        ;  (setq wl-refile-guess-functions
-                                        ;    (cons #'wl-refile-guess-by-spam
-                                        ;          wl-refile-guess-functions)))
+;;(unless (memq 'wl-refile-guess-by-spam wl-refile-guess-functions)
+;;  (setq wl-refile-guess-functions
+;;    (cons #'wl-refile-guess-by-spam
+;;          wl-refile-guess-functions)))
 
 ;; refile-rule を優先したい場合 (spamfilter-wl.el や bogofilter-wl.el
 ;; と同じ設定) は, こっちの設定を有効にする
@@ -407,8 +398,6 @@
 (setq elmo-msgdb-default-type 'standard
       elmo-msgdb-convert-type 'sync
       )
-                                        ;(setq elmo-pop3-debug t)
-                                        ;(setq debug-on-quit t)
 
 (autoload 'mu-cite-original "mu-cite" nil t)
 (add-hook 'mail-citation-hook 'mu-cite-original)
@@ -416,3 +405,4 @@
 (setq wl-summary-number-column-alist
       (append '(("^%inbox$" . 6) ("^+spam$" . 6))
               wl-summary-number-column-alist))
+
