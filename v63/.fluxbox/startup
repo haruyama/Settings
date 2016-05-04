@@ -59,6 +59,8 @@ pkill fdpowermon
 /usr/bin/synclient TapButton1=0
 /usr/bin/synclient TapButton3=2
 
+/usr/bin/gnome-settings-daemon &
+
 exec fluxbox
 # or if you want to keep a log:
 # exec fluxbox -log "/home/haruyama/.fluxbox/log"
