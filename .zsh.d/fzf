@@ -8,4 +8,4 @@ export FZF_DEFAULT_OPTS="--extended --cycle --ansi --select-1 --exit-0 --exact"
 
 # Auto-completion
 # ---------------
-  [[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null
