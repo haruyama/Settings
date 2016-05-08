@@ -1,20 +1,23 @@
 # vim: filetype=zsh
 
 if [ ! -f ~/.zplug/zplug ]; then
-    curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
+        git clone https://github.com/zplug/zplug ~/.zplug
 fi
 
-source ~/.zplug/zplug
+source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-completions", use:src
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "rupa/z", use:z.sh
 zplug "chrissicool/zsh-256color"
 
-zplug install
+if ! zplug check; then
+        zplug install
+fi
+
 zplug load
 
 add-zsh-hook precmd _z_precmd
 function _z_precmd {
-_z --add "$PWD"
+        _z --add "$PWD"
 }
