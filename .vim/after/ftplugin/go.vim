@@ -19,6 +19,8 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_fmt_command = 'goimports'
 
+let g:syntastic_go_checkers = ['go']
+
 augroup after_ftplugin_go
 "  autocmd! BufWritePre *.go :GoImports
 "  autocmd! BufWritePost *_test.go :GoTest
