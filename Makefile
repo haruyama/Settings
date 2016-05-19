@@ -6,7 +6,7 @@ init:
 	ln -fs ~/lib/Settings/.[A-Z0-9a-z]* ~/
 	rm ~/.git
 	mkdir -p ~/bin
-	ln -fs ~/lib/Settings/bin/* ~/bin/*
+	ln -fs ~/lib/Settings/bin/* ~/bin/
 	[ -e ~/.ssh ] || mkdir -m=700 ~/.ssh
 	touch ~/.ssh/config
 	cp ~/lib/Settings/sample/.zshenv ~
