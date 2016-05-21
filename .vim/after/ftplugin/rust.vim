@@ -5,6 +5,8 @@ let b:did_after_ftplugin_rust = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+setl iskeyword+=!
+
 augroup after_ftplugin_rust
   autocmd! BufWritePre <buffer> :RustFmt
 augroup END
