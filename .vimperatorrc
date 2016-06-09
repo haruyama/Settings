@@ -39,5 +39,3 @@ lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x
 lazy fmaps -u='(fastladder|livedoor)\.com/reader' j k s a p o v c i,p <Space> <S-Space> z b < > q w e,g
 lazy fmaps -u='feedly\.com' g h m a e t c d p l s n b n p o v V m s S D e t d c / r ? 1 2 3 4 5 6 7 8 9 <Enter>
 "lazy fmaps -u='https?://www\.rememberthemilk\.com/home/' j k m i c t ? d F,f G,g S,s L,l Y,y H,h M,m <Del> <C-S-Left> <C-S-Right>
-lazy fmaps -u='http://code.google.com/p/vimperator-labs/issues/list' o j k
-lazy fmaps -u='http://code.google.com/p/vimperator-labs/issues/detail' u
