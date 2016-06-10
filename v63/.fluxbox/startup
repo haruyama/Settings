@@ -31,8 +31,8 @@ export VTE_CJK_WIDTH=1
 #export LC_TELEPHONE=ja_JP.UTF-8
 
 /usr/bin/setxkbmap -option "ctrl:nocaps,keypad:pointerkeys"
-/usr/bin/xmodmap ~/.xmodmaprc
 /usr/bin/xkbset m
+/usr/bin/xmodmap ~/.xmodmaprc
 /usr/bin/X11/xset m 2 10
 
 pkill uim-xim
