@@ -7,6 +7,11 @@
             "max": 3
 
     },
-    "no-mix-dearu-desumasu": true
+    "no-mix-dearu-desumasu": true,
+    "prh": {
+            "rulePaths": [
+              "~/.textlint.d/prh.yml"
+            ]
+    }
   }
 }
