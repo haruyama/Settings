@@ -1,7 +1,8 @@
 {
   "rules": {
     "preset-jtf-style": {
-        "4.2.6.ハイフン(-)": false
+        "4.2.6.ハイフン(-)": false,
+        "4.2.8.セミコロン(;)": false
     },
     "max-ten": {
             "max": 3
