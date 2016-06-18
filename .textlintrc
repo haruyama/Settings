@@ -2,6 +2,11 @@
   "rules": {
     "preset-jtf-style": {
         "4.2.6.ハイフン(-)": false
-    }
+    },
+    "max-ten": {
+            "max": 3
+
+    },
+    "no-mix-dearu-desumasu": true
   }
 }

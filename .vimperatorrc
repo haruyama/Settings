@@ -2,7 +2,8 @@ set visualbell
 set hlsearch
 set ignorecase
 set focuscontent
-set complete=sl
+"set complete=sl
+set complete=l
 
 set showstatuslinks=1
 set noinsertmode
