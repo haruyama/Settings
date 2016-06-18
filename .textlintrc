@@ -1,5 +1,7 @@
 {
   "rules": {
-    "preset-jtf-style": true
+    "preset-jtf-style": {
+        "4.2.6.ハイフン(-)": false
+    }
   }
 }
