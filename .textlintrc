@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "preset-jtf-style": {
+        "4.2.6.ハイフン(-)": false,
+        "4.2.8.セミコロン(;)": false,
+        "4.3.6.中かっこ{ }": false,
+        "4.3.7.山かっこ<>": false,
+        "4.3.5.二重引用符": false
+    },
+    "no-mix-dearu-desumasu": true,
+    "prh": {
+            "rulePaths": [
+              "~/.textlint.d/prh.yml"
+            ]
+    }
+  }
+}
