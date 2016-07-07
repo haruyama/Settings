@@ -41,12 +41,20 @@ repo = 'guns/vim-clojure-highlight'
 on_ft = ['clojure ']
 
 [[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
+
+[[plugins]]
 repo = 'aohta/blockdiag.vim',
 on_ft = ['diag']
 
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
+
+[[plugins]]
+repo = 'b4b4r07/vim-hcl'
+on_ft = ['hcl']
 
 [[plugins]]
 repo = 'othree/html5.vim'
