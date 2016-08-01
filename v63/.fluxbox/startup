@@ -18,7 +18,7 @@
 # And last but not least we start fluxbox.
 # Because it is the last app you have to run it with ''exec'' before it.
 
-export VTE_CJK_WIDTH=1
+export VTE_CJK_WIDTH=auto
 
 #export LC_IDENTIFICATION=ja_JP.UTF-8
 #export LC_TIME=ja_JP.UTF-8
