@@ -61,8 +61,8 @@ if type ruby > /dev/null 2>&1; then
         _cache_hosts=(`env RUBYOPT="" ruby -ne 'if /^Host\s+(.+)$/; print $1.strip, "\n"; end' ~/.ssh/config`)
 fi
 
-autoload -U compinit
-compinit
+# autoload -U compinit
+# compinit
 zstyle ':completion:*' format '%B%d%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
