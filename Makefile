@@ -9,6 +9,7 @@ init:
 	ln -fs ~/lib/Settings/bin/* ~/bin/
 	[ -e ~/.ssh ] || mkdir -m=700 ~/.ssh
 	touch ~/.ssh/config
+	chmod 600 ~/.ssh/config
 	cp ~/lib/Settings/sample/.zshenv ~
 	cp ~/lib/Settings/sample/.zshrc ~
 	git submodule update --init --recursive
