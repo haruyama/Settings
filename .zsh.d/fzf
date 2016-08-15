@@ -1,6 +1,6 @@
 # Setup fzf
 # ---------
-export FZF_DEFAULT_OPTS="--extended --cycle --ansi --select-1 --exit-0 --exact"
+export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0"
 
 # Key bindings
 # ------------
