@@ -11,7 +11,9 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "rupa/z", use:z.sh
 zplug "chrissicool/zsh-256color"
 
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
+if [ "$( uname -o )" != 'Cygwin' ]; then
+    zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
+fi
 zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
 
 if ! zplug check; then
