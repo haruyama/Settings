@@ -6,7 +6,7 @@
 
 # Change your keymap:
 xmodmap "/home/haruyama/.Xmodmap"
-export VTE_CJK_WIDTH=1
+export VTE_CJK_WIDTH=auto
 
 # Applications you want to run with fluxbox.
 # MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
