@@ -35,6 +35,7 @@ setopt share_history
 setopt short_loops
 setopt sh_word_split
 setopt transient_rprompt
+setopt nocheckjobs
 #setopt mark_dirs
 #setopt glob_complete
 #setopt no_unset
