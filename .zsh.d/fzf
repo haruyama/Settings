@@ -1,6 +1,10 @@
 # Setup fzf
 # ---------
-export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0"
+if [[ $(fzf --version) > '0.13' ]] ; then
+    export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0 --exact --ansi"
+else
+    export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0"
+fi
 
 # Key bindings
 # ------------
