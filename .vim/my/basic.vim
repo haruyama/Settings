@@ -15,7 +15,7 @@ if has('clipboard')
     set clipboard=unnamed
   endif
 endif
-set completeopt+=longest
+set completeopt=menuone
 set backspace=indent,start,eol
 set listchars=tab:»-,trail:_,extends:»,precedes:«,nbsp:%
 set laststatus=2
@@ -52,7 +52,6 @@ if exists('&ambiwidth')
   set ambiwidth=double
 endif
 
-set completeopt=menuone
 
 nnoremap Y y$
 set display=lastline
