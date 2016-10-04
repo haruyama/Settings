@@ -21,7 +21,6 @@ on_cmd = [ 'VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTermin
 hook_add = '''
 let g:vimfiler_as_default_explorer = 0
 let g:vimshell_interactive_update_time = 500
-
 '''
 
 [[plugins]]
@@ -67,6 +66,14 @@ on_ft = ['json']
 [[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = ['javascript']
+hook_add = '''
+let g:jsx_ext_required = 0
+'''
+
 
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
