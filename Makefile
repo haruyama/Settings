@@ -1,7 +1,6 @@
-update:
+update: fzf_install
 	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
 	git submodule update --init --recursive
-	cd ~/.fzf && git pull && ./install --all
 
 fzf_install:
 	[ -d ~/.fzf ] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
