@@ -3,7 +3,11 @@ update:
 	git submodule update --init --recursive
 	cd ~/.fzf && git pull && ./install --all
 
-init:
+fzf_install:
+	[ -d ~/.fzf ] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install --all
+
+init: fzf_install
 	ln -fs ~/lib/Settings/.[A-Z0-9a-z]* ~/
 	rm ~/.git
 	mkdir -p ~/bin
@@ -14,5 +18,3 @@ init:
 	cp ~/lib/Settings/sample/.zshenv ~
 	cp ~/lib/Settings/sample/.zshrc ~
 	git submodule update --init --recursive
-	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	~/.fzf/install --all
