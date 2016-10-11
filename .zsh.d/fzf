@@ -6,10 +6,4 @@ else
     export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0"
 fi
 
-# Key bindings
-# ------------
-[[ -f "$HOME/.zplug/repos/junegunn/fzf/shell/key-bindings.zsh" ]] && source "$HOME/.zplug/repos/junegunn/fzf/shell/key-bindings.zsh"
-
-# Auto-completion
-# ---------------
-[[ $- == *i* ]] && source "$HOME/.zplug/repos/junegunn/fzf/shell/completion.zsh" 2> /dev/null
+[[ -f "$HOME/.fzf.zsh" ]] && source "$HOME/.fzf.zsh"

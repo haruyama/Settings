@@ -1,6 +1,6 @@
 # vim: filetype=zsh
 
-if [ ! -f ~/.zplug/zplug ]; then
+if [ ! -f ~/.zplug/init.zsh ]; then
         git clone https://github.com/zplug/zplug ~/.zplug
 fi
 
@@ -11,9 +11,6 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "rupa/z", use:z.sh
 zplug "chrissicool/zsh-256color"
 
-if [ "$( uname -o )" != 'Cygwin' ]; then
-    zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-fi
 zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
 
 if ! zplug check; then
