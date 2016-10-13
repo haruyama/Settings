@@ -4,7 +4,7 @@ update: fzf_install
 
 fzf_install:
 	[ -d ~/.fzf ] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	~/.fzf/install --all
+	cd ~/.fzf && git pull && ./install --all
 
 init: fzf_install
 	ln -fs ~/lib/Settings/.[A-Z0-9a-z]* ~/
