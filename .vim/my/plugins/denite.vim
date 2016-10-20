@@ -1,4 +1,4 @@
-nnoremap <silent> ,ua :<C-u>DeniteBufferDir file_rec<CR>
+nnoremap <silent> ,ua :<C-u>DeniteBufferDir file_rec directory_rec<CR>
 
 nnoremap <silent> ,uc :<C-u>Denite colorscheme<CR>
 nnoremap <silent> ,uc :<C-u>Denite filetype<CR>
