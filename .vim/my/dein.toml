@@ -16,21 +16,27 @@ hook_post_update = '''
   let g:dein#plugin.build = cmd
 '''
 
-# [[plugins]]
-# repo = 'Shougo/denite.nvim'
-# depends = ['neomru.vim', 'Shougo/neoyank.vim']
-# if   = ''' has('python3')'''
-# hook_source = '''
-# source ~/.vim/my/plugins/denite.vim
-# '''
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+depends = ['Shougo/neomru.vim', 'Shougo/neoyank.vim']
+if   = ''' has('python3')'''
+hook_source = '''
+source ~/.vim/my/plugins/denite.vim
+'''
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
-depends = ['neomru.vim', 'Shougo/neoyank.vim']
-#if   = '''! has('python3')'''
+depends = ['Shougo/neomru.vim', 'Shougo/neoyank.vim']
+if   = '''! has('python3')'''
 hook_source = '''
 source ~/.vim/my/plugins/unite.vim
 '''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -43,9 +49,6 @@ augroup colorscheme
   autocmd! VimEnter * colorscheme wombat256i
 augroup END
 '''
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
