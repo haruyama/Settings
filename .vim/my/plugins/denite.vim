@@ -1,7 +1,8 @@
 nnoremap <silent> ,ua :<C-u>DeniteBufferDir file_rec directory_rec<CR>
 
 nnoremap <silent> ,uc :<C-u>Denite colorscheme<CR>
-nnoremap <silent> ,uc :<C-u>Denite filetype<CR>
+nnoremap <silent> ,ud :<C-u>Denite directory_rec<CR>
+nnoremap <silent> ,uf :<C-u>Denite filetype<CR>
 nnoremap <silent> ,ug :<C-u>Denite grep<CR>
 nnoremap <silent> ,ul :<C-u>Denite line<CR>
 
