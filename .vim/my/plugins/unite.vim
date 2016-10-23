@@ -16,6 +16,7 @@ nnoremap <silent> ,uq :<C-u>Unite -no-quit -direction=botright quickfix location
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru tab<CR>
+nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
 
 call unite#custom#default_action('file',     'above')
 call unite#custom#default_action('file_mru', 'above')

@@ -7,6 +7,5 @@ set cpo&vim
 
 setlocal omnifunc=necoghc#omnifunc
 
-nnoremap <silent> ,uh :<C-u>Unite haddock<CR>
 let &cpo = s:save_cpo
 unlet s:save_cpo
