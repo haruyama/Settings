@@ -19,7 +19,7 @@ hook_post_update = '''
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 depends = ['Shougo/neomru.vim', 'Shougo/neoyank.vim']
-if   = ''' has('python3')'''
+if   = ''' v:version >= 800 && has('python3')'''
 hook_source = '''
 source ~/.vim/my/plugins/denite.vim
 '''
@@ -27,7 +27,7 @@ source ~/.vim/my/plugins/denite.vim
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = ['Shougo/neomru.vim', 'Shougo/neoyank.vim']
-if   = '''! has('python3')'''
+if   = '''! (v:version >= 800 && has('python3'))'''
 hook_source = '''
 source ~/.vim/my/plugins/unite.vim
 '''
