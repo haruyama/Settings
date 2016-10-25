@@ -18,5 +18,10 @@ init: fzf_install
 	cp ~/lib/Settings/sample/.zshrc ~
 	git submodule update --init --recursive
 
+js_install: textlint_install js_linter_install
+
+js_linter_install:
+	npm install -g jshint jslint eslint eslint_d
+
 textlint_install:
 	npm install -g textlint textlint-rule-max-ten textlint-rule-spellcheck-tech-word textlint-rule-no-mix-dearu-desumasu  textlint-rule-preset-jtf-style textlint-rule-prh
