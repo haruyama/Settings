@@ -77,6 +77,9 @@ let g:jsx_ext_required = 0
 [[plugins]]
 repo = 'ternjs/tern_for_vim'
 on_ft = ['javascript']
+hook_post_update = '''
+  let g:dein#plugin.build = "npm install"
+'''
 
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
