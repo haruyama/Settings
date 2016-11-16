@@ -1,11 +1,14 @@
 # vim: filetype=zsh
+#
+export ZPLUG_HOME=~/.zplug
 
 if [ ! -f ~/.zplug/init.zsh ]; then
-        git clone https://github.com/zplug/zplug ~/.zplug
+        git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi
 
 source ~/.zplug/init.zsh
 
+zplug "zplug/zplug"
 zplug "zsh-users/zsh-completions", use:src
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "rupa/z", use:z.sh
