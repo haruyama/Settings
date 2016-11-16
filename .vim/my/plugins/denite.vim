@@ -8,8 +8,13 @@ nnoremap <silent> ,ul :<C-u>Denite line<CR>
 
 nnoremap <silent> ,um :<C-u>Denite file_mru<CR>
 
+
 nnoremap <silent> ,uu :<C-u>Denite buffer file_mru<CR>
 nnoremap <silent> ,uy :<C-u>Denite neoyank<CR>
+
+nnoremap <silent> ,ur :<C-u>Denite -resume=true<CR>
+nnoremap <silent> ,up :<C-u>Denite -resume=true -select=-1 -immediately=true<CR>
+nnoremap <silent> ,un :<C-u>Denite -resume=true -select=+1 -immediately=true<CR>
 
 call denite#custom#map('_', "\<C-n>", 'move_to_next_line')
 call denite#custom#map('_', "\<C-p>", 'move_to_prev_line')
