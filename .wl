@@ -25,12 +25,11 @@
 (setq wl-local-domain "queen-ml.org")
 
 (setq wl-default-spec "+")
-(setq wl-smtp-posting-server "mail.queen-ml.org")
-;; (setq wl-smtp-posting-port 25)
-(setq wl-smtp-connection-type "ssl")
-(setq wl-smtp-posting-port 587)
+(setq wl-smtp-posting-server "scarlet-camel-91678cecd5d34ab7.znlc.jp")
+(setq wl-smtp-posting-port 465)
+(setq wl-smtp-connection-type 'ssl)
 (setq wl-smtp-posting-user "haruyama")
-(setq wl-smtp-authenticate-type "cram-md5")
+(setq wl-smtp-authenticate-type "plain")
 
 (setq wl-fcc "+fcc")
 (setq wl-expire-alist
