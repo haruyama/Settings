@@ -326,8 +326,8 @@
 (require 'spamfilter-wl)
 (setq wl-spam-folder-name "+spam")
 (setq spamf-wl-spam-folder-name "+spam")
-(setq wl-spam-auto-check-folder-regexp-list '("apop" "^\\."))
-(setq wl-spam-undecided-folder-regexp-list '("apop" "^\\."))
+(setq wl-spam-auto-check-folder-regexp-list '("haruyama" "^\\."))
+(setq wl-spam-undecided-folder-regexp-list '("haruyama" "^\\."))
 (setq wl-spam-scheme 'spamfilter)
 (setq elmo-spam-spamfilter-corpus-filename "~/.elmo/.spamfilter")
 
