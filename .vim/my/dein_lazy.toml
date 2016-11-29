@@ -44,6 +44,10 @@ repo = 'kchmck/vim-coffee-script'
 on_ft = ['coffee']
 
 [[plugins]]
+repo = 'rhysd/vim-crystal'
+on_ft = ['crystal']
+
+[[plugins]]
 repo = 'aohta/blockdiag.vim',
 on_ft = ['diag']
 
