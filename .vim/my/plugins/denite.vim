@@ -16,5 +16,5 @@ nnoremap <silent> ,ur :<C-u>Denite -resume=true<CR>
 nnoremap <silent> ,up :<C-u>Denite -resume=true -select=-1 -immediately=true<CR>
 nnoremap <silent> ,un :<C-u>Denite -resume=true -select=+1 -immediately=true<CR>
 
-call denite#custom#map('_', "\<C-n>", 'move_to_next_line')
-call denite#custom#map('_', "\<C-p>", 'move_to_prev_line')
+call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
