@@ -18,6 +18,9 @@ init: fzf_install
 	cp ~/lib/Settings/sample/.zshrc ~
 	git submodule update --init --recursive
 
+gtk3:
+	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
 js_install: textlint_install js_linter_install
 
 js_linter_install:
