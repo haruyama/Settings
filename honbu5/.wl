@@ -43,7 +43,7 @@
 (setq wl-draft-always-delete-myself t)
 (setq wl-interactive-exit nil)
 (setq wl-interactive-send t)
-(setq wl-default-folder "&haruyama/apop@mail.queen-ml.org:110")
+(setq wl-default-folder "&haruyama@scarlet-camel-91678cecd5d34ab7.znlc.jp:995!")
 (define-key wl-draft-mode-map "\C-c\C-i" 'insert-signature)
 (define-key wl-draft-mode-map "\C-c[Tab]" 'insert-signature)
 (defun mc-wl-verify-signature ()
@@ -274,7 +274,7 @@
          ("未承認広告" . "+spam"))
         ))
 
-(setq wl-biff-check-folder-list '("&haruyama/apop@mail.queen-ml.org:110"))
+(setq wl-biff-check-folder-list '("&haruyama@scarlet-camel-91678cecd5d34ab7.znlc.jp:995!"))
 (setq wl-biff-check-interval 300)
 (add-hook 'wl-summary-exit-hook
           'wl-biff-check-folders)
@@ -326,8 +326,8 @@
 (require 'spamfilter-wl)
 (setq wl-spam-folder-name "+spam")
 (setq spamf-wl-spam-folder-name "+spam")
-(setq wl-spam-auto-check-folder-regexp-list '("apop" "^\\."))
-(setq wl-spam-undecided-folder-regexp-list '("apop" "^\\."))
+(setq wl-spam-auto-check-folder-regexp-list '("haruyama" "^\\."))
+(setq wl-spam-undecided-folder-regexp-list '("haruyama" "^\\."))
 (setq wl-spam-scheme 'spamfilter)
 (setq elmo-spam-spamfilter-corpus-filename "~/.elmo/.spamfilter")
 
@@ -373,10 +373,10 @@
 ;; (setq spamf-tokenize-file-function   #'jtoken-block-tokenize-file)
 ;; (setq spamf-tokenize-buffer-function #'jtoken-block-tokenize-buffer)
 ;; (setq spamf-tokenize-string-function #'jtoken-block-tokenize-string)
-;;(setq elmo-split-folder "&haruyama/apop@mail.queen-ml.org:110")
+;;(setq elmo-split-folder "&haruyama@scarlet-camel-91678cecd5d34ab7.znlc.jp:995!")
 ;;(setq elmo-split-rule
 ;;      '(((spamfilter) "+spam") ; SPAM は `+spam' へ
-;;              (t "&haruyama/apop@mail.queen-ml.org:110")))         ; それ以外は `+inbox' へ
+;;              (t "&haruyama@scarlet-camel-91678cecd5d34ab7.znlc.jp:995!")))         ; それ以外は `+inbox' へ
 
 
 

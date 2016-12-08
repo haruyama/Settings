@@ -3,10 +3,12 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+(require 'generic-x)
+
 (require 'eieio)
 (package-initialize)
 
-(require `cl)
+(require `cl-lib)
 
 (defvar installing-package-list
   '(apel
@@ -251,7 +253,7 @@
   (add-hook (intern (format "%s-hook" mode))
             (lambda ()
               (add-to-list (make-local-variable 'paredit-space-for-delimiter-predicates)
-                           (lambda (_ _) nil))
+                           (lambda (a b) nil))
               (enable-paredit-mode))))
 
 (add-hook 'oz-mode-hook
