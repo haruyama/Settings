@@ -31,4 +31,4 @@ use_anti_alias = true
 fg_color = green
 DEFAULT = 13,Ricty Diminished Discord 13
 bg_color = black
-fontsize = 13
+fontsize = 14
