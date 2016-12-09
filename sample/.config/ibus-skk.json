@@ -1,15 +1,15 @@
 {
-	"custom_rom_kana_rule": {
-		".": [null, "."],
-		",": [null, ","],
-		"d.": [null, "。"],
-		"d,": [null, "、"],
+  "custom_rom_kana_rule": {
+    ".": [null, "."],
+    ",": [null, ","],
+    "d.": [null, "。"],
+    "d,": [null, "、"],
 
-		";": [null, ";"],
-		"?": [null, "?"],
-		"!": [null, "!"],
-		"(": [null, "("],
-		")": [null, ")"],
+    ";": [null, ";"],
+    "?": [null, "?"],
+    "!": [null, "!"],
+    "(": [null, "("],
+    ")": [null, ")"],
 
     "http://": ["l", "http://"],
     "https://": ["l", "https://"]
