@@ -2,11 +2,11 @@
 #
 export ZPLUG_HOME=~/.zplug
 
-if [ ! -f ~/.zplug/init.zsh ]; then
+if [ ! -f $ZPLUG_HOME/init.zsh ]; then
         git clone https://github.com/zplug/zplug $ZPLUG_HOME
 fi
 
-source ~/.zplug/init.zsh
+source $ZPLUG_HOME/init.zsh
 
 #zplug "zplug/zplug"
 zplug "zsh-users/zsh-completions", use:src
