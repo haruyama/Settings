@@ -244,3 +244,6 @@ repo = 'dietsche/vim-lastplace'
 
 [[plugins]]
 repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
