@@ -21,10 +21,13 @@ init: fzf_install
 gtk3:
 	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
-js_install: textlint_install js_linter_install
+js_install: textlint_install js_dev_install js_misc_install
 
-js_linter_install:
-	npm install -g jshint jslint eslint eslint_d
+js_dev_install:
+	npm install -g jshint jslint eslint eslint_d coffeelint npm-check-updates fixpack license-checker eslint-plugin-react
+
+js_misc_install:
+	npm install -g honyaku
 
 textlint_install:
 	npm install -g textlint textlint-rule-max-ten textlint-rule-spellcheck-tech-word textlint-rule-no-mix-dearu-desumasu  textlint-rule-preset-jtf-style textlint-rule-prh
