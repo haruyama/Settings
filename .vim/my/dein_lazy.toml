@@ -76,6 +76,11 @@ repo = 'mxw/vim-jsx'
 on_ft = ['javascript']
 hook_add = '''
 let g:jsx_ext_required = 0
+let g:quickrun_config = {
+      \ "javascript.jsx": {
+      \   "command": "node",
+      \   }
+      \ }
 '''
 
 [[plugins]]
