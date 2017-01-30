@@ -42,3 +42,13 @@ lazy fmaps -u='feedly\.com' g h m a e t c d p l s n b n p o v V m s S D e t d c 
 "lazy fmaps -u='https?://www\.rememberthemilk\.com/home/' j k m i c t ? d F,f G,g S,s L,l Y,y H,h M,m <Del> <C-S-Left> <C-S-Right>
 
 js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
+
+"https://rcmdnk.com/blog/2017/01/27/computer-firefox/
+nnoremap t :mytabopen about:blank<CR>:open<Space>
+command! mytabopen -nargs=1 -description "Open with new tab" :js liberator.open("<args>", liberator.NEW_TAB);
+nnoremap <C-n> :js gBrowser.mTabContainer.advanceSelectedTab(1, true)<CR>
+nnoremap <C-p> :js gBrowser.mTabContainer.advanceSelectedTab(-1, true)<CR>
+nnoremap d :js gBrowser.removeTab(gBrowser.mCurrentTab)<CR>
+nnoremap u :js undoCloseTab()<CR>
+nnoremap r :js gBrowser.reload()<CR>
+nnoremap R :js gBrowser.reload(true)<CR>
