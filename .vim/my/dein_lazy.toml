@@ -123,12 +123,12 @@ repo = 'tpope/vim-rake'
 on_ft = ['ruby']
 
 [[plugins]]
-repo = 'rust-lang/rust.vim'
+repo = 'mckinnsb/rust.vim'
 on_ft = ['rust']
 hook_source = '''
 let g:rustfmt_autosave = 1
 let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
-let g:syntastic_rust_checkers = ['rustc']
+let g:syntastic_rust_checkers = ['cargo']
 '''
 
 [[plugins]]
