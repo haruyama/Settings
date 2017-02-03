@@ -125,13 +125,19 @@ on_ft = ['ruby']
 [[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
+hook_source = '''
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+let g:syntastic_rust_checkers = ['rustc']
+'''
 
 [[plugins]]
 repo = 'racer-rust/vim-racer'
 on_ft = ['rust']
 hook_source = '''
 set hidden
-let g:racer_cmd = expand('~/.cargo/bin/racer')
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let $RUST_SRC_PATH = '$HOME/src/Rust/rust/src'
 '''
 
 [[plugins]]
