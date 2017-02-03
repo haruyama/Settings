@@ -137,7 +137,6 @@ on_ft = ['rust']
 hook_source = '''
 set hidden
 let g:racer_cmd = '$HOME/.cargo/bin/racer'
-let $RUST_SRC_PATH = '$HOME/src/Rust/rust/src'
 '''
 
 [[plugins]]
