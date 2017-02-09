@@ -31,3 +31,8 @@ js_misc_install:
 
 textlint_install:
 	npm install -g textlint textlint-rule-max-ten textlint-rule-spellcheck-tech-word textlint-rule-no-mix-dearu-desumasu  textlint-rule-preset-jtf-style textlint-rule-prh
+
+nodebrew:
+	wget git.io/nodebrew
+	perl nodebrew setup
+	rm nodebrew
