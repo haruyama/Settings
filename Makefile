@@ -24,7 +24,7 @@ gtk3:
 js_install: textlint_install js_dev_install js_misc_install
 
 js_dev_install:
-	npm install -g jshint jslint eslint eslint_d coffeelint npm-check-updates fixpack license-checker eslint-plugin-react
+	npm install -g jshint jslint eslint eslint_d coffeelint npm-check-updates fixpack license-checker eslint-plugin-react tern
 
 js_misc_install:
 	npm install -g honyaku
