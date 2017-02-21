@@ -22,6 +22,8 @@ setl includeexpr=substitute(substitute(v:fname,'/.*$','',''),'\\.','/','g')
 setl path+=src;/,test;/
 setl suffixesadd=.clj,.cljs
 
+let g:syntastic_clojure_checkers = ['nrepl']
+
 augroup after_ftplugin_clojure
   autocmd! BufWritePre <buffer> :RTrim
 augroup END

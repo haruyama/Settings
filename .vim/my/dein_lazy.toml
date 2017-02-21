@@ -24,6 +24,14 @@ let g:vimshell_interactive_update_time = 500
 '''
 
 [[plugins]]
+repo = 'tpope/vim-salve'
+on_ft = ['clojure ']
+
+[[plugins]]
+repo = 'tpope/vim-projectionist'
+on_ft = ['clojure ']
+
+[[plugins]]
 repo = 'tpope/vim-dispatch'
 on_ft = ['clojure ']
 
