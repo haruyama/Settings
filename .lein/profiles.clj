@@ -3,6 +3,7 @@
                   [jonase/eastwood "0.2.3"]
                   [lein-ancient    "0.6.10"]
                   [lein-bikeshed   "0.4.1"]
+                  [lein-cljfmt     "0.5.6"]
                   [lein-cloverage  "1.0.9"]
                   [lein-difftest   "2.0.0"]
                   [lein-exec       "0.3.6"]
@@ -18,8 +19,6 @@
         :dependencies  [[org.clojure/tools.namespace "0.2.10"]
                         [im.chit/vinyasa             "0.4.7"]
                         [jonase/kibit                "0.1.3"]
-                        [spyscope                    "0.1.6"]
-                        [cljfmt "0.5.1"]
-                        [jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]]
+                        [spyscope                    "0.1.6"]]
         :injections  [(require 'spyscope.core)]
         :jvm-opts ["-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]}}
