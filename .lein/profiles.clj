@@ -18,6 +18,8 @@
         :dependencies  [[org.clojure/tools.namespace "0.2.10"]
                         [im.chit/vinyasa             "0.4.7"]
                         [jonase/kibit                "0.1.3"]
-                        [spyscope                    "0.1.6"]]
+                        [spyscope                    "0.1.6"]
+                        [cljfmt "0.5.1"]
+                        [jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]]
         :injections  [(require 'spyscope.core)]
         :jvm-opts ["-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]}}
