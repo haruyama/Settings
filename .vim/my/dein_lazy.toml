@@ -25,27 +25,35 @@ let g:vimshell_interactive_update_time = 500
 
 [[plugins]]
 repo = 'tpope/vim-salve'
-on_ft = ['clojure ']
+on_ft = ['clojure']
 
 [[plugins]]
 repo = 'tpope/vim-projectionist'
-on_ft = ['clojure ']
+on_ft = ['clojure']
 
 [[plugins]]
 repo = 'tpope/vim-dispatch'
-on_ft = ['clojure ']
+on_ft = ['clojure']
 
 [[plugins]]
 repo = 'tpope/vim-fireplace'
-on_ft = ['clojure ']
+on_ft = ['clojure']
 
 [[plugins]]
 repo = 'guns/vim-clojure-static'
-on_ft = ['clojure ']
+on_ft = ['clojure']
 
 [[plugins]]
 repo = 'guns/vim-clojure-highlight'
-on_ft = ['clojure ']
+on_ft = ['clojure']
+
+# [[plugins]]
+# repo = 'venantius/vim-cljfmt'
+# on_ft = ['clojure']
+
+[[plugins]]
+repo = 'venantius/vim-eastwood'
+on_ft = ['clojure']
 
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
