@@ -1,14 +1,14 @@
-nnoremap <silent> ,ua :<C-u>DeniteBufferDir file_rec directory_rec<CR>
+nnoremap <silent> ,ua :<C-u>DeniteBufferDir -default-action=split file_rec directory_rec<CR>
 
 nnoremap <silent> ,uc :<C-u>Denite colorscheme<CR>
-nnoremap <silent> ,ud :<C-u>Denite directory_rec<CR>
+nnoremap <silent> ,ud :<C-u>Denite -default-action=split directory_rec<CR>
 nnoremap <silent> ,uf :<C-u>Denite filetype<CR>
 nnoremap <silent> ,ug :<C-u>Denite grep<CR>
 nnoremap <silent> ,ul :<C-u>Denite line<CR>
 
 nnoremap <silent> ,um :<C-u>Denite file_mru<CR>
 
-nnoremap <silent> ,uu :<C-u>Denite buffer file_mru<CR>
+nnoremap <silent> ,uu :<C-u>Denite -default-action=split buffer file_mru<CR>
 nnoremap <silent> ,uy :<C-u>Denite neoyank<CR>
 
 nnoremap <silent> ,ur :<C-u>Denite -resume=true<CR>
@@ -23,3 +23,5 @@ call denite#custom#source('file_mru', 'matchers', ['matcher_fuzzy', 'matcher_pro
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
 \ [ '.git/', '.ropeproject/', '__pycache__/',
 \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', 'node_modules/', 'vendor/'])
+
+call denite#custom#source('file_mru', 'matchers', ['matcher_fuzzy', 'matcher_project_files'])
