@@ -34,10 +34,10 @@ Control Right :NextWorkspace
 Control Left :PrevWorkspace
 !Mod1 E :ExecCommand Eterm
 !Mod1 M :ExecCommand multi-gnome-terminal
-Mod1 G :ExecCommand /usr/bin/gnome-terminal
+Mod1 G :ExecCommand /usr/bin/gnome-terminal --hide-menubar
 !Mod1 G :ExecCommand /usr/bin/xfce4-terminal --hide-menubar
 
-!XF86Search :ExecCommand gnome-terminal
+!XF86Search :ExecCommand gnome-terminal --hide-menubar
 
 Mod4 L :ExecCommand gnome-screensaver-command -l
 
