@@ -31,14 +31,13 @@
     session
     wanderlust))
 
-(let ((not-installed
-       (loop for package in installing-package-list
-             when (not (package-installed-p package))
-             collect package)))
-  (when not-installed
-    (package-refresh-contents)
-    (dolist (package not-installed)
-      (package-install package))))
+;; refresh package list if it is not already available
+(when (not package-archive-contents) (package-refresh-contents))
+
+;; install packages from the list that are not yet installed
+(dolist (pkg installing-package-list)
+  (when (and (not (package-installed-p pkg)) (assoc pkg package-archive-contents))
+    (package-install pkg)))
 
 (when  (require 'helm-config nil t)
   (require 'helm-ls-git)
@@ -171,11 +170,24 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(helm-truncate-lines t t)
  '(inhibit-startup-screen t)
- '(mime-view-type-subtype-score-alist (quote (((text . enriched) . 3) ((text . richtext) . 2) ((text . plain) . 4) ((text . html) . mime-view-text/html-entity-score) (multipart . mime-view-multipart-entity-score))))
+ '(mime-view-type-subtype-score-alist
+   (quote
+    (((text . enriched)
+      . 3)
+     ((text . richtext)
+      . 2)
+     ((text . plain)
+      . 4)
+     ((text . html)
+      . mime-view-text/html-entity-score)
+     (multipart . mime-view-multipart-entity-score))))
+ '(package-selected-packages
+   (quote
+    (wanderlust session semi recentf-ext markdown-mode magit helm-ls-git helm fuzzy flim ddskk color-theme auto-async-byte-compile auto-save-buffers-enhanced auto-complete apel paredit)))
  '(riece-desktop-notify-message-function (quote riece-message-text))
- '(tool-bar-mode nil)
- )
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
