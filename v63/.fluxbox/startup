@@ -30,11 +30,6 @@ export VTE_CJK_WIDTH=auto
 #export LC_NAME=ja_JP.UTF-8
 #export LC_TELEPHONE=ja_JP.UTF-8
 
-/usr/bin/setxkbmap -option "ctrl:nocaps,keypad:pointerkeys"
-/usr/bin/xmodmap ~/.xmodmaprc
-/usr/bin/xkbset m
-/usr/bin/X11/xset m 2 10
-
 pkill uim-xim
 /usr/bin/uim-xim &
 
@@ -60,6 +55,11 @@ pkill fdpowermon
 /usr/bin/synclient TapButton3=2
 
 /usr/bin/gnome-settings-daemon &
+
+/usr/bin/setxkbmap -option "ctrl:nocaps,keypad:pointerkeys"
+/usr/bin/xmodmap ~/.xmodmaprc
+/usr/bin/xkbset m
+/usr/bin/x11/xset m 2 10
 
 exec fluxbox
 # or if you want to keep a log:
