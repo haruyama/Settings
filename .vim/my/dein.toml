@@ -51,12 +51,6 @@ augroup END
 '''
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-hook_source = '''
-source ~/.vim/my/plugins/unite.vim
-'''
-
-[[plugins]]
 repo = 'AutoTag'
 
 [[plugins]]
