@@ -57,7 +57,7 @@ source ~/.vim/my/plugins/unite.vim
 '''
 
 [[plugins]]
-repo = 'AutoTag'
+repo = 'vim-scripts/AutoTag'
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
