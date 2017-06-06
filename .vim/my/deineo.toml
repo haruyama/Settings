@@ -1,4 +1,17 @@
 [[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = ['context_filetype.vim']
+if = "has('nvim')"
+on_i = 1
+hook_source = '''
+let g:deoplete#enable_at_startup = 1
+source ~/.vim/my/plugins/deoplete.rc.vim
+'''
+
+[[plugins]]
 repo = 'tweekmonster/deoplete-clang2'
 on_ft = ['c', 'cpp']
 hook_source = '''
@@ -18,16 +31,9 @@ on_ft = 'python'
 repo = 'zchee/deoplete-go'
 on_i = 1
 on_ft = 'go'
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = ['context_filetype.vim']
-if = "has('nvim')"
-on_i = 1
+build = 'make'
 hook_source = '''
-let g:deoplete#enable_at_startup = 1
-source ~/.vim/my/plugins/deoplete.rc.vim
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#use_cache = 1
 '''

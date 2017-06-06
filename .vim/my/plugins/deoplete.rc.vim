@@ -3,6 +3,7 @@
 "
 
 set completeopt+=noinsert
+set completeopt+=noselect
 
 " <TAB>: completion.
 imap <silent><expr> <TAB>
