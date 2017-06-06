@@ -1,6 +1,9 @@
 [[plugins]]
-repo = 'zchee/deoplete-clang'
+repo = 'tweekmonster/deoplete-clang2'
 on_ft = ['c', 'cpp']
+hook_source = '''
+autocmd FileType c,cpp let b:clang2_orig_maps = {}
+'''
 
 [[plugins]]
 repo = 'carlitux/deoplete-ternjs'
@@ -13,17 +16,18 @@ on_ft = 'python'
 
 [[plugins]]
 repo = 'zchee/deoplete-go'
+on_i = 1
 on_ft = 'go'
 
 [[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
-depends = ['Shougo/context_filetype.vim']
+depends = ['context_filetype.vim']
 if = "has('nvim')"
 on_i = 1
 hook_source = '''
 let g:deoplete#enable_at_startup = 1
 source ~/.vim/my/plugins/deoplete.rc.vim
 '''
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
