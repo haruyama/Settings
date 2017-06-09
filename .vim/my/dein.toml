@@ -104,17 +104,26 @@ repo = 'osyo-manga/unite-quickfix'
 [[plugins]]
 repo = 'rhysd/clever-f.vim'
 
+# [[plugins]]
+# repo = 'scrooloose/syntastic'
+# hook_add = '''
+# let g:syntastic_always_populate_loc_list = 1
+# " let g:syntastic_check_on_open = 1
+# let g:syntastic_check_on_wq = 0
+# set statusline+=%#warningmsg#
+# set statusline+=%{SyntasticStatuslineFlag()}
+# set statusline+=%*
+# " http://stackoverflow.com/questions/18270355/how-to-ignore-angular-directive-lint-error-with-vim-and-syntastic
+# let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+# '''
+
 [[plugins]]
-repo = 'scrooloose/syntastic'
+repo = 'w0rp/ale'
 hook_add = '''
-let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-" http://stackoverflow.com/questions/18270355/how-to-ignore-angular-directive-lint-error-with-vim-and-syntastic
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'go': ['go build'],
+\}
 '''
 
 [[plugins]]
