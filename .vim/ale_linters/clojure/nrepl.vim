@@ -3,10 +3,6 @@ if exists("g:loaded_ale_clojure_nrepl_checker")
 endif
 let g:loaded_ale_clojure_nrepl_checker=1
 
-function! ale_linters#clojure#nrepl#Send(buffer) abort
-    return
-endfunction
-
 function! ale_linters#clojure#nrepl#Handle(buffer, lines) abort
     let l:filename = substitute(expand('%'), getcwd() . '/', '', '')
     let l:prefix = matchstr(filename, "^\\(src\\|test\\)/")
