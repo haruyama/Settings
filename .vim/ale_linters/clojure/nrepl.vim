@@ -14,7 +14,7 @@ function! ale_linters#clojure#nrepl#Handle(buffer, lines) abort
         return []
     endif
 
-    let l:template = '(require ''clojure.tools.namespace) (require ''clojure.test) (let [namespaces (clojure.tools.namespace/find-namespaces-in-dir (java.io.File. "%s"))] (doseq [ns namespaces] (prn ns) (require ns :reload)))'
+    let l:template = '(require ''clojure.tools.namespace) (require ''clojure.test) (let [namespaces (clojure.tools.namespace/find-namespaces-in-dir (java.io.File. "%s"))] (doseq [ns namespaces] (require ns :reload)))'
     let l:exp      = printf(l:template, escape(l:filename, '"\'))
     let l:response = fireplace#client().eval(l:exp, {})
     if type(l:response) == type(0)
