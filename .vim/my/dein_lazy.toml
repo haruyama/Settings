@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
 depends = ['neosnippet', 'context_filetype.vim']
-if = "has('lua') && !has('nvim') "
+if = "has('lua') && !has('nvim')"
 on_i = 1
 hook_source = '''
 let g:neocomplete#enable_at_startup = 1
