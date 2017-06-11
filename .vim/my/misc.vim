@@ -66,4 +66,3 @@ xmap ab <Plug>(textobj-multitextobj-a)
 augroup QuickFixCmd
   autocmd! QuickFixCmdPost make,*grep* cwindow
 augroup END
-
