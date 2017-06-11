@@ -69,6 +69,10 @@ repo = 'aohta/blockdiag.vim',
 on_ft = ['diag']
 
 [[plugins]]
+repo = 'ElmCast/elm-vim'
+on_ft = ['elm']
+
+[[plugins]]
 repo = 'fatih/vim-go'
 on_ft = ['go']
 
