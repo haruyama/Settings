@@ -15,14 +15,31 @@ endfunction
 
 command! RTrim :call s:RTrim()
 
-function! s:VimShellSendStringAndMove(line1, line2, string)
-  let string = join(getline(a:line1, a:line2), "\<LF>")
-  let string .= "\<LF>"
-  execute 'VimShellSendString ' . string
-  call cursor(a:line2 + 1, 1)
-endfunction
 
-command! -range -nargs=? VimShellSendStringAndMove call s:VimShellSendStringAndMove(<line1>, <line2>, <q-args>)
+if has('nvim')
+  augroup Terminal
+    au!
+    au TermOpen * let g:last_terminal_job_id = b:terminal_job_id
+  augroup END
+  function! s:REPLSend(line1, line2, string)
+    let l:string = join(getline(a:line1, a:line2), "\<LF>")
+    let l:string .= "\<LF>"
+    call jobsend(g:last_terminal_job_id, l:string)
+    call cursor(a:line2 + 1, 1)
+  endfunction
 
-xnoremap <silent> ,s   :VimShellSendString<CR>
-xnoremap <silent> <CR> :VimShellSendStringAndMove<CR>
+  command! REPLSendLine call s:REPLSend([getline('.')])
+  command! -range -nargs=? REPLSendLine call s:REPLSend(<line1>, <line2>, <q-args>)
+
+  xnoremap <silent> <CR> :REPLSendLine<CR>
+else
+  function! s:VimShellSendStringAndMove(line1, line2, string)
+    let string = join(getline(a:line1, a:line2), "\<LF>")
+    let string .= "\<LF>"
+    execute 'VimShellSendString ' . string
+    call cursor(a:line2 + 1, 1)
+  endfunction
+  command! -range -nargs=? VimShellSendStringAndMove call s:VimShellSendStringAndMove(<line1>, <line2>, <q-args>)
+  xnoremap <silent> ,s   :VimShellSendString<CR>
+  xnoremap <silent> <CR> :VimShellSendStringAndMove<CR>
+endif

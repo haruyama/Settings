@@ -16,6 +16,7 @@ on_map = ['<Plug>(vimfiler_switch)']
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
+if = "!has('nvim')"
 on_map = [['n', '<Plug>']]
 on_cmd = [ 'VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTerminal', 'VimShellPop']
 hook_add = '''
