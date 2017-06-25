@@ -77,6 +77,10 @@ repo = 'fatih/vim-go'
 on_ft = ['go']
 
 [[plugins]]
+repo = 'nbouscal/vim-stylish-haskell'
+on_ft = ['haskell']
+
+[[plugins]]
 repo = 'b4b4r07/vim-hcl'
 on_ft = ['hcl']
 
