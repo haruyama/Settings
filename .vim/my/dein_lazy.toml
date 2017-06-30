@@ -116,8 +116,12 @@ repo = 'elzr/vim-json'
 on_ft = ['json']
 
 [[plugins]]
+repo = 'godlygeek/tabular'
+
+[[plugins]]
 repo = 'plasticboy/vim-markdown'
-on_ft = ['makrdown', 'mkd']
+depends = ['tabular']
+on_ft = ['markdown', 'mkd']
 
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
