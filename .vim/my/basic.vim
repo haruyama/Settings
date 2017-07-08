@@ -56,3 +56,7 @@ endif
 nnoremap Y y$
 set display=lastline
 set pumheight=11
+
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+endif
