@@ -17,6 +17,8 @@ init: fzf_install
 	cp ~/lib/Settings/sample/.zshenv ~
 	cp ~/lib/Settings/sample/.zshrc ~
 	git submodule update --init --recursive
+	mkdir -p ~/.config/nvim
+	ln -fs ~/.vimrc ~/.config/nvim/init.vim
 
 gtk3:
 	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
