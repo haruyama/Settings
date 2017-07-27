@@ -36,7 +36,6 @@ set lazyredraw
 
 set report=0
 set synmaxcol=200
-set termguicolors
 
 set t_Co=256
 "set cmdheight=3
