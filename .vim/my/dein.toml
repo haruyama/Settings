@@ -122,7 +122,7 @@ repo = 'w0rp/ale'
 hook_add = '''
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'go': ['go build'],
+\   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
 \}
 '''
 
