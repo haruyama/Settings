@@ -9,12 +9,6 @@ source ~/.vim/my/plugins/neocomplete.vim
 '''
 
 [[plugins]]
-repo = 'Shougo/vimfiler'
-depends = ['unite.vim'],
-on_cmd = [ 'VimFilerTab', 'VimFiler', 'VimFilerExplorer', 'VimFilerBufferDir' ]
-on_map = ['<Plug>(vimfiler_switch)']
-
-[[plugins]]
 repo = 'Shougo/vimshell.vim'
 if = "!has('nvim')"
 on_map = [['n', '<Plug>']]
@@ -120,7 +114,7 @@ let g:quickrun_config = {
 repo = 'ternjs/tern_for_vim'
 on_ft = ['javascript']
 hook_post_update = '''
-  let g:dein#plugin.build = "npm install"
+  let g:dein#plugin.build = 'npm install'
 '''
 
 [[plugins]]
@@ -187,6 +181,17 @@ on_ft = ['scheme']
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = ['typescript']
+hook_post_update = '''
+  let g:dein#plugin.build = 'make'
+'''
 
 [[plugins]]
 repo = 'superbrothers/vim-vimperator'
