@@ -19,6 +19,11 @@ let g:vimshell_interactive_update_time = 500
 '''
 
 [[plugins]]
+repo = 'rhysd/vim-grammarous'
+on_cmd = [ 'GrammarousCheck' ]
+
+
+[[plugins]]
 repo = 'tpope/vim-salve'
 on_ft = ['clojure']
 
