@@ -16,6 +16,7 @@
     auto-save-buffers-enhanced
     auto-async-byte-compile
     color-theme
+    cp5022x
     ddskk
     flim
     flymake
@@ -185,7 +186,7 @@
      (multipart . mime-view-multipart-entity-score))))
  '(package-selected-packages
    (quote
-    (wanderlust session semi recentf-ext markdown-mode magit helm-ls-git helm fuzzy flim ddskk color-theme auto-async-byte-compile auto-save-buffers-enhanced auto-complete apel paredit)))
+    (cp5022x wanderlust session semi recentf-ext markdown-mode magit helm-ls-git helm fuzzy flim ddskk color-theme auto-async-byte-compile auto-save-buffers-enhanced auto-complete apel paredit)))
  '(riece-desktop-notify-message-function (quote riece-message-text))
  '(tool-bar-mode nil))
 (custom-set-faces

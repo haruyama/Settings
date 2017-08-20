@@ -1,9 +1,17 @@
 ;; -*- mode: emacs-lisp; coding: euc-japan-unix -*-
-;; vim: filetype=emacs-lisp
+;; vim: filetype=lisp
+
+(setq charsets-mime-charset-alist
+      (cons
+       (cons (list 'unicode)	'utf-8)
+       charsets-mime-charset-alist))
+(setq charsets-mime-charset-alist
+      (cons
+       (cons (list 'ascii)	'us-ascii)
+       charsets-mime-charset-alist))
 (setq wl-folder-notify-deleted t)
 (setq wl-folder-check-async t)
 
-(setq wl-icon-directory "/usr/share/emacs/site-lisp/wl/etc/icons")
 ;; [[ SEMI の設定 ]]
 
 ;; HTML パートを表示しない
@@ -14,7 +22,7 @@
 (setq mime-edit-split-message nil)
 
 ;; 大きいメッセージとみなす行数の設定
-(setq mime-edit-message-default-max-lines 50000)
+(setq mime-edit-message-default-max-lines 100000)
 (setq mime-setup-enable-inline-image t)
 (setq mime-edit-message-max-length nil)
 
@@ -90,20 +98,9 @@
 ;; Summary モードに移るとき, 最初にスレッドを開いておく
 (setq wl-thread-insert-opened t)
 
-(require 'mess-lcl)
-
-(setq mime-edit-translate-buffer-hook
-      '((lambda ()
-          (let ((message-mime-mode mime-edit-mode-flag)
-                (message-edit-buffer (current-buffer))
-                message-save-encoder)
-            (message-locale-maybe-encode)))
-        mime-edit-translate-header))
-
-
 (setq message-locale-mime-charsets-alist
       '((en us-ascii)
-        (fj us-ascii iso-2022-jp iso-2022-jp-2)
+        (fj us-ascii utf-8)
         (none)))
 
 
@@ -132,7 +129,7 @@
 
 
 (defvar my-mime-filename-coding-system-for-decode
-  '(iso-2022-jp japanese-shift-jis japanese-iso-8bit))
+  '(utf-8 iso-2022-jp japanese-shift-jis japanese-iso-8bit))
 
 (require 'mime-setup)
 (eval-after-load "mime"
@@ -405,3 +402,6 @@
       (append '(("^%inbox$" . 6) ("^+spam$" . 6))
               wl-summary-number-column-alist))
 
+(add-hook 'wl-draft-mode-hook
+          (lambda ()
+            (add-to-list 'mime-charset-type-list '(utf-8 8 nil))))
