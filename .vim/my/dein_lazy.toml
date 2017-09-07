@@ -10,7 +10,7 @@ source ~/.vim/my/plugins/neocomplete.vim
 
 [[plugins]]
 repo = 'Shougo/vimshell.vim'
-if = "!has('nvim')"
+if = "!has('nvim') && !has('terminal')"
 on_map = [['n', '<Plug>']]
 on_cmd = [ 'VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTerminal', 'VimShellPop']
 hook_add = '''
