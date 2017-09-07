@@ -405,3 +405,24 @@
 (add-hook 'wl-draft-mode-hook
           (lambda ()
             (add-to-list 'mime-charset-type-list '(utf-8 8 nil))))
+
+;; Workaround for base64 with trailing garbage
+;; http://thread.gmane.org/gmane.mail.wanderlust.general.japanese/7628/focus=7640
+(require 'mime-def)
+(mel-define-method mime-decode-string (string (nil "base64"))
+  (condition-case error
+      (base64-decode-string string)
+    (error
+     (catch 'done
+       (when (string-match
+              "\\([A-Za-z0-9+/ \t\r\n]+\\)=*" string)
+         (let ((tail (substring string (match-end 0)))
+               (string (match-string 1 string)))
+           (dotimes (i 3)
+             (condition-case nil
+                 (progn
+                   (setq string (base64-decode-string string))
+                   (throw 'done (concat string tail)))
+               (error))
+             (setq string (concat string "=")))))
+       (signal (car error) (cdr error))))))
