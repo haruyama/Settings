@@ -109,9 +109,10 @@ repo = 'w0rp/ale'
 hook_add = '''
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
+\   'go': ['go build', 'go vet'],
 \}
 '''
+# \   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
