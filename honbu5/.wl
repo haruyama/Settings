@@ -3,12 +3,8 @@
 
 (setq charsets-mime-charset-alist
       (cons
-       (cons (list 'unicode)	'utf-8)
-       charsets-mime-charset-alist))
-(setq charsets-mime-charset-alist
-      (cons
-       (cons (list 'ascii)	'us-ascii)
-       charsets-mime-charset-alist))
+        (cons (list 'unicode) 'utf-8)
+        charsets-mime-charset-alist))
 (setq wl-folder-notify-deleted t)
 (setq wl-folder-check-async t)
 
@@ -68,14 +64,14 @@
       (mc-decrypt-message))))
 
 (eval-after-load "mailcrypt"
-  '(setq mc-modes-alist
-         (append
-          (quote
-           ((wl-draft-mode (encrypt . mc-encrypt-message)
-                           (sign . mc-sign-message))
-            (wl-summary-mode (decrypt . mc-wl-decrypt-message)
-                             (verify . mc-wl-verify-signature))))
-          mc-modes-alist)))
+                 '(setq mc-modes-alist
+                        (append
+                          (quote
+                            ((wl-draft-mode (encrypt . mc-encrypt-message)
+                                            (sign . mc-sign-message))
+                             (wl-summary-mode (decrypt . mc-wl-decrypt-message)
+                                              (verify . mc-wl-verify-signature))))
+                          mc-modes-alist)))
 
 
 (require 'lsdb)
@@ -133,10 +129,10 @@
 
 (require 'mime-setup)
 (eval-after-load "mime"
-  '(defadvice mime-entity-filename (around mime-decode activate)
-     ad-do-it
-     (and ad-return-value
-          (setq ad-return-value (eword-decode-string ad-return-value)))))
+                 '(defadvice mime-entity-filename (around mime-decode activate)
+                             ad-do-it
+                             (and ad-return-value
+                                  (setq ad-return-value (eword-decode-string ad-return-value)))))
 
 (when nil
   (defun my-mime-decode-filename (filename)
@@ -148,37 +144,37 @@
               (unless (memq 'emacs-mule dcs)
                 (let ((pcs my-mime-filename-coding-system-for-decode))
                   (while pcs
-                    (if (memq (coding-system-base (car pcs)) dcs)
-                        (setq rest (decode-coding-string filename (car pcs))
-                              pcs nil)
-                      (setq pcs (cdr pcs))))))))
+                         (if (memq (coding-system-base (car pcs)) dcs)
+                           (setq rest (decode-coding-string filename (car pcs))
+                                 pcs nil)
+                           (setq pcs (cdr pcs))))))))
           rest)))
 
   (eval-after-load "mime"
-    '(defadvice mime-entity-filename (after eword-decode-for-broken-MUA activate)
-       "Decode encoded file name for BROKEN MUA."
-       (when (stringp ad-return-value)
-         (setq ad-return-value (my-mime-decode-filename ad-return-value)))))
+                   '(defadvice mime-entity-filename (after eword-decode-for-broken-MUA activate)
+                               "Decode encoded file name for BROKEN MUA."
+                               (when (stringp ad-return-value)
+                                 (setq ad-return-value (my-mime-decode-filename ad-return-value)))))
 
   (defadvice mime-entity-fetch-field
-      (after mime-decode-entity activate)
-    "MIME decode fetched field of entity."
-    (if ad-return-value
-        (setq ad-return-value (eword-decode-string (namajis-decode ad-return-value)))))
+             (after mime-decode-entity activate)
+             "MIME decode fetched field of entity."
+             (if ad-return-value
+               (setq ad-return-value (eword-decode-string (namajis-decode ad-return-value)))))
   (defun namajis-decode (s)
     (with-temp-buffer
       (insert s)
       (beginning-of-buffer)
       (while (re-search-forward "\033$[@B][^\033]+\033([BJ]" nil t)
-        (decode-coding-region (match-beginning 0) (match-end 0) 'junet))
+             (decode-coding-region (match-beginning 0) (match-end 0) 'junet))
       (buffer-substring 1 (point-max)))))
 
 
 (eval-after-load "mime"
-  '(defadvice mime-entity-filename (around mime-decode activate)
-     ad-do-it
-     (and ad-return-value
-          (setq ad-return-value (eword-decode-string ad-return-value)))))
+                 '(defadvice mime-entity-filename (around mime-decode activate)
+                             ad-do-it
+                             (and ad-return-value
+                                  (setq ad-return-value (eword-decode-string ad-return-value)))))
 
 (defun filename-japanese-to-roman-string (str)
   (save-excursion
@@ -186,19 +182,19 @@
     (erase-buffer)
     (insert str)
     (call-process-region
-     (point-min)(point-max)
-     "kakasi" t t t "-rk" "-Ha" "-Ka" "-Ja" "-Ea" "-ka")
+      (point-min)(point-max)
+      "kakasi" t t t "-rk" "-Ha" "-Ka" "-Ja" "-Ea" "-ka")
     (buffer-string)))
 
 ;;添付ファイルのmimeデコード(らしい)
 (eval-after-load "mime"
-  '(defadvice mime-entity-filename (around mime-decode activate)
-     ad-do-it
-     (and ad-return-value
-          (setq ad-return-value
-                (eword-decode-string (decode-mime-charset-string
-                                      ad-return-value
-                                      'iso-2022-jp))))))
+                 '(defadvice mime-entity-filename (around mime-decode activate)
+                             ad-do-it
+                             (and ad-return-value
+                                  (setq ad-return-value
+                                        (eword-decode-string (decode-mime-charset-string
+                                                               ad-return-value
+                                                               'iso-2022-jp))))))
 
 (setq wl-message-ignored-field-list
       '(".")
@@ -211,7 +207,7 @@
         ;;        "reply-to"
         "sender"
         "mailing-list"
-                                        ;        "newsgroups"
+        ;        "newsgroups"
         "delivered-to"
         ))
 
@@ -343,7 +339,7 @@
               ;; (chasen-async-close)
               (spamf-save-corpus "~/.elmo/.spamfilter")))
 
-        ;;; tokenizer の指定
+;;; tokenizer の指定
 
 ;; ChaSen を使う場合
 ;; (setq spamf-file-for-each-function   #'chasen-file-for-each)
@@ -410,19 +406,19 @@
 ;; http://thread.gmane.org/gmane.mail.wanderlust.general.japanese/7628/focus=7640
 (require 'mime-def)
 (mel-define-method mime-decode-string (string (nil "base64"))
-  (condition-case error
-      (base64-decode-string string)
-    (error
-     (catch 'done
-       (when (string-match
-              "\\([A-Za-z0-9+/ \t\r\n]+\\)=*" string)
-         (let ((tail (substring string (match-end 0)))
-               (string (match-string 1 string)))
-           (dotimes (i 3)
-             (condition-case nil
-                 (progn
-                   (setq string (base64-decode-string string))
-                   (throw 'done (concat string tail)))
-               (error))
-             (setq string (concat string "=")))))
+                   (condition-case error
+                                   (base64-decode-string string)
+                                   (error
+                                     (catch 'done
+                                            (when (string-match
+                                                    "\\([A-Za-z0-9+/ \t\r\n]+\\)=*" string)
+                                              (let ((tail (substring string (match-end 0)))
+                                                    (string (match-string 1 string)))
+                                                (dotimes (i 3)
+                                                  (condition-case nil
+                                                                  (progn
+                                                                    (setq string (base64-decode-string string))
+                                                                    (throw 'done (concat string tail)))
+                                                                  (error))
+                                                  (setq string (concat string "=")))))
        (signal (car error) (cdr error))))))
