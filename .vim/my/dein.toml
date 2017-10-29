@@ -110,6 +110,7 @@ hook_add = '''
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'go': ['go build', 'go vet'],
+\   'typescript': ['tslint'],
 \}
 '''
 # \   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
