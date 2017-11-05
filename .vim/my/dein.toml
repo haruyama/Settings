@@ -163,12 +163,7 @@ let g:yankround_max_history = 50
 '''
 
 [[plugins]]
-repo = 'haya14busa/incsearch.vim'
-hook_add = '''
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-'''
+repo = 'haya14busa/is.vim'
 
 [[plugins]]
 repo = 'mh21/errormarker.vim'
