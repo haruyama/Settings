@@ -1,0 +1,58 @@
+! fluxbox-update_configs added '(workspace=[current])' to (Next|Prev)(Window|Group)
+! check lines marked by 'FBCV13' if they are correctly updated
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Mouse1 :MacroCmd {Focus} {Raise} {ActivateTab}
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Move1 :StartMoving
+OnLeftGrip Move1 :StartResizing bottomleft
+OnRightGrip Move1 :StartResizing bottomright
+OnWindowBorder Move1 :StartMoving
+
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Mouse2 :StartTabbing
+
+!mouse actions added by fluxbox-update_configs
+OnTitlebar Double Mouse1 :Shade
+OnTitlebar Mouse3 :WindowMenu
+
+!mouse actions added by fluxbox-update_configs
+OnWindow Mod1 Mouse1 :MacroCmd {Raise} {Focus} {StartMoving}
+OnWindow Mod1 Mouse3 :MacroCmd {Raise} {Focus} {StartResizing BottomRight}
+
+!mouse actions added by fluxbox-update_configs
+OnDesktop Mouse1 :hideMenus
+OnDesktop Mouse2 :workspaceMenu
+OnDesktop Mouse3 :rootMenu
+OnDesktop Mouse4 :nextWorkspace
+OnDesktop Mouse5 :prevWorkspace
+
+automagically bbkeys :bbconf.
+  :
+  :
+Mod1 Tab :NextWindow (workspace=[current]) !! FBCV13 !!
+Control Right :NextWorkspace
+Control Left :PrevWorkspace
+!Mod1 E :ExecCommand Eterm
+!Mod1 M :ExecCommand multi-gnome-terminal
+Mod1 G :ExecCommand /usr/bin/gnome-terminal --hide-menubar
+!Mod1 G :ExecCommand /usr/bin/xfce4-terminal --hide-menubar
+
+!XF86Search :ExecCommand gnome-terminal --hide-menubar
+
+Mod4 L :ExecCommand gnome-screensaver-command -l
+
+Mod4 F1 :SendToWorkspace 1
+Mod4 F2 :SendToWorkspace 2
+Mod4 F3 :SendToWorkspace 3
+Mod4 F4 :SendToWorkspace 4
+Mod4 F5 :SendToWorkspace 5
+
+Mod4 1 :Workspace 1
+Mod4 2 :Workspace 2
+Mod4 3 :Workspace 3
+Mod4 4 :Workspace 4
+Mod4 5 :Workspace 5
+
+Mod4 M :Maximize
+Mod4 S :Stick
+Mod4 T :Shade
