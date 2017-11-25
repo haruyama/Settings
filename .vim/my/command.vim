@@ -35,9 +35,7 @@ if has('nvim')
 elseif has('terminal')
   augroup Terminal
     au!
-    " 新規に作られた直後にこれだけだといけてない
-    " もう一度 buffer に入り直す必要あり
-    au BufEnter * if &l:buftype ==# 'terminal' | let g:last_terminal_bn = bufnr('%') | endif
+    au BufWinEnter * if &l:buftype ==# 'terminal' | let g:last_terminal_bn = bufnr('%') | endif
   augroup END
   function! s:REPLSend(line1, line2, string)
     call cursor(a:line1, 1)
