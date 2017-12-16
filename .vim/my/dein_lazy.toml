@@ -194,9 +194,6 @@ on_ft = ['typescript']
 [[plugins]]
 repo = 'Quramy/tsuquyomi'
 on_ft = ['typescript']
-hook_post_update = '''
-  let g:dein#plugin.build = 'make'
-'''
 
 [[plugins]]
 repo = 'superbrothers/vim-vimperator'
