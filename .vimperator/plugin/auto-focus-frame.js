@@ -1,1 +1,0 @@
-../vimperator-plugins/auto-focus-frame.js

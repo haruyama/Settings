@@ -1,1 +1,0 @@
-../vimperator-plugins/auto_reload.js
