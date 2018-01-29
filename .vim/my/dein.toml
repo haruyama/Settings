@@ -19,7 +19,7 @@ hook_post_update = '''
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 depends = ['neomru.vim', 'neoyank.vim']
-if   = '''has('nvim') || (v:version >= 800 && has('python3'))'''
+if = '''has('nvim') || (v:version >= 800 && has('python3'))'''
 hook_source = '''
 source ~/.vim/my/plugins/denite.vim
 '''
@@ -240,3 +240,11 @@ repo = 'simeji/winresizer'
 
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''

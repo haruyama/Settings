@@ -1,11 +1,11 @@
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-depends = ['neosnippet', 'context_filetype.vim']
-if = "has('lua') && !has('nvim')"
+repo = 'Shougo/deoplete.nvim'
+depends = ['context_filetype.vim']
+if = '''has('nvim') || (v:version >= 800 && has('python3'))'''
 on_i = 1
 hook_source = '''
-let g:neocomplete#enable_at_startup = 1
-source ~/.vim/my/plugins/neocomplete.vim
+let g:deoplete#enable_at_startup = 1
+source ~/.vim/my/plugins/deoplete.rc.vim
 '''
 
 [[plugins]]
@@ -22,6 +22,12 @@ let g:vimshell_interactive_update_time = 500
 repo = 'rhysd/vim-grammarous'
 on_cmd = [ 'GrammarousCheck' ]
 
+[[plugins]]
+repo = 'tweekmonster/deoplete-clang2'
+on_ft = ['c', 'cpp']
+hook_source = '''
+autocmd FileType c,cpp let b:clang2_orig_maps = {}
+'''
 
 [[plugins]]
 repo = 'tpope/vim-salve'
@@ -88,6 +94,17 @@ let g:go_def_mode = 'godef'
 '''
 
 [[plugins]]
+repo = 'zchee/deoplete-go'
+on_i = 1
+on_ft = 'go'
+build = 'make'
+hook_source = '''
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#use_cache = 1
+'''
+
+[[plugins]]
 repo = 'nbouscal/vim-stylish-haskell'
 on_ft = ['haskell']
 
@@ -98,6 +115,11 @@ on_ft = ['hcl']
 [[plugins]]
 repo = 'othree/html5.vim'
 on_ft = ['html']
+
+[[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_ft = 'javascript'
+do = 'npm install -g tern'
 
 [[plugins]]
 repo = 'pangloss/vim-javascript'
@@ -149,6 +171,10 @@ hook_add = '''
   let g:jedi#rename_command = "<leader>R"
   autocmd! FileType python setlocal completeopt-=preview
 '''
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = 'python'
 
 [[plugins]]
 repo = 'tpope/gem-ctags'

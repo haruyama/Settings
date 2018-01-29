@@ -20,6 +20,9 @@ init: fzf_install
 	mkdir -p ~/.config/nvim
 	ln -fs ~/.vimrc ~/.config/nvim/init.vim
 
+neovim:
+	pip3 install neovim
+
 gtk3:
 	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
