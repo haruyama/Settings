@@ -221,10 +221,6 @@ repo = 'Quramy/tsuquyomi'
 on_ft = ['typescript']
 
 [[plugins]]
-repo = 'superbrothers/vim-vimperator'
-on_ft = ['vimperator']
-
-[[plugins]]
 repo = 'posva/vim-vue'
 on_ft = ['vue']
 
