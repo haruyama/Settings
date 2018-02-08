@@ -1,6 +1,5 @@
 update: fzf_install
 	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
-	#git submodule update --init --recursive
 
 fzf_install:
 	[ -d ~/.fzf ] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -16,7 +15,6 @@ init: fzf_install
 	chmod 600 ~/.ssh/config
 	cp ~/lib/Settings/sample/.zshenv ~
 	cp ~/lib/Settings/sample/.zshrc ~
-	git submodule update --init --recursive
 	mkdir -p ~/.config/nvim
 	ln -fs ~/.vimrc ~/.config/nvim/init.vim
 
