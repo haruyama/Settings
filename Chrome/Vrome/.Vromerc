@@ -1,0 +1,4 @@
+" vim: set ft=vim:
+
+set editor=gvim -f
+set disablesites=mail.google.com, reader.google.com, www.facebook.com, feedly.com
