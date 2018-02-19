@@ -2,7 +2,7 @@
   "keyMapping": {
     "suspend": "<C-[>",
     "normal": {
-      ".": "repeatLastCommand",
+      ".": "ignore",
       "<C-Z>": "toSuspendMode",
       "<Esc>": "toNormalMode",
       "<C-[>": "toNormalMode",
