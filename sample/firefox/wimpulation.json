@@ -27,6 +27,7 @@
       "g<": "showLastMessage",
       "<C-G>": "showPageInfo",
       "g<C-G>": "showElementInfo",
+      "H": "back",
       "o": "smartOpen",
       "O": "smartOpenInTab",
       "c": "compose|mousedown|mouseup|mouseclick",
