@@ -168,8 +168,8 @@
       "<C-C>": "toNormalMode",
       "<C-[>": "toNormalMode",
       "<Esc>": "toNormalMode",
-      "<Tab>": "focusNextAndChangeMode",
-      "<S-Tab>": "focusPreviousAndChangeMode",
+      "<Tab>": "ignore",
+      "<S-Tab>": "ignore",
       "<C-O><Tab>": "toInsertModeOnNextInput",
       "<C-O><C-I>": "toInsertModeOnNextInput",
       "<C-O><S-Tab>": "toInsertModeOnPreviousInput"
