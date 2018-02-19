@@ -49,7 +49,7 @@
       "<C-B>": "movePageUp",
       "<C-F>": "movePageDown",
       "<C-Y>": "scrollLineUp",
-      "<C-E>": "scrollLineDown",
+      "<C-E>": "ignore",
       "%": "scrollPercent",
       "zt": "moveTargetAtTop",
       "zz": "moveTargetAtCenter",
