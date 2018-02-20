@@ -374,6 +374,6 @@
     "onlyVisibility": false,
     "highlightSearch": true,
     "overwriteErrorPage": true,
-    "activateNewTab": false
+    "activateNewTab": true
   }
 }
