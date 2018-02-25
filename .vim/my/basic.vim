@@ -8,7 +8,7 @@ set tabstop=4 softtabstop=4 bs=2
 set wildmenu
 set wildmode=list:longest,full
 set textwidth=0
-set foldmethod=indent
+set foldmethod=manual
 if has('clipboard')
   if has('unnamedplus')
     set clipboard=unnamed,unnamedplus
