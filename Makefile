@@ -39,3 +39,6 @@ nodebrew:
 	wget git.io/nodebrew
 	perl nodebrew setup
 	rm nodebrew
+
+tmux:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
