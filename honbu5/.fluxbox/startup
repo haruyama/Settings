@@ -27,6 +27,8 @@ xset b off
 #/usr/lib/x86_64-linux-gnu/mate-notification-daemon/mate-notification-daemon
 /usr/bin/spacefm -d &
 
+/usr/bin/parcellite &
+
 /usr/bin/xinput --set-prop "Logitech Unifying Device. Wireless PID:1028" "Evdev Middle Button Emulation" 1
 
 exec fluxbox
