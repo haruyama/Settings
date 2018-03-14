@@ -10,6 +10,9 @@
 
    [exec] (Gnome Terminal) {/usr/bin/gnome-terminal --hide-menubar}
 
+   [exec] (Firefox) {/usr/bin/firefox}
+   [exec] (Chromium) {/usr/bin/chromium-browser}
+
    [config] (Configuration)
    [submenu] (Styles) {}
       [stylesdir] (/usr/share/fluxbox/styles)
