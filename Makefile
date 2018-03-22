@@ -19,7 +19,9 @@ init: fzf_install
 	ln -fs ~/.vimrc ~/.config/nvim/init.vim
 
 neovim:
+	gem install neovim
 	pip3 install neovim
+	npm install -g neovim
 
 gtk3:
 	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
