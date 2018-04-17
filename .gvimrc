@@ -1,4 +1,4 @@
-set guifont=VL\ ゴシック\ 14
+set guifont=VL\ Gothic\ 16
 colorscheme darkblue
 
 set lines=32
