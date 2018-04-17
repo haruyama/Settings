@@ -49,3 +49,5 @@ GTAGS
 *.omc
 .omakedb
 .omakedb.*
+
+.tern-port
