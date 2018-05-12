@@ -1,0 +1,23 @@
+{
+    "usageCount": 3, 
+    "abbreviation": {
+        "wordChars": "[\\w]", 
+        "abbreviations": [], 
+        "immediate": false, 
+        "ignoreCase": false, 
+        "backspace": true, 
+        "triggerInside": false
+    }, 
+    "modes": [], 
+    "title": "CoqIde", 
+    "hotkey": {
+        "hotKey": null, 
+        "modifiers": []
+    }, 
+    "filter": {
+        "regex": "CoqIde.CoqIde", 
+        "isRecursive": true
+    }, 
+    "type": "folder", 
+    "showInTrayMenu": false
+}
