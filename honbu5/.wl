@@ -424,3 +424,5 @@
                                                                   (error))
                                                   (setq string (concat string "=")))))
        (signal (car error) (cdr error))))))
+
+(defalias 'wl-match-string 'match-string "")
