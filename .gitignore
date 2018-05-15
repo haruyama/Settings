@@ -20,15 +20,10 @@
 .mlterm/comphist
 .mlterm/challenge
 
-.riece/log
-.riece/save
-
 .vim/.netrwhist
 .vim/bundle/*
 .vim/history/*
 .vim/spell
 .vim/view/
-
-.vimperator/info
 
 a.out
