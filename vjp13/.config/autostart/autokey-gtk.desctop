@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=autokey-gtk
+Comment=AutoKey
+Exec=/usr/bin/autokey-gtk
+Terminal=false
