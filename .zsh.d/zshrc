@@ -70,7 +70,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*:default' list-colors ""
 #zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
-zstyle ':completion:*' completer _oldlist _complete _match _history _ignored _approximate _prefix
+zstyle ':completion:*' completer _oldlist _complete _match _ignored _approximate _prefix
+# _history
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' verbose yes
 #zstyle ':completion:sudo:*' environ PATH="$SUDO_PATH:$PATH"
