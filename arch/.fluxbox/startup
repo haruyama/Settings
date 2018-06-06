@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+xmodmap "/home/haruyama/.Xmodmap"
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+# unclutter -idle 2 &
+# wmnd &
+# wmsmixer -w &
+# idesk &
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+pkill ssh-agent
+xset b off
+eval `ssh-agent`
+
+pkill ibus-daemon
+/usr/bin/ibus-daemon --xim &
+export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+
+
+/usr/bin/fbsetroot -solid black
+
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "/home/haruyama/.fluxbox/log"
