@@ -27,6 +27,11 @@ export XMODIFIERS=@im=ibus
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 
+pkill gnome-screensaver
+/usr/bin/gnome-screensaver &
+
+pkill xautolock
+/usr/bin/xautolock -locker "/usr/bin/gnome-screensaver-command -l" &
 
 /usr/bin/fbsetroot -solid black
 

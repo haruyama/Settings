@@ -75,6 +75,7 @@ Mod1 F5 :Kill
 Mod1 F9 :Minimize
 Mod1 F10 :Maximize
 Mod4 m :Fullscreen
+Mod4 l :Exec gnome-screensaver-command -l
 
 # open the window menu
 Mod1 space :WindowMenu
