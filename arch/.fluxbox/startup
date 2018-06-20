@@ -35,6 +35,8 @@ pkill xautolock
 
 /usr/bin/fbsetroot -solid black
 
+/usr/bin/parcellite &
+
 exec fluxbox
 # or if you want to keep a log:
 # exec fluxbox -log "/home/haruyama/.fluxbox/log"
