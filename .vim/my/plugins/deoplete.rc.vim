@@ -34,22 +34,22 @@ endfunction
 
 inoremap <expr> '  pumvisible() ? deoplete#mappings#close_popup() : "'"
 
-" call deoplete#custom#set('_', 'matchers', ['matcher_head'])
-" call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
-" call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment', 'String'])
+" call deoplete#custom#source('_', 'matchers', ['matcher_head'])
+" call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
+" call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
 
 " Use auto delimiter
-" call deoplete#custom#set('_', 'converters',
+" call deoplete#custom#source('_', 'converters',
 "       \ ['converter_auto_paren',
 "       \  'converter_auto_delimiter', 'remove_overlap'])
-call deoplete#custom#set('_', 'converters', [
+call deoplete#custom#source('_', 'converters', [
       \ 'converter_remove_paren',
       \ 'converter_remove_overlap',
       \ 'converter_truncate_abbr',
       \ 'converter_truncate_menu',
       \ ])
 
-" call deoplete#custom#set('buffer', 'min_pattern_length', 9999)
+" call deoplete#custom#source('buffer', 'min_pattern_length', 9999)
 
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
