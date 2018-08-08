@@ -85,8 +85,8 @@ let g:niji_matching_filetypes = ['lisp', 'scheme']
 [[plugins]]
 repo = 'haruyama/EnhCommentify.vim'
 
-[[plugins]]
-repo = 'haruyama/vim-matchopen'
+#[[plugins]]
+#repo = 'haruyama/vim-matchopen'
 
 [[plugins]]
 repo = 'honza/vim-snippets'
