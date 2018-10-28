@@ -1,4 +1,9 @@
 [app] (name=fbrun)
-  [Position]	(WINCENTER)	{0 0}
+  [Position]	(CENTER)	{0 0}
   [Layer]	{2}
+[end]
+[app] (name=slack) (class=Slack) (role=browser-window)
+[end]
+[app] (name=Navigator) (class=Firefox) (role=browser)
+  [Workspace]	{0}
 [end]
