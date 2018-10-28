@@ -25,11 +25,19 @@ xset b off
 #/usr/bin/synergys -a localhost
 /usr/lib/notification-daemon/notification-daemon &
 #/usr/lib/x86_64-linux-gnu/mate-notification-daemon/mate-notification-daemon
+pkill spacefm
 /usr/bin/spacefm -d &
 
+pkill parcellite
 /usr/bin/parcellite &
 
 /usr/bin/xinput --set-prop "Logitech Unifying Device. Wireless PID:1028" "Evdev Middle Button Emulation" 1
+
+pkill dropbox
+/usr/bin/dropbox start &
+
+/usr/bin/ibus exit
+/usr/bin/ibus-daemon -x &
 
 exec fluxbox
 # or if you want to keep a log:
