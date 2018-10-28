@@ -74,14 +74,14 @@
                           mc-modes-alist)))
 
 
-(require 'lsdb)
-(lsdb-wl-insinuate)
-(add-hook 'wl-draft-mode-hook
-          (lambda ()
-            (define-key wl-draft-mode-map "\M-\t" 'lsdb-complete-name)))
-(add-hook 'wl-summary-mode-hook
-          (lambda ()
-            (define-key wl-summary-mode-map ":" 'lsdb-wl-toggle-buffer)))
+;(require 'lsdb)
+;(lsdb-wl-insinuate)
+;(add-hook 'wl-draft-mode-hook
+;          (lambda ()
+;            (define-key wl-draft-mode-map "\M-\t" 'lsdb-complete-name)))
+;(add-hook 'wl-summary-mode-hook
+;          (lambda ()
+;            (define-key wl-summary-mode-map ":" 'lsdb-wl-toggle-buffer)))
 (define-key wl-summary-mode-map "b" 'wl-summary-prev-page)
 (define-key wl-summary-mode-map "\C-h" 'wl-summary-prev-page)
 
