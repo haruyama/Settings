@@ -234,7 +234,7 @@ repo = 'osyo-manga/vim-textobj-multitextobj'
 repo = 'sgur/vim-textobj-parameter'
 
 [[plugins]]
-repo = 'dietsche/vim-lastplace'
+repo = 'farmergreg/vim-lastplace'
 
 [[plugins]]
 repo = 'simeji/winresizer'
