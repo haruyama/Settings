@@ -3,7 +3,8 @@
   [Layer]	{2}
 [end]
 [app] (name=slack) (class=Slack) (role=browser-window)
+  [Sticky]	{yes}
 [end]
 [app] (name=Navigator) (class=Firefox) (role=browser)
-  [Workspace]	{0}
+  [Sticky]	{yes}
 [end]
