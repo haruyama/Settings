@@ -21,8 +21,8 @@
     flim
     flymake
     fuzzy
-    helm
-    helm-ls-git
+;    helm
+;    helm-ls-git
     magit
     markdown-mode
     paredit
@@ -40,48 +40,48 @@
   (when (and (not (package-installed-p pkg)) (assoc pkg package-archive-contents))
     (package-install pkg)))
 
-(when  (require 'helm-config nil t)
-  (require 'helm-ls-git)
-  (helm-mode 1)
+;(when  (require 'helm-config nil t)
+;  (require 'helm-ls-git)
+;  (helm-mode 1)
 
-  (global-set-key (kbd "M-x") 'helm-M-x)
-  (global-set-key (kbd "C-x C-f") 'helm-find-files)
-  (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
-  (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
-  (define-key helm-map  (kbd  "C-h") 'delete-backward-char)
-  (define-key helm-read-file-map (kbd "C-h") 'delete-backward-char)
+;  (global-set-key (kbd "M-x") 'helm-M-x)
+;  (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;  (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+;  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+;  (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+;  (define-key helm-map  (kbd  "C-h") 'delete-backward-char)
+;  (define-key helm-read-file-map (kbd "C-h") 'delete-backward-char)
 
-  (custom-set-variables `(helm-truncate-lines t))
-  
-  ;; Disable helm in some functions
-  (add-to-list 'helm-completing-read-handlers-alist '(find-alternate-file . nil))
+;  (custom-set-variables `(helm-truncate-lines t))
 
-  ;; Emulate `kill-line' in helm minibuffer
-  (setq helm-delete-minibuffer-contents-from-point t)
-  (defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
-    "Emulate `kill-line' in helm minibuffer"
-    (kill-new (buffer-substring (point) (field-end))))
+  ; Disable helm in some functions
+;  (add-to-list 'helm-completing-read-handlers-alist '(find-alternate-file . nil))
 
-  (defadvice helm-ff-kill-or-find-buffer-fname (around execute-only-if-exist activate)
-    "Execute command only if CANDIDATE exists"
-    (when (file-exists-p candidate)
-      ad-do-it))
+  ; Emulate `kill-line' in helm minibuffer
+;  (setq helm-delete-minibuffer-contents-from-point t)
+;  (defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
+;    "Emulate `kill-line' in helm minibuffer"
+;    (kill-new (buffer-substring (point) (field-end))))
 
-  (defadvice helm-ff-transform-fname-for-completion (around my-transform activate)
-    "Transform the pattern to reflect my intention"
-    (let* ((pattern (ad-get-arg 0))
-           (input-pattern (file-name-nondirectory pattern))
-           (dirname (file-name-directory pattern)))
-      (setq input-pattern (replace-regexp-in-string "\\." "\\\\." input-pattern))
-      (setq ad-return-value
-            (concat dirname
-                    (if (string-match "^\\^" input-pattern)
-                        ;; '^' is a pattern for basename
-                        ;; and not required because the directory name is prepended
-                        (substring input-pattern 1)
-                      (concat ".*" input-pattern))))))
-  )
+;  (defadvice helm-ff-kill-or-find-buffer-fname (around execute-only-if-exist activate)
+;    "Execute command only if CANDIDATE exists"
+;    (when (file-exists-p candidate)
+;      ad-do-it))
+
+;  (defadvice helm-ff-transform-fname-for-completion (around my-transform activate)
+;    "Transform the pattern to reflect my intention"
+;    (let* ((pattern (ad-get-arg 0))
+;           (input-pattern (file-name-nondirectory pattern))
+;           (dirname (file-name-directory pattern)))
+;      (setq input-pattern (replace-regexp-in-string "\\." "\\\\." input-pattern))
+;      (setq ad-return-value
+;            (concat dirname
+;                    (if (string-match "^\\^" input-pattern)
+                        ; '^' is a pattern for basename
+                        ; and not required because the directory name is prepended
+;                        (substring input-pattern 1)
+;                      (concat ".*" input-pattern))))))
+;  )
 
 (require 'auto-async-byte-compile)
 (defvar auto-async-byte-complile-exclude-files-regexp "/junk/")
@@ -171,7 +171,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(helm-truncate-lines t t)
  '(inhibit-startup-screen t)
  '(mime-view-type-subtype-score-alist
    (quote
@@ -184,9 +183,6 @@
      ((text . html)
       . mime-view-text/html-entity-score)
      (multipart . mime-view-multipart-entity-score))))
- '(package-selected-packages
-   (quote
-    (cp5022x wanderlust session semi recentf-ext markdown-mode magit helm-ls-git helm fuzzy flim ddskk color-theme auto-async-byte-compile auto-save-buffers-enhanced auto-complete apel paredit)))
  '(riece-desktop-notify-message-function (quote riece-message-text))
  '(tool-bar-mode nil))
 (custom-set-faces
