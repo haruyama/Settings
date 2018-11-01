@@ -8,3 +8,9 @@
 [app] (name=Navigator) (class=Firefox) (role=browser)
   [Sticky]	{yes}
 [end]
+[app] (name=franz) (class=Franz) (role=browser-window)
+  [Sticky]	{yes}
+[end]
+[app] (name=rhythmbox) (class=Rhythmbox)
+  [Sticky]	{yes}
+[end]
