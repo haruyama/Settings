@@ -1,0 +1,16 @@
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (name=slack) (class=Slack) (role=browser-window)
+  [Sticky]	{yes}
+[end]
+[app] (name=Navigator) (class=Firefox) (role=browser)
+  [Sticky]	{yes}
+[end]
+[app] (name=franz) (class=Franz) (role=browser-window)
+  [Sticky]	{yes}
+[end]
+[app] (name=rhythmbox) (class=Rhythmbox)
+  [Sticky]	{yes}
+[end]
