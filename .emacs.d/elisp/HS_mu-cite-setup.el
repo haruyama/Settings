@@ -10,7 +10,3 @@
                (goto-char (point-min))
                (replace-regexp "^½Õ»³\\(¤µ¤ó\\|»á\\)>" "½Õ»³>")
                (replace-regexp "^HARUYAMA\\(¤µ¤ó\\|»á\\)>" "HARUYAMA>"))))
-
-(autoload 'lsdb-mu-insinuate "lsdb")
-(eval-after-load "mu-cite"
-                 '(lsdb-mu-insinuate))

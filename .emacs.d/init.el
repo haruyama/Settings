@@ -25,6 +25,7 @@
 ;    helm-ls-git
     magit
     markdown-mode
+    mu-cite
     paredit
     popup
     recentf-ext
@@ -183,6 +184,9 @@
      ((text . html)
       . mime-view-text/html-entity-score)
      (multipart . mime-view-multipart-entity-score))))
+ '(package-selected-packages
+   (quote
+    (wanderlust session recentf-ext paredit markdown-mode magit helm-ls-git fuzzy ddskk cp5022x color-theme auto-save-buffers-enhanced auto-complete auto-async-byte-compile)))
  '(riece-desktop-notify-message-function (quote riece-message-text))
  '(tool-bar-mode nil))
 (custom-set-faces
