@@ -47,9 +47,6 @@ pkill xautolock
 pkill wmacpi
 /usr/bin/wmacpi &
 
-pkill dropbox
-/usr/bin/dropbox start &
-
 #pkill bluetooth-applet
 #/usr/bin/bluetooth-applet &
 pkill nm-applet
