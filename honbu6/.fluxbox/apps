@@ -14,3 +14,6 @@
 [app] (name=rhythmbox) (class=Rhythmbox)
   [Sticky]	{yes}
 [end]
+[app] (name=discord) (class=discord) (role=browser-window)
+  [Sticky]	{yes}
+[end]
