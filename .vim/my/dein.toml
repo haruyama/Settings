@@ -98,7 +98,13 @@ xnoremap <silent> <Leader>a :EasyAlign<cr>
 '''
 
 [[plugins]]
-repo = 'kana/vim-smartinput'
+repo = 'cohama/lexima.vim'
+hook_add = '''
+let g:lexima_ctrlh_as_backspace = 1
+'''
+
+# [[plugins]]
+# repo = 'kana/vim-smartinput'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
