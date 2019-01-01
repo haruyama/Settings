@@ -4,7 +4,7 @@ set backup
 set history=500
 set ruler showcmd showmode incsearch ignorecase smartcase expandtab number modeline shiftround infercase hidden
 "set cursorline cursorcolumn
-set tabstop=4 softtabstop=4 bs=2
+set tabstop=4 softtabstop=4 bs=2 shiftwidth=0
 set wildmenu
 set wildmode=list:longest,full
 set textwidth=0
