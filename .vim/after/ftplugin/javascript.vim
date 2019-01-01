@@ -6,10 +6,13 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 setl tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
+setl iskeyword+=$
+setl iskeyword+=-
 
 augroup after_ftplugin_javascript
   autocmd! BufWritePre <buffer> :RTrim
 augroup END
+
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
