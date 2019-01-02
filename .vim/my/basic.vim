@@ -30,7 +30,6 @@ set nobackup
 set viewoptions=folds,options,cursor,unix,slash
 set iskeyword-=.
 set iskeyword-=#
-set iskeyword-=-
 
 set ttyfast
 set lazyredraw
