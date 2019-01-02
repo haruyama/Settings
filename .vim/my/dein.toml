@@ -63,12 +63,6 @@ source ~/.vim/my/plugins/neosnippet.vim
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
-hook_source = '''
-if !exists('g:context_filetype#filetypes')
-  let g:context_filetype#filetypes = {}
-endif
-let g:context_filetype#filetypes.go = []
-'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -258,7 +252,6 @@ if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
 
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
-if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
 rev = 'next'
 build = 'bash install.sh'
 hook_add = '''
