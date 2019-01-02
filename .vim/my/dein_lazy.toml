@@ -107,7 +107,10 @@ on_ft = ['elm']
 repo = 'haya14busa/vim-gofmt'
 on_ft = 'go'
 hook_add = '''
-autocmd! BufWritePre *.go :Fmt
+augroup vim-gofmt
+  autocmd!
+  autocmd BufWritePre *.go :Fmt
+augroup END
 '''
 
 [[plugins]]
