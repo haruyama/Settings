@@ -104,6 +104,13 @@ on_ft = ['elm']
 # '''
 
 [[plugins]]
+repo = 'haya14busa/vim-gofmt'
+on_ft = 'go'
+hook_add = '''
+autocmd! BufWritePre *.go :Fmt
+'''
+
+[[plugins]]
 repo = 'nbouscal/vim-stylish-haskell'
 on_ft = ['haskell']
 
