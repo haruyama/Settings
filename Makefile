@@ -43,3 +43,9 @@ nodebrew:
 
 tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+lsp_install:
+	go get -u golang.org/x/tools/cmd/golsp
+	npm i -g vue-language-server
+	npm i -g javascript-typescript-langserver
+
