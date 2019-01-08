@@ -19,6 +19,7 @@
       [exec] (sakura) {sakura}
       [exec] (xfce4-terminal) {xfce4-terminal}
       [exec] (firefox) {firefox}
+      [exec] (chromium) {chromium}
 [submenu] (Fluxbox menu)
       [config] (Configure)
 [submenu] (System Styles) {Choose a style...}
