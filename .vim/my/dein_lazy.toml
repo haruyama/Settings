@@ -93,7 +93,7 @@ on_ft = ['elm']
 # '''
 
 # [[plugins]]
-# repo = 'zchee/deoplete-go'
+# repo = 'deoplete-plugins/deoplete-go'
 # on_i = 1
 # on_ft = 'go'
 # build = 'make'
@@ -182,7 +182,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'zchee/deoplete-jedi'
+repo = 'deoplete-plugins/deoplete-jedi'
 on_ft = 'python'
 
 [[plugins]]
