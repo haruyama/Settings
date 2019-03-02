@@ -251,6 +251,10 @@ build = 'bash install.sh'
 hook_add = '''
 set hidden
 
+let g:LanguageClient_rootMarkers = {
+        \ 'go': ['.git', 'go.mod'],
+        \ }
+
 let g:LanguageClient_serverCommands = {
       \ 'html': [],
       \ 'css': [],
@@ -258,7 +262,7 @@ let g:LanguageClient_serverCommands = {
       \ 'javascript.jsx': ['javascript-typescript-stdio'],
       \ 'typescript': ['javascript-typescript-stdio'],
       \ 'vue': ['vls'],
-      \ 'go': ['golsp'],
+      \ 'go': ['bingo'],
       \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
