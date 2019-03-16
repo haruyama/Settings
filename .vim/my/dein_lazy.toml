@@ -182,6 +182,10 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'purescript-contrib/purescript-vim'
+on_ft = 'purescript'
+
+[[plugins]]
 repo = 'deoplete-plugins/deoplete-jedi'
 on_ft = 'python'
 
