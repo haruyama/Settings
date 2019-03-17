@@ -46,6 +46,5 @@ tmux:
 
 lsp_install:
 	go get -u github.com/saibing/bingo
-	npm i -g vue-language-server
-	npm i -g javascript-typescript-langserver
+	npm i -g vue-language-server javascript-typescript-langserver purescript-language-server
 
