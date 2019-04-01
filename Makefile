@@ -45,6 +45,6 @@ tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 lsp_install:
-	go get -u github.com/saibing/bingo
+	go get -u golang.org/x/tools/cmd/gopls
 	npm i -g vue-language-server javascript-typescript-langserver purescript-language-server
 
