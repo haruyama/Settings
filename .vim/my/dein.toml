@@ -63,6 +63,22 @@ source ~/.vim/my/plugins/neosnippet.vim
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
+hook_source = '''
+let g:context_filetype#filetypes = {
+      \ 'html': [
+      \   {
+      \     'start' : '^\s*<script type="application/x-go">',
+      \     'end' : '^\s*</script>',
+      \     'filetype' : 'go',
+      \   },
+      \   {
+      \     'start' : '^\s*<style>',
+      \     'end' : '^\s*</style>',
+      \     'filetype' : 'css',
+      \   },
+      \ ]
+      \}
+'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
@@ -111,6 +127,7 @@ let g:ale_linters = {
 \}
 nnoremap <silent> <leader>an :ALENextWrap<cr>
 nnoremap <silent> <leader>ap :ALEPreviousWrap<cr>
+let g:ale_go_bingo_executable = 'gopls'
 '''
 # \   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
 
@@ -273,6 +290,7 @@ nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 let g:LanguageClient_diagnosticsEnable = 0
+"autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 " let g:LanguageClient_loggingLevel = 'INFO'
 " let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/LanguageClient.log')
 " let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
