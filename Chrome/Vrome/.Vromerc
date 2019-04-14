@@ -2,4 +2,4 @@
 
 unmap <C-f>
 set editor=gvim -f
-set disablesites=mail.google.com, reader.google.com, www.facebook.com, feedly.com, twitter.com, pacificporter.esa.io
+set disablesites=mail.google.com, reader.google.com, www.facebook.com, feedly.com, twitter.com, pacificporter.esa.io, colab.research.google.com
