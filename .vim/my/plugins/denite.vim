@@ -1,4 +1,4 @@
-nnoremap <silent> ,ua :<C-u>DeniteBufferDir -default-action=split file_rec<CR>
+nnoremap <silent> ,ua :<C-u>DeniteBufferDir -default-action=split file/rec<CR>
 
 nnoremap <silent> ,uc :<C-u>Denite colorscheme<CR>
 nnoremap <silent> ,ud :<C-u>Denite -default-action=split directory_rec<CR>
