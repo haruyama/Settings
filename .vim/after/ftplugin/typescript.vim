@@ -5,7 +5,7 @@ let b:did_after_ftplugin_javascript = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-setl tabstop=4 expandtab shiftwidth=4 softtabstop=4 smarttab
+setl tabstop=2 expandtab shiftwidth=2 softtabstop=2 smarttab
 setl iskeyword+=$
 setl iskeyword+=-
 
