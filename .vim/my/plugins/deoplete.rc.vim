@@ -19,20 +19,20 @@ endfunction"}}}
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> deoplete#mappings#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-h> deoplete#mappings#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> deoplete#mappings#smart_close_popup()."\<C-h>"
 
-inoremap <expr><C-g> deoplete#mappings#undo_completion()
+"inoremap <expr><C-g> deoplete#mappings#undo_completion()
 " <C-l>: redraw candidates
-inoremap <expr><C-l>       deoplete#mappings#refresh()
+"inoremap <expr><C-l>       deoplete#mappings#refresh()
 
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-  return deoplete#mappings#close_popup() . "\<CR>"
-endfunction
+"inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"function! s:my_cr_function() abort
+"  return deoplete#mappings#close_popup() . "\<CR>"
+"endfunction
 
-inoremap <expr> '  pumvisible() ? deoplete#mappings#close_popup() : "'"
+"inoremap <expr> '  pumvisible() ? deoplete#mappings#close_popup() : "'"
 
 " call deoplete#custom#source('_', 'matchers', ['matcher_head'])
 " call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
