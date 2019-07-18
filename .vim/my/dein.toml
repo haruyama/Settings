@@ -281,6 +281,7 @@ let g:LanguageClient_serverCommands = {
       \ 'javascript.jsx': ['javascript-typescript-stdio'],
       \ 'purescript': ['purescript-language-server', '--stdio'],
       \ 'typescript': ['javascript-typescript-stdio'],
+      \ 'typescript.tsx': ['javascript-typescript-stdio'],
       \ 'vue': ['vls'],
       \ 'go': ['gopls'],
       \ 'python': ['pyls'],
