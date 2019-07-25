@@ -280,6 +280,7 @@ let g:LanguageClient_serverCommands = {
       \ 'javascript': ['javascript-typescript-stdio'],
       \ 'javascript.jsx': ['javascript-typescript-stdio'],
       \ 'purescript': ['purescript-language-server', '--stdio'],
+      \ 'rust': ['rustup', 'run', 'stable', 'rls'],
       \ 'typescript': ['javascript-typescript-stdio'],
       \ 'typescript.tsx': ['javascript-typescript-stdio'],
       \ 'vue': ['vls'],
