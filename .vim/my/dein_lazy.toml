@@ -131,7 +131,12 @@ on_ft = ['html']
 # do = 'npm install -g tern'
 
 [[plugins]]
-repo = 'pangloss/vim-javascript'
+repo = 'szymonmaszke/vimpyter'
+on_ft = ['ipynb']
+
+
+[[plugins]]
+repo = 'othree/yajs.vim'
 on_ft = ['javascript']
 
 [[plugins]]
