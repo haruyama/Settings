@@ -1,0 +1,70 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+# xmodmap "/home/haruyama/.Xmodmap"
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+# unclutter -idle 2 &
+# wmnd &
+# wmsmixer -w &
+# idesk &
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+
+export VTE_CJK_WIDTH=auto
+
+#export LC_IDENTIFICATION=ja_JP.UTF-8
+#export LC_TIME=ja_JP.UTF-8
+#export LC_NUMERIC=ja_JP.UTF-8
+#export LC_PAPER=ja_JP.UTF-8
+#export LC_ADDRESS=ja_JP.UTF-8
+#export LC_MEASUREMENT=ja_JP.UTF-8
+#export LC_MONETARY=ja_JP.UTF-8
+#export LC_NAME=ja_JP.UTF-8
+#export LC_TELEPHONE=ja_JP.UTF-8
+
+pkill ibus-daemon
+/usr/bin/ibus-daemon &
+
+#pkill notification-daemon
+#/usr/lib/notification-daemon/notification-daemon &
+
+pkill gnome-screensaver
+/usr/bin/gnome-screensaver &
+
+pkill xautolock
+/usr/bin/xautolock -locker "/usr/bin/gnome-screensaver-command -l" &
+
+/usr/bin/fbsetroot -solid black
+
+pkill wmacpi
+/usr/bin/wmacpi &
+
+#pkill bluetooth-applet
+#/usr/bin/bluetooth-applet &
+pkill nm-applet
+/usr/bin/nm-applet &
+
+pkill parcellite
+/usr/bin/parcellite &
+
+#/usr/bin/synclient TapButton1=0
+#/usr/bin/synclient TapButton3=2
+
+#/usr/bin/gnome-settings-daemon &
+
+#/usr/bin/setxkbmap -option "ctrl:nocaps,keypad:pointerkeys"
+/usr/bin/xmodmap ~/.xmodmaprc
+#/usr/bin/xkbset m
+#/usr/bin/x11/xset m 2 10
+
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "/home/haruyama/.fluxbox/log"
