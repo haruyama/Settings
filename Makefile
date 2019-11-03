@@ -17,6 +17,7 @@ init: fzf_install
 	cp ~/lib/Settings/sample/.zshrc ~
 	mkdir -p ~/.config/nvim
 	ln -fs ~/.vimrc ~/.config/nvim/init.vim
+	ln -fs ~/.vim/after ~/.config/nvim/after
 
 neovim:
 	pip3 install neovim
