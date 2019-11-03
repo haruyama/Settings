@@ -77,20 +77,23 @@ on_ft = ['diag']
 repo = 'ElmCast/elm-vim'
 on_ft = ['elm']
 
-# [[plugins]]
-# repo = 'fatih/vim-go'
-# on_ft = ['go']
-# hook_source = '''
-# let g:go_snippet_engine = 'neosnippet'
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+hook_source = '''
+let g:go_snippet_engine = 'neosnippet'
 
-# let g:go_highlight_functions = 1
-# let g:go_highlight_methods = 1
-# let g:go_highlight_structs = 1
-# let g:go_highlight_operators = 1
-# let g:go_highlight_build_constraints = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
-# let g:go_fmt_command = 'goimports'
-# '''
+let g:go_def_mapping_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
+
+let g:go_fmt_command = 'goimports'
+'''
 
 # [[plugins]]
 # repo = 'deoplete-plugins/deoplete-go'
@@ -103,15 +106,15 @@ on_ft = ['elm']
 # let g:deoplete#sources#go#use_cache = 1
 # '''
 
-[[plugins]]
-repo = 'haya14busa/vim-gofmt'
-on_ft = 'go'
-hook_add = '''
-augroup vim-gofmt
-  autocmd!
-  autocmd BufWritePre *.go :Fmt
-augroup END
-'''
+# [[plugins]]
+# repo = 'haya14busa/vim-gofmt'
+# on_ft = 'go'
+# hook_add = '''
+# augroup vim-gofmt
+#   autocmd!
+#   autocmd BufWritePre *.go :Fmt
+# augroup END
+# '''
 
 [[plugins]]
 repo = 'nbouscal/vim-stylish-haskell'
