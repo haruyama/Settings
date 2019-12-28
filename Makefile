@@ -46,7 +46,7 @@ tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 lsp_install:
-	go get -u golang.org/x/tools/cmd/gopls
+	go get -u golang.org/x/tools/gopls
 	npm i -g vue-language-server javascript-typescript-langserver purescript-language-server
 	pip3 install python-language-server
 
