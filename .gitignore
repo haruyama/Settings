@@ -12,6 +12,7 @@
 .emacs.d/recentf
 .emacs.d/session.*
 .emacs.d/saved-places
+.emacs.d/transient/
 .emacs.d/**/*.elc
 
 .lein/repl-history
