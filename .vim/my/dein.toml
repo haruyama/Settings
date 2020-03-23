@@ -197,11 +197,14 @@ repo = 'tpope/vim-repeat'
 [[plugins]]
 repo = 'rhysd/committia.vim'
 
+# [[plugins]]
+# repo = 'majutsushi/tagbar'
+# hook_add = '''
+# source ~/.vim/my/plugins/tagbar.vim
+# '''
+
 [[plugins]]
-repo = 'majutsushi/tagbar'
-hook_add = '''
-source ~/.vim/my/plugins/tagbar.vim
-'''
+repo = 'liuchengxu/vista.vim'
 
 [[plugins]]
 repo = 'janko-m/vim-test'
