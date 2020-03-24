@@ -16,7 +16,6 @@
     auto-complete
     auto-save-buffers-enhanced
     auto-async-byte-compile
-    color-theme
     cp5022x
     ddskk
     flim
@@ -187,7 +186,7 @@
      (multipart . mime-view-multipart-entity-score))))
  '(package-selected-packages
    (quote
-    (wanderlust session recentf-ext paredit markdown-mode magit helm-ls-git fuzzy ddskk cp5022x color-theme auto-save-buffers-enhanced auto-complete auto-async-byte-compile)))
+    (wanderlust session recentf-ext paredit markdown-mode magit helm-ls-git fuzzy ddskk cp5022x auto-save-buffers-enhanced auto-complete auto-async-byte-compile)))
  '(riece-desktop-notify-message-function (quote riece-message-text))
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -275,9 +274,6 @@
             (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
             (define-key paredit-mode-map (kbd "}") 'paredit-close-curly)))
 
-
-(require 'color-theme)
-(setq color-theme-is-global t)
 
 (require 'diff-mode)
 
