@@ -205,6 +205,9 @@ repo = 'rhysd/committia.vim'
 
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
+hook_add = '''
+let g:vista_default_executive = 'lcn'
+'''
 
 [[plugins]]
 repo = 'janko-m/vim-test'
