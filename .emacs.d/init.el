@@ -78,6 +78,7 @@
 (leaf ddskk
       :config (load "HS_skk-setup"))
 (leaf flymake)
+(leaf lsdb)
 (leaf mu-cite)
 (leaf mu-cite)
 (leaf recentf)
