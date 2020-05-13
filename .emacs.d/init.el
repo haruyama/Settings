@@ -18,10 +18,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-;;; Commentary:
-
-;; My init.el.
-
 ;;; Code:
 
 ;; this enables this running method
@@ -79,7 +75,6 @@
       :config (load "HS_skk-setup"))
 (leaf flymake)
 (leaf lsdb)
-(leaf mu-cite)
 (leaf mu-cite)
 (leaf recentf)
 (leaf recentf-ext)
