@@ -137,18 +137,21 @@ on_ft = ['html']
 repo = 'szymonmaszke/vimpyter'
 on_ft = ['ipynb']
 
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
 repo = 'othree/yajs.vim'
-on_ft = ['javascript']
+on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
 repo = 'yuezk/vim-js'
-on_ft = ['javascript']
+on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
 repo = 'MaxMEllon/vim-jsx-pretty'
-on_ft = ['javascript', 'javascriptreact', 'tsx', 'typescriptreact']
+on_ft = ['javascript', 'javascript.jsx', 'javascriptreact', 'tsx', 'typescriptreact']
 
 # [[plugins]]
 # repo = 'ternjs/tern_for_vim'
