@@ -310,3 +310,6 @@ let g:LanguageClient_diagnosticsEnable = 0
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'
 build = './install.sh'
+
+[[plugins]]
+repo = 'iberianpig/tig-explorer.vim'
