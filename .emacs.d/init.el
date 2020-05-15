@@ -97,6 +97,8 @@
 (setq require-final-newline t)
 (setq use-dialog-box nil)
 
+(load "text-adjust")
+
 (provide 'init)
 
 ;; init.el ends here
