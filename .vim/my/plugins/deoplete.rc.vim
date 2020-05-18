@@ -51,19 +51,15 @@ call deoplete#custom#source('_', 'converters', [
 
 " call deoplete#custom#source('buffer', 'min_pattern_length', 9999)
 
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
-" let g:deoplete#keyword_patterns.tex = '\\?[a-zA-Z_]\w*'
-let g:deoplete#keyword_patterns.tex = '[^\w|\s][a-zA-Z_]\w*'
-
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.python = ''
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.lua = 'xolox#lua#omnifunc'
+call deoplete#custom#option('keyword_patterns', {
+      \ '_': '[a-zA-Z_]\k*',
+      \ 'ruby': '[a-zA-Z_]\w*[!?]?',
+      \ 'tex': '[^\w|\s][a-zA-Z_]\w*',
+      \})
 
 " inoremap <silent><expr> <C-t> deoplete#mappings#manual_complete('file')
 
-let g:deoplete#enable_refresh_always = 1
+call deoplete#custom#var('enable_refresh_alway', 1)
 let g:deoplete#enable_camel_case = 1
 
 " deoplete-clang "{{{
