@@ -43,7 +43,6 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 "       \ ['converter_auto_paren',
 "       \  'converter_auto_delimiter', 'remove_overlap'])
 call deoplete#custom#source('_', 'converters', [
-      \ 'converter_remove_paren',
       \ 'converter_remove_overlap',
       \ 'converter_truncate_abbr',
       \ 'converter_truncate_menu',
