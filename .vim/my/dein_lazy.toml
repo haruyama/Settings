@@ -23,6 +23,10 @@ repo = 'rhysd/vim-grammarous'
 on_cmd = [ 'GrammarousCheck' ]
 
 [[plugins]]
+repo = 'ballerina-attic/plugin-vim'
+on_ft = ['bal']
+
+[[plugins]]
 repo = 'tweekmonster/deoplete-clang2'
 on_ft = ['c', 'cpp']
 hook_source = '''
