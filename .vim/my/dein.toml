@@ -124,6 +124,7 @@ let g:ale_linters = {
 \   'go': ['go build', 'go vet'],
 \   'typescript': ['tslint'],
 \   'html': ['alex', 'htmlhint', 'proselint', 'write-good'],
+\   'rust': ['cargo', 'rls'],
 \}
 nnoremap <silent> <leader>an :ALENextWrap<cr>
 nnoremap <silent> <leader>ap :ALEPreviousWrap<cr>
