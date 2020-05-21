@@ -51,3 +51,4 @@ GTAGS
 .omakedb.*
 
 .tern-port
+.ccls-cache
