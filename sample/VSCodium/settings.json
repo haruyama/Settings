@@ -1,0 +1,6 @@
+{
+    "editor.fontSize": 20,
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.enableNeovim": true,
+    "workbench.colorTheme": "Monokai Dimmed"
+}
