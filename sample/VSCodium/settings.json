@@ -1,6 +1,19 @@
 {
-    "editor.fontSize": 20,
-    "vim.neovimPath": "/usr/bin/nvim",
-    "vim.enableNeovim": true,
-    "workbench.colorTheme": "Monokai Dimmed"
+  "editor.fontSize": 20,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.enableNeovim": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "asdfghjklwertuiop",
+  "vim.highlightedyank.enable": true,
+  "vim.hlsearch": true,
+  "vim.ignorecase": true,
+  "vim.incsearch": true,
+  "vim.leader": "\\",
+  "vim.sneak": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.visualstar": true,
+  "workbench.colorTheme": "Monokai Dimmed"
 }
