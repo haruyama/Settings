@@ -15,5 +15,9 @@
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
-  "workbench.colorTheme": "Monokai Dimmed"
+  "workbench.colorTheme": "Monokai Dimmed",
+  "python.linting.flake8Enabled": true,
+  "pyright.useLibraryCodeForTypes": true,
+  "editor.formatOnSave": true,
+  "python.pythonPath": "/usr/bin/python3"
 }
