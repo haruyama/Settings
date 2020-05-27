@@ -1,0 +1,7 @@
+window class_only: 'Navigator' do
+    remap 'C-n', to: 'Down'
+end
+window class_only: 'vscodium' do
+    remap 'C-h', to: 'BackSpace'
+    remap 'C-n', to: 'Down'
+end
