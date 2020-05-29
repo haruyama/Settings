@@ -34,36 +34,43 @@ autocmd FileType c,cpp let b:clang2_orig_maps = {}
 '''
 
 [[plugins]]
-repo = 'tpope/vim-salve'
+repo = 'liquidz/vim-iced'
 on_ft = ['clojure']
+hook_source = '''
+let g:iced_enable_default_key_mappings = v:true
+'''
 
-[[plugins]]
-repo = 'tpope/vim-projectionist'
-on_ft = ['clojure']
+# [[plugins]]
+# repo = 'tpope/vim-salve'
+# on_ft = ['clojure']
 
-[[plugins]]
-repo = 'tpope/vim-dispatch'
-on_ft = ['clojure']
+# [[plugins]]
+# repo = 'tpope/vim-projectionist'
+# on_ft = ['clojure']
+
+# [[plugins]]
+# repo = 'tpope/vim-dispatch'
+# on_ft = ['clojure']
 
 [[plugins]]
 repo = 'tpope/vim-fireplace'
 on_ft = ['clojure']
 
-[[plugins]]
-repo = 'guns/vim-clojure-static'
-on_ft = ['clojure']
+# [[plugins]]
+# repo = 'guns/vim-clojure-static'
+# on_ft = ['clojure']
 
-[[plugins]]
-repo = 'guns/vim-clojure-highlight'
-on_ft = ['clojure']
+# [[plugins]]
+# repo = 'guns/vim-clojure-highlight'
+# on_ft = ['clojure']
 
 # [[plugins]]
 # repo = 'venantius/vim-cljfmt'
 # on_ft = ['clojure']
 
-[[plugins]]
-repo = 'venantius/vim-eastwood'
-on_ft = ['clojure']
+# [[plugins]]
+# repo = 'venantius/vim-eastwood'
+# on_ft = ['clojure']
 
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'

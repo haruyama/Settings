@@ -277,15 +277,17 @@ hook_add = '''
 set hidden
 
 let g:LanguageClient_rootMarkers = {
-        \ 'go': ['.git', 'go.mod'],
-        \ 'purescript': ['bower.json'],
-        \ 'rust': ['Cargo.toml'],
-        \ }
+      \ 'clojure': ['project.clj'],
+      \ 'go': ['.git', 'go.mod'],
+      \ 'purescript': ['bower.json'],
+      \ 'rust': ['Cargo.toml'],
+      \ }
 
 let g:LanguageClient_serverCommands = {
       \ 'html': [],
       \ 'css': [],
-      \  'haskell': ['hie-wrapper'],
+      \ 'clojure': ['bash', '-c', '~/bin/clojure-lsp'],
+      \ 'haskell': ['hie-wrapper'],
       \ 'javascript': ['javascript-typescript-stdio'],
       \ 'jsx': ['javascript-typescript-stdio'],
       \ 'javascript.jsx': ['javascript-typescript-stdio'],
