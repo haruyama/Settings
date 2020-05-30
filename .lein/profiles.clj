@@ -21,5 +21,7 @@
                         [im.chit/vinyasa             "0.4.7"]
                         [jonase/kibit                "0.1.8"]
                         [spyscope                    "0.1.6"]]
+        :managed-dependencies [[org.clojure/core.rrb-vector "0.0.13"]
+                               [org.flatland/ordered "1.5.7"]]
         :injections  [(require 'spyscope.core)]
         :jvm-opts ["-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1"]}}
