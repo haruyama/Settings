@@ -145,10 +145,6 @@ on_ft = ['html']
 # do = 'npm install -g tern'
 
 [[plugins]]
-repo = 'szymonmaszke/vimpyter'
-on_ft = ['ipynb']
-
-[[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript', 'javascript.jsx']
 
