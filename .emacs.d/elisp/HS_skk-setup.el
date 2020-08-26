@@ -8,7 +8,7 @@
 (autoload 'skk-check-jisyo "skk-tools" nil t)
 (autoload 'skk-merge "skk-tools" nil t)
 (autoload 'skk-diff "skk-tools" nil t)
-(require 'skk-study)
+;(require 'skk-study)
 
 (add-hook 'isearch-mode-hook
           (function (lambda ()
