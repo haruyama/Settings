@@ -52,3 +52,6 @@ GTAGS
 
 .tern-port
 .ccls-cache
+
+.mypy_cache
+__pycache__
