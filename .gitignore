@@ -14,6 +14,7 @@
 .emacs.d/saved-places
 .emacs.d/transient/
 .emacs.d/**/*.elc
+.emacs.d/custom.el
 
 .lein/repl-history
 .lein/self-installs

@@ -327,6 +327,7 @@
        (signal (car error) (cdr error))))))
 
 (defalias 'wl-match-string 'match-string "")
+(defalias 'elmo-replace-in-string 'replace-regexp-in-string "")
 
 (setq wl-draft-reply-without-argument-list
       '((("X-ML-Name" "Reply-To") . (("Reply-To") nil nil))

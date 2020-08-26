@@ -71,14 +71,19 @@
   :custom `((custom-file . ,(locate-user-emacs-file "custom.el"))))
 
 (leaf auto-complete)
-(leaf ddskk
-      :config (load "HS_skk-setup"))
+;(leaf ddskk
+;      :config (load "HS_skk-setup"))
+(leaf skk
+  :ensure ddskk
+  :custom ((default-input-method . "japanese-skk"))
+  :config (load "HS_skk-setup"))
 (leaf flymake)
 (leaf lsdb)
 (leaf mu-cite)
 (leaf recentf)
 (leaf recentf-ext)
-(leaf wl)
+(leaf wl
+  :ensure wanderlust)
 
 (keyboard-translate ?\C-h ?\C-?)
 (define-key ctl-x-map "L" 'goto-line)
