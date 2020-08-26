@@ -228,6 +228,10 @@ repo = 'haruyama/scheme.vim'
 on_ft = ['scheme']
 
 [[plugins]]
+repo = 'evanleck/vim-svelte'
+on_ft = ['svelte']
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
