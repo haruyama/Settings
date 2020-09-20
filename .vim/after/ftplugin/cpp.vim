@@ -5,7 +5,9 @@ let b:did_after_ftplugin_cpp = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -I ./inc -I ./include'
+let g:ale_cpp_cc_options = ' -Wall -std=c++2a -I ./inc -I ./include'
+let g:ale_cpp_gcc_options = ' -Wall -std=c++2a -I ./inc -I ./include'
+let g:ale_cpp_clang_options  = ' -Wall -std=c++2a -I ./inc -I ./include'
 
 setl ts=2 sw=2 sts=2 expandtab
 setl omnifunc=ccomplete#Complete
