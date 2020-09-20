@@ -21,3 +21,5 @@
 	autosquash = true
 [include]
 	path = ~/.gitconfig_local
+[merge]
+	conflictStyle = diff3
