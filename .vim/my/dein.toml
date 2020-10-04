@@ -113,8 +113,15 @@ repo = 'cohama/lexima.vim'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 
+# [[plugins]]
+# repo = 'rhysd/clever-f.vim'
+
 [[plugins]]
-repo = 'rhysd/clever-f.vim'
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+noremap f <Plug>(easymotion-f)
+noremap F <Plug>(easymotion--F)
+'''
 
 [[plugins]]
 repo = 'w0rp/ale'
