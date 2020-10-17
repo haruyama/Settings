@@ -303,9 +303,12 @@ let g:LanguageClient_serverCommands = {
       \ 'vue': ['vls'],
       \ 'go': ['gopls'],
       \ 'python': ['pyls'],
-      \ 'c': ['ccls'],
-      \ 'cpp': ['ccls'],
+      \ 'c': ['clangd', '-compile-commands-dir=' . getcwd()],
+      \ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd()],
       \ }
+
+"       \ 'c': ['ccls'],
+"       \ 'cpp': ['ccls'],
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
