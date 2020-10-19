@@ -34,6 +34,14 @@ on_ft = ['c', 'cpp']
 repo = 'Shougo/deoplete-clangx'
 on_ft = ['c', 'cpp']
 
+[[plugins]]
+repo = 'rhysd/vim-clang-format'
+on_ft = ['c', 'cpp']
+hook_add = '''
+let g:clang_format#auto_format = 1
+let g:clang_format#auto_format_on_insert_leave = 1
+'''
+
 # [[plugins]]
 # repo = 'tweekmonster/deoplete-clang2'
 # on_ft = ['c', 'cpp']
