@@ -27,11 +27,19 @@ repo = 'ballerina-attic/plugin-vim'
 on_ft = ['bal']
 
 [[plugins]]
-repo = 'tweekmonster/deoplete-clang2'
+repo = 'vim-scripts/a.vim'
 on_ft = ['c', 'cpp']
-hook_source = '''
-autocmd FileType c,cpp let b:clang2_orig_maps = {}
-'''
+
+[[plugins]]
+repo = 'Shougo/deoplete-clangx'
+on_ft = ['c', 'cpp']
+
+# [[plugins]]
+# repo = 'tweekmonster/deoplete-clang2'
+# on_ft = ['c', 'cpp']
+# hook_source = '''
+# autocmd FileType c,cpp let b:clang2_orig_maps = {}
+# '''
 
 [[plugins]]
 repo = 'Shougo/neoinclude.vim'
