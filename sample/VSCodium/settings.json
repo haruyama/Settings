@@ -3,7 +3,6 @@
   "vim.neovimPath": "/usr/bin/nvim",
   "vim.enableNeovim": true,
   "vim.camelCaseMotion.enable": true,
-  "vim.easymotion": true,
   "vim.easymotionKeys": "asdfghjklwertuiop",
   "vim.highlightedyank.enable": true,
   "vim.hlsearch": true,
@@ -12,12 +11,67 @@
   "vim.leader": "\\",
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
-  "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
   "workbench.colorTheme": "Monokai Dimmed",
   "python.linting.flake8Enabled": true,
-  "pyright.useLibraryCodeForTypes": true,
   "editor.formatOnSave": true,
-  "python.pythonPath": "/usr/bin/python3"
+  "python.pythonPath": "/usr/bin/python3",
+  "tabnine.experimentalAutoImports": true,
+  "[rust]": {
+    "editor.defaultFormatter": "matklad.rust-analyzer"
+  },
+  "python.dataScience.askForKernelRestart": false,
+  "window.zoomLevel": 0,
+  "go.formatTool": "goimports",
+  "editor.minimap.enabled": false,
+  "terminal.integrated.inheritEnv": false,
+  "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.clang_format_fallbackStyle": "Chromium",
+  "vim.statusBarColorControl": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f"
+  },
+  "cmake.configureOnOpen": true,
+  "breadcrumbs.enabled": false,
+  "editor.renderControlCharacters": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "f"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "f"
+      ]
+    },
+    {
+      "before": [
+        "F"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "F"
+      ]
+    },
+    {
+      "before": [
+        "F"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "F"
+      ]
+    },
+  ],
+  "vim.easymotion": true,
+  "editor.tabCompletion": "on",
+  "workbench.editor.highlightModifiedTabs": true,
+  "editor.renderWhitespace": "trailing",
+  "terminal.integrated.commandsToSkipShell": ["-workbench.action.quickOpen"],
 }
