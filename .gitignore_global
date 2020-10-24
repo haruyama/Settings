@@ -84,7 +84,12 @@ relwithdebinfo
 *.weba
 *.yuv
 *.ivf
+*.bgra
+*.argb
+*.png
 
 CMakeCache.txt
 CMakeFiles
 cmake_install.cmake
+
+infer-out
