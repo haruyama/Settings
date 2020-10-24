@@ -74,14 +74,26 @@
                           mc-modes-alist)))
 
 
-;(require 'lsdb)
-;(lsdb-wl-insinuate)
-;(add-hook 'wl-draft-mode-hook
-;          (lambda ()
-;            (define-key wl-draft-mode-map "\M-\t" 'lsdb-complete-name)))
-;(add-hook 'wl-summary-mode-hook
-;          (lambda ()
-;            (define-key wl-summary-mode-map ":" 'lsdb-wl-toggle-buffer)))
+(require 'bbdb) 
+(bbdb-initialize 'wl)
+(bbdb-mua-auto-update-init 'wl)
+
+(defun my-bbdb-complete-mail ()
+  "If on a header field, calls `bbdb-complete-mail' to complete the name."
+  (interactive)
+  (when (< (point)
+           (save-excursion
+             (goto-char (point-min))
+             (search-forward (concat "\n" mail-header-separator "\n") nil 0)
+             (point)))
+    (bbdb-complete-mail)))
+
+;; Use TAB to complete names
+(add-hook 'wl-mail-setup-hook
+          (function
+            (lambda ()
+              (define-key (current-local-map) (kbd "<tab>") 'my-bbdb-complete-mail))))
+
 (define-key wl-summary-mode-map "b" 'wl-summary-prev-page)
 (define-key wl-summary-mode-map "\C-h" 'wl-summary-prev-page)
 

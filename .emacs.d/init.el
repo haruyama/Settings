@@ -76,7 +76,7 @@
   :custom ((default-input-method . "japanese-skk"))
   :config (load "HS_skk-setup"))
 (leaf flymake :ensure t)
-(leaf lsdb :ensure t)
+(leaf bbdb :ensure t)
 (leaf mu-cite :ensure t)
 (leaf recentf :ensure t)
 (leaf recentf-ext :ensure t)
