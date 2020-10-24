@@ -56,12 +56,6 @@ endif
 repo = 'vim-scripts/AutoTag'
 
 [[plugins]]
-repo = 'Shougo/neosnippet'
-hook_source = '''
-source ~/.vim/my/plugins/neosnippet.vim
-'''
-
-[[plugins]]
 repo = 'Shougo/context_filetype.vim'
 hook_source = '''
 let g:context_filetype#filetypes = {

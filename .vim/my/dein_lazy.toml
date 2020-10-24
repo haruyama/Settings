@@ -9,6 +9,15 @@ source ~/.vim/my/plugins/deoplete.rc.vim
 '''
 
 [[plugins]]
+repo = 'Shougo/neosnippet'
+hook_source = '''
+source ~/.vim/my/plugins/neosnippet.vim
+'''
+on_i  = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+
+[[plugins]]
 repo = 'Shougo/vimshell.vim'
 if = "!has('nvim') && !has('terminal')"
 on_map = [['n', '<Plug>']]
