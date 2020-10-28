@@ -112,6 +112,10 @@ repo = 'mattn/emmet-vim'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
+hook_add = '''
+nmap f <Plug>(easymotion-s)
+nmap F <Plug>(easymotion-s)
+'''
 
 [[plugins]]
 repo = 'w0rp/ale'
