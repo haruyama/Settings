@@ -8,6 +8,7 @@
 
 #Automatically generated file. Do not edit (see /usr/doc/menu/html/index.html)
 
+   [exec] (konsole) {/usr/bin/konsole --hide-menubar}
    [exec] (Gnome Terminal) {/usr/bin/gnome-terminal --hide-menubar}
 
    [config] (Configuration)

@@ -36,10 +36,10 @@ pkill parcellite
 pkill dropbox
 /usr/bin/dropbox start &
 
-#/usr/bin/ibus exit
-#/usr/bin/ibus-daemon -x &
+/usr/bin/ibus exit
+/usr/bin/ibus-daemon -x &
 
-fcitx-autostart &
+# fcitx-autostart &
 
 /usr/bin/fbsetroot  -solid black
 
