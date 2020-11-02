@@ -74,6 +74,7 @@ profile
 release
 relwithdebinfo
 sanitizer
+native
 
 *.mp3
 *.mp4
