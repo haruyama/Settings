@@ -273,5 +273,6 @@ autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
 #source ~/.zsh.d/plugins
-source ~/.zsh.d/zplug
+#source ~/.zsh.d/zplug
+source ~/.zsh.d/zinit
 source ~/.zsh.d/fzf

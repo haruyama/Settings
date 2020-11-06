@@ -1,0 +1,25 @@
+# vim: filetype=zsh
+
+export ZINIT_HOME=~/.zinit
+
+if [ ! -d $ZINIT_HOME ]; then
+    mkdir $ZINIT_HOME
+    git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+fi
+
+source $ZINIT_HOME/bin/zinit.zsh
+
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zdharma/fast-syntax-highlighting
+zinit light bobthecow/git-flow-completion
+zinit light rupa/z
+zinit light chrissicool/zsh-256color
+
+add-zsh-hook precmd _z_precmd
+function _z_precmd {
+        _z --add "$PWD"
+}
