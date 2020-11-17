@@ -20,7 +20,7 @@ init: fzf_install
 	ln -fs ~/.vim/after ~/.config/nvim/after
 
 neovim:
-	pip3 install pynvim
+	pip3 install pynvim msgpack
 	npm install -g neovim
 
 gtk3:
