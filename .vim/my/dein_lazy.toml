@@ -18,10 +18,17 @@ on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
 [[plugins]]
+repo = 'Shougo/defx.nvim'
+hook_source = '''
+source ~/.vim/my/plugins/defx.vim
+'''
+on_cmd = ['Defx']
+
+[[plugins]]
 repo = 'Shougo/vimshell.vim'
 if = "!has('nvim') && !has('terminal')"
 on_map = [['n', '<Plug>']]
-on_cmd = [ 'VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTerminal', 'VimShellPop']
+on_cmd = ['VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTerminal', 'VimShellPop']
 hook_add = '''
 let g:vimfiler_as_default_explorer = 0
 let g:vimshell_interactive_update_time = 500
@@ -38,6 +45,11 @@ on_ft = ['bal']
 [[plugins]]
 repo = 'vim-scripts/a.vim'
 on_ft = ['c', 'cpp']
+
+[[plugins]]
+repo = 'haruyama/vim-gencode-cpp'
+on_ft = ['cpp']
+depends = ['a.vim']
 
 [[plugins]]
 repo = 'Shougo/deoplete-clangx'

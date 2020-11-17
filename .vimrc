@@ -9,6 +9,7 @@ source $HOME/.vim/my/template.vim
 source $HOME/.vim/my/command.vim
 "source $HOME/.vim/my/mark.vim
 source $HOME/.vim/my/misc.vim
+source $HOME/.vim/my/tab.vim
 source $HOME/.vim/my/quickfixgrep.vim
 
 if filereadable(expand('~/.vimrc.local'))
