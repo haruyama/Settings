@@ -1,7 +1,7 @@
-nnoremap <silent> ,ua :<C-u>DeniteBufferDir -default-action=split file/rec<CR>
+nnoremap <silent> ,ua :<C-u>DeniteBufferDir -default-action=tabswitch file/rec<CR>
 
 nnoremap <silent> ,uc :<C-u>Denite colorscheme<CR>
-nnoremap <silent> ,ud :<C-u>Denite -default-action=split directory_rec<CR>
+nnoremap <silent> ,ud :<C-u>Denite -default-action=tabswitch directory_rec<CR>
 nnoremap <silent> ,uf :<C-u>Denite filetype<CR>
 nnoremap <silent> ,ug :<C-u>Denite grep<CR>
 nnoremap <silent> ,ul :<C-u>Denite line<CR>
@@ -30,15 +30,15 @@ call denite#custom#source('file_mru', 'matchers', ['matcher_fuzzy', 'matcher_pro
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
+        \ denite#do_map('do_action')
   nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
+        \ denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
+        \ denite#do_map('do_action', 'preview')
   nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
+        \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
+        \ denite#do_map('open_filter_buffer')
   nnoremap <silent><buffer><expr> <Space>
-  \ denite#do_map('toggle_select').'j'
+        \ denite#do_map('toggle_select').'j'
 endfunction
