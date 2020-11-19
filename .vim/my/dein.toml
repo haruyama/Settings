@@ -121,7 +121,7 @@ nmap F <Plug>(easymotion-s)
 repo = 'w0rp/ale'
 hook_add = '''
 let g:ale_linters = {
-\   'cpp': ['cc', 'clangd', 'clangtidy', 'cppcheck'],
+\   'cpp': ['clangd', 'cppcheck', 'cpplint'],
 \   'javascript': ['eslint'],
 \   'go': ['go build', 'go vet'],
 \   'html': ['alex', 'htmlhint', 'proselint', 'write-good'],
@@ -133,6 +133,7 @@ let g:ale_go_bingo_executable = 'gopls'
 let g:ale_javascript_eslint_suppress_missing_config = 1
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 let g:ale_cmake_cmakelint_options = '--filter=-readability/wonkycase,-linelength'
+let g:ale_cpp_cpplint_options = '--linelength=120 --filter=-build/include_subdir,-legal/copyright,-build/c++11'
 '''
 # \   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
 
@@ -322,8 +323,13 @@ let g:LanguageClient_diagnosticsEnable = 0
 '''
 
 [[plugins]]
-repo = 'tbodt/deoplete-tabnine'
-build = './install.sh'
+repo = 'iberianpig/tig-explorer.vim'
 
 [[plugins]]
-repo = 'iberianpig/tig-explorer.vim'
+repo = 'webdevel/tabulous'
+hook_add = '''
+let g:tabulousLabelNameOptions = ':d:t:r'
+let g:tabulousCloseStr = ''
+'''
+
+

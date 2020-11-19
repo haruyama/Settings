@@ -69,10 +69,12 @@ let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
 
 " libclang default compile flags
-let g:deoplete#sources#clang#flags = ['-x', 'c++', '-std=c++11']
+let g:deoplete#sources#clang#flags = ['-x', 'c++', '-std=gnu++2a']
 
 " compile_commands.json directory path
 " Not file path. Need build directory path
 " let g:deoplete#sources#clang#clang_complete_database =
 "       \ expand('~/src/neovim/build')
 "}}}
+
+call deoplete#custom#source('tabnine', 'rank', 50)
