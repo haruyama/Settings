@@ -22,6 +22,7 @@ init: fzf_install
 neovim:
 	pip3 install pynvim msgpack
 	npm install -g neovim
+	gem install --user neovim
 
 gtk3:
 	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
