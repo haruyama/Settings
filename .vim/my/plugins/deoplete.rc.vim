@@ -77,4 +77,5 @@ let g:deoplete#sources#clang#flags = ['-x', 'c++', '-std=gnu++2a']
 "       \ expand('~/src/neovim/build')
 "}}}
 
-call deoplete#custom#source('tabnine', 'rank', 50)
+" call deoplete#custom#source('tabnine', 'rank', 150)
+call deoplete#custom#option('complete_suffix', 0)

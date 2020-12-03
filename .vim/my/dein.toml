@@ -121,7 +121,7 @@ nmap F <Plug>(easymotion-s)
 repo = 'w0rp/ale'
 hook_add = '''
 let g:ale_linters = {
-\   'cpp': ['clangd', 'cppcheck', 'cpplint'],
+\   'cpp': ['cppcheck', 'cpplint'],
 \   'javascript': ['eslint'],
 \   'go': ['go build', 'go vet'],
 \   'html': ['alex', 'htmlhint', 'proselint', 'write-good'],
@@ -211,7 +211,8 @@ repo = 'rhysd/committia.vim'
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
 hook_add = '''
-let g:vista_default_executive = 'lcn'
+"let g:vista_default_executive = 'lcn'
+let g:vista_default_executive = 'vim_lsp'
 '''
 
 [[plugins]]
@@ -273,54 +274,85 @@ if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
 repo = 'roxma/nvim-yarp'
 if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
 
+# [[plugins]]
+# repo = 'autozimu/LanguageClient-neovim'
+# rev = 'next'
+# build = 'bash install.sh'
+# hook_add = '''
+# set hidden
+
+# let g:LanguageClient_rootMarkers = {
+#       \ 'clojure': ['project.clj'],
+#       \ 'go': ['.git', 'go.mod'],
+#       \ 'purescript': ['bower.json'],
+#       \ 'rust': ['Cargo.toml'],
+#       \ }
+
+# let g:LanguageClient_serverCommands = {
+#       \ 'html': [],
+#       \ 'css': [],
+#       \ 'clojure': ['bash', '-c', '~/bin/clojure-lsp'],
+#       \ 'haskell': ['hie-wrapper'],
+#       \ 'javascript': ['javascript-typescript-stdio'],
+#       \ 'jsx': ['javascript-typescript-stdio'],
+#       \ 'javascript.jsx': ['javascript-typescript-stdio'],
+#       \ 'purescript': ['purescript-language-server', '--stdio'],
+#       \ 'rust': ['rls'],
+#       \ 'typescript': ['javascript-typescript-stdio'],
+#       \ 'typescript.tsx': ['javascript-typescript-stdio'],
+#       \ 'tsx': ['javascript-typescript-stdio'],
+#       \ 'vue': ['vls'],
+#       \ 'go': ['gopls'],
+#       \ 'python': ['pyls'],
+#       \ 'c': ['clangd', '-compile-commands-dir=' . getcwd()],
+#       \ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd()],
+#       \ }
+
+# "       \ 'c': ['ccls'],
+# "       \ 'cpp': ['ccls'],
+
+# nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+# " Or map each action separately
+# nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+# nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+# nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+# let g:LanguageClient_diagnosticsEnable = 0
+# "autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+# " let g:LanguageClient_loggingLevel = 'INFO'
+# " let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/LanguageClient.log')
+# " let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
+# '''
+
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
+repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
-set hidden
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_highlight_references_enabled = 1
 
-let g:LanguageClient_rootMarkers = {
-      \ 'clojure': ['project.clj'],
-      \ 'go': ['.git', 'go.mod'],
-      \ 'purescript': ['bower.json'],
-      \ 'rust': ['Cargo.toml'],
-      \ }
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    " setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> <F2> <plug>(lsp-rename)
+    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+endfunction
 
-let g:LanguageClient_serverCommands = {
-      \ 'html': [],
-      \ 'css': [],
-      \ 'clojure': ['bash', '-c', '~/bin/clojure-lsp'],
-      \ 'haskell': ['hie-wrapper'],
-      \ 'javascript': ['javascript-typescript-stdio'],
-      \ 'jsx': ['javascript-typescript-stdio'],
-      \ 'javascript.jsx': ['javascript-typescript-stdio'],
-      \ 'purescript': ['purescript-language-server', '--stdio'],
-      \ 'rust': ['rls'],
-      \ 'typescript': ['javascript-typescript-stdio'],
-      \ 'typescript.tsx': ['javascript-typescript-stdio'],
-      \ 'tsx': ['javascript-typescript-stdio'],
-      \ 'vue': ['vls'],
-      \ 'go': ['gopls'],
-      \ 'python': ['pyls'],
-      \ 'c': ['clangd', '-compile-commands-dir=' . getcwd()],
-      \ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd()],
-      \ }
-
-"       \ 'c': ['ccls'],
-"       \ 'cpp': ['ccls'],
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-let g:LanguageClient_diagnosticsEnable = 0
-"autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-" let g:LanguageClient_loggingLevel = 'INFO'
-" let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/LanguageClient.log')
-" let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
+augroup lsp_install
+  au!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 '''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
 
 [[plugins]]
 repo = 'iberianpig/tig-explorer.vim'
@@ -331,5 +363,3 @@ hook_add = '''
 let g:tabulousLabelNameOptions = ':d:t:r'
 let g:tabulousCloseStr = ''
 '''
-
-
