@@ -66,6 +66,11 @@ on_ft = ['bal']
 [[plugins]]
 repo = 'vim-scripts/a.vim'
 on_ft = ['c', 'cpp']
+hook_add = '''
+let g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc,wdr:include/shiguredo/mp4,wdr:src'
+let g:alternateRelativeFiles = 0
+let g:alternateNoDefaultAlternate = 1
+'''
 
 [[plugins]]
 repo = 'haruyama/vim-gencode-cpp'

@@ -121,10 +121,11 @@ nmap F <Plug>(easymotion-s)
 repo = 'w0rp/ale'
 hook_add = '''
 let g:ale_linters = {
-\   'cpp': ['cppcheck', 'cpplint'],
+\   'cpp': ['cpplint'],
 \   'javascript': ['eslint'],
 \   'go': ['go build', 'go vet'],
 \   'html': ['alex', 'htmlhint', 'proselint', 'write-good'],
+\   'python': ['flake8', 'pyright'],
 \   'rust': ['cargo', 'rls'],
 \}
 nnoremap <silent> <leader>an :ALENextWrap<cr>
@@ -133,7 +134,7 @@ let g:ale_go_bingo_executable = 'gopls'
 let g:ale_javascript_eslint_suppress_missing_config = 1
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 let g:ale_cmake_cmakelint_options = '--filter=-readability/wonkycase,-linelength'
-let g:ale_cpp_cpplint_options = '--linelength=120 --filter=-build/include_subdir,-legal/copyright,-build/c++11'
+let g:ale_cpp_cpplint_options = '--linelength=120 --filter=-build/include_subdir,-legal/copyright,-build/c++11,-whitespace/braces'
 '''
 # \   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
 
