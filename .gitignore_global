@@ -90,9 +90,11 @@ native
 *.bgra
 *.argb
 *.png
+*.aac
 
 CMakeCache.txt
 CMakeFiles
 cmake_install.cmake
 
 infer-out
+iwyu.txt
