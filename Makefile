@@ -19,18 +19,20 @@ init: fzf_install
 	ln -fs ~/.vimrc ~/.config/nvim/init.vim
 	ln -fs ~/.vim/after ~/.config/nvim/after
 
-neovim:
+neovim: js_neovim_install
 	pip3 install pynvim msgpack
-	npm install -g neovim
 	gem install --user neovim
 
 gtk3:
 	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
-js_install: textlint_install js_dev_install js_misc_install
+js_install: textlint_install js_dev_install js_misc_install js_neovim_install
 
 js_dev_install:
 	npm install -g jshint jslint eslint eslint_d coffeelint npm-check-updates fixpack license-checker eslint-plugin-react tern nsp typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier eslint-config-prettier eslint-plugin-prettier
+
+js_neovim_install:
+	npm install -g neovim
 
 js_misc_install:
 	npm install -g honyaku
