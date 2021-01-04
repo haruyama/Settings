@@ -51,5 +51,5 @@ tmux:
 lsp_install:
 	go install golang.org/x/tools/gopls
 	npm i -g vue-language-server javascript-typescript-langserver purescript-language-server
-	pip3 install python-language-server
+	pip3 install python-language-server pyls-black
 
