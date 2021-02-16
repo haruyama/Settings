@@ -1,11 +1,11 @@
-update: fzf_install
+update: asdf_plugin_update asdf_plugin_install # fzf_install
 	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
 
 fzf_install:
 	[ -d ~/.fzf ] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	cd ~/.fzf && git pull && ./install --all
 
-init: fzf_install
+init: asdf
 	ln -fs ~/lib/Settings/.[A-Z0-9a-z]* ~/
 	rm ~/.git
 	mkdir -p ~/bin
@@ -53,3 +53,21 @@ lsp_install:
 	npm i -g vue-language-server javascript-typescript-langserver purescript-language-server
 	pip3 install python-language-server pyls-black
 
+asdf:
+	git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+	cd ~/.asdf && git checkout "`git describe --abbrev=0 --tags`"
+
+
+asdf_plugin:
+	asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
+	asdf plugin add nodejs
+	bash -c ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
+asdf_plugin_install:
+	asdf install fzf latest
+	asdf global fzf "`asdf latest fzf`"
+	asdf install nodejs latest
+	asdf global nodejs "`asdf latest nodejs`"
+
+asdf_plugin_update:
+	asdf plugin update --all
