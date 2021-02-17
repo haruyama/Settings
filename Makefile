@@ -1,4 +1,4 @@
-update: asdf_plugin_update asdf_plugin_install # fzf_install
+update: asdf_plugin_update asdf_install # fzf_install
 	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
 
 fzf_install:
@@ -63,7 +63,7 @@ asdf_plugin:
 	asdf plugin add nodejs
 	bash -c ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-asdf_plugin_install:
+asdf_install:
 	asdf install fzf latest
 	asdf global fzf "`asdf latest fzf`"
 	asdf install nodejs latest
