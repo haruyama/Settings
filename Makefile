@@ -59,15 +59,18 @@ asdf:
 
 
 asdf_plugin:
+	asdf plugin add golang https://github.com/kennyp/asdf-golang.git
+	asdf plugin add gohugo
 	asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
 	asdf plugin add nodejs
 	bash -c ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
+
 asdf_install:
-	asdf install fzf latest
-	asdf global fzf "`asdf latest fzf`"
-	asdf install nodejs latest
-	asdf global nodejs "`asdf latest nodejs`"
+	asdf install fzf latest && asdf global fzf "`asdf latest fzf`"
+	asdf install nodejs latest && asdf global nodejs "`asdf latest nodejs`"
+	asdf install golang latest && asdf global golang "`asdf latest golang`"
+	asdf install gohugo latest && asdf global gohugo "`asdf latest gohugo`"
 
 asdf_plugin_update:
 	asdf plugin update --all
