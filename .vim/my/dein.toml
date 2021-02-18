@@ -80,11 +80,11 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
-[[plugins]]
-repo = 'raymond-w-ko/vim-niji'
-hook_add = '''
-let g:niji_matching_filetypes = ['lisp', 'scheme']
-'''
+# [[plugins]]
+# repo = 'raymond-w-ko/vim-niji'
+# hook_add = '''
+# let g:niji_matching_filetypes = ['lisp', 'scheme']
+# '''
 
 [[plugins]]
 repo = 'haruyama/EnhCommentify.vim'
@@ -369,3 +369,4 @@ hook_add = '''
 let g:tabulousLabelNameOptions = ':d:t:r'
 let g:tabulousCloseStr = ''
 '''
+
