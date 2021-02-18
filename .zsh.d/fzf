@@ -6,5 +6,5 @@ if [[ -x $HOME/.asdf/shims/fzf ]]; then
     else
         export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0"
     fi
-    source "$HOME/.asdf/installs/fzf/$(asdf latest fzf)/shell/key-bindings.zsh"
+    source "$(asdf where fzf)/shell/key-bindings.zsh"
 fi
