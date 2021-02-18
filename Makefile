@@ -59,6 +59,7 @@ asdf:
 
 
 asdf_plugin:
+	asdf plugin add hadolint https://github.com/looztra/asdf-hadolint
 	asdf plugin add golang https://github.com/kennyp/asdf-golang.git
 	asdf plugin add gohugo
 	asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
