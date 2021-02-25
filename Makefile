@@ -49,7 +49,7 @@ tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 lsp_install:
-	go install golang.org/x/tools/gopls
+	go install golang.org/x/tools/gopls@latest
 	npm i -g vue-language-server javascript-typescript-langserver purescript-language-server
 	pip3 install python-language-server pyls-black
 
