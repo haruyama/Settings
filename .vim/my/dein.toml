@@ -101,12 +101,6 @@ hook_add = '''
 xnoremap <silent> <Leader>a :EasyAlign<cr>
 '''
 
-[[plugins]]
-repo = 'cohama/lexima.vim'
-
-[[plugins]]
-repo = 'mattn/emmet-vim'
-
 # [[plugins]]
 # repo = 'rhysd/clever-f.vim'
 
@@ -166,8 +160,8 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-[[plugins]]
-repo = 'tyru/open-browser.vim'
+# [[plugins]]
+# repo = 'tyru/open-browser.vim'
 
 [[plugins]]
 repo = 'ujihisa/neco-look'
@@ -261,8 +255,8 @@ repo = 'sgur/vim-textobj-parameter'
 [[plugins]]
 repo = 'farmergreg/vim-lastplace'
 
-[[plugins]]
-repo = 'simeji/winresizer'
+# [[plugins]]
+# repo = 'simeji/winresizer'
 
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
