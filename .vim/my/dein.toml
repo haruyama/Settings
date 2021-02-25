@@ -95,12 +95,6 @@ repo = 'haruyama/EnhCommentify.vim'
 [[plugins]]
 repo = 'honza/vim-snippets'
 
-[[plugins]]
-repo = 'junegunn/vim-easy-align'
-hook_add = '''
-xnoremap <silent> <Leader>a :EasyAlign<cr>
-'''
-
 # [[plugins]]
 # repo = 'rhysd/clever-f.vim'
 

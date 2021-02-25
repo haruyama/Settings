@@ -49,6 +49,13 @@ source ~/.vim/my/plugins/defx.vim
 on_cmd = ['Defx']
 
 [[plugins]]
+repo = 'junegunn/vim-easy-align'
+hook_add = '''
+xnoremap <silent> <Leader>a :EasyAlign<cr>
+'''
+on_cmd = ['EasyAlign']
+
+[[plugins]]
 repo = 'Shougo/vimshell.vim'
 if = "!has('nvim') && !has('terminal')"
 on_map = [['n', '<Plug>']]
