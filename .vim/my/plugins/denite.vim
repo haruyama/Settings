@@ -41,4 +41,6 @@ function! s:denite_my_settings() abort
         \ denite#do_map('open_filter_buffer')
   nnoremap <silent><buffer><expr> <Space>
         \ denite#do_map('toggle_select').'j'
+  nnoremap <silent><buffer><expr> u
+        \ denite#do_map('move_up_path')
 endfunction
