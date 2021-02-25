@@ -8,7 +8,7 @@ nnoremap <silent> ,ul :<C-u>Denite line<CR>
 
 nnoremap <silent> ,um :<C-u>Denite file_mru<CR>
 
-nnoremap <silent> ,uu :<C-u>Denite -default-action=split buffer file_mru<CR>
+nnoremap <silent> ,uu :<C-u>Denite -default-action=tabswitch buffer file_mru<CR>
 nnoremap <silent> ,uy :<C-u>Denite neoyank<CR>
 
 nnoremap <silent> ,ur :<C-u>Denite -resume=true<CR>
