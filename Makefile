@@ -59,6 +59,7 @@ asdf:
 
 
 asdf_plugin:
+	asdf plugin add nim https://github.com/asdf-community/asdf-nim
 	asdf plugin add hadolint https://github.com/looztra/asdf-hadolint
 	asdf plugin add golang https://github.com/kennyp/asdf-golang.git
 	asdf plugin add gohugo
@@ -72,6 +73,7 @@ asdf_install:
 	asdf install nodejs latest && asdf global nodejs "`asdf latest nodejs`"
 	asdf install golang latest && asdf global golang "`asdf latest golang`"
 	asdf install gohugo latest && asdf global gohugo "`asdf latest gohugo`"
+	asdf install nim latest && asdf global nim "`asdf latest nim`"
 
 asdf_plugin_update:
 	asdf plugin update --all
