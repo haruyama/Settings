@@ -296,6 +296,15 @@ autocmd! FileType python setlocal completeopt-=preview
 '''
 
 [[plugins]]
+repo = 'python-rope/ropevim'
+on_ft = 'python'
+hook_add = '''
+let ropevim_vim_completion=1
+let ropevim_extended_complete=1
+let g:ropevim_autoimport_modules = ['os', 'shutil', 'sys', 'time']
+'''
+
+[[plugins]]
 repo = 'purescript-contrib/purescript-vim'
 on_ft = 'purescript'
 
