@@ -276,6 +276,10 @@ let g:vim_json_syntax_conceal = 0
 # on_ft = ['markdown', 'mkd']
 
 [[plugins]]
+repo = 'zah/nim.vim'
+on_ft = 'nim'
+
+[[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
 hook_add = '''
