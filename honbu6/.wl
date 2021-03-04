@@ -126,15 +126,14 @@
          ("Sender" . wl-from)
          ("Reply-To" . wl-from)
          )
+        ("tankyu"
+         ("From" . "HARUYAMA Seigo <haruyama@tankyu.net>")
+         ("Sender" . wl-from)
+         )
         ("engligh"
          ("From" . wl-from)
          (message-locale-default . 'en)
-         (bottom . (concat "\n"
-                           "-- \n"
-                           "  HARUYAMA Seigo\n"
-                           "  haruyama@queen-ml.org")
-                 ))))
-
+                 )))
 
 (defvar my-mime-filename-coding-system-for-decode
   '(utf-8 iso-2022-jp japanese-shift-jis japanese-iso-8bit))
