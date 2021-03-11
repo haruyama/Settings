@@ -42,13 +42,11 @@ repo = 'Shougo/neoyank.vim'
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]
-repo = 'dsolstad/vim-wombat256i'
+repo = 'joshdick/onedark.vim'
 hook_add = '''
 if !has("gui_running")
   set background=dark
-  augroup colorscheme
-    autocmd! VimEnter * colorscheme wombat256i
-  augroup END
+  colorscheme onedark
 endif
 '''
 
