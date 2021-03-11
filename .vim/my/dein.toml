@@ -174,8 +174,8 @@ let g:yankround_max_history = 50
 [[plugins]]
 repo = 'haya14busa/is.vim'
 
-[[plugins]]
-repo = 'mh21/errormarker.vim'
+# [[plugins]]
+# repo = 'mh21/errormarker.vim'
 
 [[plugins]]
 repo = 'guns/vim-sexp'
