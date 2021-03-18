@@ -87,9 +87,9 @@ repo = 'haruyama/vim-gencode-cpp'
 on_ft = ['cpp']
 depends = ['a.vim']
 
-[[plugins]]
-repo = 'Shougo/deoplete-clangx'
-on_ft = ['c', 'cpp']
+# [[plugins]]
+# repo = 'Shougo/deoplete-clangx'
+# on_ft = ['c', 'cpp']
 
 [[plugins]]
 repo = 'rhysd/vim-clang-format'
