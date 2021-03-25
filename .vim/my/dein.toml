@@ -107,6 +107,7 @@ nmap F <Plug>(easymotion-s)
 repo = 'w0rp/ale'
 hook_add = '''
 let g:ale_linters = {
+\   'c': ['cpplint'],
 \   'cpp': ['cpplint'],
 \   'javascript': ['eslint'],
 \   'go': ['go build', 'go vet'],
