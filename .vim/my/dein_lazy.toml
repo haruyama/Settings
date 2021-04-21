@@ -70,6 +70,14 @@ repo = 'rhysd/vim-grammarous'
 on_cmd = [ 'GrammarousCheck' ]
 
 [[plugins]]
+repo = 'raghur/vim-ghost'
+on_cmd = ['GhostInstall', 'GhostStart']
+hook_post_update = '''
+:GhostInstall
+'''
+
+
+[[plugins]]
 repo = 'ballerina-attic/plugin-vim'
 on_ft = ['bal']
 
