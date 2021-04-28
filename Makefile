@@ -70,7 +70,7 @@ asdf_plugin:
 
 asdf_install:
 	asdf install fzf latest && asdf global fzf "`asdf latest fzf`"
-	asdf install nodejs latest && asdf global nodejs "`asdf latest nodejs`"
+	asdf install nodejs lts && asdf global nodejs lts
 	asdf install golang latest && asdf global golang "`asdf latest golang`"
 	asdf install gohugo latest && asdf global gohugo "`asdf latest gohugo`"
 	asdf install nim latest && asdf global nim "`asdf latest nim`"
