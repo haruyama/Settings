@@ -1,4 +1,4 @@
-update: asdf_plugin_update asdf_install # fzf_install
+update: asdf_update asdf_install # fzf_install
 	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
 
 fzf_install:
@@ -75,5 +75,6 @@ asdf_install:
 	asdf install gohugo latest && asdf global gohugo "`asdf latest gohugo`"
 	asdf install nim latest && asdf global nim "`asdf latest nim`"
 
-asdf_plugin_update:
+asdf_update:
+	asdf update
 	asdf plugin update --all
