@@ -7,8 +7,8 @@
 	sw = switch
 	ignored = !git ls-files -v | grep "^[[:lower:]]"
 [core]
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes_global
+	excludesfile = ~/.config/git/ignore
+	attributesfile = ~/.config/git/attributes
 	quotepath = false
 [color]
 	ui = auto
@@ -22,7 +22,7 @@
 [rebase]
 	autosquash = true
 [include]
-	path = ~/.gitconfig_local
+	path = ~/.config/git/config_local
 [merge]
 	conflictStyle = diff3
 [pull]

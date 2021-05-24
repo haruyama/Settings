@@ -5,9 +5,9 @@ fzf_install:
 	[ -d ~/.fzf ] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	cd ~/.fzf && git pull && ./install --all
 
-init: asdf
+init: asdf git
 	ln -fs ~/lib/Settings/.[A-Z0-9a-z]* ~/
-	rm ~/.git
+	rm ~/.git ~/.gitignore
 	mkdir -p ~/bin
 	ln -fs ~/lib/Settings/bin/* ~/bin/
 	[ -e ~/.ssh ] || mkdir -m=700 ~/.ssh
@@ -18,6 +18,10 @@ init: asdf
 	mkdir -p ~/.config/nvim
 	ln -fs ~/.vimrc ~/.config/nvim/init.vim
 	ln -fs ~/.vim/after ~/.config/nvim/after
+
+git:
+	mkdir -p ~/.config/git
+	ln -fs ~/lib/Settings/_config/git/* ~/.config/git/
 
 neovim: js_neovim_install
 	pip3 install pynvim msgpack
