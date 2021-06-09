@@ -98,3 +98,5 @@ cmake_install.cmake
 
 infer-out
 iwyu.txt
+
+.tool-versions
