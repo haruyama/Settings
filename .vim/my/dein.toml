@@ -68,7 +68,8 @@ let g:context_filetype#filetypes = {
       \     'end' : '^\s*</style>',
       \     'filetype' : 'css',
       \   },
-      \ ]
+      \ ],
+      \ 'vue': []
       \}
 '''
 
@@ -84,8 +85,14 @@ repo = 'Shougo/neco-syntax'
 # let g:niji_matching_filetypes = ['lisp', 'scheme']
 # '''
 
-[[plugins]]
-repo = 'haruyama/EnhCommentify.vim'
+# [[plugins]]
+# repo = 'haruyama/EnhCommentify.vim'
+
+ [[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+vnoremap <silent> <leader>x :TComment<cr>
+'''
 
 #[[plugins]]
 #repo = 'haruyama/vim-matchopen'
@@ -110,6 +117,7 @@ let g:ale_linters = {
 \   'c': ['cpplint'],
 \   'cpp': ['cpplint'],
 \   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
 \   'go': ['go build', 'go vet'],
 \   'html': ['alex', 'htmlhint', 'proselint', 'write-good'],
 \   'python': ['flake8', 'pycodestle', 'pyright'],
@@ -357,3 +365,6 @@ let g:tabulousLabelNameOptions = ':d:t:r'
 let g:tabulousCloseStr = ''
 '''
 
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
