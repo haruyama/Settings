@@ -79,29 +79,14 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
-# [[plugins]]
-# repo = 'raymond-w-ko/vim-niji'
-# hook_add = '''
-# let g:niji_matching_filetypes = ['lisp', 'scheme']
-# '''
-
-# [[plugins]]
-# repo = 'haruyama/EnhCommentify.vim'
-
  [[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = '''
 vnoremap <silent> <leader>x :TComment<cr>
 '''
 
-#[[plugins]]
-#repo = 'haruyama/vim-matchopen'
-
 [[plugins]]
 repo = 'honza/vim-snippets'
-
-# [[plugins]]
-# repo = 'rhysd/clever-f.vim'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
@@ -161,9 +146,6 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
-# [[plugins]]
-# repo = 'tyru/open-browser.vim'
-
 [[plugins]]
 repo = 'ujihisa/neco-look'
 
@@ -183,9 +165,6 @@ let g:yankround_max_history = 50
 [[plugins]]
 repo = 'haya14busa/is.vim'
 
-# [[plugins]]
-# repo = 'mh21/errormarker.vim'
-
 [[plugins]]
 repo = 'guns/vim-sexp'
 
@@ -197,12 +176,6 @@ repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'rhysd/committia.vim'
-
-# [[plugins]]
-# repo = 'majutsushi/tagbar'
-# hook_add = '''
-# source ~/.vim/my/plugins/tagbar.vim
-# '''
 
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
@@ -256,9 +229,6 @@ repo = 'sgur/vim-textobj-parameter'
 [[plugins]]
 repo = 'farmergreg/vim-lastplace'
 
-# [[plugins]]
-# repo = 'simeji/winresizer'
-
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
 
@@ -269,55 +239,6 @@ if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
 [[plugins]]
 repo = 'roxma/nvim-yarp'
 if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
-
-# [[plugins]]
-# repo = 'autozimu/LanguageClient-neovim'
-# rev = 'next'
-# build = 'bash install.sh'
-# hook_add = '''
-# set hidden
-
-# let g:LanguageClient_rootMarkers = {
-#       \ 'clojure': ['project.clj'],
-#       \ 'go': ['.git', 'go.mod'],
-#       \ 'purescript': ['bower.json'],
-#       \ 'rust': ['Cargo.toml'],
-#       \ }
-
-# let g:LanguageClient_serverCommands = {
-#       \ 'html': [],
-#       \ 'css': [],
-#       \ 'clojure': ['bash', '-c', '~/bin/clojure-lsp'],
-#       \ 'haskell': ['hie-wrapper'],
-#       \ 'javascript': ['javascript-typescript-stdio'],
-#       \ 'jsx': ['javascript-typescript-stdio'],
-#       \ 'javascript.jsx': ['javascript-typescript-stdio'],
-#       \ 'purescript': ['purescript-language-server', '--stdio'],
-#       \ 'rust': ['rls'],
-#       \ 'typescript': ['javascript-typescript-stdio'],
-#       \ 'typescript.tsx': ['javascript-typescript-stdio'],
-#       \ 'tsx': ['javascript-typescript-stdio'],
-#       \ 'vue': ['vls'],
-#       \ 'go': ['gopls'],
-#       \ 'python': ['pyls'],
-#       \ 'c': ['clangd', '-compile-commands-dir=' . getcwd()],
-#       \ 'cpp': ['clangd', '-compile-commands-dir=' . getcwd()],
-#       \ }
-
-# "       \ 'c': ['ccls'],
-# "       \ 'cpp': ['ccls'],
-
-# nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-# " Or map each action separately
-# nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-# nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-# nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-# let g:LanguageClient_diagnosticsEnable = 0
-# "autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-# " let g:LanguageClient_loggingLevel = 'INFO'
-# " let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/LanguageClient.log')
-# " let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
-# '''
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
@@ -364,7 +285,6 @@ hook_add = '''
 let g:tabulousLabelNameOptions = ':d:t:r'
 let g:tabulousCloseStr = ''
 '''
-
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
