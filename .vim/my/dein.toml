@@ -1,4 +1,10 @@
 [[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'vim-denops/denops-helloworld.vim'
+
+[[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
@@ -17,274 +23,82 @@ hook_post_update = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/denite.nvim'
-depends = ['neomru.vim', 'neoyank.vim']
-if = '''has('nvim') || (v:version >= 800 && has('python3'))'''
+repo = 'Shougo/ddc.vim'
+depends = ['context_filetype.vim', 'denops.vim']
+on_event = 'InsertEnter'
 hook_source = '''
-source ~/.vim/my/plugins/denite.vim
-'''
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-depends = ['neomru.vim', 'neoyank.vim']
-if   = '''! (has('nvim') || (v:version >= 800 && has('python3')))'''
-hook_source = '''
-source ~/.vim/my/plugins/unite.vim
-'''
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
-
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-
-[[plugins]]
-repo = 'joshdick/onedark.vim'
-hook_add = '''
-if !has("gui_running")
-  set background=dark
-  colorscheme onedark
-endif
-'''
-
-[[plugins]]
-repo = 'vim-scripts/AutoTag'
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-hook_source = '''
-let g:context_filetype#filetypes = {
-      \ 'html': [
-      \   {
-      \     'start' : '^\s*<script type="application/x-go">',
-      \     'end' : '^\s*</script>',
-      \     'filetype' : 'go',
-      \   },
-      \   {
-      \     'start' : '^\s*<style>',
-      \     'end' : '^\s*</style>',
-      \     'filetype' : 'css',
-      \   },
-      \ ],
-      \ 'vue': []
-      \}
-'''
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'Shougo/neco-syntax'
-
- [[plugins]]
-repo = 'tomtom/tcomment_vim'
-hook_add = '''
-vnoremap <silent> <leader>x :TComment<cr>
-'''
-
-[[plugins]]
-repo = 'honza/vim-snippets'
-
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
-hook_add = '''
-nmap f <Plug>(easymotion-s)
-nmap F <Plug>(easymotion-s)
-'''
-
-[[plugins]]
-repo = 'w0rp/ale'
-hook_add = '''
-let g:ale_linters = {
-\   'c': ['cpplint'],
-\   'cpp': ['cpplint'],
-\   'javascript': ['eslint'],
-\   'typescript': ['eslint'],
-\   'go': ['go build', 'go vet'],
-\   'html': ['alex', 'htmlhint', 'proselint', 'write-good'],
-\   'python': ['flake8', 'pycodestle', 'pyright'],
-\   'rust': ['cargo', 'rls'],
-\}
-nnoremap <silent> <leader>an :ALENextWrap<cr>
-nnoremap <silent> <leader>ap :ALEPreviousWrap<cr>
-let g:ale_go_bingo_executable = 'gopls'
-let g:ale_javascript_eslint_suppress_missing_config = 1
-let g:ale_python_mypy_options = '--ignore-missing-imports'
-let g:ale_cmake_cmakelint_options = '--filter=-readability/wonkycase,-linelength'
-let g:ale_cpp_cpplint_options = '--linelength=120 --filter=-build/include_subdir,-legal/copyright,-build/c++11,-whitespace/braces'
-'''
-# \   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
-
-[[plugins]]
-repo = 'thinca/vim-quickrun'
-hook_add = '''
-let g:quickrun_config = {
-\    "octave" : {
-\       "command" : "octave",
-\       "cmdopt"  : "--silent",
-\   },
-\    "ceylon" : {
-\       "command" : "ceylon",
-\       "cmdopt"  : "compile",
-\   },
-\}
-'''
-
-[[plugins]]
-repo = 'thinca/vim-template'
-hook_add = '''
-let g:template_vim_template_dir  = $HOME . '/.vim/template'
-let g:template_vim_template_dirs = [$HOME . '/.vim/template']
-'''
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'ujihisa/neco-look'
-
-[[plugins]]
-repo = 'LeafCage/yankround.vim'
-hook_add = '''
-let g:yankring_history_dir            = $HOME . '/.vim/history'
-let g:yankring_manual_clipboard_check = 1
-
-nmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-let g:yankround_max_history = 50
-'''
-
-[[plugins]]
-repo = 'haya14busa/is.vim'
-
-[[plugins]]
-repo = 'guns/vim-sexp'
-
-[[plugins]]
-repo = 'tpope/vim-sexp-mappings-for-regular-people'
-
-[[plugins]]
-repo = 'tpope/vim-repeat'
-
-[[plugins]]
-repo = 'rhysd/committia.vim'
-
-[[plugins]]
-repo = 'liuchengxu/vista.vim'
-hook_add = '''
-"let g:vista_default_executive = 'lcn'
-let g:vista_default_executive = 'vim_lsp'
-'''
-
-[[plugins]]
-repo = 'janko-m/vim-test'
-depends = ['vimproc.vim']
-hook_add = '''
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>f :TestFile<CR>
-nmap <silent> <leader>s :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-
-if has('nvim')
-  let g:test#strategy = 'vimproc'
-endif
-
-let g:test#python#pytest#options = {
-  \ 'nearest': '-v',
-  \ 'file':    '-v',
-  \ 'suite':   '-v',
-\}
-let g:test#go#gotest#options = {
-  \ 'nearest': '-v',
-  \ 'file':    '-v',
-  \ 'suite':   '-v',
-\}
-'''
-
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']
-
-[[plugins]]
-repo = 'kana/vim-textobj-user'
-
-[[plugins]]
-repo = 'osyo-manga/vim-textobj-multiblock'
-
-[[plugins]]
-repo = 'osyo-manga/vim-textobj-multitextobj'
-
-[[plugins]]
-repo = 'sgur/vim-textobj-parameter'
-
-[[plugins]]
-repo = 'farmergreg/vim-lastplace'
-
-[[plugins]]
-repo = 'ConradIrwin/vim-bracketed-paste'
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
-
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
-
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-hook_add = '''
-let g:lsp_signs_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_highlight_references_enabled = 1
-
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    " setlocal signcolumn=yes
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-    nmap <buffer> <F2> <plug>(lsp-rename)
-    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
+inoremap <silent><expr> <C-l> ddc#complete_common_string()
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ ""
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+call ddc#custom#patch_global(
+      \ 'sources', ['around', 'nvimlsp']
+      \ )
+call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+        \   'matchers': ['matcher_head'],
+        \   'sorters': ['sorter_rank'],
+        \ },
+        \ 'around': {'mark': 'A'},
+        \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
+        \ 'necovim': {'mark': 'vim'},
+        \ 'nextword': {'mark': 'nextword', 'minAutoCompleteLength': 3},
+        \ 'nvimlsp': {'mark': 'lsp', 'forceCompletionPattern': '\.|:|->'},
+        \ })
+call ddc#custom#patch_filetype(
+      \ ['vim', 'toml'], 'sources', ['necovim', 'around']
+      \ )
+call ddc#custom#patch_filetype(
+      \ ['help', 'markdown'], 'sources', ['nextword', 'around']
+      \ )
+call ddc#enable()
 
-augroup lsp_install
-  au!
-  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-
-augroup lsp_python
-  au!
-  autocmd BufWritePre *.py :LspDocumentFormatSync
-augroup END
+lua << EOF
+local lspconfig = require'lspconfig'
+lspconfig.clangd.setup{}
+lspconfig.gopls.setup{}
+lspconfig.pyright.setup{}
+EOF
 '''
 
 [[plugins]]
-repo = 'mattn/vim-lsp-settings'
+repo = 'Shougo/ddc-around'
+on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'iberianpig/tig-explorer.vim'
+repo = 'Shougo/ddc-zsh'
+on_ft = 'zsh'
+depends = 'ddc.vim'
 
 [[plugins]]
-repo = 'webdevel/tabulous'
-hook_add = '''
-let g:tabulousLabelNameOptions = ':d:t:r'
-let g:tabulousCloseStr = ''
-'''
+repo = 'Shougo/ddc-nextword'
+on_ft = ['toml', 'help']
+on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'editorconfig/editorconfig-vim'
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = ['vim', 'toml']
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'neovim/nvim-lsp'
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
