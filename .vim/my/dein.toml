@@ -63,6 +63,9 @@ local lspconfig = require'lspconfig'
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
 lspconfig.pyright.setup{}
+lspconfig.rls.setup{}
+lspconfig.sorbet.setup{}
+lspconfig.vuels.setup{}
 EOF
 '''
 
