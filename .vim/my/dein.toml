@@ -59,8 +59,10 @@ call ddc#custom#patch_filetype(
 call ddc#enable()
 
 lua << EOF
+vim.lsp.set_log_level("debug")
 local lspconfig = require'lspconfig'
 lspconfig.clangd.setup{}
+lspconfig.denols.setup{}
 lspconfig.gopls.setup{}
 lspconfig.pyright.setup{}
 lspconfig.rls.setup{}
