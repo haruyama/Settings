@@ -1,7 +1,11 @@
 let g:dein#install_progress_type = 'title'
 let g:dein#enable_notification = 1
 
-let s:dein_dir = expand('~/.cache/dein')
+if has('nvim-0.5.0')
+  let s:dein_dir = expand('~/.cache/dein-nvim-0.5.0')
+else
+  let s:dein_dir = expand('~/.cache/dein')
+endif
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if &runtimepath !~# '/dein.vim'
@@ -23,8 +27,10 @@ call dein#load_toml('~/.vim/my/dein_lazy.toml', {'lazy': 1})
 "  call dein#load_toml('~/.vim/my/deineo.toml', {})
 "endif
 
-if dein#tap('deoplete.nvim') && has('nvim')
-  call dein#disable('neocomplete.vim')
+if has('nvim-0.5.0')
+ call dein#load_toml('~/.vim/my/ddc.toml', {})
+else
+ call dein#load_toml('~/.vim/my/deoplete.toml', {})
 endif
 
 call dein#end()

@@ -1,14 +1,4 @@
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = ['context_filetype.vim']
-if = '''has('nvim') || (v:version >= 800 && has('python3'))'''
-on_i = 1
-hook_source = '''
-let g:deoplete#enable_at_startup = 1
-source ~/.vim/my/plugins/deoplete.rc.vim
-'''
-
-[[plugins]]
 repo = 'Shougo/neosnippet'
 hook_source = '''
 source ~/.vim/my/plugins/neosnippet.vim
@@ -16,21 +6,6 @@ source ~/.vim/my/plugins/neosnippet.vim
 on_i  = 1
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
-
-[[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
-on_i  = 1
-depends = ['vim-lsp', 'deoplete.nvim', 'neosnippet-snippets']
-
-[[plugins]]
-repo = 'thomasfaingnaert/vim-lsp-snippets'
-on_i  = 1
-depends = ['vim-lsp', 'neosnippet-snippets']
-
-[[plugins]]
-repo = 'thomasfaingnaert/vim-lsp-neosnippet'
-on_i  = 1
-depends = ['vim-lsp', 'neosnippet-snippets', 'vim-lsp-snippets']
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -95,11 +70,6 @@ on_ft = ['c', 'cpp']
 hook_add = '''
 let g:clang_format#auto_format = 1
 '''
-
-[[plugins]]
-repo = 'Shougo/neoinclude.vim'
-on_ft = ['c', 'cpp']
-depends = ['deoplete.nvim']
 
 [[plugins]]
 repo = 'liquidz/vim-iced'
@@ -221,10 +191,6 @@ let g:ropevim_autoimport_modules = ['os', 'shutil', 'sys', 'time']
 [[plugins]]
 repo = 'purescript-contrib/purescript-vim'
 on_ft = 'purescript'
-
-[[plugins]]
-repo = 'deoplete-plugins/deoplete-jedi'
-on_ft = 'python'
 
 [[plugins]]
 repo = 'tpope/gem-ctags'
