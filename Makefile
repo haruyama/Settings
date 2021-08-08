@@ -58,6 +58,7 @@ asdf:
 
 
 asdf_plugin:
+	asdf plugin add neovim
 	asdf plugin add deno https://github.com/asdf-community/asdf-deno.git
 	asdf plugin add nim https://github.com/asdf-community/asdf-nim
 	asdf plugin add hadolint https://github.com/looztra/asdf-hadolint
@@ -75,6 +76,7 @@ asdf_install:
 	asdf install gohugo latest && asdf global gohugo "`asdf latest gohugo`"
 	asdf install nim latest && asdf global nim "`asdf latest nim`"
 	asdf install deno latest && asdf global deno "`asdf latest deno`"
+	asdf install neovim stable && asdf global neovim stable
 
 asdf_update:
 	asdf update
