@@ -25,14 +25,6 @@ source ~/.vim/my/plugins/denite.vim
 '''
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-depends = ['neomru.vim', 'neoyank.vim']
-if   = '''! (has('nvim') || (v:version >= 800 && has('python3')))'''
-hook_source = '''
-source ~/.vim/my/plugins/unite.vim
-'''
-
-[[plugins]]
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
