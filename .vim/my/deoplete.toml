@@ -51,6 +51,11 @@ depends = ['vim-lsp', 'deoplete.nvim', 'neosnippet-snippets']
 
 
 [[plugins]]
+repo = 'thomasfaingnaert/vim-lsp-snippets'
+on_i  = 1
+depends = ['vim-lsp']
+
+[[plugins]]
 repo = 'thomasfaingnaert/vim-lsp-neosnippet'
 on_i  = 1
 depends = ['vim-lsp', 'neosnippet-snippets', 'vim-lsp-snippets']
@@ -63,4 +68,3 @@ depends = ['deoplete.nvim']
 [[plugins]]
 repo = 'deoplete-plugins/deoplete-jedi'
 on_ft = 'python'
-
