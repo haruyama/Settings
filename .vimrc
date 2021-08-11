@@ -1,6 +1,5 @@
 autocmd!
 
-" source $HOME/.vim/my/neobundle.vim
 source $HOME/.vim/my/dein.vim
 
 source $HOME/.vim/my/basic.vim
