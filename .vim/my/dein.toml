@@ -245,3 +245,5 @@ if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
 repo = 'roxma/nvim-yarp'
 if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
 
+[[plugins]]
+repo = 'kana/vim-smartinput'
