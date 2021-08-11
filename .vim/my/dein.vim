@@ -24,7 +24,7 @@ endif
 call dein#begin(s:dein_dir)
 
 call dein#load_toml('~/.vim/my/dein.toml', {'lazy': 0})
-"call dein#load_toml('~/.vim/my/dein_lazy.toml', {'lazy': 1})
+call dein#load_toml('~/.vim/my/dein_lazy.toml', {'lazy': 1})
 "if has('nvim')
 "  call dein#load_toml('~/.vim/my/deineo.toml', {})
 "endif
