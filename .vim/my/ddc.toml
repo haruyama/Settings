@@ -103,3 +103,10 @@ EOF
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
+
+[[plugins]]
+repo = 'liuchengxu/vista.vim'
+hook_add = '''
+let g:vista_default_executive = 'nvim_lsp'
+'''
+
