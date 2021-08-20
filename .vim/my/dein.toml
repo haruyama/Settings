@@ -193,6 +193,8 @@ let g:test#go#gotest#options = {
   \ 'file':    '-v',
   \ 'suite':   '-v',
 \}
+
+let g:test#javascript#jest#executable = 'npx jest'
 '''
 
 [[plugins]]
