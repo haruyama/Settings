@@ -1,6 +1,5 @@
 [[plugins]]
 repo = 'vim-denops/denops.vim'
-augroup = 'denops_plugin_internal'
 
 [[plugins]]
 repo = 'vim-denops/denops-helloworld.vim'
