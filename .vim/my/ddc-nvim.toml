@@ -1,10 +1,4 @@
 [[plugins]]
-repo = 'vim-denops/denops.vim'
-
-[[plugins]]
-repo = 'vim-denops/denops-helloworld.vim'
-
-[[plugins]]
 repo = 'Shougo/ddc.vim'
 depends = ['context_filetype.vim', 'denops.vim']
 on_event = 'InsertEnter'
@@ -77,4 +71,3 @@ repo = 'liuchengxu/vista.vim'
 hook_add = '''
 let g:vista_default_executive = 'nvim_lsp'
 '''
-
