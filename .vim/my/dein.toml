@@ -71,7 +71,7 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
- [[plugins]]
+[[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = '''
 vnoremap <silent> <leader>x :TComment<cr>
