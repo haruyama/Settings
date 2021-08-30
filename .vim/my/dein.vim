@@ -1,4 +1,4 @@
-let g:dein#auto_recache = v:true
+"let g:dein#auto_recache = v:true
 let g:dein#lazy_rplugins = v:true
 let g:dein#install_progress_type = 'title'
 let g:dein#enable_notification = v:true
@@ -17,9 +17,9 @@ if &runtimepath !~# '/dein.vim'
   execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-if !dein#load_state(s:dein_dir)
-  finish
-end
+" if !dein#load_state(s:dein_dir)
+"   finish
+" end
 
 call dein#begin(s:dein_dir)
 
