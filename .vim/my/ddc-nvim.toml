@@ -22,24 +22,26 @@ call ddc#custom#patch_global('sourceOptions', {
         \ },
         \ 'around': {'mark': 'A'},
         \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
-        \ 'necovim': {'mark': 'vim'},
         \ 'nvimlsp': {'mark': 'lsp', 'forceCompletionPattern': '\.|:|->'},
         \ })
 call ddc#custom#patch_filetype(
-      \ ['vim', 'toml'], 'sources', ['necovim', 'around']
+      \ ['vim', 'toml'], 'sources', ['around']
       \ )
 call ddc#enable()
 lua << EOF
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 vim.lsp.set_log_level("debug")
 local lspconfig = require'lspconfig'
-lspconfig.clangd.setup{}
-lspconfig.denols.setup{}
-lspconfig.gopls.setup{}
-lspconfig.pyright.setup{}
-lspconfig.rls.setup{}
-lspconfig.solargraph.setup{}
--- lspconfig.sorbet.setup{}
-lspconfig.vuels.setup{}
+lspconfig.clangd.setup{on_attach = on_attach, capabilities = capabilities}
+lspconfig.denols.setup{on_attach = on_attach, capabilities = capabilities}
+lspconfig.gopls.setup{on_attach = on_attach, capabilities = capabilities}
+lspconfig.pyright.setup{on_attach = on_attach, capabilities = capabilities}
+lspconfig.rls.setup{on_attach = on_attach, capabilities = capabilities}
+lspconfig.solargraph.setup{on_attach = on_attach, capabilities = capabilities}
+-- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
+lspconfig.vuels.setup{on_attach = on_attach, capabilities = capabilities}
 EOF
 '''
 
@@ -71,3 +73,39 @@ repo = 'liuchengxu/vista.vim'
 hook_add = '''
 let g:vista_default_executive = 'nvim_lsp'
 '''
+
+[[plugins]]
+repo = 'matsui54/ddc-nvim-lsp-doc'
+hook_add = '''
+call ddc_nvim_lsp_doc#enable()
+'''
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
+hook_add = '''
+imap <expr> <C-k>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+smap <expr> <C-k>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+
+" Expand or jump
+imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+" Jump forward or backward
+imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+
+" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
+" See https://github.com/hrsh7th/vim-vsnip/pull/50
+nmap        s   <Plug>(vsnip-select-text)
+xmap        s   <Plug>(vsnip-select-text)
+nmap        S   <Plug>(vsnip-cut-text)
+xmap        S   <Plug>(vsnip-cut-text)
+'''
+
+[[plugins]]
+repo = 'rafamadriz/friendly-snippets'
