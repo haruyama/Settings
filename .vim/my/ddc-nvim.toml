@@ -13,7 +13,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'nvimlsp']
+      \ 'sources', ['around', 'nvimlsp', 'vsnip']
       \ )
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
