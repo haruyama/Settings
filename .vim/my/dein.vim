@@ -1,4 +1,4 @@
-"let g:dein#auto_recache = v:true
+" let g:dein#auto_recache = v:true
 let g:dein#lazy_rplugins = v:true
 let g:dein#install_progress_type = 'title'
 let g:dein#enable_notification = v:true

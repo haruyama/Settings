@@ -30,18 +30,43 @@ call ddc#custom#patch_filetype(
 call ddc#enable()
 lua << EOF
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  },
+}
+
+vim.o.completeopt = 'menuone,noselect'
 
 vim.lsp.set_log_level("debug")
+
 local lspconfig = require'lspconfig'
 lspconfig.clangd.setup{capabilities = capabilities}
-lspconfig.denols.setup{capabilities = capabilities}
+-- lspconfig.denols.setup{capabilities = capabilities}
 lspconfig.gopls.setup{capabilities = capabilities}
 lspconfig.pyright.setup{capabilities = capabilities}
 lspconfig.rls.setup{capabilities = capabilities}
 lspconfig.solargraph.setup{capabilities = capabilities}
 -- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
+lspconfig.tsserver.setup{capabilities = capabilities}
 lspconfig.vuels.setup{capabilities = capabilities}
+
+require'lspinstall'.setup()
+
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{capabilities = capabilities}
+end
 EOF
 '''
 
@@ -109,3 +134,6 @@ xmap        S   <Plug>(vsnip-cut-text)
 
 [[plugins]]
 repo = 'rafamadriz/friendly-snippets'
+
+[[plugins]]
+repo = 'kabouzeid/nvim-lspinstall'
