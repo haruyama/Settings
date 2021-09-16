@@ -22,7 +22,9 @@ call ddc#custom#patch_global('sourceOptions', {
         \ },
         \ 'around': {'mark': 'A'},
         \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
-        \ 'nvimlsp': {'mark': 'lsp', 'forceCompletionPattern': '\.|:|->'},
+        \ 'nvimlsp': {
+  ￼     \   'mark': 'lsp',
+  ￼     \   'forceCompletionPattern': '\.\w*|:\w*|->\w*' },
         \ })
 call ddc#custom#patch_filetype(
       \ ['vim', 'toml'], 'sources', ['around']
