@@ -17,13 +17,15 @@ call ddc#custom#patch_global(
       \ )
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
-        \   'matchers': ['matcher_head'],
-        \   'sorters': ['sorter_rank'],
-        \ },
-        \ 'around': {'mark': 'A'},
-        \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
-        \ 'nvimlsp': {'mark': 'lsp', 'forceCompletionPattern': '\.|:|->'},
-        \ })
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank'],
+      \ },
+      \ 'around': {'mark': 'A'},
+      \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
+      \ 'nvimlsp': {
+      \   'mark': 'lsp', 
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'},
+      \ })
 call ddc#custom#patch_filetype(
       \ ['vim', 'toml'], 'sources', ['around']
       \ )
