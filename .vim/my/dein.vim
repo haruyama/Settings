@@ -30,8 +30,8 @@ call dein#load_toml('~/.vim/my/dein_lazy.toml', {'lazy': 1})
 "endif
 
 if has('nvim-0.5.0')
-  call dein#load_toml('~/.vim/my/ddc-nvim.toml', {'lazy': 0})
-  call dein#load_toml('~/.vim/my/ddc-common.toml', {'lazy': 0})
+  call dein#load_toml('~/.vim/my/ddc-nvim.toml', {'lazy': 1})
+  call dein#load_toml('~/.vim/my/ddc-common.toml', {'lazy': 1})
 else
   call dein#load_toml('~/.vim/my/ddc-vim.toml', {'lazy': 0})
   call dein#load_toml('~/.vim/my/ddc-common.toml', {'lazy': 0})

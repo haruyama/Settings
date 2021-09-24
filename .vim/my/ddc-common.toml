@@ -1,5 +1,14 @@
 [[plugins]]
 repo = 'vim-denops/denops.vim'
+hook_source = '''
+" let g:denops#server#service#deno_args = get(g:,
+" \ 'denops#server#service#deno_args', [
+" \ '-q',
+" \ '--no-check',
+" \ '--unstable',
+" \ '-A',
+" \ ]) + ['--inspect']
+'''
 
 [[plugins]]
 repo = 'Shougo/ddc-around'

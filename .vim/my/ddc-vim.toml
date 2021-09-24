@@ -3,15 +3,16 @@ repo = 'Shougo/ddc.vim'
 depends = ['context_filetype.vim', 'denops.vim']
 on_event = 'InsertEnter'
 hook_source = '''
-inoremap <silent><expr> <C-l> ddc#complete_common_string()
+" <TAB>: completion.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ ""
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+\ pumvisible() ? '<C-n>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#manual_complete()
+
+" <S-TAB>: completion back.
+inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
+inoremap <silent><expr> <C-l> ddc#complete_common_string()
+
 call ddc#custom#patch_global(
       \ 'sources', ['around', 'ddc-vim-lsp']
       \ )
