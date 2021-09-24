@@ -31,4 +31,3 @@ on_source = 'ddc.vim'
 repo = 'Shougo/neco-vim'
 on_ft = ['vim', 'toml']
 on_source = 'ddc.vim'
-
