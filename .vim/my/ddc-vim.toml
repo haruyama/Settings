@@ -14,18 +14,20 @@ inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 inoremap <silent><expr> <C-l> ddc#complete_common_string()
 
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'ddc-vim-lsp']
+      \ 'sources', ['around', 'vim-lsp']
       \ )
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
-        \   'matchers': ['matcher_head'],
-        \   'sorters': ['sorter_rank'],
-        \ },
-        \ 'around': {'mark': 'A'},
-        \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
-        \ 'necovim': {'mark': 'vim'},
-        \ 'ddc-vim-lsp': {'mark': 'lsp', 'forceCompletionPattern': '\\.|:|->'},
-        \ })
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank'],
+      \ },
+      \ 'around': {'mark': 'A'},
+      \ 'eskk': {'mark': 'eskk', 'matchers': [], 'sorters': []},
+      \ 'necovim': {'mark': 'vim'},
+      \ 'vim-lsp': {
+      \   'mark': 'lsp',
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'},
+      \ })
 call ddc#custom#patch_filetype(
       \ ['vim', 'toml'], 'sources', ['necovim', 'around']
       \ )
