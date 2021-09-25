@@ -58,6 +58,7 @@ asdf:
 
 
 asdf_plugin:
+	asdf plugin add vim
 	asdf plugin add neovim
 	asdf plugin add deno https://github.com/asdf-community/asdf-deno.git
 	asdf plugin add nim https://github.com/asdf-community/asdf-nim
@@ -76,7 +77,8 @@ asdf_install:
 	asdf install gohugo latest && asdf global gohugo "`asdf latest gohugo`"
 	asdf install nim latest && asdf global nim "`asdf latest nim`"
 	asdf install deno latest && asdf global deno "`asdf latest deno`"
-	asdf install neovim latest && asdf global neovim "`asdf latest neovim`"
+	asdf install neovim nightly && asdf global neovim nightly
+	asdf install vim latest && asdf global vim "`asdf latest vim`"
 
 asdf_update:
 	asdf update
