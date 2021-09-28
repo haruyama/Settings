@@ -146,9 +146,3 @@ xmap        S   <Plug>(vsnip-cut-text)
 
 [[plugins]]
 repo = 'rafamadriz/friendly-snippets'
-
-[[plugins]]
-repo = 'lewis6991/impatient.nvim'
-hook_source = '''
-lua require('impatient')
-'''

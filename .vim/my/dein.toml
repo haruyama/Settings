@@ -218,3 +218,10 @@ if = 'has("nvim")'
 hook_add = '''
 let g:did_load_filetypes = 1
 '''
+
+[[plugins]]
+repo = 'lewis6991/impatient.nvim'
+if = 'has("nvim")'
+hook_source = '''
+lua require('impatient')
+'''
