@@ -141,5 +141,5 @@ xmap        S   <Plug>(vsnip-cut-text)
 repo = 'rafamadriz/friendly-snippets'
 on_source = 'vim-vsnip'
 hook_source = '''
-let g:vsnip_snippet_dirs = g:vsnip_snippet_dirs + globpath(&runtimepath, 'friendly-snippets', 1, 1)
+let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtimepath, 'friendly-snippets', 1, 1)
 '''
