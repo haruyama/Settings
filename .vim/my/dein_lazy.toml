@@ -387,3 +387,10 @@ nnoremap <silent> ,un :<C-u>Denite -resume=true -select=+1 -immediately=true<CR>
 
 '''
 
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = 'denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_source = 'denite.nvim'
