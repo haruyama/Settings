@@ -14,7 +14,7 @@ inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 inoremap <silent><expr> <C-l> ddc#complete_common_string()
 
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'nvim-lsp']
+      \ 'sources', ['around', 'nvim-lsp', 'vsnip']
       \ )
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
@@ -25,10 +25,13 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'nvim-lsp': {
       \   'mark': 'lsp', 
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'},
+      \ 'vsnip': {
+      \   'mark': 'snip', 
+      \   },
       \ })
       " \   'forceCompletionPattern': '\.|:|->'},
 call ddc#custom#patch_global('sourceParams', {
-      \ 'nvimlsp': {'maxSize': 500},
+      \ 'nvim-lsp': {'maxSize': 500},
       \ })
 call ddc#custom#patch_filetype(
       \ ['vim', 'toml'], 'sources', ['around']
@@ -114,12 +117,14 @@ call ddc_nvim_lsp_doc#enable()
 
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
+on_source = 'vim-vsnip-integ'
 
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip-integ'
+on_source = 'ddc.vim'
 hook_source = '''
-imap <expr> <C-k>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-smap <expr> <C-k>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+imap <expr> <C-k>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-k>'
+smap <expr> <C-k>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-k>'
 
 " Expand or jump
 imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
