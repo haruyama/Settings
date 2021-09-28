@@ -43,19 +43,10 @@ let g:context_filetype#filetypes = {
 '''
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-
-[[plugins]]
-repo = 'Shougo/neco-syntax'
-
-[[plugins]]
 repo = 'tomtom/tcomment_vim'
 hook_add = '''
 vnoremap <silent> <leader>x :TComment<cr>
 '''
-
-[[plugins]]
-repo = 'honza/vim-snippets'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
