@@ -29,13 +29,12 @@ call dein#load_toml('~/.vim/my/dein_lazy_on_ft.toml', {'lazy': 1})
 
 if has('nvim-0.5.0')
   call dein#load_toml('~/.vim/my/ddc-nvim.toml', {'lazy': 1})
-  call dein#load_toml('~/.vim/my/ddc-common.toml', {'lazy': 1})
 else
   call dein#load_toml('~/.vim/my/vim-lsp.toml', {'lazy': 0})
   call dein#load_toml('~/.vim/my/ddc-vim.toml', {'lazy': 1})
-  call dein#load_toml('~/.vim/my/ddc-common.toml', {'lazy': 1})
   " call dein#load_toml('~/.vim/my/deoplete.toml', {})
 endif
+call dein#load_toml('~/.vim/my/ddc-common.toml', {'lazy': 1})
 
 call dein#end()
 call dein#save_state()
