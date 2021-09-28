@@ -2,29 +2,6 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/vimproc.vim'
-hook_post_update = '''
-  if dein#util#_is_windows()
-    let cmd = 'tools\\update-dll-mingw'
-  elseif dein#util#_is_cygwin()
-    let cmd = 'make -f make_cygwin.mak'
-  elseif executable('gmake')
-    let cmd = 'gmake'
-  else
-    let cmd = 'make'
-  endif
-  let g:dein#plugin.build = cmd
-'''
-
-[[plugins]]
-repo = 'Shougo/denite.nvim'
-depends = ['neomru.vim', 'neoyank.vim']
-if = '''has('nvim') || (v:version >= 800 && has('python3'))'''
-hook_source = '''
-source ~/.vim/my/plugins/denite.vim
-'''
-
-[[plugins]]
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
@@ -47,7 +24,7 @@ repo = 'vim-scripts/AutoTag'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
-hook_source = '''
+hook_add = '''
 let g:context_filetype#filetypes = {
       \ 'html': [
       \   {
@@ -171,17 +148,12 @@ repo = 'rhysd/committia.vim'
 
 [[plugins]]
 repo = 'janko-m/vim-test'
-depends = ['vimproc.vim']
 hook_add = '''
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>f :TestFile<CR>
 nmap <silent> <leader>s :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
-
-if has('nvim')
-  let g:test#strategy = 'vimproc'
-endif
 
 let g:test#python#pytest#options = {
   \ 'nearest': '-v',
