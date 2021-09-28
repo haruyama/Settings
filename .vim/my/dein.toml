@@ -234,11 +234,10 @@ repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
-if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
+if = '!has("nvim")'
 
 [[plugins]]
 repo = 'roxma/nvim-yarp'
-if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
 
 [[plugins]]
 repo = 'nathom/filetype.nvim'
