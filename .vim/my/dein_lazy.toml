@@ -1,19 +1,19 @@
-[[plugins]]
-repo = 'Shougo/neosnippet'
-hook_source = '''
-source ~/.vim/my/plugins/neosnippet.vim
-'''
-on_i  = 1
-on_ft = ['snippet']
-depends = ['neosnippet-snippets']
-
+# [[plugins]]
+# repo = 'Shougo/neosnippet'
+# hook_source = '''
+# source ~/.vim/my/plugins/neosnippet.vim
+# '''
+# on_i  = 1
+# on_ft = ['snippet']
+# depends = ['neosnippet-snippets']
+#
 [[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 
-[[plugins]]
-repo = 'kana/vim-smartinput'
-on_i = 1
+# [[plugins]]
+# repo = 'kana/vim-smartinput'
+# on_i = 1
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
@@ -29,15 +29,15 @@ xnoremap <silent> <Leader>a :EasyAlign<cr>
 '''
 on_cmd = ['EasyAlign']
 
-[[plugins]]
-repo = 'Shougo/vimshell.vim'
-if = "!has('nvim') && !has('terminal')"
-on_map = [['n', '<Plug>']]
-on_cmd = ['VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTerminal', 'VimShellPop']
-hook_add = '''
-let g:vimfiler_as_default_explorer = 0
-let g:vimshell_interactive_update_time = 500
-'''
+# [[plugins]]
+# repo = 'Shougo/vimshell.vim'
+# if = "!has('nvim') && !has('terminal')"
+# on_map = [['n', '<Plug>']]
+# on_cmd = ['VimShell', 'VimShellExecute', 'VimShellInteractive', 'VimShellTerminal', 'VimShellPop']
+# hook_add = '''
+# let g:vimfiler_as_default_explorer = 0
+# let g:vimshell_interactive_update_time = 500
+# '''
 
 [[plugins]]
 repo = 'rhysd/vim-grammarous'
@@ -337,4 +337,4 @@ EOF
 " highlight! link TSURL             Underlined
 " highlight! link TSUnderline       Underlined
 " highlight! link TSVariableBuiltin CandyLime
-  '''
+'''
