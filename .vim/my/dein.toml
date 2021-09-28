@@ -6,12 +6,22 @@ repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 repo = 'joshdick/onedark.vim'
-hook_add = '''
+if = '!has("nvim")'
+hook_source = '''
 if !has("gui_running")
   set background=dark
   colorscheme onedark
 endif
 '''
+
+[[plugins]]
+repo = 'rafamadriz/neon'
+if = 'has("nvim")'
+hook_source = '''
+set termguicolors
+colorscheme neon
+'''
+
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
