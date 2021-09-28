@@ -14,9 +14,6 @@ endif
 '''
 
 [[plugins]]
-repo = 'vim-scripts/AutoTag'
-
-[[plugins]]
 repo = 'Shougo/context_filetype.vim'
 hook_add = '''
 let g:context_filetype#filetypes = {
@@ -101,9 +98,6 @@ repo = 'tpope/vim-fugitive'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'ujihisa/neco-look'
-
-[[plugins]]
 repo = 'LeafCage/yankround.vim'
 hook_add = '''
 let g:yankring_history_dir            = $HOME . '/.vim/history'
@@ -176,8 +170,8 @@ repo = 'farmergreg/vim-lastplace'
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
 
-[[plugins]]
-repo = 'iberianpig/tig-explorer.vim'
+# [[plugins]]
+# repo = 'iberianpig/tig-explorer.vim'
 
 [[plugins]]
 repo = 'webdevel/tabulous'
