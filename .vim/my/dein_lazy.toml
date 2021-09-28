@@ -9,7 +9,7 @@ depends = ['neosnippet-snippets']
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
-on_i = 1
+on_event = 'InsertEnter'
 
 [[plugins]]
 repo = 'kana/vim-smartinput'
