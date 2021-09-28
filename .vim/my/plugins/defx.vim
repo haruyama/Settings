@@ -1,4 +1,8 @@
-autocmd FileType defx call s:defx_my_settings()
+augroup my_defx
+    autocmd!
+    autocmd FileType defx call s:defx_my_settings()
+augroup END
+
 function! s:defx_my_settings() abort
   " Define mappings
   nnoremap <silent><buffer><expr> <CR>
