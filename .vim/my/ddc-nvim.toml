@@ -45,7 +45,9 @@ on_source = 'nvim-lspconfig'
 depends = 'ddc.vim'
 
 [[plugins]]
-repo = 'neovim/nvim-lsp'
+repo = 'neovim/nvim-lspconfig'
+depends = 'impatient.nvim'
+on_source = 'ddc.vim'
 hook_source = '''
 lua << EOF
 local opts = { noremap=true, silent=true }
@@ -56,15 +58,6 @@ vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementati
 vim.api.nvim_buf_set_keymap(bufnr, 'n', '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_buf_set_keymap(bufnr, 'n', ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-EOF
-'''
-
-[[plugins]]
-repo = 'neovim/nvim-lspconfig'
-depends = 'impatient.nvim'
-on_source = 'ddc.vim'
-hook_source = '''
-lua << EOF
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
