@@ -239,3 +239,11 @@ if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
 [[plugins]]
 repo = 'roxma/nvim-yarp'
 if = '''!has('nvim') && (v:version >= 800 && has('python3'))'''
+
+[[plugins]]
+repo = 'nathom/filetype.nvim'
+depends = 'impatient.nvim'
+if = 'has("nvim")'
+hook_add = '''
+let g:did_load_filetypes = 1
+'''
