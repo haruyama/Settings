@@ -47,10 +47,7 @@ endif
 set fileencodings=utf-8,ucs-bom,iso-2022-jp,euc-jp,cp932,default,latin
 set fileformats=unix,dos,mac
 
-if exists('&ambiwidth')
-  set ambiwidth=double
-endif
-
+set ambiwidth=double
 
 nnoremap Y y$
 set display=lastline
