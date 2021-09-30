@@ -1,3 +1,5 @@
+ASDF_VIM_CONFIG="--with-tlib=ncursesgg--with-compiledby=asdf --enable-multibyte --enable-cscope --enable-terminal --enable-perlinterp --enable-rubyinterp --enable-python3interp --enable-luainterp --enable-gui=gtk3"
+
 update: asdf_update asdf_install # fzf_install
 	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
 
@@ -78,7 +80,7 @@ asdf_install:
 	asdf install nim latest && asdf global nim "`asdf latest nim`"
 	asdf install deno latest && asdf global deno "`asdf latest deno`"
 	asdf install neovim nightly && asdf global neovim nightly
-	asdf install vim latest && asdf global vim "`asdf latest vim`"
+	env ASDF_VIM_CONFIG=${ASDF_VIM_CONFIG} asdf install vim latest && asdf global vim "`asdf latest vim`"
 
 asdf_update:
 	asdf update
