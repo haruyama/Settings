@@ -118,26 +118,26 @@ EOF
 " highlight! link TSVariableBuiltin CandyLime
 '''
 
-[[plugins]]
-repo = 'gelguy/wilder.nvim'
-on_map = ':'
-hook_source = '''
-silent! call wilder#enable_cmdline_enter()
-set wildcharm=<Tab>
-
-"      \ 'modes': [':', '/', '?'],
-call wilder#setup({
-      \ 'modes': [':'],
-      \ 'next_key': '<C-n>',
-      \ 'previous_key': '<C-p>',
-      \ 'accept_key': '<Down>',
-      \ 'reject_key': '<Up>',
-      \ })
-
-call wilder#set_option('renderer', wilder#popupmenu_renderer({
-      \ 'highlighter': wilder#basic_highlighter(),
-      \ }))
-'''
+# [[plugins]]
+# repo = 'gelguy/wilder.nvim'
+# on_map = ':'
+# hook_source = '''
+# silent! call wilder#enable_cmdline_enter()
+# set wildcharm=<Tab>
+#
+# "      \ 'modes': [':', '/', '?'],
+# call wilder#setup({
+#       \ 'modes': [':'],
+#       \ 'next_key': '<C-n>',
+#       \ 'previous_key': '<C-p>',
+#       \ 'accept_key': '<Down>',
+#       \ 'reject_key': '<Up>',
+#       \ })
+#
+# call wilder#set_option('renderer', wilder#popupmenu_renderer({
+#       \ 'highlighter': wilder#basic_highlighter(),
+#       \ }))
+# '''
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
