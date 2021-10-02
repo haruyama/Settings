@@ -173,3 +173,37 @@ on_source = 'denite.nvim'
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
 on_source = 'denite.nvim'
+
+[[plugins]]
+repo = 'vim-skk/skkeleton'
+on_map = {ic = '<Plug>(skkeleton-toggle)'}
+on_source = 'ddc.vim'
+depends = ['ddc.vim']
+hook_add = '''
+  imap <C-j> <Plug>(skkeleton-toggle)
+  cmap <C-j> <Plug>(skkeleton-toggle)
+'''
+hook_source = '''
+augroup my_skkeleton
+  autocmd!
+  autocmd User skkeleton-initialize-pre call s:skkeleton_init()
+augroup END
+ "let g:skkeleton#debug = v:true
+function! s:skkeleton_init() abort
+  call skkeleton#config({
+        \ 'eggLikeNewline': v:true,
+        \ 'registerConvertResult': v:true,
+        \ })
+
+  call skkeleton#register_kanatable('rom', {
+        \ 'jj': 'escape',
+        \ '~': ['〜', ''],
+        \ "z\<Space>": ["\u3000", ''],
+        \ })
+
+  call skkeleton#config({
+        \ 'markerHenkan': '<>',
+        \ 'markerHenkanSelect': '>>',
+        \ })
+endfunction
+'''

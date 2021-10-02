@@ -14,7 +14,7 @@ inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 inoremap <silent><expr> <C-l> ddc#complete_common_string()
 
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'vim-lsp']
+      \ 'sources', ['around', 'vim-lsp', 'skkeleton']
       \ )
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
@@ -27,6 +27,11 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'vim-lsp': {
       \   'mark': 'lsp',
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'},
+      \ 'skkeleton': {
+      \   'mark': 'skkeleton',
+      \   'matchers': ['skkeleton'],
+      \   'sorters': []
+      \   },
       \ })
 call ddc#custom#patch_filetype(
       \ ['vim', 'toml'], 'sources', ['necovim', 'around']

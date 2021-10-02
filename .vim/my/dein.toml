@@ -200,13 +200,13 @@ if = '!has("nvim")'
 [[plugins]]
 repo = 'roxma/nvim-yarp'
 
-[[plugins]]
-repo = 'nathom/filetype.nvim'
-depends = 'impatient.nvim'
-if = 'has("nvim")'
-hook_add = '''
-let g:did_load_filetypes = 1
-'''
+# [[plugins]]
+# repo = 'nathom/filetype.nvim'
+# depends = 'impatient.nvim'
+# if = 'has("nvim")'
+# hook_add = '''
+# let g:did_load_filetypes = 1
+# '''
 
 [[plugins]]
 repo = 'lewis6991/impatient.nvim'
