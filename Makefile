@@ -85,3 +85,26 @@ asdf_install:
 asdf_update:
 	asdf update
 	asdf plugin update --all
+
+SKKDIC_DIR=/usr/share/skk
+MY_SKKDIC=~/.local/share/skk/SKK-JISYO.my
+TMP_EUC_SKKDIC=/tmp/SKK-JISYO.euc-jisx0213
+TMP_UTF8_SKKDIC=/tmp/SKK-JISYO.utf8
+TMP_JAWII_SKKDIC=/tmp/SKK-JISYO.jawiki
+# original: https://github.com/eidera/skktools/blob/47de7074952e3374d21b33a02319ceb1cdc986dc/scripts/run.bash
+skkdic:
+	skkdic-expr2 \
+		${SKKDIC_DIR}/SKK-JISYO.L + \
+		${SKKDIC_DIR}/SKK-JISYO.geo + \
+		${SKKDIC_DIR}/SKK-JISYO.jinmei + \
+		${SKKDIC_DIR}/SKK-JISYO.propernoun + \
+		${SKKDIC_DIR}/SKK-JISYO.station + \
+		> ${TMP_EUC_SKKDIC}
+
+	iconv -f euc-jisx0213 -t utf8 ${TMP_EUC_SKKDIC} > ${TMP_UTF8_SKKDIC}
+	curl https://raw.githubusercontent.com/tokuhirom/jawiki-kana-kanji-dict/master/SKK-JISYO.jawiki -o ${TMP_JAWII_SKKDIC}
+	mkdir -p ~/.local/share/skk
+	rm -f ${MY_SKKDIC}
+	echo ';; -*- coding: utf-8 -*-'  > ${MY_SKKDIC}
+	skkdic-expr2 ${TMP_UTF8_SKKDIC} ${TMP_JAWII_SKKDIC} >> ${MY_SKKDIC}
+	rm ${TMP_EUC_SKKDIC} ${TMP_UTF8_SKKDIC} ${TMP_JAWII_SKKDIC}
