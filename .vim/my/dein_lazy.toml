@@ -177,7 +177,6 @@ on_source = 'denite.nvim'
 [[plugins]]
 repo = 'vim-skk/skkeleton'
 on_map = {ic = '<Plug>(skkeleton-toggle)'}
-on_source = 'ddc.vim'
 depends = ['ddc.vim']
 hook_add = '''
   imap <C-j> <Plug>(skkeleton-toggle)
@@ -191,19 +190,18 @@ augroup END
  "let g:skkeleton#debug = v:true
 function! s:skkeleton_init() abort
   call skkeleton#config({
+        \ 'globalJisyo': expand('~/.local/share/skk/SKK-JISYO.my'),
+        \ 'globalJisyoEncoding': 'utf-8',
         \ 'eggLikeNewline': v:true,
         \ 'registerConvertResult': v:true,
+        \ 'markerHenkan': '<>',
+        \ 'markerHenkanSelect': '>>',
         \ })
 
   call skkeleton#register_kanatable('rom', {
         \ 'jj': 'escape',
         \ '~': ['〜', ''],
         \ "z\<Space>": ["\u3000", ''],
-        \ })
-
-  call skkeleton#config({
-        \ 'markerHenkan': '<>',
-        \ 'markerHenkanSelect': '>>',
         \ })
 endfunction
 '''
