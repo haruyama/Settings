@@ -61,4 +61,4 @@ ISO10646_UCS2_1_BIWIDTH=VL Gothic-iso10646-1;
 #ISO10646_UCS2_1_BIWIDTH=AR PL SungtiL GB-iso10646-1;
 
 ## settings for UTF8 fixed width Arabic characters:
-ISO10646_UCS4_1 = Monospace;
+ISO10646_UCS4_1 = HackGenNerd Console 24
