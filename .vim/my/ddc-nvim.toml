@@ -1,18 +1,8 @@
 [[plugins]]
 repo = 'Shougo/ddc.vim'
-depends = ['context_filetype.vim', 'denops.vim', 'nvim-lspconfig']
+depends = ['context_filetype.vim', 'denops.vim', 'nvim-lspconfig', 'pum.vim']
 on_event = 'InsertEnter'
 hook_source = '''
-" <TAB>: completion.
-inoremap <silent><expr> <TAB>
-\ pumvisible() ? '<C-n>' :
-\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-\ '<TAB>' : ddc#manual_complete()
-
-" <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
-inoremap <silent><expr> <C-l> ddc#complete_common_string()
-
 call ddc#custom#patch_global(
       \ 'sources', ['around', 'nvim-lsp', 'vsnip', 'skkeleton']
       \ )
@@ -41,8 +31,62 @@ call ddc#custom#patch_global('sourceParams', {
 call ddc#custom#patch_filetype(
       \ ['vim', 'toml'], 'sources', ['around']
       \ )
+
+" Use pum.vim
+call ddc#custom#patch_global('autoCompleteEvents', [
+    \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
+    \ 'CmdlineEnter', 'CmdlineChanged',
+    \ ])
+call ddc#custom#patch_global('completionMenu', 'pum.vim')
+
+inoremap <silent><expr> <TAB>
+      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#manual_complete()
+inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
+inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
 call ddc#enable()
-'''
+# '''
+# hook_add = '''
+# nnoremap : <Cmd>call CommandlinePre()<CR>:
+#
+# function! CommandlinePre() abort
+#   call dein#source('ddc.vim')
+#
+#   cnoremap <expr> <Tab>
+#         \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' : '<Tab>'
+#   cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+#   cnoremap <expr> <C-n>
+#         \ pum#visible() ? '<Cmd>call pum#map#select_relative(+1)<CR>' : '<Down>'
+#   cnoremap <expr> <C-p>
+#         \ pum#visible() ? '<Cmd>call pum#map#select_relative(-1)<CR>' : '<Up>'
+#   cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+#   cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+#
+#   " Overwrite sources
+#   let s:prev_buffer_config = ddc#custom#get_buffer()
+#   call ddc#custom#patch_buffer('sources', ['around'])
+#
+#   augroup my_ddc
+#     autocmd!
+#     autocmd CmdlineLeave * ++once call CommandlinePost()
+#   augroup END
+#
+#   " Enable command line completion
+#   call ddc#enable_cmdline_completion()
+#   call ddc#enable()
+# endfunction
+#
+# function! CommandlinePost() abort
+#   " Restore sources
+#   call ddc#custom#set_buffer(s:prev_buffer_config)
+# endfunction
+# '''
+
 
 [[plugins]]
 repo = 'Shougo/ddc-nvim-lsp'
