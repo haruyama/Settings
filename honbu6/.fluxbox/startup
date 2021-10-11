@@ -25,8 +25,8 @@ xset b off
 #/usr/bin/synergys -a localhost
 /usr/lib/notification-daemon/notification-daemon &
 #/usr/lib/x86_64-linux-gnu/mate-notification-daemon/mate-notification-daemon
-pkill spacefm
-/usr/bin/spacefm -d &
+# pkill spacefm
+# /usr/bin/spacefm -d &
 
 pkill parcellite
 /usr/bin/parcellite &
@@ -36,10 +36,10 @@ pkill parcellite
 pkill dropbox
 /usr/bin/dropbox start &
 
-/usr/bin/ibus exit
-/usr/bin/ibus-daemon -x &
+# /usr/bin/ibus exit
+# /usr/bin/ibus-daemon -x &
 
-# fcitx-autostart &
+/usr/bin/fcitx5 &
 
 /usr/bin/fbsetroot  -solid black
 
