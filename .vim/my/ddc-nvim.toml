@@ -199,6 +199,9 @@ nmap        s   <Plug>(vsnip-select-text)
 xmap        s   <Plug>(vsnip-select-text)
 nmap        S   <Plug>(vsnip-cut-text)
 xmap        S   <Plug>(vsnip-cut-text)
+
+" Shougo/pum.vim
+autocmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_item)
 '''
 
 [[plugins]]
