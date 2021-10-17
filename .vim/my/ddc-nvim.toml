@@ -20,8 +20,12 @@ call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_head'],
       \   'sorters': ['sorter_rank'],
+      \   'converters': ['converter_remove_overlap'],
       \ },
-      \ 'around': {'mark': 'A'},
+      \ 'around': {
+      \   'mark': 'A',
+      \   'matchers': ['matcher_head', 'matcher_length'],
+      \ },
       \ 'nvim-lsp': {
       \   'mark': 'lsp', 
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'},
@@ -31,7 +35,8 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'skkeleton': {
       \   'mark': 'skkeleton',
       \   'matchers': ['skkeleton'],
-      \   'sorters': []
+      \   'sorters': [],
+      \   'minAutoCompleteLength': 2,
       \   },
       \ })
       " \   'forceCompletionPattern': '\.|:|->'},
