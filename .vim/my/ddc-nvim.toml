@@ -201,7 +201,7 @@ nmap        S   <Plug>(vsnip-cut-text)
 xmap        S   <Plug>(vsnip-cut-text)
 
 " Shougo/pum.vim
-autocmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_item)
+" autocmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_item)
 '''
 
 [[plugins]]
