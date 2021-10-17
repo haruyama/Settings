@@ -3,16 +3,6 @@ repo = 'Shougo/ddc.vim'
 depends = ['context_filetype.vim', 'denops.vim', 'nvim-lspconfig', 'pum.vim']
 on_event = 'InsertEnter'
 hook_source = '''
-" <TAB>: completion.
-inoremap <silent><expr> <TAB>
-\ pumvisible() ? '<C-n>' :
-\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-\ '<TAB>' : ddc#map#manual_complete()
-
-" <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
-inoremap <silent><expr> <C-l> ddc#complete_common_string()
-
 call ddc#custom#patch_global(
       \ 'sources', ['around', 'nvim-lsp', 'vsnip', 'skkeleton']
       \ )
@@ -63,7 +53,6 @@ inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
-
 
 call ddc#enable()
 '''
@@ -218,11 +207,3 @@ on_source = 'vim-vsnip'
 hook_source = '''
 let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtimepath, 'friendly-snippets', 1, 1)
 '''
-
-[[plugins]]
-repo = 'Shougo/ddc-cmdline-history'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-cmdline'
-on_source = 'ddc.vim'
