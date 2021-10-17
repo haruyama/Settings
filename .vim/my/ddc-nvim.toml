@@ -3,6 +3,16 @@ repo = 'Shougo/ddc.vim'
 depends = ['context_filetype.vim', 'denops.vim', 'nvim-lspconfig', 'pum.vim']
 on_event = 'InsertEnter'
 hook_source = '''
+" <TAB>: completion.
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? '<C-n>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#map#manual_complete()
+
+" <S-TAB>: completion back.
+inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
+inoremap <silent><expr> <C-l> ddc#complete_common_string()
+
 call ddc#custom#patch_global(
       \ 'sources', ['around', 'nvim-lsp', 'vsnip', 'skkeleton']
       \ )
@@ -10,8 +20,12 @@ call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_head'],
       \   'sorters': ['sorter_rank'],
+      \   'converters': ['converter_remove_overlap'],
       \ },
-      \ 'around': {'mark': 'A'},
+      \ 'around': {
+      \   'mark': 'A',
+      \   'matchers': ['matcher_head', 'matcher_length'],
+      \ },
       \ 'nvim-lsp': {
       \   'mark': 'lsp', 
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'},
@@ -21,7 +35,8 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'skkeleton': {
       \   'mark': 'skkeleton',
       \   'matchers': ['skkeleton'],
-      \   'sorters': []
+      \   'sorters': [],
+      \   'minAutoCompleteLength': 2,
       \   },
       \ })
       " \   'forceCompletionPattern': '\.|:|->'},
@@ -49,43 +64,51 @@ inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
+
 call ddc#enable()
-# '''
-# hook_add = '''
-# nnoremap : <Cmd>call CommandlinePre()<CR>:
-#
-# function! CommandlinePre() abort
-#   call dein#source('ddc.vim')
-#
-#   cnoremap <expr> <Tab>
-#         \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' : '<Tab>'
-#   cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
-#   cnoremap <expr> <C-n>
-#         \ pum#visible() ? '<Cmd>call pum#map#select_relative(+1)<CR>' : '<Down>'
-#   cnoremap <expr> <C-p>
-#         \ pum#visible() ? '<Cmd>call pum#map#select_relative(-1)<CR>' : '<Up>'
-#   cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
-#   cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
-#
-#   " Overwrite sources
-#   let s:prev_buffer_config = ddc#custom#get_buffer()
-#   call ddc#custom#patch_buffer('sources', ['around'])
-#
-#   augroup my_ddc
-#     autocmd!
-#     autocmd CmdlineLeave * ++once call CommandlinePost()
-#   augroup END
-#
-#   " Enable command line completion
-#   call ddc#enable_cmdline_completion()
-#   call ddc#enable()
-# endfunction
-#
-# function! CommandlinePost() abort
-#   " Restore sources
-#   call ddc#custom#set_buffer(s:prev_buffer_config)
-# endfunction
-# '''
+'''
+hook_add = '''
+nnoremap :       <Cmd>call CommandlinePre()<CR>:
+
+function! CommandlinePre() abort
+  call dein#source('ddc.vim')
+
+  " Note: It disables default command line completion!
+  cnoremap <expr> <Tab>
+        \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+        \ ddc#manual_complete()
+  cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+  cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+  cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+  set wildchar=<C-t>
+
+  " Overwrite sources
+  let s:prev_buffer_config = ddc#custom#get_buffer()
+  call ddc#custom#patch_buffer('sources',
+        \ ['necovim', 'cmdline-history', 'around'])
+  call ddc#custom#patch_buffer('sourceOptions', {
+        \ 'necovim': {
+          \   'isVolatile': v:true,
+          \   'forceCompletionPattern': '\S/\S*'
+          \ },
+          \})
+
+  augroup my_pum
+    autocmd!
+    autocmd CmdlineLeave * ++once call CommandlinePost()
+  augroup END
+
+  " Enable command line completion
+  call ddc#enable_cmdline_completion()
+  call ddc#enable()
+endfunction
+function! CommandlinePost() abort
+  " Restore sources
+  call ddc#custom#set_buffer(s:prev_buffer_config)
+  cunmap <Tab>
+  set wildchar=<Tab>
+endfunction
+'''
 
 
 [[plugins]]
@@ -193,3 +216,7 @@ on_source = 'vim-vsnip'
 hook_source = '''
 let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtimepath, 'friendly-snippets', 1, 1)
 '''
+
+[[plugins]]
+repo = 'Shougo/ddc-cmdline-history'
+on_source = 'ddc.vim'
