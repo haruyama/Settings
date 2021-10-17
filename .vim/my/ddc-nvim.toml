@@ -78,6 +78,8 @@ function! CommandlinePre() abort
         \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
         \ ddc#manual_complete()
   cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+  cnoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
+  cnoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
   cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
   cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
   set wildchar=<C-t>
@@ -85,7 +87,7 @@ function! CommandlinePre() abort
   " Overwrite sources
   let s:prev_buffer_config = ddc#custom#get_buffer()
   call ddc#custom#patch_buffer('sources',
-        \ ['necovim', 'cmdline-history', 'around'])
+        \ ['cmdline', 'cmdline-history', 'around'])
   call ddc#custom#patch_buffer('sourceOptions', {
         \ 'necovim': {
           \   'isVolatile': v:true,
@@ -219,4 +221,8 @@ let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtime
 
 [[plugins]]
 repo = 'Shougo/ddc-cmdline-history'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-cmdline'
 on_source = 'ddc.vim'
