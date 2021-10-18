@@ -14,7 +14,7 @@ inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 inoremap <silent><expr> <C-l> ddc#complete_common_string()
 
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'vim-lsp', 'skkeleton']
+      \ 'sources', ['around', 'vim-lsp']
       \ )
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
@@ -30,18 +30,14 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'skkeleton': {
       \   'mark': 'skkeleton',
       \   'matchers': ['skkeleton'],
-      \   'sorters': []
+      \   'sorters': [],
       \   },
       \ })
-call ddc#custom#patch_filetype(
-      \ ['vim', 'toml'], 'sources', ['necovim', 'around']
-      \ )
+
 call ddc#enable()
 '''
 
 [[plugins]]
 repo = 'shun/ddc-vim-lsp'
-# on_source = 'vim-lsp-settings'
-# depends = 'ddc.vim'
 depends = ["vim-lsp"]
 on_source = 'ddc.vim'
