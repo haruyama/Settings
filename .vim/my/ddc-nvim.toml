@@ -14,7 +14,7 @@ inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 inoremap <silent><expr> <C-l> ddc#complete_common_string()
 
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'nvim-lsp', 'vsnip', 'skkeleton']
+      \ 'sources', ['around', 'nvim-lsp', 'vsnip']
       \ )
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
@@ -51,60 +51,7 @@ call ddc#enable()
 
 [[plugins]]
 repo = 'Shougo/ddc-nvim-lsp'
-on_source = 'nvim-lspconfig'
-depends = 'ddc.vim'
-
-[[plugins]]
-repo = 'neovim/nvim-lspconfig'
-depends = 'impatient.nvim'
 on_source = 'ddc.vim'
-hook_source = '''
-lua << EOF
-local opts = { noremap=true, silent=true }
-
-vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', '[g', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', ']g', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.preselectSupport = true
-capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  },
-}
-
-vim.o.completeopt = 'menuone,noselect'
-
-vim.lsp.set_log_level("debug")
-
-
-local lspconfig = require'lspconfig'
-lspconfig.clangd.setup{capabilities = capabilities}
-lspconfig.cmake.setup{capabilities = capabilities}
-lspconfig.denols.setup{capabilities = capabilities}
-lspconfig.gopls.setup{capabilities = capabilities}
-lspconfig.pyright.setup{capabilities = capabilities}
-lspconfig.rls.setup{capabilities = capabilities}
-lspconfig.solargraph.setup{capabilities = capabilities}
--- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
--- lspconfig.tsserver.setup{capabilities = capabilities}
-lspconfig.vuels.setup{capabilities = capabilities}
---
-EOF
-'''
 
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
