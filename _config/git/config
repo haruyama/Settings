@@ -5,7 +5,8 @@
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	upll = pull
 	sw = switch
-	ignored = !git ls-files -v | grep "^[[:lower:]]"
+	assume-unchanged = !git ls-files -v | grep "^[[:lower:]]"
+	skipped-worktree = !git ls-files -v | grep "^S"
 [core]
 	excludesfile = ~/.config/git/ignore
 	attributesfile = ~/.config/git/attributes
