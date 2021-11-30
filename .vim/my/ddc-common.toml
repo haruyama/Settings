@@ -34,3 +34,20 @@ on_source = 'ddc.vim'
 [[plugins]]
 repo = 'Shougo/ddc-matcher_length'
 on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'matsui54/ddc-dictionary'
+on_source = 'ddc.vim'
+hook_source = '''
+call ddc#custom#patch_global('sourceParams', {
+      \ 'dictionary': {'dictPaths': 
+      \ [
+      \ '/usr/share/dict/words',
+      \ ],
+      \ 'smartCase': v:true,
+      \ }
+      \ })
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'dictionary': {'mark': 'D'},
+      \ })
+'''

@@ -14,7 +14,7 @@ inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 inoremap <silent><expr> <C-l> ddc#complete_common_string()
 
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'vim-lsp']
+      \ 'sources', ['around', 'vim-lsp', 'dictionary']
       \ )
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
