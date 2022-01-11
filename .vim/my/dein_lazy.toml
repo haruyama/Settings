@@ -67,13 +67,13 @@ vim.o.completeopt = 'menuone,noselect'
 local lspconfig = require'lspconfig'
 lspconfig.clangd.setup{capabilities = capabilities}
 lspconfig.cmake.setup{capabilities = capabilities}
-lspconfig.denols.setup{capabilities = capabilities}
+-- lspconfig.denols.setup{capabilities = capabilities}
 lspconfig.gopls.setup{capabilities = capabilities}
 lspconfig.pyright.setup{capabilities = capabilities}
 lspconfig.rls.setup{capabilities = capabilities}
 lspconfig.solargraph.setup{capabilities = capabilities}
 -- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
--- lspconfig.tsserver.setup{capabilities = capabilities}
+lspconfig.tsserver.setup{capabilities = capabilities}
 lspconfig.vuels.setup{capabilities = capabilities}
 EOF
 '''
