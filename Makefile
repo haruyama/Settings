@@ -35,7 +35,7 @@ gtk3:
 js_install: textlint_install js_dev_install js_misc_install js_neovim_install
 
 js_dev_install:
-	npm install -g jshint jslint eslint eslint_d coffeelint npm-check-updates fixpack license-checker eslint-plugin-react tern nsp typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier eslint-config-prettier eslint-plugin-prettier tree-sitter-cli
+	npm install -g jshint jslint eslint eslint_d coffeelint npm-check-updates fixpack license-checker eslint-plugin-react tern nsp typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier eslint-config-prettier eslint-plugin-prettier tree-sitter-cli fx
 
 js_neovim_install:
 	npm install -g neovim
