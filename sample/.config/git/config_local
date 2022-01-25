@@ -1,0 +1,10 @@
+[include]
+	path = ~/.config/git/user_unixuser
+[url "ssh://git@github.com/pacificporter/"]
+	insteadOf = https://github.com/pacificporter/
+[includeIf "gitdir:~/work/PP/"]
+	path = ~/.config/git/user_pacificporter
+[includeIf "gitdir:~/work/Sora/"]
+	path = ~/.config/git/user_tankyu
+[includeIf "gitdir:~/lib/Go/src/github.com/pacificporter/"]
+	path = ~/.config/git/user_pacificporter
