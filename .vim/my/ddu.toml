@@ -1,0 +1,96 @@
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+depends = 'denops.vim'
+on_source = 'denops.vim'
+hook_add = '''
+  " nnoremap <silent> / <Cmd>Ddu
+  " \ -name=search line
+  " \ -ui-param-startFilter=v:true<CR>
+  " nnoremap <silent> * <Cmd>Ddu
+  " \ -name=search line -input=`expand('<cword>')`
+  " \ -ui-param-startFilter=v:false<CR>
+  " nnoremap <silent> n <Cmd>Ddu
+  " \ -name=search -resume -refresh<CR>
+  nnoremap <silent> ,ua
+  \ <Cmd>Ddu -name=files file_rec
+  \ -source-param-path='`expand('%:p:h')`'<CR>
+'''
+hook_source = '''
+call ddu#custom#patch_global({
+    \   'ui': 'std',
+    \   'sourceOptions': {
+    \     '_': {
+    \       'ignoreCase': v:true,
+    \       'matchers': ['matcher_substring'],
+    \     },
+    \   },
+    \   'sourceParams': {
+    \     'file_external': {
+    \       'cmd': ['git', 'ls-files', '-co', '--exclude-standard'],
+    \     },
+    \   },
+    \   'uiParams': {
+    \     'std': {
+    \       'filterSplitDirection': 'floating',
+    \     }
+    \   },
+    \ })
+call ddu#custom#patch_local('files', {
+    \   'uiParams': {
+    \     'std': {
+    \       'split': 'floating',
+    \     }
+    \   },
+    \ })
+'''
+
+[plugins.ftplugin]
+ddu-std = '''
+nnoremap <buffer><silent> <CR>
+\ <Cmd>call ddu#ui#std#do_map('doAction')<CR>
+nnoremap <buffer><silent> <Space>
+\ <Cmd>call ddu#ui#std#do_map('toggleSelectItem')<CR>
+nnoremap <buffer><silent> i
+\ <Cmd>call ddu#ui#std#do_map('openFilterWindow')<CR>
+nnoremap <buffer><silent> q
+\ <Cmd>call ddu#ui#std#do_map('quit')<CR>
+'''
+ddu-std-filter = '''
+inoremap <buffer><silent> <CR>
+\ <Esc><Cmd>close<CR>
+nnoremap <buffer><silent> <CR>
+\ <Cmd>close<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/ddu-commands.vim'
+depends = 'ddu.vim'
+on_cmd = 'Ddu'
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-std'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file_rec'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-line'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'matsui54/ddu-source-file_external'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_substring'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-kind-file'
+on_source = 'ddu.vim'

@@ -198,7 +198,7 @@ hook_source = '''
 source ~/.vim/my/plugins/denite.vim
 '''
 hook_add = '''
-nnoremap <silent> ,ua :<C-u>DeniteBufferDir -default-action=tabswitch file/rec<CR>
+" nnoremap <silent> ,ua :<C-u>DeniteBufferDir -default-action=tabswitch file/rec<CR>
 
 nnoremap <silent> ,uc :<C-u>Denite colorscheme<CR>
 nnoremap <silent> ,ud :<C-u>Denite -default-action=tabswitch directory_rec<CR>
