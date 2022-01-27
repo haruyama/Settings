@@ -122,6 +122,9 @@
 
 (use-cjk-char-width-table 'ja_JP)
 
+(setq max-specpdl-size 3000)
+(setq max-lisp-eval-depth 1000)
+
 (provide 'init)
 
 ;; init.el ends here
