@@ -108,6 +108,9 @@ repo = 'tpope/vim-fugitive'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
+repo = 'Matt-A-Bennett/vim-surround-funk'
+
+[[plugins]]
 repo = 'LeafCage/yankround.vim'
 hook_add = '''
 let g:yankring_history_dir            = $HOME . '/.vim/history'

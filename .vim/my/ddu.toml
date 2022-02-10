@@ -17,11 +17,21 @@ hook_add = '''
 '''
 hook_source = '''
 call ddu#custom#patch_global({
-    \   'ui': 'std',
+    \   'ui': 'ff',
     \   'sourceOptions': {
     \     '_': {
     \       'ignoreCase': v:true,
     \       'matchers': ['matcher_substring'],
+    \     },
+    \     'file_old': {
+    \       'matchers': [
+    \         'matcher_substring', 'matcher_relative', 'matcher_hidden',
+    \       ],
+    \     },
+    \     'file_external': {
+    \       'matchers': [
+    \         'matcher_substring', 'matcher_hidden',
+    \       ],
     \     },
     \   },
     \   'sourceParams': {
@@ -30,32 +40,64 @@ call ddu#custom#patch_global({
     \     },
     \   },
     \   'uiParams': {
-    \     'std': {
+    \     'ff': {
     \       'filterSplitDirection': 'floating',
     \     }
     \   },
+    \   'kindOptions': {
+    \     'file': {
+    \       'defaultAction': 'open',
+    \     },
+    \     'word': {
+    \       'defaultAction': 'append',
+    \     },
+    \     'deol': {
+    \       'defaultAction': 'switch',
+    \     },
+    \   }
     \ })
 call ddu#custom#patch_local('files', {
     \   'uiParams': {
-    \     'std': {
-    \       'split': 'floating',
+    \     'ff': {
+    \       'split': has('nvim') ? 'floating' : 'horizontal',
     \     }
     \   },
     \ })
 '''
 
 [plugins.ftplugin]
-ddu-std = '''
+ddu-ff = '''
 nnoremap <buffer><silent> <CR>
-\ <Cmd>call ddu#ui#std#do_map('doAction')<CR>
+\ <Cmd>call ddu#ui#ff#do_action('itemAction')<CR>
 nnoremap <buffer><silent> <Space>
-\ <Cmd>call ddu#ui#std#do_map('toggleSelectItem')<CR>
+\ <Cmd>call ddu#ui#ff#do_action('toggleSelectItem')<CR>
 nnoremap <buffer><silent> i
-\ <Cmd>call ddu#ui#std#do_map('openFilterWindow')<CR>
+\ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
+nnoremap <buffer><silent> <C-l>
+\ <Cmd>call ddu#ui#ff#do_action('refreshItems')<CR>
+nnoremap <buffer><silent> p
+\ <Cmd>call ddu#ui#ff#do_action('preview')<CR>
 nnoremap <buffer><silent> q
-\ <Cmd>call ddu#ui#std#do_map('quit')<CR>
+\ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
+nnoremap <buffer><silent> d
+\ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'delete'})<CR>
+nnoremap <buffer><silent> e
+\ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'edit'})<CR>
+nnoremap <buffer><silent> v
+\ <Cmd>call ddu#ui#ff#do_action('itemAction',
+\ {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
+nnoremap <buffer><silent> N
+\ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'new'})<CR>
+nnoremap <buffer><silent> r
+\ <Cmd>call ddu#ui#ff#do_action('updateOptions', {
+\   'sourceOptions': {
+\     '_': {
+\       'matchers': [],
+\     },
+\   },
+\ })<CR>
 '''
-ddu-std-filter = '''
+ddu-ff-filter = '''
 inoremap <buffer><silent> <CR>
 \ <Esc><Cmd>close<CR>
 nnoremap <buffer><silent> <CR>
@@ -68,7 +110,7 @@ depends = 'ddu.vim'
 on_cmd = 'Ddu'
 
 [[plugins]]
-repo = 'Shougo/ddu-ui-std'
+repo = 'Shougo/ddu-ui-ff'
 on_source = 'ddu.vim'
 
 [[plugins]]
