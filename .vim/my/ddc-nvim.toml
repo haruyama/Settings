@@ -59,11 +59,18 @@ hook_source = '''
 let g:vista_default_executive = 'nvim_lsp'
 '''
 
+# [[plugins]]
+# repo = 'matsui54/ddc-nvim-lsp-doc'
+# on_source = 'ddc-nvim-lsp'
+# hook_source = '''
+# call ddc_nvim_lsp_doc#enable()
+# '''
+
 [[plugins]]
-repo = 'matsui54/ddc-nvim-lsp-doc'
+repo = 'matsui54/denops-popup-preview.vim'
 on_source = 'ddc-nvim-lsp'
 hook_source = '''
-call ddc_nvim_lsp_doc#enable()
+call popup_preview#enable()
 '''
 
 [[plugins]]
