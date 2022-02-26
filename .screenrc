@@ -2,3 +2,4 @@ msgminwait 0
 startup_message off
 autodetach on
 hardstatus alwayslastline "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %t%{= wk}%+Lw %{= wk}%=%{= gk} %y/%m/%d %c "
+cjkwidth on
