@@ -32,3 +32,5 @@
 	enabled = true
 [init]
 	defaultBranch = main
+[commit]
+	template = /home/haruyama/.config/git/message
