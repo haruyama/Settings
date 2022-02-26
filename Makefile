@@ -24,6 +24,7 @@ init: asdf git
 git:
 	mkdir -p ~/.config/git
 	ln -fs ~/lib/Settings/_config/git/* ~/.config/git/
+	git config --global commit.template ~/.config/git/message
 
 neovim: js_neovim_install
 	pip3 install pynvim msgpack

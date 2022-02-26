@@ -1,0 +1,9 @@
+# feat      feature
+# fix       bug fix
+# refactor  refactoring
+# deps      dependencies
+# breaking  breaking changes
+# docs      documentation
+# style     formatting, missing semi colons, etc
+# test      when adding missing tests
+# chore     maintain
