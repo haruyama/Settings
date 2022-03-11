@@ -13,6 +13,8 @@ hook_add = '''
   " \ -name=search -resume -refresh<CR>
   nnoremap <silent> ,ua
   \ <Cmd>Ddu -name=files file_rec<CR>
+  nnoremap <silent> ,uu
+  \ <Cmd>Ddu -name=files mr<CR>
 '''
 hook_source = '''
 call ddu#custom#alias('source', 'file_rg', 'file_external')
@@ -197,6 +199,13 @@ on_source = 'ddu.vim'
 [[plugins]]
 repo = 'shun/ddu-source-rg'
 on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'kuuote/ddu-source-mr'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'lambdalisue/mr.vim'
 
 [[plugins]]
 repo = 'Shougo/ddu-filter-matcher_substring'
