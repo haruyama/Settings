@@ -66,3 +66,15 @@ xmap ab <Plug>(textobj-multitextobj-a)
 augroup QuickFixCmd
   autocmd! QuickFixCmdPost make,*grep* cwindow
 augroup END
+
+" https://github.com/ryanpcmcquen/fix-vim-pasting/blob/master/plugin/fix-vim-pasting.vim
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ''
+endfunction
