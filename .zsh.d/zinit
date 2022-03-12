@@ -18,8 +18,27 @@ zinit light zdharma/fast-syntax-highlighting
 zinit light bobthecow/git-flow-completion
 zinit light rupa/z
 zinit light chrissicool/zsh-256color
+zinit light mollifier/anyframe
 
 add-zsh-hook precmd _z_precmd
 function _z_precmd {
         _z --add "$PWD"
 }
+
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+bindkey '^xb' anyframe-widget-cdr
+bindkey '^x^b' anyframe-widget-checkout-git-branch
+
+bindkey '^xr' anyframe-widget-execute-history
+bindkey '^x^r' anyframe-widget-execute-history
+
+bindkey '^xi' anyframe-widget-put-history
+bindkey '^x^i' anyframe-widget-put-history
+
+bindkey '^xk' anyframe-widget-kill
+bindkey '^x^k' anyframe-widget-kill
+
+bindkey '^xe' anyframe-widget-insert-git-branch
+bindkey '^x^e' anyframe-widget-insert-git-branch
