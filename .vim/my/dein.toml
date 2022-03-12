@@ -180,8 +180,11 @@ repo = 'sgur/vim-textobj-parameter'
 [[plugins]]
 repo = 'farmergreg/vim-lastplace'
 
+# [[plugins]]
+# repo = 'ConradIrwin/vim-bracketed-paste'
+
 [[plugins]]
-repo = 'ConradIrwin/vim-bracketed-paste'
+repo = 'roxma/vim-paste-easy'
 
 # [[plugins]]
 # repo = 'iberianpig/tig-explorer.vim'
