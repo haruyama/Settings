@@ -22,7 +22,6 @@ set termguicolors
 colorscheme neon
 '''
 
-
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 hook_add = '''
@@ -202,6 +201,9 @@ repo = 'farmergreg/vim-lastplace'
 
 [[plugins]]
 repo = 'roxma/vim-paste-easy'
+hook_add = '''
+let g:paste_char_threshold=8
+'''
 
 # [[plugins]]
 # repo = 'iberianpig/tig-explorer.vim'
