@@ -31,8 +31,8 @@ add-zsh-hook chpwd chpwd_recent_dirs
 bindkey '^xb' anyframe-widget-cdr
 bindkey '^x^b' anyframe-widget-checkout-git-branch
 
-bindkey '^xr' anyframe-widget-execute-history
-bindkey '^x^r' anyframe-widget-execute-history
+bindkey '^xr' anyframe-widget-put-history
+bindkey '^x^r' anyframe-widget-put-history
 
 bindkey '^xi' anyframe-widget-put-history
 bindkey '^x^i' anyframe-widget-put-history
