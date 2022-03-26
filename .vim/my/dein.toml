@@ -119,11 +119,14 @@ let g:quickrun_config = {
 '''
 
 [[plugins]]
-repo = 'thinca/vim-template'
-hook_add = '''
-let g:template_vim_template_dir  = $HOME . '/.vim/template'
-let g:template_vim_template_dirs = [$HOME . '/.vim/template']
-'''
+repo = 'mattn/vim-sonictemplate'
+
+# [[plugins]]
+# repo = 'thinca/vim-template'
+# hook_add = '''
+# let g:template_vim_template_dir  = $HOME . '/.vim/template'
+# let g:template_vim_template_dirs = [$HOME . '/.vim/template']
+# '''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
