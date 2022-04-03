@@ -27,3 +27,4 @@ textlint-rule-prh
 textlint-rule-spellcheck-tech-word
 tree-sitter-cli
 typescript
+yaml-validator
