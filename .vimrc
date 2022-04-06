@@ -24,3 +24,9 @@ endif
 if filereadable(expand('~/.vimrc.local'))
   source $HOME/.vimrc.local
 end
+
+if has('gui_running')
+  set guifont=DejaVu\ Sans\ Mono:h20
+end
+let g:neovide_cursor_animate_in_insert_mode = 0
+let g:neovide_cursor_animate_command_line = 0
