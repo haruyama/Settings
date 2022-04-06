@@ -30,3 +30,7 @@ if has('gui_running')
 end
 let g:neovide_cursor_animate_in_insert_mode = 0
 let g:neovide_cursor_animate_command_line = 0
+
+if !has('nvim')
+  call setcellwidths([[0x2500, 0x25ff, 1]])
+end
