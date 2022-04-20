@@ -2,8 +2,8 @@
 # fix       bug fix
 # refactor  refactoring
 # deps      dependencies
+# chore     maintain
+# test      when adding missing tests
+# style     formatting, missing semi colons, etc
 # breaking  breaking changes
 # docs      documentation
-# style     formatting, missing semi colons, etc
-# test      when adding missing tests
-# chore     maintain
