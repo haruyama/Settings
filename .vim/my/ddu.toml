@@ -212,3 +212,20 @@ on_source = 'ddu.vim'
 [[plugins]]
 repo = 'Shougo/ddu-kind-word'
 on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+on_source = 'ddu.vim'
+[plugins.ftplugin]
+ddu-filer = '''
+nnoremap <buffer> q
+\ <Cmd>call ddu#ui#filer#do_action('quit')<CR>
+nnoremap <buffer> o
+\ <Cmd>call ddu#ui#filer#do_action('expandItem')<CR>
+nnoremap <buffer> O
+\ <Cmd>call ddu#ui#filer#do_action('collapseItem')<CR>
+nnoremap <buffer><expr> <CR>
+\ ddu#ui#filer#is_directory() ?
+\ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
+\ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
+'''
