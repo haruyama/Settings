@@ -100,3 +100,5 @@ infer-out
 iwyu.txt
 
 .tool-versions
+
+docker-compose.override.yml
