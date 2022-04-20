@@ -1,11 +1,7 @@
 ASDF_VIM_CONFIG="--with-tlib=ncurses --with-compiledby=asdf --enable-multibyte --enable-cscope --enable-terminal --enable-perlinterp --enable-rubyinterp --enable-python3interp --enable-luainterp --enable-gui=gtk3"
 
-update: asdf_update asdf_install # fzf_install
+update: asdf_update asdf_install
 	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
-
-fzf_install:
-	[ -d ~/.fzf ] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	cd ~/.fzf && git pull && ./install --all
 
 init: asdf git
 	ln -fs ~/lib/Settings/.[A-Z0-9a-z]* ~/
@@ -26,33 +22,19 @@ git:
 	ln -fs ~/lib/Settings/_config/git/* ~/.config/git/
 	git config --global commit.template ~/.config/git/message
 
-neovim: js_neovim_install
+neovim:
 	pip3 install pynvim msgpack
 	gem install --user neovim
 
 gtk3:
 	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
-js_install: textlint_install js_dev_install js_misc_install js_neovim_install
-
-js_dev_install:
-	npm install -g jshint jslint eslint eslint_d coffeelint npm-check-updates fixpack license-checker eslint-plugin-react tern nsp typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier eslint-config-prettier eslint-plugin-prettier tree-sitter-cli fx
-
-js_neovim_install:
-	npm install -g neovim
-
-js_misc_install:
-	npm install -g honyaku
-
-textlint_install:
-	npm install -g textlint textlint-rule-max-ten textlint-rule-spellcheck-tech-word textlint-rule-no-mix-dearu-desumasu  textlint-rule-preset-jtf-style textlint-rule-prh
-
 tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 lsp_install:
 	go install golang.org/x/tools/gopls@latest
-	npm i -g vue-language-server javascript-typescript-langserver purescript-language-server typescript-language-server
+	# npm i -g vls javascript-typescript-langserver purescript-language-server typescript-language-server
 	pip3 install python-language-server pyls-black cmake-language-server
 
 asdf:
