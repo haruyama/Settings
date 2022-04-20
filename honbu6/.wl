@@ -340,12 +340,12 @@
 (defalias 'wl-match-string 'match-string "")
 (defalias 'elmo-replace-in-string 'replace-regexp-in-string "")
 
-(setq wl-draft-reply-without-argument-list
-      '((("X-ML-Name" "Reply-To") . (("Reply-To") nil nil))
-        ("X-ML-Name" . (("To" "Cc") nil nil))
-        ("Followup-To" . (nil nil ("Followup-To")))
-        ("Newsgroups" . (nil nil ("Newsgroups")))
-        ("Reply-To" . (("Reply-To") nil nil))
-        ("Mail-Reply-To" . (("Mail-Reply-To") nil nil))
-        (wl-draft-self-reply-p . (("To") ("Cc") nil))
-        ("From" . (("From") nil nil))))
+; (setq wl-draft-reply-without-argument-list
+;       '((("X-ML-Name" "Reply-To") . (("Reply-To") nil nil))
+;         ("X-ML-Name" . (("To" "Cc") nil nil))
+;         ("Followup-To" . (nil nil ("Followup-To")))
+;         ("Newsgroups" . (nil nil ("Newsgroups")))
+;         ("Reply-To" . (("Reply-To") nil nil))
+;         ("Mail-Reply-To" . (("Mail-Reply-To") nil nil))
+;         (wl-draft-self-reply-p . (("To") ("Cc") nil))
+;         ("From" . (("From") nil nil))))
