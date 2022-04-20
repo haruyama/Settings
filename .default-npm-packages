@@ -10,6 +10,7 @@ eslint_d
 fixpack
 fx
 honyaku
+javascript-typescript-langserver
 jshint
 jslint
 license-checker
@@ -18,6 +19,7 @@ neovim
 npm-check-updates
 nsp
 prettier
+purescript-language-server
 tern
 textlint
 textlint-rule-max-ten
@@ -27,4 +29,6 @@ textlint-rule-prh
 textlint-rule-spellcheck-tech-word
 tree-sitter-cli
 typescript
+typescript-language-server
+vls
 yaml-validator
