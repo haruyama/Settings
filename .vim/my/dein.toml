@@ -247,3 +247,6 @@ if = 'has("nvim")'
 hook_source = '''
 lua require('impatient')
 '''
+
+[[plugins]]
+repo = 'wsdjeg/vim-fetch'
