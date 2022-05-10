@@ -17,3 +17,6 @@
 [app] (name=discord) (class=discord) (role=browser-window)
   [Sticky]	{yes}
 [end]
+[app] (name=OmegaT) (class=OmegaT)
+  [Sticky]	{yes}
+[end]
