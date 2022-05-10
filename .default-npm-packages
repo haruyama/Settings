@@ -14,7 +14,7 @@ javascript-typescript-langserver
 jshint
 jslint
 license-checker
-markdown-pdf
+md-to-pdf
 neovim
 npm-check-updates
 nsp
