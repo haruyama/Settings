@@ -196,3 +196,6 @@ on_ft = ['vue']
 repo = 'mrk21/yaml-vim'
 on_ft = ['yaml']
 
+[[plugins]]
+repo = 'ziglang/zig.vim'
+on_ft = ['zig']
