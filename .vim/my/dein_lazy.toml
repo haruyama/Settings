@@ -2,12 +2,12 @@
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
 
-[[plugins]]
-repo = 'Shougo/defx.nvim'
-hook_source = '''
-source ~/.vim/my/plugins/defx.vim
-'''
-on_cmd = ['Defx']
+# [[plugins]]
+# repo = 'Shougo/defx.nvim'
+# hook_source = '''
+# source ~/.vim/my/plugins/defx.vim
+# '''
+# on_cmd = ['Defx']
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
