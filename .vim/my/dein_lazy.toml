@@ -75,6 +75,7 @@ lspconfig.solargraph.setup{capabilities = capabilities}
 -- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
 lspconfig.tsserver.setup{capabilities = capabilities}
 lspconfig.vuels.setup{capabilities = capabilities}
+lspconfig.zls.setup{capabilities = capabilities}
 EOF
 '''
 
