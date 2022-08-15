@@ -17,6 +17,12 @@ hook_add = '''
   \ <Cmd>Ddu -name=files buffer<CR>
   nnoremap <silent> ,uu
   \ <Cmd>Ddu -name=files mr<CR>
+  nnoremap <silent> ,uc
+  \ <Cmd>Ddu -name=files -source-param-current=true mr<CR>
+  nnoremap <silent> ,uw
+  \ <Cmd>Ddu -name=files -source-param-kind=mrw mr<CR>
+  nnoremap <silent> ,ug
+  \ <Cmd>Ddu -name=files -source-param-kind=mrr mr<CR>
 '''
 hook_source = '''
 call ddu#custom#patch_global({
@@ -203,9 +209,6 @@ on_source = 'ddu.vim'
 [[plugins]]
 repo = 'kuuote/ddu-source-mr'
 on_source = 'ddu.vim'
-
-[[plugins]]
-repo = 'lambdalisue/mr.vim'
 
 [[plugins]]
 repo = 'Shougo/ddu-filter-matcher_substring'

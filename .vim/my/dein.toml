@@ -250,3 +250,6 @@ lua require('impatient')
 
 [[plugins]]
 repo = 'wsdjeg/vim-fetch'
+
+[[plugins]]
+repo = 'lambdalisue/mr.vim'
