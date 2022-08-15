@@ -1,0 +1,11 @@
+keymap:
+  - name: Ctrl-H -> Backspace
+    application:
+      only: [Chromium]
+    remap:
+      C-h: backspace
+  - name: Ctrl-N -> Down
+    application:
+      only: [Chromium, firefox]
+    remap:
+      C-n: down
