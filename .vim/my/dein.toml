@@ -131,8 +131,14 @@ repo = 'mattn/vim-sonictemplate'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+# [[plugins]]
+# repo = 'tpope/vim-surround'
+
 [[plugins]]
-repo = 'tpope/vim-surround'
+repo = 'machakann/vim-sandwich'
+hook_add = '''
+runtime macros/sandwich/keymap/surround.vim
+'''
 
 [[plugins]]
 repo = 'Matt-A-Bennett/vim-surround-funk'
