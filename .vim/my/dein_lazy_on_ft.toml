@@ -184,9 +184,9 @@ on_ft = ['typescript']
 repo = 'peitalin/vim-jsx-typescript'
 on_ft = ['typescript']
 
-[[plugins]]
-repo = 'Quramy/tsuquyomi'
-on_ft = ['typescript']
+# [[plugins]]
+# repo = 'Quramy/tsuquyomi'
+# on_ft = ['typescript']
 
 [[plugins]]
 repo = 'posva/vim-vue'
