@@ -44,6 +44,7 @@ asdf:
 
 
 asdf_plugin:
+	asdf plugin add goneovim https://github.com/airtonix/asdf-goneovim.git
 	asdf plugin add zig
 	asdf plugin add vim
 	asdf plugin add neovim
@@ -67,6 +68,7 @@ asdf_install:
 	asdf install neovim nightly && asdf global neovim nightly
 	env ASDF_VIM_CONFIG=${ASDF_VIM_CONFIG} asdf install vim latest && asdf global vim "`asdf latest vim`"
 	asdf install zig latest && asdf global zig "`asdf latest zig`"
+	asdf install goneovim latest && asdf global goneovim "`asdf latest goneovim`"
 
 asdf_update:
 	asdf update
