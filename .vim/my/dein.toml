@@ -259,3 +259,6 @@ repo = 'wsdjeg/vim-fetch'
 
 [[plugins]]
 repo = 'lambdalisue/mr.vim'
+hook_source = '''
+let g:mr_disable_warning = 1
+'''
