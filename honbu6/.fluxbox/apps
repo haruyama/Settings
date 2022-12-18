@@ -20,3 +20,6 @@
 [app] (name=OmegaT) (class=OmegaT)
   [Sticky]	{yes}
 [end]
+[app] (name=Navigator) (class=firefox) (role=browser)
+  [Sticky]	{yes}
+[end]
