@@ -15,6 +15,7 @@
 	ui = auto
 [push]
 	default = simple
+	useForceIfIncludes=yes
 [url "git@github.com:"]
 	pushinsteadof = "git://github.com/"
 	pushinsteadof = "https://github.com/"
