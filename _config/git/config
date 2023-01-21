@@ -15,7 +15,8 @@
 	ui = auto
 [push]
 	default = simple
-	useForceIfIncludes=yes
+	useForceIfIncludes = true
+	autoSetupRemote = true
 [url "git@github.com:"]
 	pushinsteadof = "git://github.com/"
 	pushinsteadof = "https://github.com/"
