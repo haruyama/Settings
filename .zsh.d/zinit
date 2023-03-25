@@ -7,7 +7,7 @@ if [ ! -d $ZINIT_HOME ]; then
     git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 fi
 
-source $ZINIT_HOME/bin/zinit.zsh
+source $ZINIT_HOME/bin/zi.zsh
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
