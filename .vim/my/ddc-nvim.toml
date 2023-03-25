@@ -53,8 +53,8 @@ call ddc#enable()
 '''
 
 [[plugins]]
-repo = 'Shougo/ddc-nvim-lsp'
-on_source = 'ddc.vim'
+repo = 'Shougo/ddc-source-nvim-lsp'
+on_source = 'nvim-lspconfig'
 
 [[plugins]]
 repo = 'liuchengxu/vista.vim'

@@ -39,6 +39,6 @@ call ddc#enable()
 '''
 
 [[plugins]]
-repo = 'shun/ddc-vim-lsp'
+repo = 'shun/ddc-source-vim-lsp'
 depends = ["vim-lsp"]
 on_source = 'ddc.vim'
