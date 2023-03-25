@@ -27,3 +27,5 @@
 .vim/history/*
 .vim/spell
 .vim/view/
+
+.zsh.d/antigen
