@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=5.0.18
+Type=Application
+Name=fcitx5
+Comment=
+Exec=/usr/bin/fcitx5
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false
