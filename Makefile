@@ -32,10 +32,16 @@ gtk3:
 tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+lsp_update:
+	go install golang.org/x/tools/gopls@latest
+	pipx upgrade-all
+
 lsp_install:
 	go install golang.org/x/tools/gopls@latest
 	# npm i -g vls javascript-typescript-langserver purescript-language-server typescript-language-server
-	pip3 install python-language-server pyls-black cmake-language-server
+	pipx install python-language-server
+	pipx install pyls-black
+	pipx install cmake-language-server
 #	rm -rf ~/src/zls && mkdir ~/src/zls && cd ~/src/zls && curl -L https://github.com/zigtools/zls/releases/download/0.9.0/x86_64-linux.tar.xz | tar -xJ --strip-components=1 -C . && chmod 700 zls && cp zls ~/bin/
 
 asdf:
