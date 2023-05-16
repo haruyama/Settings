@@ -35,7 +35,9 @@ call ddc#custom#patch_global('sourceOptions', {
       \   },
       \ })
 
-call ddc#enable()
+call ddc#enable(#{
+      \   context_filetype: has('nvim') ? 'treesitter' : 'context_filetype',
+      \ })
 '''
 
 [[plugins]]

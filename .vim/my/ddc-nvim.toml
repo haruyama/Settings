@@ -49,7 +49,10 @@ call ddc#custom#patch_global('sourceParams', {
 call ddc#custom#patch_filetype(
       \ ['vim', 'toml'], 'sources', ['around']
       \ )
-call ddc#enable()
+
+call ddc#enable(#{
+      \   context_filetype: has('nvim') ? 'treesitter' : 'context_filetype',
+      \ })
 '''
 
 [[plugins]]
