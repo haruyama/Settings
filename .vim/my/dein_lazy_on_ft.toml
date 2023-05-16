@@ -12,6 +12,12 @@ let g:alternateNoDefaultAlternate = 1
 '''
 
 [[plugins]]
+repo = 'kuznetsss/shswitch'
+on_ft = ['c', 'cpp']
+hook_add = '''
+'''
+
+[[plugins]]
 repo = 'haruyama/vim-gencode-cpp'
 on_ft = ['cpp']
 depends = ['a.vim']
