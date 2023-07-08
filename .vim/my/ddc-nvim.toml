@@ -11,10 +11,10 @@ inoremap <silent><expr> <TAB>
 
 " <S-TAB>: completion back.
 inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
-inoremap <silent><expr> <C-l> ddc#complete_common_string()
+inoremap <silent><expr> <C-l> ddc#map#complete_common_string()
 
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'nvim-lsp', 'vsnip', 'dictionary']
+      \ 'sources', ['around', 'nvim-lsp', 'dictionary']
       \ )
 call ddc#custom#patch_global('ui', 'native')
 call ddc#custom#patch_global('sourceOptions', {
@@ -79,38 +79,16 @@ hook_source = '''
 call popup_preview#enable()
 '''
 
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip'
-on_source = 'vim-vsnip-integ'
-
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip-integ'
-on_source = 'ddc.vim'
-hook_source = '''
-imap <expr> <C-k>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-k>'
-smap <expr> <C-k>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-k>'
-
-" Expand or jump
-imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-
-" Jump forward or backward
-imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
-" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
-" See https://github.com/hrsh7th/vim-vsnip/pull/50
-nmap        s   <Plug>(vsnip-select-text)
-xmap        s   <Plug>(vsnip-select-text)
-nmap        S   <Plug>(vsnip-cut-text)
-xmap        S   <Plug>(vsnip-cut-text)
-'''
-
-[[plugins]]
-repo = 'rafamadriz/friendly-snippets'
-on_source = 'vim-vsnip'
-hook_source = '''
-let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtimepath, 'friendly-snippets', 1, 1)
-'''
+# [[plugins]]
+# repo = 'hrsh7th/vim-vsnip'
+# on_source = 'ddc-source-vsnip'
+#
+# [[plugins]]
+# repo = 'uga-rosa/ddc-source-vsnip'
+#
+# [[plugins]]
+# repo = 'rafamadriz/friendly-snippets'
+# on_source = 'vim-vsnip'
+# hook_source = '''
+# let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtimepath, 'friendly-snippets', 1, 1)
+# '''
