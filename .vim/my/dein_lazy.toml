@@ -68,7 +68,28 @@ local lspconfig = require'lspconfig'
 lspconfig.clangd.setup{capabilities = capabilities}
 lspconfig.cmake.setup{capabilities = capabilities}
 -- lspconfig.denols.setup{capabilities = capabilities}
-lspconfig.gopls.setup{capabilities = capabilities}
+lspconfig.gopls.setup{
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            experimentalPostfixCompletions = true,
+            analyses = {
+                unusedparams = false,
+                shadow = false,
+            },
+            staticcheck = true,
+            hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+            },
+        },
+    },
+}
 lspconfig.pyright.setup{capabilities = capabilities}
 -- lspconfig.rls.setup{capabilities = capabilities}
 lspconfig.rust_analyzer.setup{capabilities = capabilities}
