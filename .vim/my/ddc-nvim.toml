@@ -30,7 +30,6 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'nvim-lsp': {
       \   'mark': 'lsp', 
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-      \    'dup': 'force',
       \  },
       \ 'vsnip': {
       \   'mark': 'snip', 
@@ -44,7 +43,9 @@ call ddc#custom#patch_global('sourceOptions', {
       \ })
       " \   'forceCompletionPattern': '\.|:|->'},
 call ddc#custom#patch_global('sourceParams', {
-      \ 'nvim-lsp': {'maxSize': 500},
+      \ 'nvim-lsp': #{
+      \     maxSize: 500,
+      \   }
       \ })
 call ddc#custom#patch_filetype(
       \ ['vim', 'toml'], 'sources', ['around']
@@ -58,6 +59,15 @@ call ddc#enable(#{
 [[plugins]]
 repo = 'Shougo/ddc-source-nvim-lsp'
 on_source = 'nvim-lspconfig'
+rev = '72197a06b7fa84d657432dede1110f24ac158329'
+hook_source = '''
+" lua << EOF
+" local capabilities = require("ddc_nvim_lsp").make_client_capabilities()
+" require("lspconfig").denols.setup({
+"   capabilities = capabilities,
+" })
+" EOF
+'''
 
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
