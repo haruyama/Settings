@@ -12,7 +12,7 @@ hook_add = '''
   " nnoremap <silent> n <Cmd>Ddu
   " \ -name=search -resume -refresh<CR>
   nnoremap <silent> ,ua
-  \ <Cmd>Ddu -name=files file<CR>
+  \ <Cmd>Ddu -name=files file_rec<CR>
   nnoremap <silent> ,ub
   \ <Cmd>Ddu -name=files buffer<CR>
   nnoremap <silent> ,uu
