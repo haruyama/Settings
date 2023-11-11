@@ -242,11 +242,11 @@ if = '!has("nvim")'
 [[plugins]]
 repo = 'roxma/nvim-yarp'
 
-[[plugins]]
-# repo = 'nathom/filetype.nvim'
-repo = 'Xevnar/filetype.nvim'
-depends = 'impatient.nvim'
-if = 'has("nvim")'
+# [[plugins]]
+# # repo = 'nathom/filetype.nvim'
+# repo = 'Xevnar/filetype.nvim'
+# depends = 'impatient.nvim'
+# if = 'has("nvim")'
 
 [[plugins]]
 repo = 'lewis6991/impatient.nvim'
