@@ -31,9 +31,6 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'mark': 'lsp', 
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
       \  },
-      \ 'vsnip': {
-      \   'mark': 'snip', 
-      \   },
       \ 'skkeleton': {
       \   'mark': 'skkeleton',
       \   'matchers': ['skkeleton'],
@@ -44,7 +41,10 @@ call ddc#custom#patch_global('sourceOptions', {
       " \   'forceCompletionPattern': '\.|:|->'},
 call ddc#custom#patch_global('sourceParams', {
       \ 'nvim-lsp': #{
-      \     maxSize: 500,
+      \     snippetEngine: denops#callback#register({
+      \           body -> vsnip#anonymous(body) }),
+      \     enableResolveItem: v:true,
+      \     enableAdditionalTextEdit: v:true,
       \   }
       \ })
 call ddc#custom#patch_filetype(
@@ -70,6 +70,15 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'uga-rosa/ddc-nvim-lsp-setup'
+hook_source = '''
+lua << EOF
+require("ddc_nvim_lsp_setup").setup()
+require("lspconfig").denols.setup()
+EOF
+'''
+
+[[plugins]]
 repo = 'liuchengxu/vista.vim'
 hook_source = '''
 let g:vista_default_executive = 'nvim_lsp'
@@ -89,16 +98,16 @@ hook_source = '''
 call popup_preview#enable()
 '''
 
-# [[plugins]]
-# repo = 'hrsh7th/vim-vsnip'
-# on_source = 'ddc-source-vsnip'
-#
-# [[plugins]]
-# repo = 'uga-rosa/ddc-source-vsnip'
-#
-# [[plugins]]
-# repo = 'rafamadriz/friendly-snippets'
-# on_source = 'vim-vsnip'
-# hook_source = '''
-# let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtimepath, 'friendly-snippets', 1, 1)
-# '''
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+on_source = 'ddc-source-vsnip'
+
+[[plugins]]
+repo = 'uga-rosa/ddc-source-vsnip'
+
+[[plugins]]
+repo = 'rafamadriz/friendly-snippets'
+on_source = 'vim-vsnip'
+hook_source = '''
+let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtimepath, 'friendly-snippets', 1, 1)
+'''
