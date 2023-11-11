@@ -99,7 +99,7 @@
 (setq require-final-newline t)
 (setq use-dialog-box nil)
 
-(load "text-adjust")
+; (load "text-adjust")
 
 (setq cjk-char-width-table-list
       '((ja_JP nil (japanese-jisx0213.2004-1 (#x2121 . #x2D7E))
