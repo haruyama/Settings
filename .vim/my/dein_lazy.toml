@@ -21,11 +21,8 @@ repo = 'rhysd/vim-grammarous'
 on_cmd = [ 'GrammarousCheck' ]
 
 [[plugins]]
-repo = 'raghur/vim-ghost'
-on_cmd = ['GhostInstall', 'GhostStart']
-hook_post_update = '''
-:GhostInstall
-'''
+repo = 'gamoutatsumi/dps-ghosttext.vim'
+on_cmd = ['GhostStart']
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
