@@ -1,10 +1,6 @@
 # Setup fzf
 # ---------
 if [[ -x $HOME/.asdf/shims/fzf ]]; then
-    if [[ $(fzf --version) > '0.13' && "$(fzf --version)" < 'fzf' ]] ; then
-        export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0 --exact --ansi"
-    else
-        export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0"
-    fi
+    export FZF_DEFAULT_OPTS="--extended --cycle --select-1 --exit-0 --exact --ansi"
     source "$(asdf where fzf)/shell/key-bindings.zsh"
 fi
