@@ -71,7 +71,7 @@ asdf_install:
 	asdf install nim latest && asdf global nim "`asdf latest nim`"
 	asdf install deno latest && asdf global deno "`asdf latest deno`"
 	asdf install neovim nightly && asdf global neovim nightly
-	env ASDF_VIM_CONFIG=${ASDF_VIM_CONFIG} asdf install vim latest && asdf global vim "`asdf latest vim`"
+	# env ASDF_VIM_CONFIG=${ASDF_VIM_CONFIG} asdf install vim latest && asdf global vim "`asdf latest vim`"
 	asdf install zig latest && asdf global zig "`asdf latest zig`"
 
 asdf_update:
