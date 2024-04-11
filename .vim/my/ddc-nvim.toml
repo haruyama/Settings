@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'Shougo/ddc.vim'
-depends = ['context_filetype.vim', 'denops.vim', 'nvim-lspconfig']
+depends = ['context_filetype.vim', 'denops.vim', 'ddc-source-lsp']
 on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
 " <TAB>: completion.
@@ -14,7 +14,7 @@ inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 inoremap <silent><expr> <C-l> ddc#map#complete_common_string()
 
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'nvim-lsp', 'dictionary']
+      \ 'sources', ['around', 'lsp', 'dictionary']
       \ )
 call ddc#custom#patch_global('ui', 'native')
 call ddc#custom#patch_global('sourceOptions', {
@@ -27,7 +27,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'mark': 'A',
       \   'matchers': ['matcher_head', 'matcher_length'],
       \ },
-      \ 'nvim-lsp': {
+      \ 'lsp': {
       \   'mark': 'lsp', 
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
       \  },
@@ -40,7 +40,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \ })
       " \   'forceCompletionPattern': '\.|:|->'},
 call ddc#custom#patch_global('sourceParams', {
-      \ 'nvim-lsp': #{
+      \ 'lsp': #{
       \     snippetEngine: denops#callback#register({
       \           body -> vsnip#anonymous(body) }),
       \     enableResolveItem: v:true,
@@ -57,24 +57,13 @@ call ddc#enable(#{
 '''
 
 [[plugins]]
-repo = 'Shougo/ddc-source-nvim-lsp'
-on_source = 'nvim-lspconfig'
-rev = '72197a06b7fa84d657432dede1110f24ac158329'
-hook_source = '''
-" lua << EOF
-" local capabilities = require("ddc_nvim_lsp").make_client_capabilities()
-" require("lspconfig").denols.setup({
-"   capabilities = capabilities,
-" })
-" EOF
-'''
-
-[[plugins]]
-repo = 'uga-rosa/ddc-nvim-lsp-setup'
+repo = 'Shougo/ddc-source-lsp'
 hook_source = '''
 lua << EOF
-require("ddc_nvim_lsp_setup").setup()
-require("lspconfig").denols.setup()
+local capabilities = require("ddc_source_lsp").make_client_capabilities()
+require("lspconfig").denols.setup({
+  capabilities = capabilities,
+})
 EOF
 '''
 
@@ -83,13 +72,6 @@ repo = 'liuchengxu/vista.vim'
 hook_source = '''
 let g:vista_default_executive = 'nvim_lsp'
 '''
-
-# [[plugins]]
-# repo = 'matsui54/ddc-nvim-lsp-doc'
-# on_source = 'ddc-nvim-lsp'
-# hook_source = '''
-# call ddc_nvim_lsp_doc#enable()
-# '''
 
 [[plugins]]
 repo = 'matsui54/denops-popup-preview.vim'
