@@ -14,7 +14,7 @@ init: asdf git
 	cp ~/lib/Settings/sample/.zshenv ~
 	cp ~/lib/Settings/sample/.zshrc ~
 	mkdir -p ~/.config/nvim
-	ln -fs ~/.vimrc ~/.config/nvim/init.vim
+	ln -fs ~/lib/Settings/_config/nvim/init.vim ~/.config/nvim/init.vim
 	ln -fs ~/.vim/after ~/.config/nvim/after
 
 git:
@@ -71,7 +71,7 @@ asdf_install:
 	asdf install nim latest && asdf global nim "`asdf latest nim`"
 	asdf install deno latest && asdf global deno "`asdf latest deno`"
 	asdf install neovim nightly && asdf global neovim nightly
-	# env ASDF_VIM_CONFIG=${ASDF_VIM_CONFIG} asdf install vim latest && asdf global vim "`asdf latest vim`"
+	env ASDF_VIM_CONFIG=${ASDF_VIM_CONFIG} asdf install vim latest && asdf global vim "`asdf latest vim`"
 	asdf install zig latest && asdf global zig "`asdf latest zig`"
 
 asdf_update:
@@ -101,3 +101,6 @@ skkdic:
 	# skkdic-expr2 ${TMP_UTF8_SKKDIC} ${TMP_JAWII_SKKDIC} >> ${MY_SKKDIC}
 	cat ${TMP_UTF8_SKKDIC} >> ${MY_SKKDIC}
 	rm -f ${TMP_EUC_SKKDIC} ${TMP_UTF8_SKKDIC} ${TMP_JAWII_SKKDIC}
+
+jetpack:
+	curl -fLo ~/.local/share/nvim/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim

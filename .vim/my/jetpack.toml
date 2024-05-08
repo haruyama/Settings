@@ -1,0 +1,790 @@
+[[plugins]]
+repo = 'tani/vim-jetpack'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_source = '''
+let g:lightline = {
+    \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'relativepath' ] ],
+        \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+            \ },
+    \ }
+'''
+
+[[plugins]]
+repo = 'rafamadriz/neon'
+hook_source = '''
+set termguicolors
+colorscheme neon
+'''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+hook_add = '''
+let g:context_filetype#filetypes = {
+      \ 'html': [
+      \   {
+      \     'start' : '^\s*<script type="application/x-go">',
+      \     'end' : '^\s*</script>',
+      \     'filetype' : 'go',
+      \   },
+      \   {
+      \     'start' : '^\s*<style>',
+      \     'end' : '^\s*</style>',
+      \     'filetype' : 'css',
+      \   },
+      \ ],
+      \ 'vue': []
+      \}
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'Shougo/pum.vim'
+hook_source = '''
+inoremap <PageDown> <Cmd>call pum#map#insert_relative_page(+1)<CR>
+inoremap <PageUp>   <Cmd>call pum#map#insert_relative_page(-1)<CR>
+inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1, 'empty')<CR>
+inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
+inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+inoremap <C-o>   <Cmd>call pum#map#confirm_word()<CR>
+inoremap <Home>  <Cmd>call pum#map#insert_relative(-9999, 'ignore')<CR>
+inoremap <End>   <Cmd>call pum#map#insert_relative(+9999, 'ignore')<CR>
+inoremap <C-g>   <Cmd>call pum#set_option(#{
+      \   preview: !pum#_options().preview,
+      \ })<CR>
+inoremap <C-t>   <C-v><Tab>
+'''
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+vnoremap <silent> <leader>x :TComment<cr>
+'''
+
+[[plugins]]
+repo = 'phaazon/hop.nvim'
+branch = 'v2'
+hook_source = '''
+lua << EOF
+require'hop'.setup { }
+vim.api.nvim_set_keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ current_line_only = false })<cr>", {})
+vim.api.nvim_set_keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ current_line_only = false })<cr>", {})
+vim.api.nvim_set_keymap('o', 'f', "<cmd>lua require'hop'.hint_char1({ current_line_only = false , inclusive_jump = true })<cr>", {})
+vim.api.nvim_set_keymap('o', 'F', "<cmd>lua require'hop'.hint_char1({ current_line_only = false, inclusive_jump = true })<cr>", {})
+-- vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ current_line_only = false })<cr>", {})
+-- vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ current_line_only = false })<cr>", {})
+EOF
+'''
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = '''
+let g:ale_linters = {
+\}
+" \   'c': ['cpplint'],
+" \   'cpp': ['cpplint'],
+" \   'javascript': ['biome'],
+" \   'typescript': ['biome'],
+" \   'go': ['go build', 'go vet'],
+" \   'html': ['alex', 'htmlhint', 'proselint', 'write-good'],
+" \   'python': ['flake8', 'pycodestle', 'pyright'],
+" \   'rust': ['cargo'],
+nnoremap <silent> <leader>an :ALENextWrap<cr>
+nnoremap <silent> <leader>ap :ALEPreviousWrap<cr>
+let g:ale_go_bingo_executable = 'gopls'
+let g:ale_javascript_eslint_suppress_missing_config = 1
+let g:ale_python_mypy_options = '--ignore-missing-imports'
+let g:ale_cmake_cmakelint_options = '--filter=-readability/wonkycase,-linelength'
+let g:ale_cpp_cpplint_options = '--linelength=120 --filter=-build/include_subdir,-legal/copyright,-build/c++11,-whitespace/braces'
+'''
+# \   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+let g:quickrun_config = {
+\    "octave" : {
+\       "command" : "octave",
+\       "cmdopt"  : "--silent",
+\   },
+\    "ceylon" : {
+\       "command" : "ceylon",
+\       "cmdopt"  : "compile",
+\   },
+\}
+'''
+
+[[plugins]]
+repo = 'roxma/vim-paste-easy'
+hook_add = '''
+let g:paste_char_threshold=8
+'''
+
+[[plugins]]
+repo = 'farmergreg/vim-lastplace'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'machakann/vim-sandwich'
+hook_add = '''
+runtime macros/sandwich/keymap/surround.vim
+'''
+
+[[plugins]]
+repo = 'Matt-A-Bennett/vim-surround-funk'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+hook_add = '''
+let g:yankring_history_dir            = $HOME . '/.vim/history'
+let g:yankring_manual_clipboard_check = 1
+
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+let g:yankround_max_history = 50
+'''
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'lambdalisue/mr.vim'
+hook_source = '''
+let g:mr_disable_warning = 1
+'''
+
+[[plugins]]
+repo = 'haya14busa/is.vim'
+
+[[plugins]]
+repo = 'guns/vim-sexp'
+
+[[plugins]]
+repo = 'tpope/vim-sexp-mappings-for-regular-people'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'rhysd/committia.vim'
+
+[[plugins]]
+repo = 'janko-m/vim-test'
+hook_add = '''
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>f :TestFile<CR>
+nmap <silent> <leader>s :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+let g:test#python#pytest#options = {
+  \ 'nearest': '-v',
+  \ 'file':    '-v',
+  \ 'suite':   '-v',
+\}
+let g:test#go#gotest#options = {
+  \ 'nearest': '-v',
+  \ 'file':    '-v',
+  \ 'suite':   '-v',
+\}
+
+let g:test#javascript#jest#executable = 'npx jest'
+'''
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+hook_add = '''
+xnoremap <silent> <Leader>a :EasyAlign<cr>
+'''
+on_cmd = ['EasyAlign']
+
+[[plugins]]
+repo = 'rhysd/vim-grammarous'
+on_cmd = [ 'GrammarousCheck' ]
+
+[[plugins]]
+repo = 'gamoutatsumi/dps-ghosttext.vim'
+on_cmd = ['GhostStart']
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+hook_source = '''
+lua << EOF
+local opts = { noremap=true, silent=true }
+
+-- https://dev.classmethod.jp/articles/eetann-change-neovim-lsp-diagnostics-format/
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  update_in_insert = false,
+  virtual_text = {
+    format = function(diagnostic)
+      return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
+    end,
+  },
+})
+
+vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gf', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+vim.api.nvim_set_keymap('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+vim.api.nvim_set_keymap('n', ']g', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  },
+}
+
+vim.o.completeopt = 'menuone,noselect'
+
+-- vim.lsp.set_log_level("debug")
+
+local lspconfig = require'lspconfig'
+lspconfig.clangd.setup{capabilities = capabilities}
+lspconfig.cmake.setup{capabilities = capabilities}
+-- lspconfig.denols.setup{capabilities = capabilities}
+lspconfig.gopls.setup{
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            experimentalPostfixCompletions = true,
+            analyses = {
+                unusedparams = false,
+                shadow = false,
+            },
+            staticcheck = true,
+            hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+            },
+        },
+    },
+}
+lspconfig.pyright.setup{capabilities = capabilities}
+-- lspconfig.rls.setup{capabilities = capabilities}
+lspconfig.rust_analyzer.setup{capabilities = capabilities}
+lspconfig.solargraph.setup{capabilities = capabilities}
+-- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
+lspconfig.tsserver.setup{capabilities = capabilities}
+lspconfig.vuels.setup{capabilities = capabilities}
+lspconfig.zls.setup{capabilities = capabilities}
+EOF
+'''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+# on_event = 'BufRead'
+hook_post_update = 'TSUpdate'
+hook_source = '''
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = 'all',
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+  indent = {
+    enable = true
+  },
+  -- incremental_selection = {
+    --   enable = true,
+    --   keymaps = {
+      --     init_selection = "gnn",
+      --     node_incremental = "grn",
+      --     scope_incremental = "grc",
+      --     node_decremental = "grm",
+      --   },
+      -- },
+    }
+EOF
+
+" " Custom colors
+" highlight CandyBlue         gui=NONE guibg=#2c2c2c guifg=#1e95fd
+" highlight CandyCranberry    gui=NONE guibg=#2c2c2c guifg=#4ae2e2
+" highlight CandyEmerald      gui=NONE guibg=#2c2c2c guifg=#44ff44
+" highlight CandyGreen        gui=NONE guibg=#2c2c2c guifg=#66ff66
+" highlight CandyLime         gui=NONE guibg=#2c2c2c guifg=#4ae2e2
+" highlight CandyOrange       gui=NONE guibg=#2c2c2c guifg=#ffb30a
+" highlight CandyRed          gui=NONE guibg=#2c2c2c guifg=#ff6666
+" highlight CandySky          gui=NONE guibg=#2c2c2c guifg=#6699ff
+" highlight CandyViolet       gui=NONE guibg=#2c2c2c guifg=#ff13ff
+" highlight CandyWhite        gui=NONE guibg=#2c2c2c guifg=#cccccc
+" highlight CandyYellow       gui=NONE guibg=#2c2c2c guifg=#ffd30a
+" highlight CandyCoral        gui=NONE guibg=#2c2c2c guifg=#f820ff
+" highlight CandyTurquoise    gui=NONE guibg=#2c2c2c guifg=#1bc8c8
+" highlight CandyCrimson      gui=NONE guibg=#2c2c2c guifg=#ff4444
+"
+" " neovim treesitter colors
+" highlight! link TSAnnotation      CandyViolet
+" highlight! link TSAttribute       CandySky
+" highlight! link TSBoolean         Boolean
+" highlight! link TSCharacter       Character
+" highlight! link TSConditional     CandyCoral
+" highlight! link TSConstBuiltin    CandyGreen
+" highlight! link TSConstMacro      CandyViolet
+" highlight! link TSConstant        Constant
+" highlight! link TSConstructor     CandyEmerald
+" highlight! link TSError           Error
+" highlight! link TSException       Exception
+" highlight! link TSField           CandyBlue
+" highlight! link TSFloat           Float
+" highlight! link TSFuncBuiltin     CandySky
+" highlight! link TSFuncMacro       CandySky
+" highlight! link TSFunction        CandyCranberry
+" highlight! link TSInclude         CandyCranberry
+" highlight! link TSKeyword         CandyEmerald
+" highlight! link TSKeywordFunction Keyword
+" highlight! link TSKeywordOperator CandyViolet
+" highlight! link TSLabel           Label
+" highlight! link TSLiteral         CandyYellow
+" highlight! link TSMethod          CandyTurquoise
+" highlight! link TSNamespace       CandyBlue
+" highlight! link TSNone            Normal
+" highlight! link TSNumber          Number
+" highlight! link TSOperator        Operator
+" highlight! link TSParameter       CandyWhite
+" highlight! link TSParameterReference CandyWhite
+" highlight! link TSProperty        Identifier
+" highlight! link TSPunctBracket    CandyOrange
+" highlight! link TSPunctDelimiter  CandyLime
+" highlight! link TSPunctSpecial    Special
+" highlight! link TSRepeat          Repeat
+" highlight! link TSString          String
+" highlight! link TSStringEscape    SpecialChar
+" highlight! link TSStringRegex     String
+" highlight! link TSTag             CandyBlue
+" highlight! link TSTagDelimiter    CandyLime
+" highlight! link TSText            TSNone
+" highlight! link TSTitle           Title
+" highlight! link TSType            Type
+" highlight! link TSTypeBuiltin     Type
+" highlight! link TSURL             Underlined
+" highlight! link TSUnderline       Underlined
+" highlight! link TSVariableBuiltin CandyLime
+'''
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+hook_source = '''
+" let g:denops#server#service#deno_args = get(g:,
+" \ 'denops#server#service#deno_args', [
+" \ '-q',
+" \ '--no-check',
+" \ '--unstable',
+" \ '-A',
+" \ ]) + ['--inspect']
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-source-around'
+on_source = 'ddc.vim'
+
+# [[plugins]]
+# repo = 'Shougo/ddc-source-zsh'
+# on_ft = 'zsh'
+# depends = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-converter_remove_overlap'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_length'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'matsui54/ddc-dictionary'
+on_source = 'ddc.vim'
+hook_source = '''
+call ddc#custom#patch_global('sourceParams', {
+      \ 'dictionary': {'dictPaths': 
+      \ [
+      \ '/usr/share/dict/words',
+      \ ],
+      \ 'dictionary': {'mark': 'D'},
+      \ 'smartCase': v:true,
+      \ }
+      \ })
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-native'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-inline'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-none'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-cmdline'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-cmdline-history'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-omni'
+
+[[plugins]]
+repo = 'matsui54/ddc-buffer'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+depends = ['context_filetype.vim', 'denops.vim', 'ddc-source-lsp']
+on_event = ['InsertEnter', 'CursorHold']
+hook_source = '''
+" <TAB>: completion.
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? '<C-n>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#map#manual_complete()
+
+" <S-TAB>: completion back.
+inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
+inoremap <silent><expr> <C-l> ddc#map#complete_common_string()
+
+call ddc#custom#patch_global(
+      \ 'sources', ['around', 'lsp', 'dictionary']
+      \ )
+call ddc#custom#patch_global('ui', 'pum')
+
+call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank'],
+      \   'converters': ['converter_remove_overlap'],
+      \ },
+      \ 'around': {
+      \   'mark': 'A',
+      \   'matchers': ['matcher_head', 'matcher_length'],
+      \ },
+      \ 'lsp': {
+      \   'mark': 'lsp', 
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+      \  },
+      \ })
+call ddc#custom#patch_global('sourceParams', {
+      \ 'lsp': #{
+      \     snippetEngine: denops#callback#register({
+      \           body -> vsnip#anonymous(body) }),
+      \     enableResolveItem: v:true,
+      \     enableAdditionalTextEdit: v:true,
+      \   }
+      \ })
+call ddc#custom#patch_filetype(
+      \ ['vim', 'toml'], 'sources', ['around']
+      \ )
+
+call ddc#enable(#{
+      \   context_filetype: has('nvim') ? 'treesitter' : 'context_filetype',
+      \ })
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-source-lsp'
+hook_source = '''
+lua << EOF
+local capabilities = require("ddc_source_lsp").make_client_capabilities()
+require("lspconfig").denols.setup({
+  capabilities = capabilities,
+})
+EOF
+'''
+
+[[plugins]]
+repo = 'liuchengxu/vista.vim'
+hook_source = '''
+let g:vista_default_executive = 'nvim_lsp'
+'''
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+on_source = 'ddc-source-vsnip'
+
+[[plugins]]
+repo = 'uga-rosa/ddc-source-vsnip'
+
+[[plugins]]
+repo = 'rafamadriz/friendly-snippets'
+on_source = 'vim-vsnip'
+hook_source = '''
+let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtimepath, 'friendly-snippets', 1, 1)
+'''
+
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+depends = 'denops.vim'
+on_source = 'denops.vim'
+hook_add = '''
+  " nnoremap <silent> / <Cmd>Ddu
+  " \ -name=search line
+  " \ -ui-param-startFilter=v:true<CR>
+  " nnoremap <silent> * <Cmd>Ddu
+  " \ -name=search line -input=`expand('<cword>')`
+  " \ -ui-param-startFilter=v:false<CR>
+  " nnoremap <silent> n <Cmd>Ddu
+  " \ -name=search -resume -refresh<CR>
+  nnoremap <silent> ,ua
+  \ <Cmd>Ddu -name=files file_rec<CR>
+  nnoremap <silent> ,ub
+  \ <Cmd>Ddu -name=files buffer<CR>
+  nnoremap <silent> ,uu
+  \ <Cmd>Ddu -name=files mr<CR>
+  nnoremap <silent> ,uc
+  \ <Cmd>Ddu -name=files -source-param-current=true mr<CR>
+  nnoremap <silent> ,uw
+  \ <Cmd>Ddu -name=files -source-param-kind=mrw mr<CR>
+  nnoremap <silent> ,ug
+  \ <Cmd>Ddu -name=files -source-param-kind=mrr mr<CR>
+'''
+hook_source = '''
+call ddu#custom#patch_global({
+    \   'ui': 'filer',
+    \   'sources': [{'name': 'file', 'params': {}}],
+    \   'sourceOptions': {
+    \     '_': {
+    \       'ignoreCase': v:true,
+    \       'matchers': ['matcher_substring'],
+    \     },
+    \     'file_old': {
+    \       'matchers': [
+    \         'matcher_substring', 'matcher_relative', 'matcher_hidden',
+    \       ],
+    \     },
+    \     'file_external': {
+    \       'matchers': [
+    \         'matcher_substring', 'matcher_hidden',
+    \       ],
+    \     },
+    \     'file_rec': {
+    \       'matchers': [
+    \         'matcher_substring', 'matcher_hidden',
+    \       ],
+    \     'path': expand('%:p:h'),
+    \     },
+    \     'dein': {
+    \       'defaultAction': 'cd',
+    \     },
+    \   },
+    \   'sourceParams': {
+    \     'file_external': {
+    \       'cmd': ['git', 'ls-files', '-co', '--exclude-standard'],
+    \     },
+    \   },
+    \   'uiParams': {
+    \     'ff': {
+    \       'filterSplitDirection': 'floating',
+    \     }
+    \   },
+    \   'kindOptions': {
+    \     'file': {
+    \       'defaultAction': 'open',
+    \     },
+    \     'word': {
+    \       'defaultAction': 'append',
+    \     },
+    \     'deol': {
+    \       'defaultAction': 'switch',
+    \     },
+    \     'action': {
+    \       'defaultAction': 'do',
+    \     },
+    \   },
+    \   'filterParams': {
+    \     'matcher_substring': {
+    \       'highlightMatched': 'Search',
+    \     },
+    \   }
+    \ })
+call ddu#custom#patch_local('files', {
+    \   'uiParams': {
+    \     'ff': {
+    \       'split': has('nvim') ? 'floating' : 'horizontal',
+    \     }
+    \   },
+    \ })
+
+"call ddu#custom#action('kind', 'file', 'test',
+"    \ { args -> execute('let g:foo = 1') })
+"call ddu#custom#action('source', 'file_old', 'test2',
+"    \ { args -> execute('let g:bar = 1') })
+
+nnoremap <buffer> <CR>
+\ <Cmd>call ddu#ui#ff#do_action('itemAction')<CR>
+nnoremap <buffer> <Space>
+\ <Cmd>call ddu#ui#ff#do_action('toggleSelectItem')<CR>
+nnoremap <buffer> i
+\ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
+nnoremap <buffer> <C-l>
+\ <Cmd>call ddu#ui#ff#do_action('refreshItems')<CR>
+nnoremap <buffer> p
+\ <Cmd>call ddu#ui#ff#do_action('preview')<CR>
+nnoremap <buffer> q
+\ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
+nnoremap <buffer> a
+\ <Cmd>call ddu#ui#ff#do_action('chooseAction')<CR>
+nnoremap <buffer> c
+\ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'cd'})<CR>
+nnoremap <buffer> d
+\ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'delete'})<CR>
+nnoremap <buffer> e
+\ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'edit'})<CR>
+nnoremap <buffer> E
+\ <Cmd>call ddu#ui#ff#do_action('itemAction',
+\ {'params': eval(input('params: '))})<CR>
+nnoremap <buffer> v
+\ <Cmd>call ddu#ui#ff#do_action('itemAction',
+\ {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
+nnoremap <buffer> N
+\ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'new'})<CR>
+nnoremap <buffer> r
+\ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'quickfix'})<CR>
+nnoremap <buffer> u
+\ <Cmd>call ddu#ui#ff#do_action('updateOptions', {
+\   'sourceOptions': {
+\     '_': {
+\       'matchers': [],
+\     },
+\   },
+\ })<CR>
+
+
+function! s:ddu_my_settings() abort
+  nnoremap <buffer><silent> <CR>
+        \ <Cmd>call ddu#ui#do_action('itemAction')<CR>
+  nnoremap <buffer><silent> <Space>
+        \ <Cmd>call ddu#ui#do_action('toggleSelectItem')<CR>
+  nnoremap <buffer> o
+        \ <Cmd>call ddu#ui#do_action('expandItem',
+        \ {'mode': 'toggle'})<CR>
+  nnoremap <buffer><silent> q
+        \ <Cmd>call ddu#ui#do_action('quit')<CR>
+endfunction
+autocmd FileType ddu-filer call s:ddu_my_settings()
+'''
+
+[[plugins]]
+repo = 'Shougo/ddu-commands.vim'
+depends = 'ddu.vim'
+on_cmd = 'Ddu'
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-ff'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file_rec'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file_old'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file_point'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-line'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-register'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-action'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'matsui54/ddu-source-file_external'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'shun/ddu-source-buffer'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'kuuote/ddu-source-mr'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_substring'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_relative'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_hidden'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-kind-file'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-kind-word'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-column-filename'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+on_source = 'ddu.vim'
