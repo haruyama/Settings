@@ -5,11 +5,11 @@ repo = 'Shougo/dein.vim'
 repo = 'itchyny/lightline.vim'
 hook_source = '''
 let g:lightline = {
-	      \ 'active': {
-	      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'relativepath' ] ],
-	      \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
-	      \ },
-        \ }
+    \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'relativepath' ] ],
+        \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+            \ },
+    \ }
 '''
 
 [[plugins]]
