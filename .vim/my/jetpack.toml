@@ -294,10 +294,10 @@ lspconfig.gopls.setup{
         },
     },
 }
-lspconfig.pyright.setup{capabilities = capabilities}
+-- lspconfig.pyright.setup{capabilities = capabilities}
 -- lspconfig.rls.setup{capabilities = capabilities}
 lspconfig.rust_analyzer.setup{capabilities = capabilities}
-lspconfig.solargraph.setup{capabilities = capabilities}
+-- lspconfig.solargraph.setup{capabilities = capabilities}
 -- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
 lspconfig.tsserver.setup{capabilities = capabilities}
 lspconfig.vuels.setup{capabilities = capabilities}
