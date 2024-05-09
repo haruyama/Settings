@@ -69,17 +69,24 @@ vnoremap <silent> <leader>x :TComment<cr>
 '''
 
 [[plugins]]
-repo = 'phaazon/hop.nvim'
-branch = 'v2'
+repo = 'smoka7/hop.nvim'
 hook_source = '''
 lua << EOF
-require'hop'.setup { }
-vim.api.nvim_set_keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ current_line_only = false })<cr>", {})
-vim.api.nvim_set_keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ current_line_only = false })<cr>", {})
-vim.api.nvim_set_keymap('o', 'f', "<cmd>lua require'hop'.hint_char1({ current_line_only = false , inclusive_jump = true })<cr>", {})
-vim.api.nvim_set_keymap('o', 'F', "<cmd>lua require'hop'.hint_char1({ current_line_only = false, inclusive_jump = true })<cr>", {})
--- vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ current_line_only = false })<cr>", {})
--- vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ current_line_only = false })<cr>", {})
+require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('', 'f', function()
+  hop.hint_char1({ current_line_only = false })
+end, {remap=true})
+vim.keymap.set('', 'F', function()
+  hop.hint_char1({ current_line_only = false })
+end, {remap=true})
+vim.keymap.set('', 't', function()
+  hop.hint_char1({ current_line_only = false , hint_offset = -1 })
+end, {remap=true})
+vim.keymap.set('', 'T', function()
+  hop.hint_char1({ current_line_only = false, hint_offset = 1 })
+end, {remap=true})
 EOF
 '''
 
