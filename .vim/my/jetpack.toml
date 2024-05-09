@@ -220,10 +220,6 @@ xnoremap <silent> <Leader>a :EasyAlign<cr>
 on_cmd = ['EasyAlign']
 
 [[plugins]]
-repo = 'rhysd/vim-grammarous'
-on_cmd = [ 'GrammarousCheck' ]
-
-[[plugins]]
 repo = 'gamoutatsumi/dps-ghosttext.vim'
 on_cmd = ['GhostStart']
 
