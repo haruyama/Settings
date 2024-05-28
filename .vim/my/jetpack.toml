@@ -294,14 +294,15 @@ lspconfig.gopls.setup{
         },
     },
 }
+lspconfig.clojure_lsp.setup{capabilities = capabilities}
 -- lspconfig.pyright.setup{capabilities = capabilities}
 -- lspconfig.rls.setup{capabilities = capabilities}
 lspconfig.rust_analyzer.setup{capabilities = capabilities}
 -- lspconfig.solargraph.setup{capabilities = capabilities}
 -- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
-lspconfig.tsserver.setup{capabilities = capabilities}
-lspconfig.vuels.setup{capabilities = capabilities}
-lspconfig.zls.setup{capabilities = capabilities}
+-- lspconfig.tsserver.setup{capabilities = capabilities}
+-- lspconfig.vuels.setup{capabilities = capabilities}
+-- lspconfig.zls.setup{capabilities = capabilities}
 EOF
 '''
 
@@ -316,9 +317,6 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     disable = {},
-  },
-  indent = {
-    enable = true
   },
   -- incremental_selection = {
     --   enable = true,
@@ -485,6 +483,8 @@ repo = 'Shougo/ddc.vim'
 depends = ['context_filetype.vim', 'denops.vim', 'ddc-source-lsp']
 on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
+let g:vsnip_append_final_tabstop = v:false
+
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
 \ pumvisible() ? '<C-n>' :
@@ -791,3 +791,22 @@ on_source = 'ddu.vim'
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
 on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+hook_source = '''
+let g:go_snippet_engine = 'neosnippet'
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_def_mapping_enabled = 0
+let g:go_doc_keywordprg_enabled = 0
+
+" let g:go_fmt_command = 'goimports'
+let g:go_fmt_command = 'gosimports'
+'''
