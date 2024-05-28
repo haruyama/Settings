@@ -16,6 +16,7 @@
 .emacs.d/transient/
 .emacs.d/**/*.elc
 .emacs.d/custom.el
+.emacs.d/url
 
 .lein/repl-history
 .lein/self-installs
