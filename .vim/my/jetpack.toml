@@ -250,57 +250,34 @@ vim.api.nvim_set_keymap('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<CR>', op
 vim.api.nvim_set_keymap('n', ']g', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.preselectSupport = true
-capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  },
-}
-
-vim.o.completeopt = 'menuone,noselect'
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- capabilities.textDocument.completion.completionItem.preselectSupport = true
+-- capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+-- capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+-- capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+-- capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+-- capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+-- capabilities.textDocument.completion.completionItem.resolveSupport = {
+--   properties = {
+--     'documentation',
+--     'detail',
+--     'additionalTextEdits',
+--   },
+-- }
+--
+vim.o.completeopt = 'menuone,noinsert,noselect'
+vim.opt.shortmess = vim.opt.shortmess + "c"
+vim.opt.updatetime = 100
+vim.wo.signcolumn = "yes"
 
 -- vim.lsp.set_log_level("debug")
 
-local lspconfig = require'lspconfig'
-lspconfig.clangd.setup{capabilities = capabilities}
-lspconfig.cmake.setup{capabilities = capabilities}
+-- local lspconfig = require'lspconfig'
 -- lspconfig.denols.setup{capabilities = capabilities}
-lspconfig.gopls.setup{
-    capabilities = capabilities,
-    settings = {
-        gopls = {
-            experimentalPostfixCompletions = true,
-            analyses = {
-                unusedparams = false,
-                shadow = false,
-            },
-            staticcheck = true,
-            hints = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-            },
-        },
-    },
-}
-lspconfig.clojure_lsp.setup{capabilities = capabilities}
 -- lspconfig.pyright.setup{capabilities = capabilities}
 -- lspconfig.rls.setup{capabilities = capabilities}
-lspconfig.rust_analyzer.setup{capabilities = capabilities}
 -- lspconfig.solargraph.setup{capabilities = capabilities}
 -- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
 -- lspconfig.tsserver.setup{capabilities = capabilities}
@@ -541,9 +518,54 @@ repo = 'Shougo/ddc-source-lsp'
 hook_source = '''
 lua << EOF
 local capabilities = require("ddc_source_lsp").make_client_capabilities()
-require("lspconfig").denols.setup({
+capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  },
+}
+
+local lspconfig = require'lspconfig'
+lspconfig.denols.setup({
   capabilities = capabilities,
 })
+lspconfig.rust_analyzer.setup{
+  capabilities = capabilities,
+}
+lspconfig.clangd.setup{capabilities = capabilities}
+lspconfig.cmake.setup{capabilities = capabilities}
+lspconfig.gopls.setup{
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            experimentalPostfixCompletions = true,
+            analyses = {
+                unusedparams = false,
+                shadow = false,
+            },
+            staticcheck = true,
+            hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+            },
+        },
+    },
+}
+lspconfig.clojure_lsp.setup{capabilities = capabilities}
 EOF
 '''
 
