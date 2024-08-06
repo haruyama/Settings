@@ -830,8 +830,6 @@ on_source = 'ddu.vim'
 repo = 'fatih/vim-go'
 on_ft = ['go']
 hook_source = '''
-let g:go_snippet_engine = 'neosnippet'
-
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
