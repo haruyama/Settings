@@ -28,6 +28,8 @@
 	path = ~/.config/git/config_local
 [merge]
 	conflictStyle = diff3
+[pager]
+  grep = false
 [pull]
 	rebase = false
 [rerere]
