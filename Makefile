@@ -35,6 +35,7 @@ tmux:
 lsp_update:
 	go install golang.org/x/tools/gopls@latest
 	pipx upgrade-all
+	npm update -g intelephense
 
 lsp_install:
 	go install golang.org/x/tools/gopls@latest
@@ -42,6 +43,7 @@ lsp_install:
 	pipx install python-language-server
 	pipx install pyls-black
 	pipx install cmake-language-server
+	npm install -g intelephense
 #	rm -rf ~/src/zls && mkdir ~/src/zls && cd ~/src/zls && curl -L https://github.com/zigtools/zls/releases/download/0.9.0/x86_64-linux.tar.xz | tar -xJ --strip-components=1 -C . && chmod 700 zls && cp zls ~/bin/
 
 asdf:

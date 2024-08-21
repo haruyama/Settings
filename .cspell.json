@@ -23,6 +23,7 @@
     "nnoremap",
     "noremap",
     "nvim",
+    "intelephense",
     "phaazon",
     "pycodestle",
     "pyright",
