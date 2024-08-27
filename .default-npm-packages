@@ -4,6 +4,7 @@ cspell
 fixpack
 fx
 honyaku
+intelephense
 javascript-typescript-langserver
 license-checker
 md-to-pdf
@@ -11,7 +12,6 @@ neovim
 npm-check-updates
 nsp
 prettier
-purescript-language-server
 tern
 textlint
 textlint-rule-max-ten
@@ -24,3 +24,4 @@ typescript
 typescript-language-server
 vls
 yaml-validator
+yarn
