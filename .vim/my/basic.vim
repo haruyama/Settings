@@ -44,7 +44,8 @@ if &t_Co > 2 || has('gui_running')
   set hlsearch
 endif
 
-set fileencodings=iso-2022-jp,utf-8,ucs-bom,euc-jp,cp932,default,latin
+set encoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,default,latin
 set fileformats=unix,dos,mac
 
 set ambiwidth=double
