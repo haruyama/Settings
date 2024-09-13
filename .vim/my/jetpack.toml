@@ -76,10 +76,19 @@ inoremap <C-g>   <Cmd>call pum#set_option(#{
 inoremap <C-t>   <C-v><Tab>
 '''
 
+# [[plugins]]
+# repo = 'tomtom/tcomment_vim'
+# hook_add = '''
+# vnoremap <silent> <leader>x :TComment<cr>
+# '''
+
 [[plugins]]
-repo = 'tomtom/tcomment_vim'
-hook_add = '''
-vnoremap <silent> <leader>x :TComment<cr>
+repo = 'numToStr/Comment.nvim'
+hook_source = '''
+lua << EOF
+require('Comment').setup({})
+vim.keymap.set('x', '<leader>x', '<Plug>(comment_toggle_linewise_visual)')
+EOF
 '''
 
 [[plugins]]
@@ -296,7 +305,6 @@ EOF
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
-# on_event = 'BufRead'
 hook_post_update = 'TSUpdate'
 hook_source = '''
 lua <<EOF
@@ -304,20 +312,19 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = 'all',
   highlight = {
     enable = true,
-    disable = {},
   },
-  -- indent = {
-  --   enable = true,
-  -- }
-  -- incremental_selection = {
-    --   enable = true,
-    --   keymaps = {
-      --     init_selection = "gnn",
-      --     node_incremental = "grn",
-      --     scope_incremental = "grc",
-      --     node_decremental = "grm",
-      --   },
-      -- },
+  indent = {
+    enable = true,
+  },
+  incremental_selection = {
+      enable = true,
+      keymaps = {
+          init_selection = "gnn",
+          node_incremental = "grn",
+          scope_incremental = "grc",
+          node_decremental = "grm",
+        },
+      },
     }
 EOF
 
