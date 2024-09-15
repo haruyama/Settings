@@ -104,3 +104,5 @@ iwyu.txt
 docker-compose.override.yml
 
 .phpactor.json
+
+phpunit.host.xml
