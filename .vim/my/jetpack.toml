@@ -35,7 +35,7 @@ let g:context_filetype#filetypes = {
       \     'filetype' : 'css',
       \   },
       \ ],
-      \ 'vue': []
+      \ 'vue': [],
       \}
 '''
 
@@ -85,32 +85,13 @@ inoremap <C-t>   <C-v><Tab>
 [[plugins]]
 repo = 'numToStr/Comment.nvim'
 hook_source = '''
-lua << EOF
-require('Comment').setup({})
-vim.keymap.set('x', '<leader>x', '<Plug>(comment_toggle_linewise_visual)')
-EOF
+source ~/.vim/my/plugins/Comment.nvim.lua
 '''
 
 [[plugins]]
 repo = 'smoka7/hop.nvim'
 hook_source = '''
-lua << EOF
-require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-local hop = require('hop')
-local directions = require('hop.hint').HintDirection
-vim.keymap.set('', 'f', function()
-  hop.hint_char1({ current_line_only = false })
-end, {remap=true})
-vim.keymap.set('', 'F', function()
-  hop.hint_char1({ current_line_only = false })
-end, {remap=true})
-vim.keymap.set('', 't', function()
-  hop.hint_char1({ current_line_only = false , hint_offset = -1 })
-end, {remap=true})
-vim.keymap.set('', 'T', function()
-  hop.hint_char1({ current_line_only = false, hint_offset = 1 })
-end, {remap=true})
-EOF
+source ~/.vim/my/plugins/hop.nvim.lua
 '''
 
 [[plugins]]
@@ -247,150 +228,14 @@ on_cmd = ['GhostStart']
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 hook_source = '''
-lua << EOF
-local opts = { noremap=true, silent=true }
-
--- https://dev.classmethod.jp/articles/eetann-change-neovim-lsp-diagnostics-format/
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  update_in_insert = false,
-  virtual_text = {
-    format = function(diagnostic)
-      return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
-    end,
-  },
-})
-
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gf', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-vim.api.nvim_set_keymap('n', '[g', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', ']g', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
--- capabilities.textDocument.completion.completionItem.preselectSupport = true
--- capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
--- capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
--- capabilities.textDocument.completion.completionItem.deprecatedSupport = true
--- capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
--- capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
--- capabilities.textDocument.completion.completionItem.resolveSupport = {
---   properties = {
---     'documentation',
---     'detail',
---     'additionalTextEdits',
---   },
--- }
---
-vim.o.completeopt = 'menuone,noinsert,noselect'
-vim.opt.shortmess = vim.opt.shortmess + "c"
-vim.opt.updatetime = 100
-vim.wo.signcolumn = "yes"
-
--- vim.lsp.set_log_level("debug")
-
--- local lspconfig = require'lspconfig'
--- lspconfig.denols.setup{capabilities = capabilities}
--- lspconfig.pyright.setup{capabilities = capabilities}
--- lspconfig.rls.setup{capabilities = capabilities}
--- lspconfig.solargraph.setup{capabilities = capabilities}
--- lspconfig.sorbet.setup{on_attach = on_attach, capabilities = capabilities}
--- lspconfig.vuels.setup{capabilities = capabilities}
--- lspconfig.zls.setup{capabilities = capabilities}
-EOF
+source ~/.vim/my/plugins/nvim-lspconfig.lua
 '''
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 hook_post_update = 'TSUpdate'
 hook_source = '''
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = 'all',
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true,
-  },
-  incremental_selection = {
-      enable = true,
-      keymaps = {
-          init_selection = "gnn",
-          node_incremental = "grn",
-          scope_incremental = "grc",
-          node_decremental = "grm",
-        },
-      },
-    }
-EOF
-
-" " Custom colors
-" highlight CandyBlue         gui=NONE guibg=#2c2c2c guifg=#1e95fd
-" highlight CandyCranberry    gui=NONE guibg=#2c2c2c guifg=#4ae2e2
-" highlight CandyEmerald      gui=NONE guibg=#2c2c2c guifg=#44ff44
-" highlight CandyGreen        gui=NONE guibg=#2c2c2c guifg=#66ff66
-" highlight CandyLime         gui=NONE guibg=#2c2c2c guifg=#4ae2e2
-" highlight CandyOrange       gui=NONE guibg=#2c2c2c guifg=#ffb30a
-" highlight CandyRed          gui=NONE guibg=#2c2c2c guifg=#ff6666
-" highlight CandySky          gui=NONE guibg=#2c2c2c guifg=#6699ff
-" highlight CandyViolet       gui=NONE guibg=#2c2c2c guifg=#ff13ff
-" highlight CandyWhite        gui=NONE guibg=#2c2c2c guifg=#cccccc
-" highlight CandyYellow       gui=NONE guibg=#2c2c2c guifg=#ffd30a
-" highlight CandyCoral        gui=NONE guibg=#2c2c2c guifg=#f820ff
-" highlight CandyTurquoise    gui=NONE guibg=#2c2c2c guifg=#1bc8c8
-" highlight CandyCrimson      gui=NONE guibg=#2c2c2c guifg=#ff4444
-"
-" " neovim treesitter colors
-" highlight! link TSAnnotation      CandyViolet
-" highlight! link TSAttribute       CandySky
-" highlight! link TSBoolean         Boolean
-" highlight! link TSCharacter       Character
-" highlight! link TSConditional     CandyCoral
-" highlight! link TSConstBuiltin    CandyGreen
-" highlight! link TSConstMacro      CandyViolet
-" highlight! link TSConstant        Constant
-" highlight! link TSConstructor     CandyEmerald
-" highlight! link TSError           Error
-" highlight! link TSException       Exception
-" highlight! link TSField           CandyBlue
-" highlight! link TSFloat           Float
-" highlight! link TSFuncBuiltin     CandySky
-" highlight! link TSFuncMacro       CandySky
-" highlight! link TSFunction        CandyCranberry
-" highlight! link TSInclude         CandyCranberry
-" highlight! link TSKeyword         CandyEmerald
-" highlight! link TSKeywordFunction Keyword
-" highlight! link TSKeywordOperator CandyViolet
-" highlight! link TSLabel           Label
-" highlight! link TSLiteral         CandyYellow
-" highlight! link TSMethod          CandyTurquoise
-" highlight! link TSNamespace       CandyBlue
-" highlight! link TSNone            Normal
-" highlight! link TSNumber          Number
-" highlight! link TSOperator        Operator
-" highlight! link TSParameter       CandyWhite
-" highlight! link TSParameterReference CandyWhite
-" highlight! link TSProperty        Identifier
-" highlight! link TSPunctBracket    CandyOrange
-" highlight! link TSPunctDelimiter  CandyLime
-" highlight! link TSPunctSpecial    Special
-" highlight! link TSRepeat          Repeat
-" highlight! link TSString          String
-" highlight! link TSStringEscape    SpecialChar
-" highlight! link TSStringRegex     String
-" highlight! link TSTag             CandyBlue
-" highlight! link TSTagDelimiter    CandyLime
-" highlight! link TSText            TSNone
-" highlight! link TSTitle           Title
-" highlight! link TSType            Type
-" highlight! link TSTypeBuiltin     Type
-" highlight! link TSURL             Underlined
-" highlight! link TSUnderline       Underlined
-" highlight! link TSVariableBuiltin CandyLime
+source ~/.vim/my/plugins/nvim-treesitter.lua
 '''
 
 [[plugins]]
@@ -534,77 +379,7 @@ call ddc#enable(#{
 [[plugins]]
 repo = 'Shougo/ddc-source-lsp'
 hook_source = '''
-lua << EOF
-local capabilities = require("ddc_source_lsp").make_client_capabilities()
-capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.preselectSupport = true
-capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
-capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
-capabilities.textDocument.completion.completionItem.deprecatedSupport = true
-capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
-capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = {
-        'documentation',
-        'detail',
-        'additionalTextEdits',
-    },
-}
-
-local lspconfig = require'lspconfig'
--- https://zenn.dev/mochi/articles/e6b2735108157c
-lspconfig.denols.setup({
-    root_dir = lspconfig.util.root_pattern("deno.json"),
-    init_options = {
-        lint = true,
-        unstable = true,
-        suggest = {
-            imports = {
-                hosts = {
-                    ["https://deno.land"] = true,
-                    ["https://cdn.nest.land"] = true,
-                    ["https://crux.land"] = true,
-                },
-            },
-        },
-    },
-    capabilities = capabilities,
-})
-lspconfig.ts_ls.setup({
-    root_dir = lspconfig.util.root_pattern("package.json"),
-    capabilities = capabilities,
-})
-lspconfig.rust_analyzer.setup{
-    capabilities = capabilities,
-}
-lspconfig.clangd.setup{capabilities = capabilities}
-lspconfig.intelephense.setup{capabilities = capabilities}
-lspconfig.cmake.setup{capabilities = capabilities}
-lspconfig.gopls.setup{
-    capabilities = capabilities,
-    settings = {
-        gopls = {
-            experimentalPostfixCompletions = true,
-            analyses = {
-                unusedparams = false,
-                shadow = false,
-            },
-            staticcheck = true,
-            hints = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-            },
-        },
-    },
-}
-lspconfig.clojure_lsp.setup{capabilities = capabilities}
-EOF
+source ~/.vim/my/plugins/ddc-source-lsp.lua
 '''
 
 [[plugins]]
