@@ -388,7 +388,7 @@ call ddc#custom#patch_filetype(
       \ )
 
 call ddc#enable(#{
-      \   context_filetype: has('nvim') ? 'treesitter' : 'context_filetype',
+      \   context_filetype: 'treesitter',
       \ })
 '''
 
@@ -506,7 +506,7 @@ call ddu#custom#patch_global({
 call ddu#custom#patch_local('files', {
     \   'uiParams': {
     \     'ff': {
-    \       'split': has('nvim') ? 'floating' : 'horizontal',
+    \       'split': 'floating',
     \     }
     \   },
     \ })
