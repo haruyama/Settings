@@ -94,6 +94,12 @@ hook_source = '''
 source ~/.vim/my/plugins/hop.nvim.lua
 '''
 
+# [[plugins]]
+# repo = 'folke/flash.nvim'
+# hook_source = '''
+# source ~/.vim/my/plugins/flash.nvim.lua
+# '''
+
 [[plugins]]
 repo = 'dense-analysis/ale'
 hook_add = '''
@@ -145,14 +151,20 @@ repo = 'farmergreg/vim-lastplace'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
-[[plugins]]
-repo = 'machakann/vim-sandwich'
-hook_add = '''
-runtime macros/sandwich/keymap/surround.vim
-'''
+# [[plugins]]
+# repo = 'machakann/vim-sandwich'
+# hook_add = '''
+# runtime macros/sandwich/keymap/surround.vim
+# '''
+#
+# [[plugins]]
+# repo = 'Matt-A-Bennett/vim-surround-funk'
 
 [[plugins]]
-repo = 'Matt-A-Bennett/vim-surround-funk'
+repo = 'kylechui/nvim-surround'
+hook_source = '''
+source ~/.vim/my/plugins/nvim-surround.lua
+'''
 
 [[plugins]]
 repo = 'LeafCage/yankround.vim'
@@ -184,9 +196,6 @@ repo = 'guns/vim-sexp'
 
 [[plugins]]
 repo = 'tpope/vim-sexp-mappings-for-regular-people'
-
-[[plugins]]
-repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'rhysd/committia.vim'
@@ -236,6 +245,13 @@ repo = 'nvim-treesitter/nvim-treesitter'
 hook_post_update = 'TSUpdate'
 hook_source = '''
 source ~/.vim/my/plugins/nvim-treesitter.lua
+'''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-textobjects'
+depends = 'nvim-treesitter'
+hook_source = '''
+source ~/.vim/my/plugins/nvim-treesitter-textobjects.lua
 '''
 
 [[plugins]]

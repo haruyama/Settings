@@ -13,4 +13,3 @@ end, {remap=true})
 vim.keymap.set('', 'T', function()
   hop.hint_char1({ current_line_only = false, hint_offset = 1 })
 end, {remap=true})
-
