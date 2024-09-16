@@ -4,12 +4,7 @@ repo = 'tani/vim-jetpack'
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_source = '''
-let g:lightline = {
-    \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'relativepath' ] ],
-        \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
-            \ },
-    \ }
+source ~/.vim/my/plugins/lightline.vim.vim
 '''
 
 [[plugins]]
@@ -22,21 +17,7 @@ colorscheme neon
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 hook_add = '''
-let g:context_filetype#filetypes = {
-      \ 'html': [
-      \   {
-      \     'start' : '^\s*<script type="application/x-go">',
-      \     'end' : '^\s*</script>',
-      \     'filetype' : 'go',
-      \   },
-      \   {
-      \     'start' : '^\s*<style>',
-      \     'end' : '^\s*</style>',
-      \     'filetype' : 'css',
-      \   },
-      \ ],
-      \ 'vue': [],
-      \}
+source ~/.vim/my/plugins/context_filetype.vim.vim
 '''
 
 [[plugins]]
@@ -47,33 +28,13 @@ depends = ['context_filetype.vim']
 repo = 'cohama/lexima.vim'
 depends = ['pum']
 hook_source = '''
-let g:lexima_no_default_rules = 0
-let g:lexima_accept_pum_with_enter = 0
-call lexima#set_default_rules()
-inoremap <silent><expr> <CR> pum#visible() ? "\<Cmd>call pum#map#confirm()\<CR>" :
-	      \ "\<C-r>=lexima#expand('<LT>CR>', 'i')\<CR>"
+source ~/.vim/my/plugins/lexima.vim.vim
 '''
 
 [[plugins]]
 repo = 'Shougo/pum.vim'
 hook_source = '''
-call pum#set_option({
-      \  'auto_select':  v:true,
-      \})
-inoremap <PageDown> <Cmd>call pum#map#insert_relative_page(+1)<CR>
-inoremap <PageUp>   <Cmd>call pum#map#insert_relative_page(-1)<CR>
-inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1, 'empty')<CR>
-inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
-inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
-inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
-inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
-inoremap <C-o>   <Cmd>call pum#map#confirm_word()<CR>
-inoremap <Home>  <Cmd>call pum#map#insert_relative(-9999, 'ignore')<CR>
-inoremap <End>   <Cmd>call pum#map#insert_relative(+9999, 'ignore')<CR>
-inoremap <C-g>   <Cmd>call pum#set_option(#{
-      \   preview: !pum#_options().preview,
-      \ })<CR>
-inoremap <C-t>   <C-v><Tab>
+source ~/.vim/my/plugins/pum.vim.vim
 '''
 
 # [[plugins]]
@@ -103,41 +64,13 @@ source ~/.vim/my/plugins/hop.nvim.lua
 [[plugins]]
 repo = 'dense-analysis/ale'
 hook_add = '''
-let g:ale_linters = {
-\}
-" \   'c': ['cpplint'],
-" \   'cpp': ['cpplint'],
-" \   'javascript': ['biome'],
-" \   'typescript': ['biome'],
-" \   'go': ['go build', 'go vet'],
-" \   'html': ['alex', 'htmlhint', 'proselint', 'write-good'],
-" \   'python': ['flake8', 'pycodestle', 'pyright'],
-" \   'rust': ['cargo'],
-nnoremap <silent> <leader>an :ALENextWrap<cr>
-nnoremap <silent> <leader>ap :ALEPreviousWrap<cr>
-let g:ale_go_bingo_executable = 'gopls'
-let g:ale_javascript_eslint_suppress_missing_config = 1
-let g:ale_python_mypy_options = '--ignore-missing-imports'
-let g:ale_cmake_cmakelint_options = '--filter=-readability/wonkycase,-linelength'
-let g:ale_cpp_cpplint_options = '--linelength=120 --filter=-build/include_subdir,-legal/copyright,-build/c++11,-whitespace/braces'
-let g:ale_php_phpcs_options = '--exclude=Generic.Files.LineLength'
+source ~/.vim/my/plugins/ale.vim
 '''
-# \   'go': ['go build', 'gosimple', 'go vet', 'staticcheck'],
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = '''
-let g:quickrun_config = {
-\    "octave" : {
-\       "command" : "octave",
-\       "cmdopt"  : "--silent",
-\   },
-\    "ceylon" : {
-\       "command" : "ceylon",
-\       "cmdopt"  : "compile",
-\   },
-\}
-nnoremap <silent> <leader>r :QuickRun<cr>
+source ~/.vim/my/plugins/vim-quickrun.vim
 '''
 
 [[plugins]]
@@ -204,24 +137,7 @@ repo = 'rhysd/committia.vim'
 [[plugins]]
 repo = 'janko-m/vim-test'
 hook_add = '''
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>f :TestFile<CR>
-nmap <silent> <leader>s :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-
-let g:test#python#pytest#options = {
-  \ 'nearest': '-v',
-  \ 'file':    '-v',
-  \ 'suite':   '-v',
-\}
-let g:test#go#gotest#options = {
-  \ 'nearest': '-v',
-  \ 'file':    '-v',
-  \ 'suite':   '-v',
-\}
-
-let g:test#javascript#jest#executable = 'npx jest'
+source ~/.vim/my/plugins/vim-test.vim
 '''
 
 [[plugins]]
@@ -296,15 +212,7 @@ on_source = 'ddc.vim'
 repo = 'matsui54/ddc-dictionary'
 on_source = 'ddc.vim'
 hook_source = '''
-call ddc#custom#patch_global('sourceParams', {
-      \ 'dictionary': {'dictPaths': 
-      \ [
-      \ '/usr/share/dict/words',
-      \ ],
-      \ 'dictionary': {'mark': 'D'},
-      \ 'smartCase': v:true,
-      \ }
-      \ })
+source ~/.vim/my/plugins/ddc-dictionary.vim
 '''
 
 [[plugins]]
@@ -343,52 +251,7 @@ repo = 'Shougo/ddc.vim'
 depends = ['context_filetype.vim', 'denops.vim', 'ddc-source-lsp']
 on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
-" <TAB>: completion.
-inoremap <silent><expr> <TAB>
-\ pumvisible() ? '<C-n>' :
-\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-\ '<TAB>' : ddc#map#manual_complete()
-
-" <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
-inoremap <silent><expr> <C-l> ddc#map#complete_common_string()
-
-call ddc#custom#patch_global(
-      \ 'sources', ['around', 'lsp', 'dictionary', 'vsnip']
-      \ )
-call ddc#custom#patch_global('ui', 'pum')
-
-call ddc#custom#patch_global('sourceOptions', {
-    \ '_': {
-    \   'matchers': ['matcher_head'],
-    \   'sorters': ['sorter_rank'],
-    \   'converters': ['converter_remove_overlap'],
-    \ },
-    \ 'around': {
-    \   'mark': 'A',
-    \   'matchers': ['matcher_head', 'matcher_length'],
-    \ },
-    \ 'lsp': {
-    \   'mark': 'lsp', 
-    \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-    \  },
-    \  'vsnip': #{
-    \     mark: 'vsnip',
-    \   },
-    \ })
-call ddc#custom#patch_global('sourceParams', #{
-    \   lsp: #{
-    \     enableResolveItem: v:true,
-    \     enableAdditionalTextEdit: v:true,
-    \   },
-    \ })
-call ddc#custom#patch_filetype(
-    \   ['vim', 'toml'], 'sources', ['around']
-    \ )
-
-call ddc#enable(#{
-    \   context_filetype: 'treesitter',
-    \ })
+source ~/.vim/my/plugins/ddc.vim.vim
 '''
 
 [[plugins]]
@@ -420,151 +283,10 @@ repo = 'Shougo/ddu.vim'
 depends = 'denops.vim'
 on_source = 'denops.vim'
 hook_add = '''
-  " nnoremap <silent> / <Cmd>Ddu
-  " \ -name=search line
-  " \ -ui-param-startFilter=v:true<CR>
-  " nnoremap <silent> * <Cmd>Ddu
-  " \ -name=search line -input=`expand('<cword>')`
-  " \ -ui-param-startFilter=v:false<CR>
-  " nnoremap <silent> n <Cmd>Ddu
-  " \ -name=search -resume -refresh<CR>
-  nnoremap <silent> ,ua
-  \ <Cmd>Ddu -name=files file_rec<CR>
-  nnoremap <silent> ,ub
-  \ <Cmd>Ddu -name=files buffer<CR>
-  nnoremap <silent> ,uu
-  \ <Cmd>Ddu -name=files mr<CR>
-  nnoremap <silent> ,uc
-  \ <Cmd>Ddu -name=files -source-param-current=true mr<CR>
-  nnoremap <silent> ,uw
-  \ <Cmd>Ddu -name=files -source-param-kind=mrw mr<CR>
-  nnoremap <silent> ,ug
-  \ <Cmd>Ddu -name=files -source-param-kind=mrr mr<CR>
+source ~/.vim/my/plugins/ddu.vim.add.vim
 '''
 hook_source = '''
-call ddu#custom#patch_global({
-    \   'ui': 'filer',
-    \   'sources': [{'name': 'file', 'params': {}}],
-    \   'sourceOptions': {
-    \     '_': {
-    \       'ignoreCase': v:true,
-    \       'matchers': ['matcher_substring'],
-    \     },
-    \     'file_old': {
-    \       'matchers': [
-    \         'matcher_substring', 'matcher_relative', 'matcher_hidden',
-    \       ],
-    \     },
-    \     'file_external': {
-    \       'matchers': [
-    \         'matcher_substring', 'matcher_hidden',
-    \       ],
-    \     },
-    \     'file_rec': {
-    \       'matchers': [
-    \         'matcher_substring', 'matcher_hidden',
-    \       ],
-    \     'path': expand('%:p:h'),
-    \     },
-    \     'dein': {
-    \       'defaultAction': 'cd',
-    \     },
-    \   },
-    \   'sourceParams': {
-    \     'file_external': {
-    \       'cmd': ['git', 'ls-files', '-co', '--exclude-standard'],
-    \     },
-    \   },
-    \   'uiParams': {
-    \     'ff': {
-    \       'filterSplitDirection': 'floating',
-    \     }
-    \   },
-    \   'kindOptions': {
-    \     'file': {
-    \       'defaultAction': 'open',
-    \     },
-    \     'word': {
-    \       'defaultAction': 'append',
-    \     },
-    \     'deol': {
-    \       'defaultAction': 'switch',
-    \     },
-    \     'action': {
-    \       'defaultAction': 'do',
-    \     },
-    \   },
-    \   'filterParams': {
-    \     'matcher_substring': {
-    \       'highlightMatched': 'Search',
-    \     },
-    \   }
-    \ })
-call ddu#custom#patch_local('files', {
-    \   'uiParams': {
-    \     'ff': {
-    \       'split': 'floating',
-    \     }
-    \   },
-    \ })
-
-"call ddu#custom#action('kind', 'file', 'test',
-"    \ { args -> execute('let g:foo = 1') })
-"call ddu#custom#action('source', 'file_old', 'test2',
-"    \ { args -> execute('let g:bar = 1') })
-
-nnoremap <buffer> <CR>
-\ <Cmd>call ddu#ui#do_action('itemAction')<CR>
-nnoremap <buffer> <Space>
-\ <Cmd>call ddu#ui#do_action('toggleSelectItem')<CR>
-nnoremap <buffer> i
-\ <Cmd>call ddu#ui#do_action('openFilterWindow')<CR>
-nnoremap <buffer> <C-l>
-\ <Cmd>call ddu#ui#do_action('refreshItems')<CR>
-nnoremap <buffer> p
-\ <Cmd>call ddu#ui#do_action('preview')<CR>
-nnoremap <buffer> q
-\ <Cmd>call ddu#ui#do_action('quit')<CR>
-nnoremap <buffer> a
-\ <Cmd>call ddu#ui#do_action('chooseAction')<CR>
-nnoremap <buffer> c
-\ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'cd'})<CR>
-nnoremap <buffer> d
-\ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'delete'})<CR>
-nnoremap <buffer> e
-\ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'edit'})<CR>
-nnoremap <buffer> E
-\ <Cmd>call ddu#ui#do_action('itemAction',
-\ {'params': eval(input('params: '))})<CR>
-nnoremap <buffer> v
-\ <Cmd>call ddu#ui#do_action('itemAction',
-\ {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
-nnoremap <buffer> N
-\ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'new'})<CR>
-nnoremap <buffer> r
-\ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'quickfix'})<CR>
-nnoremap <buffer> u
-\ <Cmd>call ddu#ui#do_action('updateOptions', {
-\   'sourceOptions': {
-\     '_': {
-\       'matchers': [],
-\     },
-\   },
-\ })<CR>
-
-
-function! s:ddu_my_settings() abort
-  nnoremap <buffer><silent> <CR>
-        \ <Cmd>call ddu#ui#do_action('itemAction')<CR>
-  nnoremap <buffer><silent> <Space>
-        \ <Cmd>call ddu#ui#do_action('toggleSelectItem')<CR>
-  nnoremap <buffer> o
-        \ <Cmd>call ddu#ui#do_action('expandItem',
-        \ {'mode': 'toggle'})<CR>
-  nnoremap <buffer><silent> q
-        \ <Cmd>call ddu#ui#do_action('quit')<CR>
-endfunction
-autocmd FileType ddu-filer call s:ddu_my_settings()
+source ~/.vim/my/plugins/ddu.vim.source.vim
 '''
 
 [[plugins]]
