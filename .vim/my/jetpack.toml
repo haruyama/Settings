@@ -192,11 +192,11 @@ let g:mr_disable_warning = 1
 [[plugins]]
 repo = 'haya14busa/is.vim'
 
-[[plugins]]
-repo = 'guns/vim-sexp'
+# [[plugins]]
+# repo = 'guns/vim-sexp'
 
-[[plugins]]
-repo = 'tpope/vim-sexp-mappings-for-regular-people'
+# [[plugins]]
+# repo = 'tpope/vim-sexp-mappings-for-regular-people'
 
 [[plugins]]
 repo = 'rhysd/committia.vim'
