@@ -137,6 +137,7 @@ let g:quickrun_config = {
 \       "cmdopt"  : "compile",
 \   },
 \}
+nnoremap <silent> <leader>r :QuickRun<cr>
 '''
 
 [[plugins]]
