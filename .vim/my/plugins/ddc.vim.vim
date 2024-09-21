@@ -29,6 +29,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \  },
       \  'vsnip': #{
       \     mark: 'vsnip',
+      \     dup: v:true,
       \   },
       \ })
 call ddc#custom#patch_global('sourceParams', #{
