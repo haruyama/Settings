@@ -37,12 +37,6 @@ hook_source = '''
 source ~/.vim/my/plugins/pum.vim.vim
 '''
 
-# [[plugins]]
-# repo = 'tomtom/tcomment_vim'
-# hook_add = '''
-# vnoremap <silent> <leader>x :TComment<cr>
-# '''
-
 [[plugins]]
 repo = 'numToStr/Comment.nvim'
 hook_source = '''
@@ -54,12 +48,6 @@ repo = 'smoka7/hop.nvim'
 hook_source = '''
 source ~/.vim/my/plugins/hop.nvim.lua
 '''
-
-# [[plugins]]
-# repo = 'folke/flash.nvim'
-# hook_source = '''
-# source ~/.vim/my/plugins/flash.nvim.lua
-# '''
 
 [[plugins]]
 repo = 'dense-analysis/ale'
@@ -85,15 +73,6 @@ repo = 'farmergreg/vim-lastplace'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
-# [[plugins]]
-# repo = 'machakann/vim-sandwich'
-# hook_add = '''
-# runtime macros/sandwich/keymap/surround.vim
-# '''
-#
-# [[plugins]]
-# repo = 'Matt-A-Bennett/vim-surround-funk'
-
 [[plugins]]
 repo = 'kylechui/nvim-surround'
 hook_source = '''
@@ -117,6 +96,9 @@ let g:yankround_max_history = 50
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
+repo = 'wsdjeg/vim-fetch'
+
+[[plugins]]
 repo = 'lambdalisue/mr.vim'
 hook_source = '''
 let g:mr_disable_warning = 1
@@ -124,12 +106,6 @@ let g:mr_disable_warning = 1
 
 [[plugins]]
 repo = 'haya14busa/is.vim'
-
-# [[plugins]]
-# repo = 'guns/vim-sexp'
-
-# [[plugins]]
-# repo = 'tpope/vim-sexp-mappings-for-regular-people'
 
 [[plugins]]
 repo = 'rhysd/committia.vim'
@@ -186,11 +162,6 @@ hook_source = '''
 [[plugins]]
 repo = 'Shougo/ddc-source-around'
 on_source = 'ddc.vim'
-
-# [[plugins]]
-# repo = 'Shougo/ddc-source-zsh'
-# on_ft = 'zsh'
-# depends = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc-matcher_head'
