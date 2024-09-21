@@ -141,6 +141,10 @@ source ~/.vim/my/plugins/nvim-treesitter.lua
 '''
 
 [[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-context'
+depends = 'nvim-treesitter'
+
+[[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter-textobjects'
 depends = 'nvim-treesitter'
 hook_source = '''
