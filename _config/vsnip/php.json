@@ -1,0 +1,10 @@
+{
+  "DB Query Log": {
+    "prefix": ["dblog", "querylog"],
+    "body": [
+      "\\DB::enableQueryLog();",
+      "dump(\\DB::getQueryLog());"
+    ],
+    "description": "Enable DB query log and dump the results"
+  }
+}

@@ -16,6 +16,7 @@ init: asdf git
 	mkdir -p ~/.config/nvim
 	ln -fs ~/lib/Settings/_config/nvim/init.vim ~/.config/nvim/init.vim
 	ln -fs ~/.vim/after ~/.config/nvim/after
+	ln -fs ~/lib/Settings/_config/vsnip ~/.config/vsnip
 
 git:
 	mkdir -p ~/.config/git

@@ -239,6 +239,9 @@ let g:vista_default_executive = 'nvim_lsp'
 
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
+hook_source = '''
+let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + [ expand('~/.config/vsnip') ]
+'''
 
 [[plugins]]
 repo = 'uga-rosa/ddc-source-vsnip'
@@ -246,7 +249,7 @@ repo = 'uga-rosa/ddc-source-vsnip'
 [[plugins]]
 repo = 'rafamadriz/friendly-snippets'
 hook_source = '''
-let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + globpath(&runtimepath, 'friendly-snippets', 1, 1)
+let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + [ '~/.local/share/nvim/site/pack/jetpack/opt/friendly-snippets/snippets' ]
 '''
 
 [[plugins]]
