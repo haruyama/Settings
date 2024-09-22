@@ -61,11 +61,11 @@ hook_add = '''
 source ~/.vim/my/plugins/vim-quickrun.vim
 '''
 
-[[plugins]]
-repo = 'roxma/vim-paste-easy'
-hook_add = '''
-let g:paste_char_threshold=8
-'''
+# [[plugins]]
+# repo = 'roxma/vim-paste-easy'
+# hook_add = '''
+# let g:paste_char_threshold=8
+# '''
 
 [[plugins]]
 repo = 'farmergreg/vim-lastplace'
