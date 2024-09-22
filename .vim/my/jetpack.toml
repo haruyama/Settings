@@ -104,8 +104,14 @@ hook_source = '''
 let g:mr_disable_warning = 1
 '''
 
+# [[plugins]]
+# repo = 'haya14busa/is.vim'
+
 [[plugins]]
-repo = 'haya14busa/is.vim'
+repo = 'kevinhwang91/nvim-hlslens'
+hook_source = '''
+source ~/.vim/my/plugins/nvim-hlslens.lua
+'''
 
 [[plugins]]
 repo = 'rhysd/committia.vim'
