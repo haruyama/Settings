@@ -45,6 +45,7 @@
     "lspconfig",
     "mlkem",
     "mypy",
+    "nihongo",
     "nnoremap",
     "noremap",
     "noinsert",
