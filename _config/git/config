@@ -29,7 +29,7 @@
 [merge]
 	conflictStyle = diff3
 [pager]
-  grep = false
+	grep = false
 [pull]
 	rebase = false
 [rerere]
