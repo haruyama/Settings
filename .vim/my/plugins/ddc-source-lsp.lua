@@ -67,4 +67,5 @@ lspconfig.gopls.setup{
     },
 }
 lspconfig.clojure_lsp.setup{capabilities = capabilities}
+lspconfig.pyright.setup{capabilities = capabilities}
 

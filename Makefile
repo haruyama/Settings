@@ -41,7 +41,7 @@ lsp_update:
 lsp_install:
 	go install golang.org/x/tools/gopls@latest
 	# npm i -g vls javascript-typescript-langserver purescript-language-server typescript-language-server
-	pipx install python-language-server
+	pipx install pyright
 	pipx install pyls-black
 	pipx install cmake-language-server
 	npm install -g intelephense
