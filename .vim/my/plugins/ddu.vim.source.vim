@@ -69,49 +69,52 @@ call ddu#custom#patch_local('files', {
 "call ddu#custom#action('source', 'file_old', 'test2',
 "    \ { args -> execute('let g:bar = 1') })
 
-nnoremap <buffer> <CR>
-      \ <Cmd>call ddu#ui#do_action('itemAction')<CR>
-nnoremap <buffer> <Space>
-      \ <Cmd>call ddu#ui#do_action('toggleSelectItem')<CR>
-nnoremap <buffer> i
-      \ <Cmd>call ddu#ui#do_action('openFilterWindow')<CR>
-nnoremap <buffer> <C-l>
-      \ <Cmd>call ddu#ui#do_action('refreshItems')<CR>
-nnoremap <buffer> p
-      \ <Cmd>call ddu#ui#do_action('preview')<CR>
-nnoremap <buffer> q
-      \ <Cmd>call ddu#ui#do_action('quit')<CR>
-nnoremap <buffer> a
-      \ <Cmd>call ddu#ui#do_action('chooseAction')<CR>
-nnoremap <buffer> c
-      \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'cd'})<CR>
-nnoremap <buffer> d
-      \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'delete'})<CR>
-nnoremap <buffer> e
-      \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'edit'})<CR>
-nnoremap <buffer> E
-      \ <Cmd>call ddu#ui#do_action('itemAction',
-      \ {'params': eval(input('params: '))})<CR>
-nnoremap <buffer> v
-      \ <Cmd>call ddu#ui#do_action('itemAction',
-      \ {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
-nnoremap <buffer> N
-      \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'new'})<CR>
-nnoremap <buffer> r
-      \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'quickfix'})<CR>
-nnoremap <buffer> u
-      \ <Cmd>call ddu#ui#do_action('updateOptions', {
-      \   'sourceOptions': {
-      \     '_': {
-      \       'matchers': [],
-      \     },
-      \   },
-      \ })<CR>
+" nnoremap <buffer> <CR>
+"       \ <Cmd>call ddu#ui#do_action('itemAction')<CR>
+" nnoremap <buffer> <Space>
+"       \ <Cmd>call ddu#ui#do_action('toggleSelectItem')<CR>
+" nnoremap <buffer> i
+"       \ <Cmd>call ddu#ui#do_action('openFilterWindow')<CR>
+" nnoremap <buffer> <C-l>
+"       \ <Cmd>call ddu#ui#do_action('refreshItems')<CR>
+" nnoremap <buffer> p
+"       \ <Cmd>call ddu#ui#do_action('preview')<CR>
+" nnoremap <buffer> q
+"       \ <Cmd>call ddu#ui#do_action('quit')<CR>
+" nnoremap <buffer> a
+"       \ <Cmd>call ddu#ui#do_action('chooseAction')<CR>
+" nnoremap <buffer> c
+"       \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'cd'})<CR>
+" nnoremap <buffer> d
+"       \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'delete'})<CR>
+" nnoremap <buffer> e
+"       \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'edit'})<CR>
+" nnoremap <buffer> E
+"       \ <Cmd>call ddu#ui#do_action('itemAction',
+"       \ {'params': eval(input('params: '))})<CR>
+" nnoremap <buffer> v
+"       \ <Cmd>call ddu#ui#do_action('itemAction',
+"       \ {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
+" nnoremap <buffer> N
+"       \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'new'})<CR>
+" nnoremap <buffer> r
+"       \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'quickfix'})<CR>
+" nnoremap <buffer> u
+"       \ <Cmd>call ddu#ui#do_action('updateOptions', {
+"       \   'sourceOptions': {
+"       \     '_': {
+"       \       'matchers': [],
+"       \     },
+"       \   },
+"       \ })<CR>
 
 
 function! s:ddu_my_settings() abort
+  " nnoremap <buffer><silent> <CR>
+  "       \ <Cmd>call ddu#ui#do_action('itemAction')<CR>
   nnoremap <buffer><silent> <CR>
-        \ <Cmd>call ddu#ui#do_action('itemAction')<CR>
+        \ <Cmd>call ddu#ui#do_action('itemAction',
+        \ {'name': 'open', 'params': {'command': 'split'}})<CR>
   nnoremap <buffer><silent> <Space>
         \ <Cmd>call ddu#ui#do_action('toggleSelectItem')<CR>
   nnoremap <buffer> o
