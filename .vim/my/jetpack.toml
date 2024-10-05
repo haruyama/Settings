@@ -190,41 +190,14 @@ repo = 'Shougo/ddc-matcher_length'
 on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'matsui54/ddc-dictionary'
+repo = 'matsui54/ddc-source-dictionary'
 on_source = 'ddc.vim'
 hook_source = '''
-source ~/.vim/my/plugins/ddc-dictionary.vim
+source ~/.vim/my/plugins/ddc-source-dictionary.vim
 '''
 
 [[plugins]]
-repo = 'Shougo/ddc-ui-native'
-on_source = 'ddc.vim'
-
-[[plugins]]
 repo = 'Shougo/ddc-ui-pum'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-ui-inline'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-ui-none'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-source-cmdline'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-source-cmdline-history'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-source-omni'
-
-[[plugins]]
-repo = 'matsui54/ddc-buffer'
 on_source = 'ddc.vim'
 
 [[plugins]]

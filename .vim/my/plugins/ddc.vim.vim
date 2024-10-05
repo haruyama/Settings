@@ -27,6 +27,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'mark': 'lsp', 
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
       \  },
+      \ 'dictionary': {'mark': 'D'},
       \  'vsnip': #{
       \     mark: 'vsnip',
       \     dup: v:true,

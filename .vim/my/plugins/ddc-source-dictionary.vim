@@ -3,7 +3,7 @@ call ddc#custom#patch_global('sourceParams', {
       \ [
       \ '/usr/share/dict/words',
       \ ],
-      \ 'dictionary': {'mark': 'D'},
       \ 'smartCase': v:true,
+      \ 'isVolatile': v:true,
       \ }
       \ })
