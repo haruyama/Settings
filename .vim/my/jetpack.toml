@@ -261,42 +261,10 @@ depends = 'ddu.vim'
 on_cmd = 'Ddu'
 
 [[plugins]]
-repo = 'Shougo/ddu-ui-ff'
-on_source = 'ddu.vim'
-
-[[plugins]]
-repo = 'Shougo/ddu-source-file'
-on_source = 'ddu.vim'
-
-[[plugins]]
 repo = 'Shougo/ddu-source-file_rec'
 on_source = 'ddu.vim'
 
-[[plugins]]
-repo = 'Shougo/ddu-source-file_old'
-on_source = 'ddu.vim'
-
-[[plugins]]
-repo = 'Shougo/ddu-source-file_point'
-on_source = 'ddu.vim'
-
-[[plugins]]
-repo = 'Shougo/ddu-source-line'
-on_source = 'ddu.vim'
-
-[[plugins]]
-repo = 'Shougo/ddu-source-register'
-on_source = 'ddu.vim'
-
-[[plugins]]
-repo = 'Shougo/ddu-source-action'
-on_source = 'ddu.vim'
-
-[[plugins]]
-repo = 'matsui54/ddu-source-file_external'
-on_source = 'ddu.vim'
-
-[[plugins]]
+[[[[plugins]]
 repo = 'shun/ddu-source-buffer'
 on_source = 'ddu.vim'
 

@@ -56,13 +56,13 @@ call ddu#custom#patch_global({
       \     },
       \   }
       \ })
-call ddu#custom#patch_local('files', {
-      \   'uiParams': {
-      \     'ff': {
-      \       'split': 'floating',
-      \     }
-      \   },
-      \ })
+" call ddu#custom#patch_local('files', {
+"       \   'uiParams': {
+"       \     'ff': {
+"       \       'split': 'floating',
+"       \     }
+"       \   },
+"       \ })
 
 "call ddu#custom#action('kind', 'file', 'test',
 "    \ { args -> execute('let g:foo = 1') })
