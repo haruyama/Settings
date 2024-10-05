@@ -24,12 +24,20 @@ source ~/.vim/my/plugins/context_filetype.vim.vim
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
 
+# [[plugins]]
+# repo = 'cohama/lexima.vim'
+# depends = ['pum']
+# hook_source = '''
+# source ~/.vim/my/plugins/lexima.vim.vim
+# '''
+
 [[plugins]]
-repo = 'cohama/lexima.vim'
+repo = 'windwp/nvim-autopairs'
 depends = ['pum']
 hook_source = '''
-source ~/.vim/my/plugins/lexima.vim.vim
+source ~/.vim/my/plugins/nvim-autopairs.vim.lua
 '''
+
 
 [[plugins]]
 repo = 'Shougo/pum.vim'
