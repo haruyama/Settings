@@ -33,24 +33,27 @@ gtk3:
 tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-lsp_update:
+tool_update: lsp_update go_tool_install
+
+tool_install: lsp_install go_tool_install
+	pipx install flake8
+
+go_tool_install:
+	go install golang.org/x/tools/cmd/goimports@latest
 	go install golang.org/x/tools/gopls@latest
+	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b ${GOPATH}/bin latest
+
+lsp_update:
 	pipx upgrade-all
-	npm update -g intelephense
+	npm update -g intelephense javascript-typescript-langserver typescript-language-server
 
 lsp_install:
-	go install golang.org/x/tools/gopls@latest
-	# npm i -g vls javascript-typescript-langserver purescript-language-server typescript-language-server
 	pipx install pyright
-	pipx install pyls-black
 	pipx install cmake-language-server
-	npm install -g intelephense
-#	rm -rf ~/src/zls && mkdir ~/src/zls && cd ~/src/zls && curl -L https://github.com/zigtools/zls/releases/download/0.9.0/x86_64-linux.tar.xz | tar -xJ --strip-components=1 -C . && chmod 700 zls && cp zls ~/bin/
 
 asdf:
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 	cd ~/.asdf && git checkout "`git describe --abbrev=0 --tags`"
-
 
 asdf_plugin:
 	asdf plugin add zig
