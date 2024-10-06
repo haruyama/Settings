@@ -1,7 +1,9 @@
 ASDF_VIM_CONFIG="--with-tlib=ncurses --with-compiledby=asdf --enable-multibyte --enable-cscope --enable-terminal --enable-perlinterp --enable-rubyinterp --enable-python3interp --enable-luainterp --enable-gui=gtk3"
 
-update: asdf_update asdf_install
-	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack
+
+update: asdf_update asdf_install tool_update
+#	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
 
 init: asdf git
 	ln -fs ~/lib/Settings/.[A-Z0-9a-z]* ~/
@@ -57,7 +59,7 @@ asdf:
 
 asdf_plugin:
 	asdf plugin add zig
-	asdf plugin add vim
+	# asdf plugin add vim
 	asdf plugin add neovim
 	asdf plugin add deno https://github.com/asdf-community/asdf-deno.git
 	asdf plugin add nim https://github.com/asdf-community/asdf-nim
@@ -77,7 +79,7 @@ asdf_install:
 	asdf install nim latest && asdf global nim "`asdf latest nim`"
 	asdf install deno latest && asdf global deno "`asdf latest deno`"
 	asdf install neovim nightly && asdf global neovim nightly
-	env ASDF_VIM_CONFIG=${ASDF_VIM_CONFIG} asdf install vim latest && asdf global vim "`asdf latest vim`"
+	# env ASDF_VIM_CONFIG=${ASDF_VIM_CONFIG} asdf install vim latest && asdf global vim "`asdf latest vim`"
 	asdf install zig latest && asdf global zig "`asdf latest zig`"
 
 asdf_update:
