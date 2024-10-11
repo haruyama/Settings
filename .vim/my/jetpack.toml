@@ -101,9 +101,6 @@ let g:yankround_max_history = 50
 '''
 
 [[plugins]]
-repo = 'editorconfig/editorconfig-vim'
-
-[[plugins]]
 repo = 'wsdjeg/vim-fetch'
 
 [[plugins]]
