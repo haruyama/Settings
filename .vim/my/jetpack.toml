@@ -24,20 +24,12 @@ source ~/.vim/my/plugins/context_filetype.vim.vim
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
 
-# [[plugins]]
-# repo = 'cohama/lexima.vim'
-# depends = ['pum']
-# hook_source = '''
-# source ~/.vim/my/plugins/lexima.vim.vim
-# '''
-
 [[plugins]]
 repo = 'windwp/nvim-autopairs'
 depends = ['pum']
 hook_source = '''
 source ~/.vim/my/plugins/nvim-autopairs.vim.lua
 '''
-
 
 [[plugins]]
 repo = 'Shougo/pum.vim'
@@ -68,12 +60,6 @@ repo = 'thinca/vim-quickrun'
 hook_add = '''
 source ~/.vim/my/plugins/vim-quickrun.vim
 '''
-
-# [[plugins]]
-# repo = 'roxma/vim-paste-easy'
-# hook_add = '''
-# let g:paste_char_threshold=8
-# '''
 
 [[plugins]]
 repo = 'farmergreg/vim-lastplace'
@@ -108,9 +94,6 @@ repo = 'lambdalisue/mr.vim'
 hook_source = '''
 let g:mr_disable_warning = 1
 '''
-
-# [[plugins]]
-# repo = 'haya14busa/is.vim'
 
 [[plugins]]
 repo = 'kevinhwang91/nvim-hlslens'
