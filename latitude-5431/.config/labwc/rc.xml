@@ -27,6 +27,10 @@
       <action name="None" />
     </keybind>
 
+    <keybind key="W-L">
+      <action name="Execute" command="/usr/bin/swaylock -e" />
+    </keybind>
+
     <keybind key="A-E">
       <action name="Execute" command="gnome-terminal" />
     </keybind>
