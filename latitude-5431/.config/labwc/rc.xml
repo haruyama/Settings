@@ -64,6 +64,18 @@
         <action name="ShowMenu" menu="some-custom-menu" />
       </mousebind>
     </context>
+
+    <context name="Title">
+      <mousebind button="Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleShade" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="ShowMenu" menu="client-menu" />
+      </mousebind>
+    </context>
   </mouse>
 
 </labwc_config>
