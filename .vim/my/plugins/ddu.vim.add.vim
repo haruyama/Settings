@@ -1,11 +1,3 @@
-" nnoremap <silent> / <Cmd>Ddu
-" \ -name=search line
-" \ -ui-param-startFilter=v:true<CR>
-" nnoremap <silent> * <Cmd>Ddu
-" \ -name=search line -input=`expand('<cword>')`
-" \ -ui-param-startFilter=v:false<CR>
-" nnoremap <silent> n <Cmd>Ddu
-" \ -name=search -resume -refresh<CR>
 nnoremap <silent> ,ua
       \ <Cmd>Ddu -name=files file_rec<CR>
 nnoremap <silent> ,ub
