@@ -1,20 +1,26 @@
 ASDF_VIM_CONFIG="--with-tlib=ncurses --with-compiledby=asdf --enable-multibyte --enable-cscope --enable-terminal --enable-perlinterp --enable-rubyinterp --enable-python3interp --enable-luainterp --enable-gui=gtk3"
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init bin_init neovim_init
 
 update: asdf_update asdf_install tool_update
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
 
-init: asdf git
+init: asdf git ssh_init bin_init neovim_init
 	ln -fs ~/lib/Settings/.[A-Z0-9a-z]* ~/
 	rm ~/.git ~/.gitignore
-	mkdir -p ~/bin
-	ln -fs ~/lib/Settings/bin/* ~/bin/
+	cp ~/lib/Settings/sample/.zshenv ~
+	cp ~/lib/Settings/sample/.zshrc ~
+
+ssh_init:
 	[ -e ~/.ssh ] || mkdir -m=700 ~/.ssh
 	touch ~/.ssh/config
 	chmod 600 ~/.ssh/config
-	cp ~/lib/Settings/sample/.zshenv ~
-	cp ~/lib/Settings/sample/.zshrc ~
+
+bin_init:
+	mkdir -p ~/bin
+	ln -fs ~/lib/Settings/bin/* ~/bin/
+
+neovim_init:
 	mkdir -p ~/.config/nvim
 	ln -fs ~/lib/Settings/_config/nvim/init.vim ~/.config/nvim/init.vim
 	ln -fs ~/.vim/after ~/.config/nvim/after
