@@ -5,12 +5,12 @@ on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
-\ pumvisible() ? '<C-n>' :
+\ pum#visible() ? '<C-n>' :
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
 \ '<TAB>' : ddc#map#manual_complete()
 
 " <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
+inoremap <expr><S-TAB>  pum#visible() ? '<C-p>' : '<C-h>'
 inoremap <silent><expr> <C-l> ddc#complete_common_string()
 
 call ddc#custom#patch_global(

@@ -7,7 +7,7 @@ set completeopt+=noselect
 
 " <TAB>: completion.
 imap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
+      \ pum#visible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ deoplete#mappings#manual_complete()
 function! s:check_back_space() abort "{{{
@@ -16,7 +16,7 @@ function! s:check_back_space() abort "{{{
 endfunction"}}}
 
 " <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB>  pum#visible() ? "\<C-p>" : "\<C-h>"
 
 " <C-h>, <BS>: close popup and delete backword char.
 "inoremap <expr><C-h> deoplete#mappings#smart_close_popup()."\<C-h>"
@@ -32,7 +32,7 @@ inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<C-h>"
 "  return deoplete#mappings#close_popup() . "\<CR>"
 "endfunction
 
-"inoremap <expr> '  pumvisible() ? deoplete#mappings#close_popup() : "'"
+"inoremap <expr> '  pum#visible() ? deoplete#mappings#close_popup() : "'"
 
 " call deoplete#custom#source('_', 'matchers', ['matcher_head'])
 " call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
