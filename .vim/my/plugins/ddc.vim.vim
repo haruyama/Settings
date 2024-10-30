@@ -11,28 +11,30 @@ inoremap <silent><expr> <C-l> ddc#map#complete_common_string()
 call ddc#custom#patch_global(
       \ 'sources', ['around', 'lsp', 'dictionary', 'vsnip']
       \ )
+
 call ddc#custom#patch_global('ui', 'pum')
 
-call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank'],
-      \   'converters': ['converter_remove_overlap'],
-      \ },
-      \ 'around': {
-      \   'mark': 'A',
-      \   'matchers': ['matcher_head', 'matcher_length'],
-      \ },
-      \ 'lsp': {
-      \   'mark': 'lsp', 
-      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-      \  },
-      \ 'dictionary': {'mark': 'D'},
-      \  'vsnip': #{
+call ddc#custom#patch_global('sourceOptions', #{
+      \   _: #{
+      \     matchers: ['matcher_head'],
+      \     sorters: ['sorter_rank'],
+      \     converters: ['converter_remove_overlap'],
+      \   },
+      \   around: #{
+      \     mark: 'A',
+      \     matchers: ['matcher_head', 'matcher_length'],
+      \   },
+      \   lsp: #{
+      \     mark: 'lsp', 
+      \     forceCompletionPattern: '\.\w*|:\w*|->\w*',
+      \   },
+      \   dictionary: #{mark: 'D'},
+      \   vsnip: #{
       \     mark: 'vsnip',
       \     dup: v:true,
       \   },
       \ })
+
 call ddc#custom#patch_global('sourceParams', #{
       \   lsp: #{
       \     enableResolveItem: v:true,
@@ -46,4 +48,3 @@ call ddc#custom#patch_filetype(
 call ddc#enable(#{
       \   context_filetype: 'treesitter',
       \ })
-
