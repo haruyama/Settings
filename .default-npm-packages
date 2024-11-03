@@ -12,7 +12,6 @@ neovim
 npm-check-updates
 nsp
 prettier
-tern
 textlint
 textlint-rule-max-ten
 textlint-rule-no-mix-dearu-desumasu
