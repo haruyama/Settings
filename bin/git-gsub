@@ -6,4 +6,4 @@ from, to, path, = ARGV
 
 target_files = (`/usr/bin/git grep -l #{from.shellescape} #{path ? path.shellescape : ''}`).each_line.map(&:chomp).join ' '
 
-system %|/bin/sed -i -r 's/#{from.shellescape.gsub('/', '\\/')}/#{to.shellescape.gsub('/', '\\/')}/g' #{target_files}|
+system %|/bin/sed -i s/#{from.shellescape.gsub('/', '\\/')}/#{to.shellescape.gsub('/', '\\/')}/g #{target_files}|
