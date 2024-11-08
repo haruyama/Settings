@@ -1,0 +1,17 @@
+#!/bin/sh
+
+base_branch=$1
+if [ -z "$base_branch" ] ; then
+  echo 'usage: git-delete-merged-branches-with-remote [base_branch]' >&2
+  exit 1
+fi
+
+if ! git show-ref --verify --quiet refs/heads/"$base_branch"
+then
+  echo "error: base branch '$base_branch' not found" >&2
+  exit 1
+fi
+
+git branch --merged "$base_branch"            |
+  xargs -n 1 | grep -Ev "^(\*|$base_branch)$" |
+  xargs -n 1 git branch -d
