@@ -90,7 +90,7 @@ asdf_install:
 	asdf install zig latest && asdf global zig "`asdf latest zig`"
 
 asdf_update:
-	asdf update
+	cd ~/.asdf && git checkout "`git describe --abbrev=0 --tags`"
 	asdf plugin update --all
 
 SKKDIC_DIR=/usr/share/skk
