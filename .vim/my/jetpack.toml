@@ -145,6 +145,10 @@ source ~/.vim/my/plugins/nvim-treesitter-textobjects.lua
 '''
 
 [[plugins]]
+repo = 'andersevenrud/nvim_context_vt'
+depends = 'nvim-treesitter'
+
+[[plugins]]
 repo = 'vim-denops/denops.vim'
 hook_source = '''
 " let g:denops#server#service#deno_args = get(g:,
