@@ -37,8 +37,8 @@ neovim:
 gtk3:
 	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
 
-tmux:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# tmux:
+# 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 tool_update: lsp_update go_tool_install
 
