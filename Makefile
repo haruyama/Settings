@@ -32,7 +32,6 @@ git:
 	git config --global commit.template ~/.config/git/message
 
 neovim:
-	pip3 install pynvim msgpack
 	gem install --user neovim
 
 gtk3:
