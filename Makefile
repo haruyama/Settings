@@ -75,8 +75,6 @@ asdf_plugin:
 	asdf plugin add gohugo
 	asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
 	asdf plugin add nodejs
-	bash -c ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-
 
 asdf_install:
 	asdf install fzf latest && asdf global fzf "`asdf latest fzf`"
