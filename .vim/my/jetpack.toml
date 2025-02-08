@@ -152,6 +152,20 @@ depends = 'nvim-treesitter'
 repo = 'kevinhwang91/nvim-bqf'
 
 [[plugins]]
+repo = 'Wansmer/treesj'
+hook_source = '''
+lua << LUA
+require('treesj').setup({
+  max_join_length = 1280
+  })
+vim.keymap.set('n', '<leader>m', require('treesj').toggle)
+vim.keymap.set('n', '<leader>M', function()
+    require('treesj').toggle({ split = { recursive = true } })
+end)
+LUA
+'''
+
+[[plugins]]
 repo = 'vim-denops/denops.vim'
 hook_source = '''
 " let g:denops#server#service#deno_args = get(g:,
