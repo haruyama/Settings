@@ -9,7 +9,7 @@ inoremap <expr><S-TAB>  pum#visible() ? '<C-p>' : '<C-h>'
 inoremap <silent><expr> <C-l> ddc#map#complete_common_string()
 
 call ddc#custom#patch_global(
-      \ 'sources', ['around', 'lsp', 'dictionary', 'vsnip']
+      \ 'sources', ['around', 'lsp', 'vsnip', 'dictionary'] 
       \ )
 
 call ddc#custom#patch_global('ui', 'pum')
