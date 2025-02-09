@@ -2,7 +2,7 @@
 
 base_branch=$1
 if [ -z "$base_branch" ] ; then
-  echo 'usage: git-delete-merged-branches-with-remote [base_branch]' >&2
+  echo 'usage: git-delete-merged-branches [base_branch]' >&2
   exit 1
 fi
 
