@@ -9,6 +9,7 @@
 #Automatically generated file. Do not edit (see /usr/doc/menu/html/index.html)
 
    [exec] (Gnome Terminal) {/usr/bin/gnome-terminal --hide-menubar}
+   [exec] (QTerminal) {/usr/bin/qterminal}
 
    [config] (Configuration)
    [submenu] (Styles) {}
