@@ -33,5 +33,7 @@ let g:neovide_cursor_animate_command_line = 0
 
 if has('nvim')
   set mouse=
+  let g:clipboard = false
 end
 call setcellwidths([[0x2500, 0x25ff, 1]])
+
