@@ -1,3 +1,4 @@
+// vim: ft=jsonc
 // cSpell Settings
 {
   // Version of the setting file.  Always 0.2
@@ -22,6 +23,7 @@
     "Shougo",
     "SMBC",
     "Suica",
+    "addi",
     "akaze",
     "clangd",
     "cmakelint",

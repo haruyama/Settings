@@ -166,6 +166,9 @@ LUA
 '''
 
 [[plugins]]
+repo = 'neoclide/jsonc.vim'
+
+[[plugins]]
 repo = 'vim-denops/denops.vim'
 hook_source = '''
 " let g:denops#server#service#deno_args = get(g:,
