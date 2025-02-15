@@ -8,3 +8,15 @@ keybind = ctrl+7=goto_tab:7
 keybind = ctrl+8=goto_tab:8
 keybind = ctrl+9=goto_tab:9
 keybind = ctrl+0=goto_tab:10
+
+font-family = "Migu"
+font-size = 16
+
+cursor-style = block
+cursor-style-blink = false
+
+gtk-titlebar = false
+window-decoration = server
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
