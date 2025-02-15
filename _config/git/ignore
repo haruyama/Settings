@@ -108,7 +108,3 @@ docker-compose.override.yml
 phpunit.host.xml
 
 *.jsonl
-
-_ide_helper.php
-.phpstorm.meta.php
-_ide_helper_models.php
