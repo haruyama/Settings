@@ -36,16 +36,7 @@ typeset -xT PYTHONPATH pyhon_path
 typeset -U python_path
 python_path=(./lib)
 
-if type lv > /dev/null 2>&1; then
-        export PAGER="lv"
-else
-        export PAGER="less"
-fi
-if [ "$PAGER" = "lv" ]; then
-        export LV="-c -l"
-else
-        alias lv="$PAGER"
-fi
+export PAGER="less"
 
 [ -z "$ld_library_path" ] && typeset -xT LD_LIBRARY_PATH ld_library_path
 [ -z "$include" ] && typeset -xT INCLUDE include
