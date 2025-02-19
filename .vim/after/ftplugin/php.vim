@@ -7,7 +7,7 @@ set cpo&vim
 
 setl ts=4 sw=4 sts=4 expandtab
 setl omnifunc=phpcomplete#CompletePHP
-setl tags+=./tags.vendors,tags.vendors
+setl iskeyword-=-
 
 augroup after_ftplugin_php
   autocmd! BufWritePre <buffer> :RTrim
