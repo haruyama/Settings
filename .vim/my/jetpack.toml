@@ -181,11 +181,15 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/ddc-source-around'
+repo = 'Shougo/ddc-filter-matcher_head'
 on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-matcher_head'
+repo = 'Shougo/ddc-filter-matcher_length'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-around'
 on_source = 'ddc.vim'
 
 [[plugins]]
@@ -194,10 +198,6 @@ on_source = 'ddc.vim'
 
 [[plugins]]
 repo = 'Shougo/ddc-converter_remove_overlap'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-matcher_length'
 on_source = 'ddc.vim'
 
 [[plugins]]
@@ -284,7 +284,7 @@ repo = 'kuuote/ddu-source-mr'
 on_source = 'ddu.vim'
 
 [[plugins]]
-repo = 'Shougo/ddu-filter-matcher_substring'
+repo = 'Shougo/ddu-filter-matcher_hidden'
 on_source = 'ddu.vim'
 
 [[plugins]]
@@ -292,7 +292,7 @@ repo = 'Shougo/ddu-filter-matcher_relative'
 on_source = 'ddu.vim'
 
 [[plugins]]
-repo = 'Shougo/ddu-filter-matcher_hidden'
+repo = 'Shougo/ddu-filter-matcher_substring'
 on_source = 'ddu.vim'
 
 [[plugins]]
