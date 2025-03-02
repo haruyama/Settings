@@ -10,7 +10,6 @@ let g:ale_linters = {
 " \   'rust': ['cargo'],
 nnoremap <silent> <leader>an :ALENextWrap<cr>
 nnoremap <silent> <leader>ap :ALEPreviousWrap<cr>
-let g:ale_go_bingo_executable = 'gopls'
 let g:ale_javascript_eslint_suppress_missing_config = 1
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 let g:ale_cmake_cmakelint_options = '--filter=-readability/wonkycase,-linelength'
