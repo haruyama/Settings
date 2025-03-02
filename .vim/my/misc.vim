@@ -8,14 +8,6 @@ cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 nnoremap <C-]> g<C-]>
 
-nnoremap <SID>(toggle-number)         :<C-u>set number!<CR>
-nnoremap <SID>(toggle-relativenumber) :<C-u>set relativenumber!<CR>
-nnoremap <SID>(toggle-paste)          :<C-u>set paste!<CR>
-
-nmap <Leader>1 <SID>(toggle-number)
-nmap <Leader>2 <SID>(toggle-relativenumber)
-nmap <Leader>3 <SID>(toggle-paste)
-
 nnoremap <silent> <C-l> :<C-u>nohlsearch<cr><C-l>
 
 augroup vimrc_auto_mkdir
@@ -33,10 +25,6 @@ augroup END
 "hi MatchParen cterm=bold,underline ctermfg=black ctermbg=DarkMagenta gui=bold,underline guifg=black guibg=yellow
 
 let g:eregex_default_enable = 0
-
-let g:ref_clojure_cmd     = ['lein', 'trampoline', 'run', '-m', 'clojure.main']
-let g:ref_clojure_precode = '(use ''[clojure.repl :only (doc find-doc)])'
-let g:ref_javadoc_path    = '/usr/share/doc/openjdk-8-jre-headless/'
 
 let g:textobj_multiblock_blocks = [
 \   [ '(', ')' ],
