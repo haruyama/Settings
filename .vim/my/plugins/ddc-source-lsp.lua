@@ -16,9 +16,24 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 
 local lspconfig = require('lspconfig')
+
+-- https://zenn.dev/catatsumuri/articles/beb6595d295906
+local on_attach = function(client, bufnr)
+    -- キーマッピングでシグネチャヘルプを呼び出す
+    vim.api.nvim_buf_set_keymap(bufnr, "i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
+    -- 自動でシグネチャヘルプを表示
+    vim.cmd([[
+        autocmd CursorHoldI * lua vim.lsp.buf.signature_help()
+    ]])
+
+    if client.supports_method("textDocument/inlayHint") or client.server_capabilities.inlayHintProvider then
+        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    end
+end
+
 -- https://zenn.dev/mochi/articles/e6b2735108157c
 lspconfig.denols.setup({
-    root_dir = lspconfig.util.root_pattern("deno.json"),
+    capabilities = capabilities,
     init_options = {
         lint = true,
         unstable = true,
@@ -32,20 +47,33 @@ lspconfig.denols.setup({
             },
         },
     },
-    capabilities = capabilities,
+    on_attach = on_attach,
+    root_dir = lspconfig.util.root_pattern("deno.json"),
 })
 lspconfig.ts_ls.setup({
-    root_dir = lspconfig.util.root_pattern("package.json"),
     capabilities = capabilities,
+    on_attach = on_attach,
+    root_dir = lspconfig.util.root_pattern("package.json"),
 })
 lspconfig.rust_analyzer.setup{
     capabilities = capabilities,
+    on_attach = on_attach,
+    root_dir = lspconfig.util.root_pattern("Cargo.toml"),
 }
 lspconfig.clangd.setup{capabilities = capabilities}
-lspconfig.intelephense.setup{capabilities = capabilities}
-lspconfig.cmake.setup{capabilities = capabilities}
+lspconfig.intelephense.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    root_dir = lspconfig.util.root_pattern("composer.json", ".git", "."),
+}
+lspconfig.cmake.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    root_dir = lspconfig.util.root_pattern("CMakeLists.txt", ".git", "."),
+}
 lspconfig.gopls.setup{
     capabilities = capabilities,
+    on_attach = on_attach,
     settings = {
         gopls = {
             experimentalPostfixCompletions = true,
@@ -66,5 +94,15 @@ lspconfig.gopls.setup{
         },
     },
 }
-lspconfig.clojure_lsp.setup{capabilities = capabilities}
-lspconfig.pyright.setup{capabilities = capabilities}
+lspconfig.clojure_lsp.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+lspconfig.pyright.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+lspconfig.zls.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
