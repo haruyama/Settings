@@ -123,7 +123,7 @@ xnoremap <silent> <Leader>a :EasyAlign<cr>
 on_cmd = ['EasyAlign']
 
 [[plugins]]
-repo = 'gamoutatsumi/dps-ghosttext.vim'
+repo = 'subnut/nvim-ghost.nvim'
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
