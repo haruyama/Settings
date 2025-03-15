@@ -13,6 +13,7 @@ npm-check-updates
 nsp
 prettier
 textlint
+textlint-filter-rule-comments
 textlint-rule-max-ten
 textlint-rule-no-mix-dearu-desumasu
 textlint-rule-preset-jtf-style
