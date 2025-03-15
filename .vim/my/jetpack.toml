@@ -86,16 +86,9 @@ source ~/.vim/my/plugins/nvim-surround.lua
 '''
 
 [[plugins]]
-repo = 'LeafCage/yankround.vim'
-hook_add = '''
-let g:yankring_history_dir            = $HOME . '/.vim/history'
-let g:yankring_manual_clipboard_check = 1
-
-nmap p <Plug>(yankround-p)
-nmap P <Plug>(yankround-P)
-nmap <C-p> <Plug>(yankround-prev)
-nmap <C-n> <Plug>(yankround-next)
-let g:yankround_max_history = 50
+repo = 'gbprod/yanky.nvim'
+hook_source = '''
+source ~/.vim/my/plugins/yanky.nvim.lua
 '''
 
 [[plugins]]
