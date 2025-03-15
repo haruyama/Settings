@@ -47,9 +47,18 @@ source ~/.vim/my/plugins/Comment.nvim.lua
 '''
 
 [[plugins]]
-repo = 'smoka7/hop.nvim'
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'ggandor/leap.nvim'
 hook_source = '''
-source ~/.vim/my/plugins/hop.nvim.lua
+source ~/.vim/my/plugins/leap.nvim.lua
+'''
+
+[[plugins]]
+repo = 'ggandor/flit.nvim'
+hook_source = '''
+source ~/.vim/my/plugins/flit.nvim.lua
 '''
 
 [[plugins]]
