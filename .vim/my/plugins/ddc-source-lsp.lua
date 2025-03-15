@@ -21,10 +21,6 @@ local lspconfig = require('lspconfig')
 local on_attach = function(client, bufnr)
     -- キーマッピングでシグネチャヘルプを呼び出す
     vim.api.nvim_buf_set_keymap(bufnr, "i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
-    -- 自動でシグネチャヘルプを表示
-    vim.cmd([[
-        autocmd CursorHoldI * lua vim.lsp.buf.signature_help()
-    ]])
 
     if client.supports_method("textDocument/inlayHint") or client.server_capabilities.inlayHintProvider then
         vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
