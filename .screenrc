@@ -1,6 +1,13 @@
+altscreen on
+autodetach on
+cjkwidth off
+defbce on
+defencoding utf8
+defutf8 on
+encoding utf8 utf8
+# hardstatus alwayslastline "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %t%{= wk}%+Lw %{= wk}%=%{= gk} %y/%m/%d %c "
+hardstatus alwayslastline "%{= wk} %-w%{= dd} %n %t* %{-}%+w %= %y/%m/%d %c"
 msgminwait 0
 startup_message off
-autodetach on
-hardstatus alwayslastline "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %t%{= wk}%+Lw %{= wk}%=%{= gk} %y/%m/%d %c "
-cjkwidth off
-term "screen-256color"
+term screen-256color
+vbell off
