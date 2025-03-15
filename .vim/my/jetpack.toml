@@ -11,10 +11,10 @@ source ~/.vim/my/plugins/lualine.nvim.lua
 '''
 
 [[plugins]]
-repo = 'rafamadriz/neon'
+repo = 'folke/tokyonight.nvim'
 hook_source = '''
 set termguicolors
-colorscheme neon
+colorscheme tokyonight-night
 '''
 
 [[plugins]]
