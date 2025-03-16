@@ -32,4 +32,7 @@ end
 if has('nvim')
   set mouse=
 end
-call setcellwidths([[0x2500, 0x25ff, 1]])
+call setcellwidths([
+  \ [0x2500, 0x25ff, 1],
+  \ [0xE0B0, 0xE0B3, 1],
+  \ ])
