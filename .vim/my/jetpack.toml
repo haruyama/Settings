@@ -2,9 +2,6 @@
 repo = 'tani/vim-jetpack'
 
 [[plugins]]
-repo = 'rbtnn/vim-ambiwidth'
-
-[[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
 hook_source = '''
 source ~/.vim/my/plugins/lualine.nvim.lua
