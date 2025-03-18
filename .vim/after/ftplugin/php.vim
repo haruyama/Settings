@@ -11,7 +11,6 @@ setl iskeyword-=-
 
 augroup after_ftplugin_php
   autocmd! BufWritePre <buffer> :RTrim
-  autocmd! BufWritePost <silent> :!phpcbf %
 augroup END
 let &cpo = s:save_cpo
 unlet s:save_cpo
