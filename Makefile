@@ -51,6 +51,8 @@ go_tool_install:
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b ${GOPATH}/bin latest
 	go install github.com/rhysd/actionlint/cmd/actionlint@latest
 	go install github.com/go-task/task/v3/cmd/task@latest
+	go install github.com/suzuki-shunsuke/pinact/cmd/pinact@latest
+	go install github.com/derailed/k9s@latest
 
 lsp_update:
 	pipx upgrade-all
