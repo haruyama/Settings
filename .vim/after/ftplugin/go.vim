@@ -6,8 +6,10 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 setl tabstop=4 noexpandtab shiftwidth=4 softtabstop=4 smarttab
-let g:gocode_gofmt_tabs = ' -tabs=true'
-let g:gocode_gofmt_tabwidth = ' -tabwidth=4'
+
+augroup after_ftplugin_go
+  autocmd! BufWritePost *.go :silent !goimports -w %
+augroup END
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
