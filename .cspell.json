@@ -8,6 +8,7 @@
   // words - list of words to be always considered correct
   "words": [
     "Asahi",
+    "Blatt",
     "DSAKEY",
     "ECDH",
     "Enapsulation",
@@ -19,10 +20,13 @@
     "Onigo",
     "PKEY",
     "RIZIN",
+    "MIRAI",
+    "Mujica",
     "Seigo",
     "Shougo",
     "SMBC",
     "Suica",
+    "Übel",
     "addi",
     "akaze",
     "autocmd",
