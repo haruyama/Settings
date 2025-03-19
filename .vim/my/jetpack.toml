@@ -267,6 +267,10 @@ let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + [ '~/.local/share
 '''
 
 [[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+on_source = 'ddu.vim'
+
+[[plugins]]
 repo = 'Shougo/ddu.vim'
 depends = 'denops.vim'
 on_source = 'denops.vim'
@@ -316,10 +320,6 @@ on_source = 'ddu.vim'
 
 [[plugins]]
 repo = 'Shougo/ddu-column-filename'
-on_source = 'ddu.vim'
-
-[[plugins]]
-repo = 'Shougo/ddu-ui-filer'
 on_source = 'ddu.vim'
 
 [[plugin]]
