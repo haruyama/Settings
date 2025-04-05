@@ -67,6 +67,7 @@ asdf:
 	cd ~/.asdf && git checkout "`git describe --abbrev=0 --tags`"
 
 asdf_plugin:
+	asdf plugin add terraform 
 	asdf plugin add zig
 	# asdf plugin add vim
 	asdf plugin add neovim
@@ -88,6 +89,7 @@ asdf_install:
 	asdf install neovim nightly && asdf global neovim nightly
 	# env ASDF_VIM_CONFIG=${ASDF_VIM_CONFIG} asdf install vim latest && asdf global vim "`asdf latest vim`"
 	asdf install zig latest && asdf global zig "`asdf latest zig`"
+	asdf install terraform latest && asdf global terraform latest
 
 asdf_update:
 	cd ~/.asdf && git checkout "`git describe --abbrev=0 --tags`"
