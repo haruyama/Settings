@@ -180,6 +180,19 @@ LUA
 '''
 
 [[plugins]]
+repo = 'zbirenbaum/copilot.lua'
+hook_source = '''
+lua << EOF
+require("copilot").setup({
+  suggestion = {
+    auto_trigger = true,
+  }
+})
+EOF
+'''
+
+
+[[plugins]]
 repo = 'vim-denops/denops.vim'
 hook_source = '''
 " let g:denops#server#service#deno_args = get(g:,
