@@ -170,7 +170,7 @@ LUA
 [[plugins]]
 repo = 'neoclide/jsonc.vim'
 
-[[olugins]]
+[[plugins]]
 repo = 'ysmb-wtsg/in-and-out.nvim'
 hook_source = '''
 lua << LUA
