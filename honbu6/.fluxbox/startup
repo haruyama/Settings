@@ -34,7 +34,7 @@ pkill parcellite
 /usr/bin/xinput --set-prop "Logitech Unifying Device. Wireless PID:1028" "Evdev Middle Button Emulation" 1
 
 pkill dropbox
-/usr/bin/dropbox start &
+env XDG_CURRENT_DESKTOP=Unity /usr/bin/dropbox start &
 
 # /usr/bin/ibus exit
 # /usr/bin/ibus-daemon -x &
