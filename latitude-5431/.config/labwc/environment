@@ -5,9 +5,9 @@
 
 
 XKB_DEFAULT_OPTIONS=ctrl:nocaps
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
+# GTK_IM_MODULE=fcitx
+# QT_IM_MODULE=fcitx
+# XMODIFIERS=@im=fcitx
 
 ##
 ## Use the XKB_DEFAULT_LAYOUT variable to set the keyboard layout. For example

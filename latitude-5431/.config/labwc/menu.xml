@@ -50,7 +50,7 @@
     <action name="Execute" command="firefox" />
   </item>
   <item label="Chrome">
-    <action name="Execute" command="google-chrome" />
+    <action name="Execute" command="env GTK_IM_MODULE=fcitx google-chrome" />
   </item>
   <item label="KeePassXC">
     <action name="Execute" command="keepassxc" />
@@ -67,6 +67,21 @@
 </menu>
 
 <menu id="some-custom-menu">
+  <item label="Gnome Terminal">
+    <action name="Execute" command="gnome-terminal" />
+  </item>
+  <item label="QTerminal">
+    <action name="Execute" command="qterminal" />
+  </item>
+  <item label="Firefox">
+    <action name="Execute" command="firefox" />
+  </item>
+  <item label="Chrome">
+    <action name="Execute" command="env GTK_IM_MODULE=fcitx google-chrome" />
+  </item>
+  <item label="KeePassXC">
+    <action name="Execute" command="keepassxc" />
+  </item>
   <item label="Reconfigure">
     <action name="Reconfigure" />
   </item>
