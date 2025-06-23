@@ -12,9 +12,6 @@ swaybg -c '#113344' >/dev/null 2>&1 &
 #   }
 kanshi >/dev/null 2>&1 &
 
-# Launch a panel such as yambar or waybar.
-waybar >/dev/null 2>&1 &
-
 # Enable notifications. Typically GNOME/KDE application notifications go
 # through the org.freedesktop.Notifications D-Bus API and require a client such
 # as mako to function correctly. Thunderbird is an example of this.
@@ -33,7 +30,10 @@ swayidle -w \
 	# timeout 600 'wlopm --off \*' \
 	# resume 'wlopm --on \*' \
 
+
 fcitx5 >/dev/null 2>&1 &
-gnome-terminal >/dev/null 2>&1 &
 wl-paste -pw wl-copy >/dev/null 2>&1 &
+# Launch a panel such as yambar or waybar.
+waybar >/dev/null 2>&1 &
 dropbox start >/dev/null 2>&1 &
+gnome-terminal >/dev/null 2>&1 &
