@@ -1,14 +1,23 @@
-" <TAB>: completion.
-inoremap <expr> <TAB>
-      \ : pum#visible()
-      \ ? '<Cmd>call pum#map#insert_relative(+1, "empty")<CR>'
-      \ : col('.') <= 1 ? '<TAB>'
-      \ : getline('.')[col('.') - 2] =~# '\s'
-      \ ? '<TAB>'
-      \ : ddc#map#manual_complete()
+" Use TAB to select the next item, or trigger completion.
+inoremap <silent><expr> <TAB>
+\ pum#visible() ? '<Cmd>call pum#map#select_next()<CR>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ? '<TAB>' :
+\ ddc#map#manual_complete()
 
-" <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pum#visible() ? '<C-p>' : '<C-h>'
+" Use S-TAB to select the previous item.
+inoremap <silent><expr> <S-TAB>
+\ pum#visible() ? '<Cmd>call pum#map#select_prev()<CR>' : '<S-TAB>'
+
+" Use CR (Enter) to confirm completion, otherwise it's a normal Enter.
+" Close the popup and confirm the selection.
+inoremap <silent><expr> <CR>
+\ pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' : '<CR>'
+
+" Use C-e to close the popup.
+inoremap <silent><expr> <C-e>
+\ pum#visible() ? '<Cmd>call pum#map#cancel()<CR>' : '<C-e>'
+
+" Use C-l for completing common string.
 inoremap <expr> <C-l> ddc#map#complete_common_string()
 
 call ddc#custom#patch_global(
