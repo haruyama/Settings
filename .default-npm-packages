@@ -1,5 +1,6 @@
 @bazel/bazelisk
 @biomejs/biome
+@google/gemini-cli
 cspell
 fixpack
 fx
