@@ -1,12 +1,15 @@
 " <TAB>: completion.
-inoremap <silent><expr> <TAB>
-      \ pum#visible() ? '<C-n>' :
-      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-      \ '<TAB>' : ddc#map#manual_complete()
+inoremap <expr> <TAB>
+      \ : pum#visible()
+      \ ? '<Cmd>call pum#map#insert_relative(+1, "empty")<CR>'
+      \ : col('.') <= 1 ? '<TAB>'
+      \ : getline('.')[col('.') - 2] =~# '\s'
+      \ ? '<TAB>'
+      \ : ddc#map#manual_complete()
 
 " <S-TAB>: completion back.
 inoremap <expr><S-TAB>  pum#visible() ? '<C-p>' : '<C-h>'
-inoremap <silent><expr> <C-l> ddc#map#complete_common_string()
+inoremap <expr> <C-l> ddc#map#complete_common_string()
 
 call ddc#custom#patch_global(
       \ 'sources', ['around', 'lsp', 'vsnip', 'dictionary'] 
