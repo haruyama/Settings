@@ -179,19 +179,19 @@ vim.keymap.set("i", "<leader>i", function() require("in-and-out").in_and_out() e
 LUA
 '''
 
-# [[plugins]]
-# repo = 'zbirenbaum/copilot.lua'
-# on_cmd = 'Copilot'
-# on_event = ['InsertEnter', 'CursorHold']
-# hook_source = '''
-# lua << EOF
-# require("copilot").setup({
-#   suggestion = {
-#     auto_trigger = true,
-#   }
-# })
-# EOF
-# '''
+[[plugins]]
+repo = 'zbirenbaum/copilot.lua'
+on_cmd = 'Copilot'
+on_event = ['InsertEnter', 'CursorHold']
+hook_source = '''
+lua << EOF
+require("copilot").setup({
+  suggestion = {
+    auto_trigger = true,
+  }
+})
+EOF
+'''
 
 
 [[plugins]]

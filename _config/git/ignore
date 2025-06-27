@@ -108,3 +108,4 @@ docker-compose.override.yml
 phpunit.host.xml
 
 *.jsonl
+.phan
