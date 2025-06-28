@@ -34,6 +34,6 @@ swayidle -w \
 fcitx5 >/dev/null 2>&1 &
 wl-paste -pw wl-copy >/dev/null 2>&1 &
 # Launch a panel such as yambar or waybar.
-waybar >/dev/null 2>&1 &
+sleep 2; waybar >/dev/null 2>&1 &
 dropbox start >/dev/null 2>&1 &
 gnome-terminal >/dev/null 2>&1 &
