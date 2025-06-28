@@ -15,8 +15,9 @@ call pum#set_option({
 " inoremap <silent><expr> <C-t>      pum#visible() ? "<C-v><Tab>" : "<C-t>"
 
 inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1, 'empty')<CR>
-inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
-inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
+inoremap <silent><expr> <C-n> pum#visible() ? pum#map#select_relative(+1) : '<C-n>'
+inoremap <silent><expr> <C-p> pum#visible() ? pum#map#select_relative(-1) : '<C-p>'
+
 "inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-y>   <Cmd>call pum#map#confirm_suffix()<CR>
 inoremap <C-o>   <Cmd>call pum#map#confirm_matched_pattern('^\S\+')<CR>

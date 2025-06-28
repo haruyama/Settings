@@ -1,12 +1,12 @@
 " Use TAB to select the next item, or trigger completion.
 inoremap <silent><expr> <TAB>
-\ pum#visible() ? '<Cmd>call pum#map#select_next()<CR>' :
+\ pum#visible() ? pum#map#select_relative(+1) :
 \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ? '<TAB>' :
 \ ddc#map#manual_complete()
 
 " Use S-TAB to select the previous item.
 inoremap <silent><expr> <S-TAB>
-\ pum#visible() ? '<Cmd>call pum#map#select_prev()<CR>' : '<S-TAB>'
+\ pum#visible() ? pum#map#select_relative(-1) : '<S-TAB>'
 
 " Use CR (Enter) to confirm completion, otherwise it's a normal Enter.
 " Close the popup and confirm the selection.
