@@ -186,9 +186,23 @@ on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
 lua << EOF
 require("copilot").setup({
-  suggestion = {
-    auto_trigger = true,
-  }
+    panel = {
+        enabled = true,
+        auto_refresh = true,
+        keymap = {
+            jump_prev = "[[",
+            jump_next = "]]",
+            accept = "<CR>",
+            refresh = "gr",
+        },
+        layout = {
+            position = "bottom",
+            ratio = 0.3,
+        },
+    },
+    suggestion = {
+        auto_trigger = true,
+    },
 })
 EOF
 '''
