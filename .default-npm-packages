@@ -1,6 +1,7 @@
 @bazel/bazelisk
 @biomejs/biome
 @google/gemini-cli
+@textlint-ja/textlint-rule-preset-ai-writing
 cspell
 fixpack
 fx
@@ -17,6 +18,7 @@ textlint
 textlint-filter-rule-comments
 textlint-rule-max-ten
 textlint-rule-no-mix-dearu-desumasu
+textlint-rule-preset-ja-technical-writing
 textlint-rule-preset-jtf-style
 textlint-rule-prh
 textlint-rule-spellcheck-tech-word

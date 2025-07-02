@@ -22,6 +22,8 @@
             "rulePaths": [
               "~/.textlint.d/prh.yml"
             ]
-    }
+    },
+    "preset-ja-technical-writing": true,
+    "preset-ai-writing": true
   }
 }
