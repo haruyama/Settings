@@ -207,6 +207,20 @@ require("copilot").setup({
 EOF
 '''
 
+[[plugins]]
+repo = 'lukas-reineke/indent-blankline.nvim'
+hook_source = '''
+lua << EOF
+require("ibl").setup()
+EOF
+'''
+
+[[plugins]]
+repo = 'lewis6991/gitsigns.nvim'
+hook_source = '''
+lua require('gitsigns').setup()
+'''
+
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
