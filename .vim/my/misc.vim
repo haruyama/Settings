@@ -1,6 +1,6 @@
 scriptencoding utf-8
 "source $VIMRUNTIME/macros/matchit.vim
-set omnifunc=syntaxcomplete#Complete
+" set omnifunc=syntaxcomplete#Complete
 
 "nnoremap gf <C-W>f
 "vnoremap gf <C-W>f
