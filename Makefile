@@ -22,7 +22,8 @@ bin_init:
 
 neovim_init:
 	mkdir -p ~/.config/nvim
-	ln -fs ~/lib/Settings/_config/nvim/init.vim ~/.config/nvim/init.vim
+	ln -fs ~/lib/Settings/_config/nvim/init.lua ~/.config/nvim/init.lua
+	ln -fs ~/lib/Settings/_config/nvim/lua ~/.config/nvim/lua
 	ln -fs ~/.vim/after ~/.config/nvim/after
 	ln -fs ~/lib/Settings/_config/vsnip ~/.config/vsnip
 
