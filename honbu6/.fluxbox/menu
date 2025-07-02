@@ -10,6 +10,7 @@
 
    [exec] (Gnome Terminal) {/usr/bin/gnome-terminal --hide-menubar}
    [exec] (QTerminal) {/usr/bin/qterminal}
+   [exec] (Xfce4-Terminal) {/usr/bin/xfce4-terminal}
    [exec] (Ghostty) {/home/haruyama/.local/bin/ghostty}
 
    [config] (Configuration)
