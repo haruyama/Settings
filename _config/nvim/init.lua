@@ -25,7 +25,7 @@ require('my.basic')
 -- source_vim('$HOME/.vim/my/basic.vim')
 require('my.command')
 -- source_vim('$HOME/.vim/my/command.vim')
-source_vim('$HOME/.vim/my/misc.vim')
+require('my.misc')
 source_vim('$HOME/.vim/my/tab.vim')
 source_vim('$HOME/.vim/my/jetpack.vim')
 
