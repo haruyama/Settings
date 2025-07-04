@@ -5,7 +5,6 @@
 
 -- Set options
 vim.opt.autoindent = true
-vim.opt.backup = true
 vim.opt.history = 500
 vim.opt.ruler = true
 vim.opt.showcmd = true
@@ -19,9 +18,6 @@ vim.opt.modeline = true
 vim.opt.shiftround = true
 vim.opt.infercase = true
 vim.opt.hidden = true
-
--- vim.opt.cursorline = true
--- vim.opt.cursorcolumn = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
