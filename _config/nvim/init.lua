@@ -24,7 +24,7 @@ require('my.command')
 -- source_vim('$HOME/.vim/my/command.vim')
 require('my.misc')
 require('my.tab')
-source_vim('$HOME/.vim/my/jetpack.vim')
+require('my.jetpack')
 
 -- Equivalent of: if has('vim_starting') && !empty(argv())
 if vim.fn.has('vim_starting') == 1 and not vim.tbl_isempty(vim.fn.argv()) then
