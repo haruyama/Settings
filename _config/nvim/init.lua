@@ -23,7 +23,7 @@ require('my.basic')
 require('my.command')
 -- source_vim('$HOME/.vim/my/command.vim')
 require('my.misc')
-source_vim('$HOME/.vim/my/tab.vim')
+require('my.tab')
 source_vim('$HOME/.vim/my/jetpack.vim')
 
 -- Equivalent of: if has('vim_starting') && !empty(argv())
