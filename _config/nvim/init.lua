@@ -4,9 +4,6 @@
 -- Disable diagnostics for undefined globals, common in Neovim configs
 ---@diagnostic disable: undefined-global
 
--- Clear all existing autocommands, similar to `autocmd!`
-vim.cmd('autocmd!')
-
 -- Enable the Lua loader for faster startup
 vim.loader.enable()
 
