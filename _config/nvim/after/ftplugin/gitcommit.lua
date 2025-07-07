@@ -19,11 +19,11 @@ local function select_type()
   -- title を挿入
   vim.api.nvim_buf_set_lines(bufnr, 0, 0, false, { title })
 
-  -- 最初の行・最初の文字へ移動
-  vim.api.nvim_win_set_cursor(0, { 1, 0 })
+  -- 最初の行・最後の文字へ移動
+  vim.api.nvim_win_set_cursor(0, { 1, #title })
 
   -- インサートモードに入る
-  vim.api.nvim_feedkeys("i", "n", false)
+  vim.api.nvim_feedkeys("a", "n", false)
 end
 
 -- バッファローカルに <CR><CR> を割り当て
