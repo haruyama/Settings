@@ -1,3 +1,4 @@
+@anthropic-ai/claude-code
 @bazel/bazelisk
 @biomejs/biome
 @google/gemini-cli
