@@ -1,0 +1,370 @@
+[[plugins]]
+repo = 'tani/vim-jetpack'
+
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+hook_source = '''
+source ~/.vim/my/plugins/lualine.nvim.lua
+'''
+
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
+hook_source = '''
+set termguicolors
+colorscheme tokyonight-night
+'''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+hook_add = '''
+source ~/.vim/my/plugins/context_filetype.vim.vim
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'windwp/nvim-autopairs'
+depends = ['pum']
+hook_source = '''
+source ~/.vim/my/plugins/nvim-autopairs.vim.lua
+'''
+
+[[plugins]]
+repo = 'Shougo/pum.vim'
+hook_source = '''
+source ~/.vim/my/plugins/pum.vim.vim
+'''
+
+[[plugins]]
+repo = 'numToStr/Comment.nvim'
+hook_source = '''
+source ~/.vim/my/plugins/Comment.nvim.lua
+'''
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'ggandor/leap.nvim'
+hook_source = '''
+source ~/.vim/my/plugins/leap.nvim.lua
+'''
+
+[[plugins]]
+repo = 'ggandor/flit.nvim'
+hook_source = '''
+source ~/.vim/my/plugins/flit.nvim.lua
+'''
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = '''
+source ~/.vim/my/plugins/ale.vim
+'''
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+source ~/.vim/my/plugins/vim-quickrun.vim
+'''
+
+[[plugins]]
+repo = 'farmergreg/vim-lastplace'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'kylechui/nvim-surround'
+hook_source = '''
+source ~/.vim/my/plugins/nvim-surround.lua
+'''
+
+[[plugins]]
+repo = 'gbprod/yanky.nvim'
+hook_source = '''
+source ~/.vim/my/plugins/yanky.nvim.lua
+'''
+
+[[plugins]]
+repo = 'wsdjeg/vim-fetch'
+
+[[plugins]]
+repo = 'lambdalisue/mr.vim'
+hook_source = '''
+let g:mr_disable_warning = 1
+'''
+
+[[plugins]]
+repo = 'kevinhwang91/nvim-hlslens'
+hook_source = '''
+source ~/.vim/my/plugins/nvim-hlslens.lua
+'''
+
+[[plugins]]
+repo = 'rhysd/committia.vim'
+
+[[plugins]]
+repo = 'vim-test/vim-test'
+hook_add = '''
+source ~/.vim/my/plugins/vim-test.vim
+'''
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+hook_add = '''
+xnoremap <silent> <Leader>a :EasyAlign<cr>
+'''
+on_cmd = ['EasyAlign']
+
+[[plugins]]
+repo = 'subnut/nvim-ghost.nvim'
+
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+hook_source = '''
+source ~/.vim/my/plugins/nvim-lspconfig.lua
+'''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_post_update = 'TSUpdate'
+hook_source = '''
+source ~/.vim/my/plugins/nvim-treesitter.lua
+'''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-context'
+depends = 'nvim-treesitter'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-textobjects'
+depends = 'nvim-treesitter'
+hook_source = '''
+source ~/.vim/my/plugins/nvim-treesitter-textobjects.lua
+'''
+
+[[plugins]]
+repo = 'andersevenrud/nvim_context_vt'
+depends = 'nvim-treesitter'
+
+[[plugins]]
+repo = 'kevinhwang91/nvim-bqf'
+
+[[plugins]]
+repo = 'Wansmer/treesj'
+hook_source = '''
+lua << LUA
+require('treesj').setup({
+  max_join_length = 1280
+  })
+vim.keymap.set('n', '<leader>m', require('treesj').toggle)
+vim.keymap.set('n', '<leader>M', function()
+    require('treesj').toggle({ split = { recursive = true } })
+end)
+LUA
+'''
+
+[[plugins]]
+repo = 'neoclide/jsonc.vim'
+
+[[plugins]]
+repo = 'ysmb-wtsg/in-and-out.nvim'
+hook_source = '''
+lua << LUA
+vim.keymap.set("n", "<leader>i", function() require("in-and-out").in_and_out() end)
+vim.keymap.set("i", "<leader>i", function() require("in-and-out").in_and_out() end)
+LUA
+'''
+
+[[plugins]]
+repo = 'zbirenbaum/copilot.lua'
+on_cmd = 'Copilot'
+on_event = ['InsertEnter', 'CursorHold']
+hook_source = '''
+lua << EOF
+require("copilot").setup({
+    panel = {
+        enabled = true,
+        auto_refresh = true,
+        keymap = {
+            jump_prev = "[[",
+            jump_next = "]]",
+            accept = "<CR>",
+            refresh = "gr",
+        },
+        layout = {
+            position = "bottom",
+            ratio = 0.3,
+        },
+    },
+    suggestion = {
+        auto_trigger = true,
+    },
+})
+EOF
+'''
+
+[[plugins]]
+repo = 'lukas-reineke/indent-blankline.nvim'
+hook_source = '''
+lua << EOF
+require("ibl").setup()
+EOF
+'''
+
+[[plugins]]
+repo = 'lewis6991/gitsigns.nvim'
+hook_source = '''
+lua require('gitsigns').setup()
+'''
+
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+hook_source = '''
+" let g:denops#server#service#deno_args = get(g:,
+" \ 'denops#server#service#deno_args', [
+" \ '-q',
+" \ '--no-check',
+" \ '--unstable',
+" \ '-A',
+" \ ]) + ['--inspect']
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_head'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_length'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-around'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-converter_remove_overlap'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'matsui54/ddc-source-dictionary'
+on_source = 'ddc.vim'
+hook_source = '''
+source ~/.vim/my/plugins/ddc-source-dictionary.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+depends = ['context_filetype.vim', 'denops.vim', 'ddc-source-lsp']
+on_event = ['InsertEnter', 'CursorHold']
+hook_source = '''
+source ~/.vim/my/plugins/ddc.vim.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-source-lsp'
+hook_source = '''
+source ~/.vim/my/plugins/ddc-source-lsp.lua
+'''
+
+[[plugins]]
+repo = 'liuchengxu/vista.vim'
+hook_source = '''
+let g:vista_default_executive = 'nvim_lsp'
+'''
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+hook_source = '''
+let g:vsnip_snippet_dirs =  [ expand('~/.config/vsnip') ] + get(g:, 'vsnip_snippet_dirs', [])
+
+imap <expr> <C-k> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-k>'
+smap <expr> <C-k> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-k>'
+
+imap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
+smap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
+
+inoremap <expr> <F5> vsnip#jumpable(1) ? "jumpable(1)" : "not jumpable(1)"
+inoremap <expr> <F6> vsnip#jumpable(-1) ? "jumpable(-1)" : "not jumpable(-1)"
+'''
+
+[[plugins]]
+repo = 'uga-rosa/ddc-source-vsnip'
+
+[[plugins]]
+repo = 'rafamadriz/friendly-snippets'
+hook_source = '''
+let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + [ '~/.local/share/nvim/site/pack/jetpack/opt/friendly-snippets/snippets' ]
+'''
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+depends = 'denops.vim'
+on_source = 'denops.vim'
+hook_add = '''
+source ~/.vim/my/plugins/ddu.vim.add.vim
+'''
+hook_source = '''
+source ~/.vim/my/plugins/ddu.vim.source.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/ddu-commands.vim'
+depends = 'ddu.vim'
+on_cmd = 'Ddu'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file_rec'
+on_source = 'ddu.vim'
+
+[[[[plugins]]
+repo = 'shun/ddu-source-buffer'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'kuuote/ddu-source-mr'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_hidden'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_relative'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-filter-matcher_substring'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-kind-file'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-kind-word'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-column-filename'
+on_source = 'ddu.vim'
+
+[[plugin]]
+repo = 'ziglang/zig.vim'
+on_ft = ['zig']

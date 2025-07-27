@@ -26,6 +26,7 @@ neovim_init:
 	ln -fs ~/lib/Settings/_config/nvim/lua ~/.config/nvim/lua
 	ln -fs ~/lib/Settings/_config/nvim/after ~/.config/nvim/after
 	ln -fs ~/lib/Settings/_config/vsnip ~/.config/vsnip
+	ln -fs ~/lib/Settings/_config/nvim/jetpack.toml ~/.config/nvim/jetpack.toml
 
 git:
 	mkdir -p ~/.config/git
@@ -44,7 +45,7 @@ gtk3:
 tool_update: lsp_update go_tool_install
 
 tool_install: lsp_install go_tool_install
-	pipx install flake8
+	pipx install flake8 mysql-mcp-server
 
 go_tool_install:
 	go install golang.org/x/tools/cmd/goimports@latest
