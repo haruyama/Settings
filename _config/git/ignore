@@ -109,3 +109,4 @@ phpunit.host.xml
 
 *.jsonl
 .phan
+.serena
