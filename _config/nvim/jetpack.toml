@@ -342,27 +342,27 @@ repo = 'kuuote/ddu-source-mr'
 on_source = 'ddu.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-filter-matcher_hidden'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-filter-matcher_relative'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-filter-matcher_substring'
-on_source = 'ddc.vim'
-
-[[plugins]]
-repo = 'Shougo/ddc-kind-file'
+repo = 'Shougo/ddu-filter-matcher_hidden'
 on_source = 'ddu.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-kind-word'
+repo = 'Shougo/ddu-filter-matcher_relative'
 on_source = 'ddu.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-column-filename'
+repo = 'Shougo/ddu-filter-matcher_substring'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-kind-file'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-kind-word'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-column-filename'
 on_source = 'ddu.vim'
 
 [[plugin]]
