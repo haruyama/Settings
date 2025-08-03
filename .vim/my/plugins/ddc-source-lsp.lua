@@ -76,6 +76,7 @@ lspconfig.gopls.setup{
             analyses = {
                 unusedparams = false,
                 shadow = false,
+                modernize = true,
             },
             staticcheck = true,
             hints = {
