@@ -37,6 +37,8 @@ call ddc#custom#patch_global('sourceOptions', #{
       \     matchers: ['matcher_head', 'matcher_length'],
       \   },
       \   lsp: #{
+      \     isVolatile: v:true,
+      \     confirmBehavior: 'replace',
       \     mark: 'lsp', 
       \     forceCompletionPattern: '\.\w*|:\w*|->\w*',
       \   },
