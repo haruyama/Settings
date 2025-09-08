@@ -110,3 +110,6 @@ phpunit.host.xml
 *.jsonl
 .phan
 .serena
+
+**/.claude/settings.local.json
+CLAUDE.md
