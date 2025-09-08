@@ -23,3 +23,7 @@
 [app] (name=Navigator) (class=firefox) (role=browser)
   [Sticky]	{yes}
 [end]
+[app] (class=ghostty)
+  [Deco]	{NORMAL}
+  [Fullscreen]	{no}
+[end]
