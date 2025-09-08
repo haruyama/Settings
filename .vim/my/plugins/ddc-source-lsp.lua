@@ -90,6 +90,7 @@ lspconfig.gopls.setup{
             },
         },
     },
+    root_dir = lspconfig.util.root_pattern("go.mod", ".git", "."),
 }
 lspconfig.clojure_lsp.setup{
     capabilities = capabilities,

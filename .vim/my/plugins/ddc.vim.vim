@@ -38,7 +38,6 @@ call ddc#custom#patch_global('sourceOptions', #{
       \   },
       \   lsp: #{
       \     isVolatile: v:true,
-      \     confirmBehavior: 'replace',
       \     mark: 'lsp', 
       \     forceCompletionPattern: '\.\w*|:\w*|->\w*',
       \   },
@@ -51,6 +50,7 @@ call ddc#custom#patch_global('sourceOptions', #{
 
 call ddc#custom#patch_global('sourceParams', #{
       \   lsp: #{
+      \     confirmBehavior: 'replace',
       \     enableResolveItem: v:true,
       \     enableAdditionalTextEdit: v:true,
       \   },
