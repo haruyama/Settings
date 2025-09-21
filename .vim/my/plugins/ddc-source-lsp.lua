@@ -15,7 +15,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     },
 }
 
-local lspconfig = require('lspconfig')
+local lspconfig = vim.lsp.config
 
 -- https://zenn.dev/catatsumuri/articles/beb6595d295906
 local on_attach = function(client, bufnr)
@@ -28,7 +28,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- https://zenn.dev/mochi/articles/e6b2735108157c
-lspconfig.denols.setup({
+lspconfig('denols',{
     capabilities = capabilities,
     init_options = {
         lint = true,
@@ -44,30 +44,30 @@ lspconfig.denols.setup({
         },
     },
     on_attach = on_attach,
-    root_dir = lspconfig.util.root_pattern("deno.json"),
+    root_markers = { "deno.json"},
 })
-lspconfig.ts_ls.setup({
+lspconfig('ts_ls', {
     capabilities = capabilities,
     on_attach = on_attach,
-    root_dir = lspconfig.util.root_pattern("package.json"),
+    root_markers = { "package.json"},
 })
-lspconfig.rust_analyzer.setup{
+lspconfig('rust_analyzer', {
     capabilities = capabilities,
     on_attach = on_attach,
-    root_dir = lspconfig.util.root_pattern("Cargo.toml"),
-}
-lspconfig.clangd.setup{capabilities = capabilities}
-lspconfig.intelephense.setup{
+    root_markers = { "Cargo.toml" },
+})
+lspconfig('clangd', {capabilities = capabilities})
+lspconfig('intelephense', {
     capabilities = capabilities,
     on_attach = on_attach,
-    root_dir = lspconfig.util.root_pattern("composer.json", ".git", "."),
-}
-lspconfig.cmake.setup{
+    root_markers = { "composer.json" },
+})
+lspconfig('cmake', {
     capabilities = capabilities,
     on_attach = on_attach,
-    root_dir = lspconfig.util.root_pattern("CMakeLists.txt", ".git", "."),
-}
-lspconfig.gopls.setup{
+    root_markers = { "CMakeLists.txt" },
+})
+lspconfig('gopls',{
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -90,21 +90,21 @@ lspconfig.gopls.setup{
             },
         },
     },
-    root_dir = lspconfig.util.root_pattern("go.mod", ".git", "."),
-}
-lspconfig.clojure_lsp.setup{
+    root_markers = { "go.mod" },
+})
+lspconfig('clojure_lsp', {
     capabilities = capabilities,
     on_attach = on_attach,
-}
-lspconfig.pyright.setup{
+})
+lspconfig('pyright', {
     capabilities = capabilities,
     on_attach = on_attach,
-}
-lspconfig.terraformls.setup{
+})
+lspconfig('terraformls', {
     capabilities = capabilities,
     on_attach = on_attach,
-}
-lspconfig.zls.setup{
+})
+lspconfig('zls', {
     capabilities = capabilities,
     on_attach = on_attach,
-}
+})

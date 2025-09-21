@@ -75,7 +75,6 @@
     "pycodestle",
     "pyright",
     "quantim",
-    "require'lspconfig",
     "smoka",
     "sntrup",
     "sshbuf",
