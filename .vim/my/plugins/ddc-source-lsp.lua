@@ -27,9 +27,12 @@ local on_attach = function(client, bufnr)
     end
 end
 
+lspconfig('*', {
+    root_markers = { "package.json"},
+})
+
 -- https://zenn.dev/mochi/articles/e6b2735108157c
 lspconfig('denols',{
-    capabilities = capabilities,
     init_options = {
         lint = true,
         unstable = true,
@@ -43,33 +46,27 @@ lspconfig('denols',{
             },
         },
     },
-    on_attach = on_attach,
     root_markers = { "deno.json"},
 })
+vim.lsp.enable('denols')
 lspconfig('ts_ls', {
-    capabilities = capabilities,
-    on_attach = on_attach,
     root_markers = { "package.json"},
 })
+vim.lsp.enable('ts_ls')
 lspconfig('rust_analyzer', {
-    capabilities = capabilities,
-    on_attach = on_attach,
     root_markers = { "Cargo.toml" },
 })
-lspconfig('clangd', {capabilities = capabilities})
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('clangd')
 lspconfig('intelephense', {
-    capabilities = capabilities,
-    on_attach = on_attach,
     root_markers = { "composer.json" },
 })
+vim.lsp.enable('intelephense')
 lspconfig('cmake', {
-    capabilities = capabilities,
-    on_attach = on_attach,
     root_markers = { "CMakeLists.txt" },
 })
+vim.lsp.enable('cmake')
 lspconfig('gopls',{
-    capabilities = capabilities,
-    on_attach = on_attach,
     settings = {
         gopls = {
             experimentalPostfixCompletions = true,
@@ -92,19 +89,8 @@ lspconfig('gopls',{
     },
     root_markers = { "go.mod" },
 })
-lspconfig('clojure_lsp', {
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-lspconfig('pyright', {
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-lspconfig('terraformls', {
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-lspconfig('zls', {
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
+vim.lsp.enable('gopls')
+vim.lsp.enable('clojure_lsp')
+vim.lsp.enable('pyright')
+vim.lsp.enable('terraformls')
+vim.lsp.enable('zls')
