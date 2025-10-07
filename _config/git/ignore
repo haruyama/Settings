@@ -113,3 +113,4 @@ phpunit.host.xml
 
 **/.claude/settings.local.json
 CLAUDE.md
+.claude
