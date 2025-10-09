@@ -48,16 +48,15 @@ repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'ggandor/leap.nvim'
-commit = 'a755cea5ec06191b46702ac8fde8ef03ad2fbdeb'
 hook_source = '''
 source ~/.vim/my/plugins/leap.nvim.lua
 '''
 
-[[plugins]]
-repo = 'ggandor/flit.nvim'
-hook_source = '''
-source ~/.vim/my/plugins/flit.nvim.lua
-'''
+# [[plugins]]
+# repo = 'ggandor/flit.nvim'
+# hook_source = '''
+# source ~/.vim/my/plugins/flit.nvim.lua
+# '''
 
 [[plugins]]
 repo = 'dense-analysis/ale'
