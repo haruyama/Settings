@@ -52,12 +52,6 @@ hook_source = '''
 source ~/.vim/my/plugins/leap.nvim.lua
 '''
 
-# [[plugins]]
-# repo = 'ggandor/flit.nvim'
-# hook_source = '''
-# source ~/.vim/my/plugins/flit.nvim.lua
-# '''
-
 [[plugins]]
 repo = 'dense-analysis/ale'
 hook_add = '''
