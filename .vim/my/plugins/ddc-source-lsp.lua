@@ -46,11 +46,11 @@ lspconfig('denols',{
             },
         },
     },
-    root_markers = { "deno.json"},
+    root_markers = { "deno.json" },
 })
 vim.lsp.enable('denols')
 lspconfig('ts_ls', {
-    root_markers = { "package.json"},
+    root_markers = { "package.json" },
 })
 vim.lsp.enable('ts_ls')
 lspconfig('rust_analyzer', {
