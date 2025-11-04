@@ -327,6 +327,10 @@ on_cmd = 'Ddu'
 repo = 'Shougo/ddu-source-file_rec'
 on_source = 'ddu.vim'
 
+[[plugins]]
+repo = 'Shougo/ddu-source-file'
+on_source = 'ddu.vim'
+
 [[[[plugins]]
 repo = 'shun/ddu-source-buffer'
 on_source = 'ddu.vim'

@@ -1,5 +1,7 @@
 nnoremap <silent> ,ua
       \ <Cmd>Ddu -name=files file_rec<CR>
+nnoremap <silent> ,uf
+      \ <Cmd>Ddu -name=files file<CR>
 nnoremap <silent> ,ub
       \ <Cmd>Ddu -name=files buffer<CR>
 nnoremap <silent> ,uu
