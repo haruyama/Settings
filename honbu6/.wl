@@ -47,7 +47,7 @@
 (setq wl-draft-always-delete-myself t)
 (setq wl-interactive-exit nil)
 (setq wl-interactive-send t)
-(setq wl-default-folder "&haruyama@scarlet-camel-91678cecd5d34ab7.znlc.jp:995!")
+(setq wl-default-folder "%inbox:haruyama/login@scarlet-camel-91678cecd5d34ab7.znlc.jp:993!")
 (define-key wl-draft-mode-map "\C-c\C-i" 'insert-signature)
 (define-key wl-draft-mode-map "\C-c[Tab]" 'insert-signature)
 (defun mc-wl-verify-signature ()
