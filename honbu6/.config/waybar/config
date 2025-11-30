@@ -1,0 +1,54 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 30,
+    "output": "DP-5",
+    "modules-left": ["wlr/taskbar"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "pulseaudio"],
+
+    "wlr/taskbar": {
+        "format": "{icon} {title:.20}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [],
+        "app_ids-mapping": {},
+        "all-outputs": false,
+        "active-first": true,
+        "max-length": 20
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "Muted ",
+        "format-icons": ["", "", ""],
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ifname} ",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["🔋", "🔋", "🔋", "🔋", "🔋"],
+        "format-charging": "{capacity}% 🔌",
+        "format-plugged": "{capacity}% 🔌",
+        "format-alt": "{time} {icon}",
+        "format-full": "100% 🔋",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "tooltip": true,
+        "tooltip-format": "{timeTo}"
+    }
+}

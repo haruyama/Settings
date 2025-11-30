@@ -1,0 +1,34 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Font Awesome 4 Free", "Sans";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(43, 48, 59, 0.5);
+    color: #ffffff;
+}
+
+#taskbar button {
+    padding: 0 5px;
+    background: transparent;
+    color: #ffffff;
+}
+
+#taskbar button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    margin: 0 5px;
+}
