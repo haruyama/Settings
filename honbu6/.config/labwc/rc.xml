@@ -85,6 +85,6 @@
   <focus>
     <followMouse>yes</followMouse>
     <followMouseRequiresMovement>yes</followMouseRequiresMovement>
-    <raiseOnFocus>no</raiseOnFocus>
+    <raiseOnFocus>yes</raiseOnFocus>
   </focus>
 </labwc_config>

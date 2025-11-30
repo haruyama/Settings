@@ -3,9 +3,16 @@
     "position": "bottom",
     "height": 30,
     "output": "DP-5",
+    // "modules-left": ["ext/workspaces", "wlr/taskbar"],
     "modules-left": ["wlr/taskbar"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "pulseaudio"],
+
+    "ext/workspaces": {
+        "format": "{name}",
+        "sort-by-number": true,
+        "on-click": "activate",
+    },
 
     "wlr/taskbar": {
         "format": "{icon} {title:.20}",
@@ -31,24 +38,5 @@
         "format-muted": "Muted ",
         "format-icons": ["", "", ""],
         "on-click": "pavucontrol"
-    },
-    "network": {
-        "format-wifi": "{essid} ",
-        "format-ethernet": "{ifname} ",
-        "format-disconnected": "Disconnected ⚠"
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["🔋", "🔋", "🔋", "🔋", "🔋"],
-        "format-charging": "{capacity}% 🔌",
-        "format-plugged": "{capacity}% 🔌",
-        "format-alt": "{time} {icon}",
-        "format-full": "100% 🔋",
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "tooltip": true,
-        "tooltip-format": "{timeTo}"
     }
 }
