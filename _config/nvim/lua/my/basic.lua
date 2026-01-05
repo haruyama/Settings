@@ -63,7 +63,7 @@ vim.opt.synmaxcol = 200
 vim.opt.hlsearch = true
 
 vim.opt.encoding = 'utf-8'
-vim.opt.fileencodings = 'ucs-bom,iso-2022-jp,utf-8,euc-jp,cp932,default,latin'
+vim.opt.fileencodings = 'ucs-bom,utf-8,euc-jp,cp932,default,latin'
 vim.opt.fileformats = 'unix,dos,mac'
 
 vim.opt.ambiwidth = 'double'
