@@ -87,4 +87,18 @@
     <followMouseRequiresMovement>yes</followMouseRequiresMovement>
     <raiseOnFocus>yes</raiseOnFocus>
   </focus>
+
+  <windowRules>
+    <windowRule identifier="firefox_firefox">
+      <action name="ToggleOmnipresent" />
+    </windowRule>
+
+    <windowRule identifier="rhythmbox">
+      <action name="ToggleOmnipresent" />
+    </windowRule>
+
+    <windowRule identifier="slack">
+      <action name="ToggleOmnipresent" />
+    </windowRule>
+  </windowRules>
 </labwc_config>

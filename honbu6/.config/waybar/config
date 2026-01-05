@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "bottom",
     "height": 30,
-    "output": "DP-5",
+    // "output": "DP-5",
     // "modules-left": ["ext/workspaces", "wlr/taskbar"],
     "modules-left": ["wlr/taskbar"],
     "modules-center": ["clock"],

@@ -17,7 +17,7 @@ kanshi >/dev/null 2>&1 &
 # as mako to function correctly. Thunderbird is an example of this.
 mako >/dev/null 2>&1 &
 
-swayidle -w timeout 600 '/home/haruyama/bin/dpms-off' >/dev/null 2>&1 &
+# swayidle -w timeout 600 '/home/haruyama/bin/dpms-off' >/dev/null 2>&1 &
 	# timeout 300 'swaylock -f -c 000000' \
 	# timeout 600 'wlopm --off \*' \
 	# resume 'wlopm --on \*' \
