@@ -367,6 +367,31 @@ on_source = 'ddu.vim'
 repo = 'MunifTanjim/nui.nvim'
 
 [[plugins]]
+repo = 'y3owk1n/undo-glow.nvim'
+on_event = 'VeryLazy'
+hook_source = '''
+lua << LUA
+local undo_glow = require('undo-glow')
+undo_glow.setup()
+-- https://zenn.dev/vim_jp/articles/00e297fcccf949
+-- u/Uでundo/redo
+vim.keymap.set('n', 'u', undo_glow.undo, { desc = 'Undo with highlight' })
+vim.keymap.set('n', 'U', undo_glow.redo, { desc = 'Redo with highlight' })
+
+-- p/Pでペーストし、`]でペースト範囲の末尾へ飛ぶ
+vim.keymap.set('n', 'p', function()
+  undo_glow.paste_below()
+  vim.cmd.normal({ args = { '`]' }, bang = true })
+end, { desc = 'Paste below with highlight' })
+vim.keymap.set('n', 'P', function()
+  undo_glow.paste_above()
+  vim.cmd.normal({ args = { '`]' }, bang = true })
+end, { desc = 'Paste above with highlight' })
+LUA
+'''
+
+
+[[plugins]]
 repo = 'idris-community/idris2-nvim'
 on_ft = ['idris2']
 hook_source = '''
