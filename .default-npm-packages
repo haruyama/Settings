@@ -2,6 +2,7 @@
 @bazel/bazelisk
 @biomejs/biome
 @google/gemini-cli
+@openai/codex
 @textlint-ja/textlint-rule-preset-ai-writing
 cspell
 fixpack
