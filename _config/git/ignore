@@ -108,6 +108,7 @@ docker-compose.override.yml
 phpunit.host.xml
 
 *.jsonl
+*.jsonl.xz
 .phan
 .serena
 
@@ -116,3 +117,4 @@ CLAUDE.md
 .claude
 
 .pnpm-store
+*.done
