@@ -67,9 +67,6 @@
 </menu>
 
 <menu id="some-custom-menu">
-  <item label="Ghostty">
-    <action name="Execute" command="/home/haruyama/.local/bin/ghostty" />
-  </item>
   <item label="XFCE4 Terminal">
     <action name="Execute" command="xfce4-terminal" />
   </item>
