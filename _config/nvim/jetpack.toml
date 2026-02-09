@@ -47,7 +47,7 @@ source ~/.vim/my/plugins/Comment.nvim.lua
 repo = 'tpope/vim-repeat'
 
 [[plugins]]
-repo = 'ggandor/leap.nvim'
+repo = 'https://codeberg.org/andyg/leap.nvim'
 hook_source = '''
 source ~/.vim/my/plugins/leap.nvim.lua
 '''
