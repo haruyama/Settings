@@ -43,9 +43,13 @@ gtk3:
 # 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 tool_update: lsp_update go_tool_install
+	claude update
 
 tool_install: lsp_install go_tool_install
 	pipx install flake8 mysql-mcp-server
+
+claude_install:
+	curl -fsSL https://claude.ai/install.sh | bash
 
 go_tool_install:
 	go install golang.org/x/tools/cmd/goimports@latest
