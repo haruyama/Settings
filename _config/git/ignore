@@ -118,3 +118,5 @@ CLAUDE.md
 
 .pnpm-store
 *.done
+
+lefthook.yml
