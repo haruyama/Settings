@@ -115,6 +115,7 @@ phpunit.host.xml
 **/.claude/settings.local.json
 CLAUDE.md
 .claude
+.codex
 
 .pnpm-store
 *.done
