@@ -10,9 +10,9 @@
 
 ;; [[ SEMI の設定 ]]
 
-;; HTML パートを表示しない
+;; HTML パートを表示する
 ;; mime-setup がロードされる前に記述する必要があります。
-(setq mime-setup-enable-inline-html nil)
+(setq mime-setup-enable-inline-html t)
 
 ;; 大きいメッセージを送信時に分割しない
 (setq mime-edit-split-message nil)
@@ -21,6 +21,9 @@
 (setq mime-edit-message-default-max-lines 100000)
 (setq mime-setup-enable-inline-image t)
 (setq mime-edit-message-max-length nil)
+
+;; 閾値を引き上げる（例: 1MB 未満なら確認なしで取得）
+(setq elmo-message-fetch-threshold (* 1024 1024))
 
 ;;; [[ 個人情報の設定 ]]
 
