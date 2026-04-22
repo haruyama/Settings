@@ -1,1 +1,1 @@
-require('nvim-treesitter.configs').setup ({})
+require('nvim-treesitter-textobjects').setup {}

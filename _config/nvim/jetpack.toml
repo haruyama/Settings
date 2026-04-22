@@ -124,6 +124,7 @@ source ~/.vim/my/plugins/nvim-lspconfig.lua
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
+branch = 'main'
 hook_post_update = 'TSUpdate'
 hook_source = '''
 source ~/.vim/my/plugins/nvim-treesitter.lua
@@ -135,6 +136,7 @@ depends = 'nvim-treesitter'
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter-textobjects'
+branch = 'main'
 depends = 'nvim-treesitter'
 hook_source = '''
 source ~/.vim/my/plugins/nvim-treesitter-textobjects.lua
