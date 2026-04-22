@@ -1,3 +1,8 @@
+" Avoid ALE registering its LSP linters as vim.lsp clients, which duplicates
+" results from vim.lsp.buf.references() when vim.lsp.enable() runs the same
+" server (e.g. intelephense, gopls).
+let g:ale_use_neovim_lsp_api = 0
+
 let g:ale_linters = {
       \}
 " \   'c': ['cpplint'],
