@@ -23,8 +23,15 @@ K9S_VERSION := v0.50.18
 
 # renovate: datasource=github-releases depName=golangci/golangci-lint
 GOLANGCI_LINT_VERSION := v2.11.4
-# SHA of the tag above. Must be updated together with GOLANGCI_LINT_VERSION.
-GOLANGCI_LINT_SHA := 8f3b0c7ed018e57905fbd873c697e0b1ede605a5
+GOLANGCI_LINT_VERSION_NUM := $(GOLANGCI_LINT_VERSION:v%=%)
+# SHA256 of golangci-lint-$(GOLANGCI_LINT_VERSION_NUM)-linux-amd64.tar.gz.
+# Must be updated together with GOLANGCI_LINT_VERSION. Source:
+# https://github.com/golangci/golangci-lint/releases/download/$(GOLANGCI_LINT_VERSION)/golangci-lint-$(GOLANGCI_LINT_VERSION_NUM)-checksums.txt
+GOLANGCI_LINT_SHA256_LINUX_AMD64 := 200c5b7503f67b59a6743ccf32133026c174e272b930ee79aa2aa6f37aca7ef1
+
+# SHA256 of https://claude.ai/install.sh. Anthropic updates the installer in-place;
+# on mismatch, review the new script and bump this SHA.
+CLAUDE_INSTALL_SCRIPT_SHA256 := b315b46925a9bfb9422f2503dd5aa649f680832f4c076b22d87c39d578c3d830
 
 # tani/vim-jetpack has no release tags; pin to a commit SHA on main.
 # renovate: datasource=git-refs depName=https://github.com/tani/vim-jetpack branch=main
@@ -44,7 +51,7 @@ PYRIGHT_VERSION := 1.1.409
 # renovate: datasource=pypi depName=cmake-language-server
 CMAKE_LANGSERVER_VERSION := 0.1.11
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init bin_init neovim_init
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install golangci_lint_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init bin_init neovim_init claude_install
 
 update: asdf_update asdf_install tool_update
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
@@ -94,16 +101,28 @@ tool_install: lsp_install go_tool_install
 	pipx install mysql-mcp-server==$(MYSQL_MCP_SERVER_VERSION) --force
 
 claude_install:
-	curl -fsSL https://claude.ai/install.sh | bash
+	tmp=$$(mktemp) && \
+		curl -fsSL -o $$tmp https://claude.ai/install.sh && \
+		echo "$(CLAUDE_INSTALL_SCRIPT_SHA256)  $$tmp" | sha256sum -c - && \
+		bash $$tmp && \
+		rm -f $$tmp
 
-go_tool_install:
+go_tool_install: golangci_lint_install
 	go install golang.org/x/tools/cmd/goimports@$(GOIMPORTS_VERSION)
 	go install golang.org/x/tools/gopls@$(GOPLS_VERSION)
-	curl -fsSL https://raw.githubusercontent.com/golangci/golangci-lint/$(GOLANGCI_LINT_SHA)/install.sh | sh -s -- -b $(GOPATH)/bin $(GOLANGCI_LINT_VERSION)
 	go install github.com/rhysd/actionlint/cmd/actionlint@$(ACTIONLINT_VERSION)
 	go install github.com/go-task/task/v3/cmd/task@$(TASK_VERSION)
 	go install github.com/suzuki-shunsuke/pinact/v3/cmd/pinact@$(PINACT_VERSION)
 	go install github.com/derailed/k9s@$(K9S_VERSION)
+
+golangci_lint_install:
+	tmpdir=$$(mktemp -d) && \
+		tarball=golangci-lint-$(GOLANGCI_LINT_VERSION_NUM)-linux-amd64.tar.gz && \
+		curl -fsSL -o $$tmpdir/$$tarball https://github.com/golangci/golangci-lint/releases/download/$(GOLANGCI_LINT_VERSION)/$$tarball && \
+		echo "$(GOLANGCI_LINT_SHA256_LINUX_AMD64)  $$tmpdir/$$tarball" | sha256sum -c - && \
+		tar -xzf $$tmpdir/$$tarball -C $$tmpdir && \
+		install -m 0755 $$tmpdir/golangci-lint-$(GOLANGCI_LINT_VERSION_NUM)-linux-amd64/golangci-lint $(GOPATH)/bin/golangci-lint && \
+		rm -rf $$tmpdir
 
 lsp_update:
 	pipx install pyright==$(PYRIGHT_VERSION) --force
