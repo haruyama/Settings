@@ -1,0 +1,45 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    ':semanticCommitTypeAll(deps)',
+    ':dependencyDashboard',
+  ],
+  timezone: 'Asia/Tokyo',
+  labels: ['dependencies'],
+  packageRules: [
+    {
+      description: 'Skip floating versions in .tool-versions (e.g. neovim nightly)',
+      matchManagers: ['asdf'],
+      matchDepNames: ['neovim'],
+      enabled: false,
+    },
+    {
+      description: 'Disable major bumps for Go modules with /vN in path; major bump also changes the import path and must be done manually',
+      matchDatasources: ['go'],
+      matchPackageNames: ['/\\/v\\d+$/'],
+      matchUpdateTypes: ['major'],
+      enabled: false,
+    },
+  ],
+  customManagers: [
+    {
+      customType: 'regex',
+      description: 'Pinned tool versions in Makefile (FOO_VERSION := vX.Y.Z)',
+      managerFilePatterns: ['/(^|/)Makefile$/'],
+      matchStrings: [
+        '# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+?)(?:\\s+versioning=(?<versioning>\\S+))?(?:\\s+allowedVersions=(?<allowedVersions>\\S+))?[ \\t]*\\n[A-Z0-9_]+_VERSION\\s*:=\\s*(?<currentValue>\\S+)',
+      ],
+      versioningTemplate: '{{#if versioning}}{{versioning}}{{else}}semver{{/if}}',
+    },
+    {
+      customType: 'regex',
+      description: 'Git-refs SHA pins in Makefile (FOO_SHA := <40-hex>)',
+      managerFilePatterns: ['/(^|/)Makefile$/'],
+      matchStrings: [
+        '# renovate: datasource=git-refs depName=(?<depName>\\S+) branch=(?<currentValue>\\S+)[ \\t]*\\n[A-Z0-9_]+_SHA\\s*:=\\s*(?<currentDigest>[a-f0-9]{40})',
+      ],
+      datasourceTemplate: 'git-refs',
+    },
+  ],
+}
