@@ -38,6 +38,10 @@ python_path=(./lib)
 
 export PAGER="less"
 
+# Use systemd-managed ssh-agent socket on local logins; respect a forwarded
+# SSH_AUTH_SOCK (e.g. ssh -A) when present.
+export SSH_AUTH_SOCK=${SSH_AUTH_SOCK:-${XDG_RUNTIME_DIR:-/run/user/$UID}/openssh_agent}
+
 [ -z "$ld_library_path" ] && typeset -xT LD_LIBRARY_PATH ld_library_path
 [ -z "$include" ] && typeset -xT INCLUDE include
 typeset -U cdpath fpath ld_library_path include

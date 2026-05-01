@@ -51,7 +51,7 @@ PYRIGHT_VERSION := 1.1.409
 # renovate: datasource=pypi depName=cmake-language-server
 CMAKE_LANGSERVER_VERSION := 0.1.11
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install golangci_lint_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init bin_init neovim_init claude_install
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install golangci_lint_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install
 
 update: asdf_update asdf_install tool_update
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
@@ -66,6 +66,9 @@ ssh_init:
 	[ -e ~/.ssh ] || mkdir -m=700 ~/.ssh
 	touch ~/.ssh/config
 	chmod 600 ~/.ssh/config
+
+ssh_agent:
+	systemctl --user enable --now ssh-agent.socket
 
 bin_init:
 	mkdir -p ~/bin
