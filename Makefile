@@ -89,6 +89,7 @@ neovim:
 
 gtk3:
 	gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+	gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true
 
 # tmux:
 # 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
