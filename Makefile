@@ -82,6 +82,10 @@ neovim_init:
 	ln -fs ~/lib/Settings/_config/vsnip ~/.config/vsnip
 	ln -fs ~/lib/Settings/_config/nvim/jetpack.toml ~/.config/nvim/jetpack.toml
 
+uv_init:
+	mkdir -p ~/.config/uv
+	ln -fs ~/lib/Settings/_config/uv/uv.toml ~/.config/uv/uv.toml
+
 git:
 	mkdir -p ~/.config/git
 	ln -fs ~/lib/Settings/_config/git/* ~/.config/git/
