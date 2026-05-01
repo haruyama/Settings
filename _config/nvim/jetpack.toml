@@ -392,6 +392,10 @@ end, { desc = 'Paste above with highlight' })
 LUA
 '''
 
+[[plugins]]
+repo = 'delphinus/md-render.nvim'
+on_event = ['MdRender', 'MdRenderTab', 'MdRenderDemo', 'MdRenderPager']
+
 
 [[plugins]]
 repo = 'idris-community/idris2-nvim'
