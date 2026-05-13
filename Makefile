@@ -103,6 +103,7 @@ gtk3:
 
 tool_update: lsp_update go_tool_install
 	claude update
+	uv self update
 
 tool_install: lsp_install go_tool_install
 	pipx install flake8==$(FLAKE8_VERSION) --force
