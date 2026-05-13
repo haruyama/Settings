@@ -1,4 +1,4 @@
-exclude-newer = "7 days"
+exclude-newer = "3 days"
 
 [[index]]
 url = "https://pypi.flatt.tech/simple/"
