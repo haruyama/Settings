@@ -48,8 +48,6 @@ FLAKE8_VERSION := 7.3.0
 MYSQL_MCP_SERVER_VERSION := 0.2.2
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.409
-# renovate: datasource=pypi depName=cmake-language-server
-CMAKE_LANGSERVER_VERSION := 0.1.11
 
 .PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install golangci_lint_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install
 
@@ -135,14 +133,12 @@ golangci_lint_install:
 
 lsp_update:
 	pipx install pyright==$(PYRIGHT_VERSION) --force
-	pipx install cmake-language-server==$(CMAKE_LANGSERVER_VERSION) --force
 	pipx install flake8==$(FLAKE8_VERSION) --force
 	pipx install mysql-mcp-server==$(MYSQL_MCP_SERVER_VERSION) --force
 	npm install -g intelephense@$(INTELEPHENSE_VERSION) typescript-language-server@$(TS_LANGSERVER_VERSION)
 
 lsp_install:
 	pipx install pyright==$(PYRIGHT_VERSION)
-	pipx install cmake-language-server==$(CMAKE_LANGSERVER_VERSION)
 
 asdf:
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf
