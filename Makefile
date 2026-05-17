@@ -40,7 +40,7 @@ VIM_JETPACK_SHA := 56558f41c2148120b94526e5c8e46f172864b990
 # renovate: datasource=npm depName=intelephense
 INTELEPHENSE_VERSION := 1.16.5
 # renovate: datasource=npm depName=typescript-language-server
-TS_LANGSERVER_VERSION := 5.1.3
+TS_LANGSERVER_VERSION := 5.2.0
 
 # renovate: datasource=pypi depName=flake8
 FLAKE8_VERSION := 7.3.0
