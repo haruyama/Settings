@@ -1,11 +1,11 @@
 ASDF_VIM_CONFIG="--with-tlib=ncurses --with-compiledby=asdf --enable-multibyte --enable-cscope --enable-terminal --enable-perlinterp --enable-rubyinterp --enable-python3interp --enable-luainterp --enable-gui=gtk3"
 
 # --- Pinned versions (managed by Renovate in Phase C) ---
-# asdf v0.15.0 is the last shell-based release. v0.16.0+ is a Go rewrite distributed
-# as a prebuilt binary, which requires migrating the `asdf` / `asdf_update` targets
-# off `git clone + checkout`. Keep on v0.15.0 until that migration is scoped.
-# renovate: datasource=github-releases depName=asdf-vm/asdf allowedVersions=<0.16.0
-ASDF_VERSION := v0.15.0
+# renovate: datasource=github-releases depName=asdf-vm/asdf
+ASDF_VERSION := v0.19.0
+# SHA256 of asdf-$(ASDF_VERSION)-linux-amd64.tar.gz from GitHub release assets.
+# Must be updated together with ASDF_VERSION.
+ASDF_SHA256 := f6aa14de1348c9a85f3095f79792a5cd04305c466e6458c69a36a1621cd729ef
 
 # renovate: datasource=go depName=golang.org/x/tools
 GOIMPORTS_VERSION := v0.44.0
@@ -142,8 +142,13 @@ lsp_install:
 	pipx install pyright==$(PYRIGHT_VERSION)
 
 asdf:
-	git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-	cd ~/.asdf && git checkout $(ASDF_VERSION)
+	curl -fLo /tmp/asdf-$(ASDF_VERSION).tar.gz \
+	    https://github.com/asdf-vm/asdf/releases/download/$(ASDF_VERSION)/asdf-$(ASDF_VERSION)-linux-amd64.tar.gz
+	echo "$(ASDF_SHA256)  /tmp/asdf-$(ASDF_VERSION).tar.gz" | sha256sum -c
+	mkdir -p $(HOME)/.local/bin
+	tar -xzf /tmp/asdf-$(ASDF_VERSION).tar.gz -C /tmp asdf
+	install -m 755 /tmp/asdf $(HOME)/.local/bin/asdf
+	rm -f /tmp/asdf-$(ASDF_VERSION).tar.gz /tmp/asdf
 
 asdf_plugin:
 	asdf plugin add terraform
@@ -162,7 +167,6 @@ asdf_install:
 	asdf install
 
 asdf_update:
-	cd ~/.asdf && git checkout $(ASDF_VERSION)
 	asdf plugin update --all
 
 SKKDIC_DIR=/usr/share/skk
