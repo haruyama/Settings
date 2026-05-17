@@ -121,3 +121,4 @@ CLAUDE.md
 *.done
 
 lefthook.yml
+aigis-policy.yaml

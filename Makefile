@@ -46,6 +46,8 @@ TS_LANGSERVER_VERSION := 5.1.3
 FLAKE8_VERSION := 7.3.0
 # renovate: datasource=pypi depName=mysql-mcp-server
 MYSQL_MCP_SERVER_VERSION := 0.2.2
+# renovate: datasource=pypi depName=pyaigis
+PYAIGIS_VERSION := 1.1.3
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.409
 
@@ -106,6 +108,7 @@ tool_update: tool_install
 tool_install: lsp_update go_tool_install
 	pipx install flake8==$(FLAKE8_VERSION) --force
 	pipx install mysql-mcp-server==$(MYSQL_MCP_SERVER_VERSION) --force
+	pipx install pyaigis==$(PYAIGIS_VERSION) --force
 
 claude_install:
 	tmp=$$(mktemp) && \
