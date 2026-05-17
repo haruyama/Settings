@@ -133,8 +133,6 @@ golangci_lint_install:
 
 lsp_update:
 	pipx install pyright==$(PYRIGHT_VERSION) --force
-	pipx install flake8==$(FLAKE8_VERSION) --force
-	pipx install mysql-mcp-server==$(MYSQL_MCP_SERVER_VERSION) --force
 	npm install -g intelephense@$(INTELEPHENSE_VERSION) typescript-language-server@$(TS_LANGSERVER_VERSION)
 
 lsp_install:
@@ -147,7 +145,6 @@ asdf:
 asdf_plugin:
 	asdf plugin add terraform
 	asdf plugin add zig
-	# asdf plugin add vim
 	asdf plugin add neovim
 	asdf plugin add deno https://github.com/asdf-community/asdf-deno.git
 	asdf plugin add nim https://github.com/asdf-community/asdf-nim
