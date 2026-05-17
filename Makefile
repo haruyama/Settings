@@ -22,7 +22,7 @@ PINACT_VERSION := v3.9.2
 K9S_VERSION := v0.50.18
 
 # renovate: datasource=github-releases depName=golangci/golangci-lint
-GOLANGCI_LINT_VERSION := v2.11.4
+GOLANGCI_LINT_VERSION := v2.12.2
 GOLANGCI_LINT_VERSION_NUM := $(GOLANGCI_LINT_VERSION:v%=%)
 # SHA256 of golangci-lint-$(GOLANGCI_LINT_VERSION_NUM)-linux-amd64.tar.gz.
 # Must be updated together with GOLANGCI_LINT_VERSION. Source:
