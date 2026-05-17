@@ -5,7 +5,7 @@ ASDF_VIM_CONFIG="--with-tlib=ncurses --with-compiledby=asdf --enable-multibyte -
 # as a prebuilt binary, which requires migrating the `asdf` / `asdf_update` targets
 # off `git clone + checkout`. Keep on v0.15.0 until that migration is scoped.
 # renovate: datasource=github-releases depName=asdf-vm/asdf allowedVersions=<0.16.0
-ASDF_VERSION := v0.15.0
+ASDF_VERSION := v0.19.0
 
 # renovate: datasource=go depName=golang.org/x/tools
 GOIMPORTS_VERSION := v0.44.0
