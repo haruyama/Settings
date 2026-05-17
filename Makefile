@@ -99,11 +99,11 @@ gtk3:
 # tmux:
 # 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-tool_update: lsp_update go_tool_install
+tool_update: tool_install
 	claude update
 	uv self update
 
-tool_install: lsp_install go_tool_install
+tool_install: lsp_update go_tool_install
 	pipx install flake8==$(FLAKE8_VERSION) --force
 	pipx install mysql-mcp-server==$(MYSQL_MCP_SERVER_VERSION) --force
 
