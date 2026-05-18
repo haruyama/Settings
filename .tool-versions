@@ -3,7 +3,7 @@ nodejs 25.9.0
 fzf 0.71.0
 golang 1.26.3
 gohugo 0.161.1
-hadolint 2.12.0
+hadolint 2.14.0
 nim 2.2.10
 deno 2.7.14
 # renovate: datasource=github-releases depName=neovim/neovim extractVersion=^v(?<version>.+)$
