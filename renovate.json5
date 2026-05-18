@@ -14,12 +14,6 @@
   internalChecksFilter: 'strict',
   packageRules: [
     {
-      description: 'Skip floating versions in .tool-versions (e.g. neovim nightly)',
-      matchManagers: ['asdf'],
-      matchDepNames: ['neovim'],
-      enabled: false,
-    },
-    {
       description: 'Disable major bumps for Go modules with /vN in path; major bump also changes the import path and must be done manually',
       matchDatasources: ['go'],
       matchPackageNames: ['/\\/v\\d+$/'],

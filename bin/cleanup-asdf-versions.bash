@@ -85,7 +85,7 @@ cleanup_simple "nim" "2.2.4"
 cleanup_simple "terraform" "1.12.2"
 cleanup_simple "kubectl" "1.31.0"
 cleanup_simple "fzf" "0.64.0"
-cleanup_simple "neovim" "nightly"
+cleanup_simple "neovim" "0.12.2"
 
 # Show disk usage after
 if [ "$DRY_RUN" = false ]; then

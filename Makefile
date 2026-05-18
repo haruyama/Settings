@@ -47,9 +47,12 @@ PYAIGIS_VERSION := 1.1.3
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.409
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install
+# renovate: datasource=github-releases depName=neovim/neovim
+NEOVIM_VERSION := v0.12.2
 
-update: asdf_update asdf_install tool_update
+.PHONY: update init git neovim neovim_install gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install
+
+update: asdf_update asdf_install neovim_install tool_update
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
 
 init: asdf git ssh_init bin_init neovim_init
@@ -153,6 +156,12 @@ asdf_plugin:
 
 asdf_install:
 	asdf install
+
+# Install and pin neovim to the Renovate-managed release version.
+# asdf-neovim lists versions without the leading 'v', so strip it.
+neovim_install:
+	asdf install neovim $(NEOVIM_VERSION:v%=%)
+	asdf set -u neovim $(NEOVIM_VERSION:v%=%)
 
 asdf_update:
 	asdf plugin update --all
