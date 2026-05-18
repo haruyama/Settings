@@ -8,7 +8,7 @@ ASDF_VERSION := v0.19.0
 ASDF_SHA256 := f6aa14de1348c9a85f3095f79792a5cd04305c466e6458c69a36a1621cd729ef
 
 # renovate: datasource=go depName=golang.org/x/tools
-GOIMPORTS_VERSION := v0.44.0
+GOIMPORTS_VERSION := v0.45.0
 # renovate: datasource=go depName=golang.org/x/tools/gopls
 GOPLS_VERSION := v0.21.1
 # renovate: datasource=go depName=github.com/rhysd/actionlint
