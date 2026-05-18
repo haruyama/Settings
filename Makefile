@@ -21,13 +21,9 @@ PINACT_VERSION := v3.9.2
 # renovate: datasource=go depName=github.com/derailed/k9s
 K9S_VERSION := v0.50.18
 
-# renovate: datasource=github-releases depName=golangci/golangci-lint
-GOLANGCI_LINT_VERSION := v2.11.4
-GOLANGCI_LINT_VERSION_NUM := $(GOLANGCI_LINT_VERSION:v%=%)
-# SHA256 of golangci-lint-$(GOLANGCI_LINT_VERSION_NUM)-linux-amd64.tar.gz.
-# Must be updated together with GOLANGCI_LINT_VERSION. Source:
-# https://github.com/golangci/golangci-lint/releases/download/$(GOLANGCI_LINT_VERSION)/golangci-lint-$(GOLANGCI_LINT_VERSION_NUM)-checksums.txt
-GOLANGCI_LINT_SHA256_LINUX_AMD64 := 200c5b7503f67b59a6743ccf32133026c174e272b930ee79aa2aa6f37aca7ef1
+# NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
+# renovate: datasource=go depName=github.com/golangci/golangci-lint/v2
+GOLANGCI_LINT_VERSION := v2.12.2
 
 # SHA256 of https://claude.ai/install.sh. Anthropic updates the installer in-place;
 # on mismatch, review the new script and bump this SHA.
@@ -51,7 +47,7 @@ PYAIGIS_VERSION := 1.1.3
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.409
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install golangci_lint_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install
 
 update: asdf_update asdf_install tool_update
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
@@ -117,22 +113,14 @@ claude_install:
 		bash $$tmp && \
 		rm -f $$tmp
 
-go_tool_install: golangci_lint_install
+go_tool_install:
 	go install golang.org/x/tools/cmd/goimports@$(GOIMPORTS_VERSION)
 	go install golang.org/x/tools/gopls@$(GOPLS_VERSION)
 	go install github.com/rhysd/actionlint/cmd/actionlint@$(ACTIONLINT_VERSION)
 	go install github.com/go-task/task/v3/cmd/task@$(TASK_VERSION)
 	go install github.com/suzuki-shunsuke/pinact/v3/cmd/pinact@$(PINACT_VERSION)
 	go install github.com/derailed/k9s@$(K9S_VERSION)
-
-golangci_lint_install:
-	tmpdir=$$(mktemp -d) && \
-		tarball=golangci-lint-$(GOLANGCI_LINT_VERSION_NUM)-linux-amd64.tar.gz && \
-		curl -fsSL -o $$tmpdir/$$tarball https://github.com/golangci/golangci-lint/releases/download/$(GOLANGCI_LINT_VERSION)/$$tarball && \
-		echo "$(GOLANGCI_LINT_SHA256_LINUX_AMD64)  $$tmpdir/$$tarball" | sha256sum -c - && \
-		tar -xzf $$tmpdir/$$tarball -C $$tmpdir && \
-		install -m 0755 $$tmpdir/golangci-lint-$(GOLANGCI_LINT_VERSION_NUM)-linux-amd64/golangci-lint $(GOPATH)/bin/golangci-lint && \
-		rm -rf $$tmpdir
+	go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(GOLANGCI_LINT_VERSION)
 
 lsp_update:
 	pipx install pyright==$(PYRIGHT_VERSION) --force
