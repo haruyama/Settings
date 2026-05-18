@@ -40,5 +40,14 @@
       ],
       datasourceTemplate: 'git-refs',
     },
+    {
+      customType: 'regex',
+      description: 'asdf tools in .tool-versions not handled by Renovate\'s asdf manager (e.g. neovim, fzf)',
+      managerFilePatterns: ['/(^|/)\\.tool-versions$/'],
+      matchStrings: [
+        '# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+?)(?:\\s+versioning=(?<versioning>\\S+))?(?:\\s+extractVersion=(?<extractVersion>\\S+))?[ \\t]*\\n\\S+\\s+(?<currentValue>\\S+)',
+      ],
+      versioningTemplate: '{{#if versioning}}{{versioning}}{{else}}semver{{/if}}',
+    },
   ],
 }
