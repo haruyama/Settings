@@ -33,3 +33,7 @@
 .zsh.d/antigen
 
 honbu6/.fluxbox/lastwallpaper
+
+# Override the global gitignore so this repo can track its asdf pin file
+# (other repos still treat .tool-versions as local-only).
+!.tool-versions

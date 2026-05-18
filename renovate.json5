@@ -14,12 +14,6 @@
   internalChecksFilter: 'strict',
   packageRules: [
     {
-      description: 'Skip floating versions in .tool-versions (e.g. neovim nightly)',
-      matchManagers: ['asdf'],
-      matchDepNames: ['neovim'],
-      enabled: false,
-    },
-    {
       description: 'Disable major bumps for Go modules with /vN in path; major bump also changes the import path and must be done manually',
       matchDatasources: ['go'],
       matchPackageNames: ['/\\/v\\d+$/'],
@@ -45,6 +39,15 @@
         '# renovate: datasource=git-refs depName=(?<depName>\\S+) branch=(?<currentValue>\\S+)[ \\t]*\\n[A-Z0-9_]+_SHA\\s*:=\\s*(?<currentDigest>[a-f0-9]{40})',
       ],
       datasourceTemplate: 'git-refs',
+    },
+    {
+      customType: 'regex',
+      description: 'asdf tools in .tool-versions not handled by Renovate\'s asdf manager (e.g. neovim, fzf)',
+      managerFilePatterns: ['/(^|/)\\.tool-versions$/'],
+      matchStrings: [
+        '# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+?)(?:\\s+versioning=(?<versioning>\\S+))?(?:\\s+extractVersion=(?<extractVersion>\\S+))?[ \\t]*\\n\\S+\\s+(?<currentValue>\\S+)',
+      ],
+      versioningTemplate: '{{#if versioning}}{{versioning}}{{else}}semver{{/if}}',
     },
   ],
 }

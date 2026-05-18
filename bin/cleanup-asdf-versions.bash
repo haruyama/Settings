@@ -1,9 +1,13 @@
 #!/bin/bash
-# Simple script to clean up old asdf versions
-# nodejs: keep 24.4.0 and 22.8.0
-# other tools: keep only current version
+# Clean up old asdf versions, keeping the versions listed in ~/.tool-versions.
+# nodejs additionally keeps the versions listed in NODEJS_EXTRA_KEEP.
 
 set -e
+
+TOOL_VERSIONS_FILE="${HOME}/.tool-versions"
+
+# Extra nodejs versions to keep, besides the one in ~/.tool-versions.
+NODEJS_EXTRA_KEEP=("22.8.0")
 
 # Check for dry-run mode
 DRY_RUN=false
@@ -14,7 +18,13 @@ if [ "$1" = "--dry-run" ] || [ "$1" = "-n" ]; then
     echo ""
 fi
 
+if [ ! -f "$TOOL_VERSIONS_FILE" ]; then
+    echo "Error: $TOOL_VERSIONS_FILE not found" >&2
+    exit 1
+fi
+
 echo "Starting asdf cleanup..."
+echo "Reading versions from: $TOOL_VERSIONS_FILE"
 echo ""
 
 # Show disk usage before
@@ -22,46 +32,53 @@ echo "Disk usage before cleanup:"
 du -sh ~/.asdf/installs/* | sort -hr
 echo ""
 
-# nodejs - keep 24.4.0 and 22.8.0
-echo "=== nodejs ==="
-echo "Keeping: 24.4.0, 22.8.0"
-all_nodejs=$(asdf list nodejs | sed 's/^[[:space:]*]*//')
-to_remove_nodejs=$(echo "$all_nodejs" | grep -v -E "^(24\.4\.0|22\.8\.0)$")
+cleanup_tool() {
+    local tool=$1
+    shift
+    local keep_versions=("$@")
 
-if [ -n "$to_remove_nodejs" ]; then
-    remove_count=$(echo "$to_remove_nodejs" | wc -l)
-    echo "Will remove $remove_count versions:"
-    echo "$to_remove_nodejs" | sed 's/^/  - /'
-    
-    if [ "$DRY_RUN" = false ]; then
-        echo "$to_remove_nodejs" | while read -r version; do
-            if [ -n "$version" ]; then
-                echo "Removing nodejs $version..."
-                asdf uninstall nodejs "$version" || echo "Failed to remove $version"
+    echo "=== $tool ==="
+
+    if [ ${#keep_versions[@]} -eq 0 ] || [ -z "${keep_versions[0]}" ]; then
+        echo "No keep version specified — skipping"
+        echo ""
+        return
+    fi
+
+    echo "Keeping: ${keep_versions[*]}"
+
+    local all_versions
+    all_versions=$(asdf list "$tool" 2>/dev/null | sed 's/^[[:space:]*]*//' || echo "")
+
+    if [ -z "$all_versions" ]; then
+        echo "Not installed via asdf — skipping"
+        echo ""
+        return
+    fi
+
+    local to_remove=""
+    while IFS= read -r version; do
+        [ -z "$version" ] && continue
+        local keep=false
+        for kv in "${keep_versions[@]}"; do
+            if [ "$version" = "$kv" ]; then
+                keep=true
+                break
             fi
         done
-    fi
-else
-    echo "No versions to remove"
-fi
-echo ""
+        if [ "$keep" = false ]; then
+            to_remove+="${version}"$'\n'
+        fi
+    done <<< "$all_versions"
 
-# Function for other tools
-cleanup_simple() {
-    local tool=$1
-    local keep_version=$2
-    
-    echo "=== $tool ==="
-    echo "Keeping: $keep_version"
-    
-    all_versions=$(asdf list "$tool" 2>/dev/null | sed 's/^[[:space:]*]*//' || echo "")
-    to_remove=$(echo "$all_versions" | grep -v "^${keep_version}$" || echo "")
-    
+    to_remove=$(printf '%s' "$to_remove" | sed '/^$/d')
+
     if [ -n "$to_remove" ]; then
+        local remove_count
         remove_count=$(echo "$to_remove" | wc -l)
         echo "Will remove $remove_count versions:"
         echo "$to_remove" | sed 's/^/  - /'
-        
+
         if [ "$DRY_RUN" = false ]; then
             echo "$to_remove" | while read -r version; do
                 if [ -n "$version" ]; then
@@ -76,16 +93,23 @@ cleanup_simple() {
     echo ""
 }
 
-# Clean up other tools
-cleanup_simple "golang" "1.24.5"
-cleanup_simple "deno" "2.4.1"
-cleanup_simple "gohugo" "0.148.1"
-cleanup_simple "zig" "0.14.1"
-cleanup_simple "nim" "2.2.4"
-cleanup_simple "terraform" "1.12.2"
-cleanup_simple "kubectl" "1.31.0"
-cleanup_simple "fzf" "0.64.0"
-cleanup_simple "neovim" "nightly"
+# Iterate over entries in ~/.tool-versions
+while IFS= read -r line || [ -n "$line" ]; do
+    # Skip blank lines and comments
+    [ -z "${line// /}" ] && continue
+    [[ "$line" =~ ^[[:space:]]*# ]] && continue
+
+    # shellcheck disable=SC2206
+    fields=($line)
+    tool="${fields[0]}"
+    version="${fields[1]}"
+
+    if [ "$tool" = "nodejs" ]; then
+        cleanup_tool "$tool" "$version" "${NODEJS_EXTRA_KEEP[@]}"
+    else
+        cleanup_tool "$tool" "$version"
+    fi
+done < "$TOOL_VERSIONS_FILE"
 
 # Show disk usage after
 if [ "$DRY_RUN" = false ]; then
