@@ -7,6 +7,12 @@ ASDF_VERSION := v0.19.0
 # Must be updated together with ASDF_VERSION.
 ASDF_SHA256 := f6aa14de1348c9a85f3095f79792a5cd04305c466e6458c69a36a1621cd729ef
 
+# renovate: datasource=github-releases depName=astral-sh/uv
+UV_VERSION := 0.11.15
+# SHA256 of uv-x86_64-unknown-linux-gnu.tar.gz from GitHub release assets.
+# Must be updated together with UV_VERSION.
+UV_SHA256 := b03e572f010bea94a4a52d42671ba72981e12894f71576181a1d26ff68546da7
+
 # renovate: datasource=go depName=golang.org/x/tools
 GOIMPORTS_VERSION := v0.45.0
 # renovate: datasource=go depName=golang.org/x/tools/gopls
@@ -47,7 +53,7 @@ PYAIGIS_VERSION := 1.1.3
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.409
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install
 
 update: asdf_update asdf_install tool_update
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
@@ -112,6 +118,16 @@ claude_install:
 		echo "$(CLAUDE_INSTALL_SCRIPT_SHA256)  $$tmp" | sha256sum -c - && \
 		bash $$tmp && \
 		rm -f $$tmp
+
+uv_install:
+	curl -fLo /tmp/uv-$(UV_VERSION).tar.gz \
+	    https://github.com/astral-sh/uv/releases/download/$(UV_VERSION)/uv-x86_64-unknown-linux-gnu.tar.gz
+	echo "$(UV_SHA256)  /tmp/uv-$(UV_VERSION).tar.gz" | sha256sum -c
+	mkdir -p $(HOME)/.local/bin
+	tar -xzf /tmp/uv-$(UV_VERSION).tar.gz -C /tmp uv-x86_64-unknown-linux-gnu/uv uv-x86_64-unknown-linux-gnu/uvx
+	install -m 755 /tmp/uv-x86_64-unknown-linux-gnu/uv $(HOME)/.local/bin/uv
+	install -m 755 /tmp/uv-x86_64-unknown-linux-gnu/uvx $(HOME)/.local/bin/uvx
+	rm -rf /tmp/uv-$(UV_VERSION).tar.gz /tmp/uv-x86_64-unknown-linux-gnu
 
 go_tool_install:
 	go install golang.org/x/tools/cmd/goimports@$(GOIMPORTS_VERSION)
