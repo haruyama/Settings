@@ -23,7 +23,7 @@ ACTIONLINT_VERSION := v1.7.12
 TASK_VERSION := v3.50.0
 # NOTE: on a major-version bump, also update the /v3 segment in go_tool_install below.
 # renovate: datasource=go depName=github.com/suzuki-shunsuke/pinact/v3
-PINACT_VERSION := v3.9.2
+PINACT_VERSION := v3.10.0
 # renovate: datasource=go depName=github.com/derailed/k9s
 K9S_VERSION := v0.50.18
 
