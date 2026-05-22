@@ -20,6 +20,13 @@
       matchUpdateTypes: ['major'],
       enabled: false,
     },
+    {
+      // HEAD-tracked sources (Neovim plugins, vim-jetpack pin) advance daily, so the 7-day
+      // global cooldown would always serve a stale SHA. Shorten just for git-refs.
+      description: 'Shorter cooldown for git-refs (HEAD-tracked sources have no release boundary)',
+      matchDatasources: ['git-refs'],
+      minimumReleaseAge: '3 days',
+    },
   ],
   customManagers: [
     {
@@ -48,6 +55,17 @@
         '# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+?)(?:\\s+versioning=(?<versioning>\\S+))?(?:\\s+extractVersion=(?<extractVersion>\\S+))?[ \\t]*\\n\\S+\\s+(?<currentValue>\\S+)',
       ],
       versioningTemplate: '{{#if versioning}}{{versioning}}{{else}}semver{{/if}}',
+    },
+    {
+      // Convention: place the renovate comment immediately before `[[plugins]]`,
+      // and put `commit = '<sha>'` on the line right after `repo = '...'`.
+      customType: 'regex',
+      description: 'Vim-jetpack plugin commit pins in jetpack.toml',
+      managerFilePatterns: ['/(^|/)jetpack\\.toml$/'],
+      matchStrings: [
+        '# renovate: datasource=git-refs depName=(?<depName>\\S+) branch=(?<currentValue>\\S+)[ \\t]*\\n\\[\\[plugins\\]\\]\\nrepo\\s*=\\s*[\'"][^\'"]+[\'"]\\ncommit\\s*=\\s*[\'"](?<currentDigest>[a-f0-9]{40})[\'"]',
+      ],
+      datasourceTemplate: 'git-refs',
     },
   ],
 }
