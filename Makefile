@@ -31,6 +31,9 @@ K9S_VERSION := v0.50.18
 # renovate: datasource=go depName=github.com/golangci/golangci-lint/v2
 GOLANGCI_LINT_VERSION := v2.12.2
 
+# renovate: datasource=crate depName=mcat
+MCAT_VERSION := 0.6.1
+
 # SHA256 of https://claude.ai/install.sh. Anthropic updates the installer in-place;
 # on mismatch, review the new script and bump this SHA.
 CLAUDE_INSTALL_SCRIPT_SHA256 := b315b46925a9bfb9422f2503dd5aa649f680832f4c076b22d87c39d578c3d830
@@ -53,7 +56,7 @@ PYAIGIS_VERSION := 1.1.3
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.409
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install
 
 update: asdf_update asdf_install tool_update
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
@@ -107,7 +110,7 @@ tool_update: tool_install
 	claude update
 	uv self update
 
-tool_install: lsp_update go_tool_install
+tool_install: lsp_update go_tool_install cargo_tool_install
 	pipx install flake8==$(FLAKE8_VERSION) --force
 	pipx install mysql-mcp-server==$(MYSQL_MCP_SERVER_VERSION) --force
 	pipx install pyaigis==$(PYAIGIS_VERSION) --force
@@ -137,6 +140,9 @@ go_tool_install:
 	go install github.com/suzuki-shunsuke/pinact/v3/cmd/pinact@$(PINACT_VERSION)
 	go install github.com/derailed/k9s@$(K9S_VERSION)
 	go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(GOLANGCI_LINT_VERSION)
+
+cargo_tool_install:
+	cargo install mcat --version $(MCAT_VERSION) --locked
 
 lsp_update:
 	pipx install pyright==$(PYRIGHT_VERSION) --force
