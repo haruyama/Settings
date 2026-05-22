@@ -13,6 +13,13 @@ UV_VERSION := 0.11.15
 # Must be updated together with UV_VERSION.
 UV_SHA256 := b03e572f010bea94a4a52d42671ba72981e12894f71576181a1d26ff68546da7
 
+# renovate: datasource=github-releases depName=rust-lang/rustup
+RUSTUP_VERSION := 1.29.0
+# SHA256 of rustup-init for x86_64-unknown-linux-gnu, fetched from
+# https://static.rust-lang.org/rustup/archive/$(RUSTUP_VERSION)/x86_64-unknown-linux-gnu/rustup-init.sha256
+# Must be updated together with RUSTUP_VERSION.
+RUSTUP_INIT_SHA256 := 4acc9acc76d5079515b46346a485974457b5a79893cfb01112423c89aeb5aa10
+
 # renovate: datasource=go depName=golang.org/x/tools
 GOIMPORTS_VERSION := v0.45.0
 # renovate: datasource=go depName=golang.org/x/tools/gopls
@@ -56,7 +63,7 @@ PYAIGIS_VERSION := 1.1.3
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.409
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install
 
 update: asdf_update asdf_install tool_update
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
@@ -109,6 +116,7 @@ gtk3:
 tool_update: tool_install
 	claude update
 	uv self update
+	rustup self update
 
 tool_install: lsp_update go_tool_install cargo_tool_install
 	pipx install flake8==$(FLAKE8_VERSION) --force
@@ -131,6 +139,14 @@ uv_install:
 	install -m 755 /tmp/uv-x86_64-unknown-linux-gnu/uv $(HOME)/.local/bin/uv
 	install -m 755 /tmp/uv-x86_64-unknown-linux-gnu/uvx $(HOME)/.local/bin/uvx
 	rm -rf /tmp/uv-$(UV_VERSION).tar.gz /tmp/uv-x86_64-unknown-linux-gnu
+
+rustup_install:
+	curl -fLo /tmp/rustup-init-$(RUSTUP_VERSION) \
+	    https://static.rust-lang.org/rustup/archive/$(RUSTUP_VERSION)/x86_64-unknown-linux-gnu/rustup-init
+	echo "$(RUSTUP_INIT_SHA256)  /tmp/rustup-init-$(RUSTUP_VERSION)" | sha256sum -c
+	chmod +x /tmp/rustup-init-$(RUSTUP_VERSION)
+	/tmp/rustup-init-$(RUSTUP_VERSION) -y --no-modify-path --default-toolchain stable
+	rm -f /tmp/rustup-init-$(RUSTUP_VERSION)
 
 go_tool_install:
 	go install golang.org/x/tools/cmd/goimports@$(GOIMPORTS_VERSION)
