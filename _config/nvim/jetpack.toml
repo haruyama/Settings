@@ -261,8 +261,10 @@ source ~/.vim/my/plugins/ddc-source-dictionary.vim
 repo = 'Shougo/ddc-ui-pum'
 on_source = 'ddc.vim'
 
+# renovate: datasource=git-refs depName=https://github.com/Shougo/ddc.vim branch=main
 [[plugins]]
 repo = 'Shougo/ddc.vim'
+commit = '5e00c108c369226d322717d9eddd7b8b936e63d4'
 depends = ['context_filetype.vim', 'denops.vim', 'ddc-source-lsp']
 on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
@@ -309,8 +311,10 @@ let g:vsnip_snippet_dirs = get(g:, 'vsnip_snippet_dirs', []) + [ '~/.local/share
 repo = 'Shougo/ddu-ui-filer'
 on_source = 'ddu.vim'
 
+# renovate: datasource=git-refs depName=https://github.com/Shougo/ddu.vim branch=main
 [[plugins]]
 repo = 'Shougo/ddu.vim'
+commit = '823f029b9c4fe4df98d2a3209f2a1a35937858a0'
 depends = 'denops.vim'
 on_source = 'denops.vim'
 hook_add = '''
