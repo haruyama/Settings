@@ -27,7 +27,7 @@ GOPLS_VERSION := v0.22.0
 # renovate: datasource=go depName=github.com/rhysd/actionlint
 ACTIONLINT_VERSION := v1.7.12
 # renovate: datasource=go depName=github.com/go-task/task/v3
-TASK_VERSION := v3.50.0
+TASK_VERSION := v3.51.1
 # NOTE: on a major-version bump, also update the /v3 segment in go_tool_install below.
 # renovate: datasource=go depName=github.com/suzuki-shunsuke/pinact/v3
 PINACT_VERSION := v3.10.1
