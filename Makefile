@@ -59,7 +59,7 @@ FLAKE8_VERSION := 7.3.0
 # renovate: datasource=pypi depName=mysql-mcp-server
 MYSQL_MCP_SERVER_VERSION := 0.2.2
 # renovate: datasource=pypi depName=pyaigis
-PYAIGIS_VERSION := 1.1.3
+PYAIGIS_VERSION := 1.1.4
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.409
 
