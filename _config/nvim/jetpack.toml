@@ -264,7 +264,7 @@ on_source = 'ddc.vim'
 # renovate: datasource=git-refs depName=https://github.com/Shougo/ddc.vim branch=main
 [[plugins]]
 repo = 'Shougo/ddc.vim'
-commit = '5e00c108c369226d322717d9eddd7b8b936e63d4'
+commit = '5f593cabc277d178f43e0abaf4c4e10670cd1f9d'
 depends = ['context_filetype.vim', 'denops.vim', 'ddc-source-lsp']
 on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
