@@ -7,10 +7,10 @@
   ],
   timezone: 'Asia/Tokyo',
   labels: ['dependencies'],
-  // Supply-chain cooldown: wait 7 days after a release before opening a PR.
-  // Mirrors .npmrc `min-release-age=7`; lets newly compromised releases be caught
+  // Supply-chain cooldown: wait 3 days after a release before opening a PR.
+  // Mirrors .npmrc `min-release-age=3`; lets newly compromised releases be caught
   // and yanked before we pull them.
-  minimumReleaseAge: '7 days',
+  minimumReleaseAge: '3 days',
   internalChecksFilter: 'strict',
   packageRules: [
     {
@@ -21,11 +21,12 @@
       enabled: false,
     },
     {
-      // HEAD-tracked sources (Neovim plugins, vim-jetpack pin) advance daily, so the 7-day
-      // global cooldown would always serve a stale SHA. Shorten just for git-refs.
-      description: 'Shorter cooldown for git-refs (HEAD-tracked sources have no release boundary)',
+      // Neovim/Vim plugins are pinned to their default-branch HEAD and advance
+      // frequently, so collapse all jetpack.toml git-refs bumps into one PR.
+      description: 'Group jetpack (Neovim/Vim) plugin git-refs bumps into a single PR',
+      matchFileNames: ['**/jetpack.toml'],
       matchDatasources: ['git-refs'],
-      minimumReleaseAge: '3 days',
+      groupName: 'jetpack plugins',
     },
   ],
   customManagers: [
