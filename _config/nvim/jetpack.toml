@@ -314,7 +314,7 @@ on_source = 'ddu.vim'
 # renovate: datasource=git-refs depName=https://github.com/Shougo/ddu.vim branch=main
 [[plugins]]
 repo = 'Shougo/ddu.vim'
-commit = '823f029b9c4fe4df98d2a3209f2a1a35937858a0'
+commit = '8365c770d63e88ef417734f2125df2ac3d5fb297'
 depends = 'denops.vim'
 on_source = 'denops.vim'
 hook_add = '''
