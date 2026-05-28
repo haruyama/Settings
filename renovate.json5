@@ -20,6 +20,14 @@
       matchUpdateTypes: ['major'],
       enabled: false,
     },
+    {
+      // Neovim/Vim plugins are pinned to their default-branch HEAD and advance
+      // frequently, so collapse all jetpack.toml git-refs bumps into one PR.
+      description: 'Group jetpack (Neovim/Vim) plugin git-refs bumps into a single PR',
+      matchFileNames: ['**/jetpack.toml'],
+      matchDatasources: ['git-refs'],
+      groupName: 'jetpack plugins',
+    },
   ],
   customManagers: [
     {
