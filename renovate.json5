@@ -21,12 +21,16 @@
       enabled: false,
     },
     {
-      // Neovim/Vim plugins are pinned to their default-branch HEAD and advance
-      // frequently, so collapse all jetpack.toml git-refs bumps into one PR.
-      description: 'Group jetpack (Neovim/Vim) plugin git-refs bumps into a single PR',
+      // Neovim/Vim plugins are pinned to their default-branch HEAD via
+      // jetpack.toml git-refs digests. One PR per plugin (no groupName).
+      // These digest bumps have no release timestamp, so minimumReleaseAge
+      // can't apply a per-commit cooldown; as a coarse stand-in we only open
+      // these PRs early Monday (JST, via the repo-level Asia/Tokyo timezone).
+      description: 'One PR per jetpack (Neovim/Vim) plugin, opened only early Monday (JST)',
       matchFileNames: ['**/jetpack.toml'],
       matchDatasources: ['git-refs'],
-      groupName: 'jetpack plugins',
+      minimumReleaseAgeBehaviour: 'timestamp-optional',
+      schedule: ['before 5am on monday'],
     },
   ],
   customManagers: [
