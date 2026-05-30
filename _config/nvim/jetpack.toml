@@ -168,7 +168,7 @@ repo = 'kevinhwang91/nvim-bqf'
 # renovate: datasource=git-refs depName=https://github.com/Wansmer/treesj branch=main
 [[plugins]]
 repo = 'Wansmer/treesj'
-commit = '5fa4e7ba3517f8fe743bb4488f9e9c7ce83330fc'
+commit = '79aedb401bbdc7e4202f7881eab5f6feb2105b0a'
 hook_source = '''
 lua << LUA
 require('treesj').setup({
@@ -418,7 +418,7 @@ on_source = 'ddu.vim'
 # renovate: datasource=git-refs depName=https://github.com/Shougo/ddu-kind-file branch=main
 [[plugins]]
 repo = 'Shougo/ddu-kind-file'
-commit = 'f5cfd2a13f1bfa37c8fd436d24bedd10b705bf52'
+commit = 'ef4ffe07bb87f1bdd626279d2f35cdd27df0ccff'
 on_source = 'ddu.vim'
 
 # renovate: datasource=git-refs depName=https://github.com/Shougo/ddu-kind-word branch=main
