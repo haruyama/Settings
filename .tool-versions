@@ -10,4 +10,4 @@ deno 2.8.1
 neovim 0.12.2
 zig 0.16.0
 kubectl 1.36.1
-terraform 1.15.4
+terraform 1.15.5
