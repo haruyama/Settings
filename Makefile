@@ -188,6 +188,7 @@ asdf_plugin:
 	asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
 	asdf plugin add nodejs
 	asdf plugin add kubectl
+	asdf plugin add mkcert https://github.com/salasrod/asdf-mkcert
 
 asdf_install:
 	asdf install
