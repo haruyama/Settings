@@ -72,5 +72,18 @@
       ],
       datasourceTemplate: 'git-refs',
     },
+    {
+      // asdf-nodejs installs these globally on every Node.js install. Each line
+      // is `name@version` (the parser strips `#` comment lines), so we pin every
+      // package and let Renovate bump them. Generic match: no per-line comment.
+      customType: 'regex',
+      description: 'Global npm packages pinned as name@version in .default-npm-packages',
+      managerFilePatterns: ['/(^|/)\\.default-npm-packages$/'],
+      matchStrings: [
+        '(?<depName>(?:@[^/\\s@]+/)?[^/\\s@]+)@(?<currentValue>[^\\s@]+)',
+      ],
+      datasourceTemplate: 'npm',
+      versioningTemplate: 'npm',
+    },
   ],
 }
