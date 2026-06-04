@@ -1,5 +1,8 @@
+# renovate: datasource=git-refs depName=https://github.com/tani/vim-jetpack branch=main
 [[plugins]]
 repo = 'tani/vim-jetpack'
+commit = '56558f41c2148120b94526e5c8e46f172864b990'
+opt = 1
 
 # renovate: datasource=git-refs depName=https://github.com/nvim-lualine/lualine.nvim branch=master
 [[plugins]]
@@ -9,8 +12,10 @@ hook_source = '''
 source ~/.vim/my/plugins/lualine.nvim.lua
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/folke/tokyonight.nvim branch=main
 [[plugins]]
 repo = 'folke/tokyonight.nvim'
+commit = 'cdc07ac78467a233fd62c493de29a17e0cf2b2b6'
 hook_source = '''
 set termguicolors
 colorscheme tokyonight-night
@@ -30,8 +35,10 @@ repo = 'osyo-manga/vim-precious'
 commit = '8df741e52e3886be9daaac5c02f8eac62168f379'
 depends = ['context_filetype.vim']
 
+# renovate: datasource=git-refs depName=https://github.com/windwp/nvim-autopairs branch=master
 [[plugins]]
 repo = 'windwp/nvim-autopairs'
+commit = '7b9923abad60b903ece7c52940e1321d39eccc79'
 depends = ['pum']
 hook_source = '''
 source ~/.vim/my/plugins/nvim-autopairs.vim.lua
@@ -45,14 +52,18 @@ hook_source = '''
 source ~/.vim/my/plugins/pum.vim.vim
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/numToStr/Comment.nvim branch=master
 [[plugins]]
 repo = 'numToStr/Comment.nvim'
+commit = 'e30b7f2008e52442154b66f7c519bfd2f1e32acb'
 hook_source = '''
 source ~/.vim/my/plugins/Comment.nvim.lua
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/tpope/vim-repeat branch=master
 [[plugins]]
 repo = 'tpope/vim-repeat'
+commit = '65846025c15494983dafe5e3b46c8f88ab2e9635'
 
 # renovate: datasource=git-refs depName=https://codeberg.org/andyg/leap.nvim branch=main
 [[plugins]]
@@ -62,47 +73,65 @@ hook_source = '''
 source ~/.vim/my/plugins/leap.nvim.lua
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/dense-analysis/ale branch=master
 [[plugins]]
 repo = 'dense-analysis/ale'
+commit = '178fe113564d31cba304263765aeb21e7ed23a7e'
 hook_add = '''
 source ~/.vim/my/plugins/ale.vim
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/thinca/vim-quickrun branch=master
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+commit = '77b4d6ea9972a206f02c736882c2398c36d2983c'
 hook_add = '''
 source ~/.vim/my/plugins/vim-quickrun.vim
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/farmergreg/vim-lastplace branch=master
 [[plugins]]
 repo = 'farmergreg/vim-lastplace'
+commit = 'e58cb0df716d3c88605ae49db5c4741db8b48aa9'
 
+# renovate: datasource=git-refs depName=https://github.com/tpope/vim-fugitive branch=master
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+commit = '3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0'
 
+# renovate: datasource=git-refs depName=https://github.com/kylechui/nvim-surround branch=main
 [[plugins]]
 repo = 'kylechui/nvim-surround'
+commit = '2e93e154de9ff326def6480a4358bfc149d5da2c'
 hook_source = '''
 source ~/.vim/my/plugins/nvim-surround.lua
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/gbprod/yanky.nvim branch=main
 [[plugins]]
 repo = 'gbprod/yanky.nvim'
+commit = 'b13d318dc7c816e2eee626dde61fa0a7237bc77e'
 hook_source = '''
 source ~/.vim/my/plugins/yanky.nvim.lua
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/wsdjeg/vim-fetch branch=master
 [[plugins]]
 repo = 'wsdjeg/vim-fetch'
+commit = 'b88bc5c4a8652b73bcdb577e0c90700a5064fd00'
 
+# renovate: datasource=git-refs depName=https://github.com/lambdalisue/mr.vim branch=main
 [[plugins]]
 repo = 'lambdalisue/mr.vim'
+commit = '2602c0bea2066afbc6cc5cc27ea99f2f51c66893'
 hook_source = '''
 let g:mr_disable_warning = 1
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/kevinhwang91/nvim-hlslens branch=main
 [[plugins]]
 repo = 'kevinhwang91/nvim-hlslens'
+commit = 'be2d7b2be01860b5445a007ff2bc72b29896db6b'
 hook_source = '''
 source ~/.vim/my/plugins/nvim-hlslens.lua
 '''
@@ -112,38 +141,50 @@ source ~/.vim/my/plugins/nvim-hlslens.lua
 repo = 'rhysd/committia.vim'
 commit = 'c8c0f255e8090ed90dd9d5dd2e8672994f8e3671'
 
+# renovate: datasource=git-refs depName=https://github.com/vim-test/vim-test branch=master
 [[plugins]]
 repo = 'vim-test/vim-test'
+commit = '2676d84c6901e484df00b5d728bd6a345d47ee12'
 hook_add = '''
 source ~/.vim/my/plugins/vim-test.vim
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/junegunn/vim-easy-align branch=master
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
+commit = '9815a55dbcd817784458df7a18acacc6f82b1241'
 hook_add = '''
 xnoremap <silent> <Leader>a :EasyAlign<cr>
 '''
 on_cmd = ['EasyAlign']
 
+# renovate: datasource=git-refs depName=https://github.com/subnut/nvim-ghost.nvim branch=main
 [[plugins]]
 repo = 'subnut/nvim-ghost.nvim'
+commit = 'bdba2a8ad0eec84379d65e7aa9b76a17b11b653a'
 
+# renovate: datasource=git-refs depName=https://github.com/neovim/nvim-lspconfig branch=master
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
+commit = '229b79051b380377664edc4cbd534930154921a1'
 hook_source = '''
 source ~/.vim/my/plugins/nvim-lspconfig.lua
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/nvim-treesitter/nvim-treesitter branch=main
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
+commit = '4916d6592ede8c07973490d9322f187e07dfefac'
 branch = 'main'
 hook_post_update = 'TSUpdate'
 hook_source = '''
 source ~/.vim/my/plugins/nvim-treesitter.lua
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/nvim-treesitter/nvim-treesitter-context branch=master
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter-context'
+commit = 'b311b30818951d01f7b4bf650521b868b3fece16'
 depends = 'nvim-treesitter'
 
 # renovate: datasource=git-refs depName=https://github.com/nvim-treesitter/nvim-treesitter-textobjects branch=main
@@ -162,8 +203,10 @@ repo = 'andersevenrud/nvim_context_vt'
 commit = 'fadbd9e57af72f6df3dd33df32ee733aa01cdbc0'
 depends = 'nvim-treesitter'
 
+# renovate: datasource=git-refs depName=https://github.com/kevinhwang91/nvim-bqf branch=main
 [[plugins]]
 repo = 'kevinhwang91/nvim-bqf'
+commit = 'c282a62bec6c0621a1ef5132aa3f4c9fc4dcc2c7'
 
 # renovate: datasource=git-refs depName=https://github.com/Wansmer/treesj branch=main
 [[plugins]]
@@ -186,8 +229,10 @@ LUA
 repo = 'neoclide/jsonc.vim'
 commit = '6fb92460f9e50505c9b93181a00f27d10c9b383f'
 
+# renovate: datasource=git-refs depName=https://github.com/ysmb-wtsg/in-and-out.nvim branch=master
 [[plugins]]
 repo = 'ysmb-wtsg/in-and-out.nvim'
+commit = '03456b9c49365a28732378a7f2a72a613154e042'
 hook_source = '''
 lua << LUA
 vim.keymap.set("n", "<leader>i", function() require("in-and-out").in_and_out() end)
@@ -195,8 +240,10 @@ vim.keymap.set("i", "<leader>i", function() require("in-and-out").in_and_out() e
 LUA
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/zbirenbaum/copilot.lua branch=master
 [[plugins]]
 repo = 'zbirenbaum/copilot.lua'
+commit = '1d457ad5f267b8ef855a6b8b3fe152403cb00947'
 on_cmd = 'Copilot'
 on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
@@ -223,16 +270,20 @@ require("copilot").setup({
 EOF
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/lukas-reineke/indent-blankline.nvim branch=master
 [[plugins]]
 repo = 'lukas-reineke/indent-blankline.nvim'
+commit = 'd28a3f70721c79e3c5f6693057ae929f3d9c0a03'
 hook_source = '''
 lua << EOF
 require("ibl").setup()
 EOF
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/lewis6991/gitsigns.nvim branch=main
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
+commit = '25050e4ed39e628282831d4cbecb1850454ce915'
 hook_source = '''
 lua require('gitsigns').setup()
 '''
@@ -264,8 +315,10 @@ repo = 'Shougo/ddc-filter-matcher_length'
 commit = '0d4f4a6dd657c3394e522910a7bdc2f15f587b52'
 on_source = 'ddc.vim'
 
+# renovate: datasource=git-refs depName=https://github.com/Shougo/ddc-source-around branch=main
 [[plugins]]
 repo = 'Shougo/ddc-source-around'
+commit = '68e679ca0b989cfe3300acac9099b893d0675063'
 on_source = 'ddc.vim'
 
 # renovate: datasource=git-refs depName=https://github.com/Shougo/ddc-sorter_rank branch=main
@@ -305,14 +358,18 @@ hook_source = '''
 source ~/.vim/my/plugins/ddc.vim.vim
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/Shougo/ddc-source-lsp branch=main
 [[plugins]]
 repo = 'Shougo/ddc-source-lsp'
+commit = 'a8fef26851f3b648e064fa3aeb7c8c054684e846'
 hook_source = '''
 source ~/.vim/my/plugins/ddc-source-lsp.lua
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/liuchengxu/vista.vim branch=master
 [[plugins]]
 repo = 'liuchengxu/vista.vim'
+commit = '1e90efad6e32c4f7d16b1ca8f49bf63d0693802e'
 hook_source = '''
 let g:vista_default_executive = 'nvim_lsp'
 '''
@@ -433,11 +490,15 @@ repo = 'Shougo/ddu-column-filename'
 commit = 'c7a9e3fbd7b936b057e0e6de0b5095f445abc935'
 on_source = 'ddu.vim'
 
+# renovate: datasource=git-refs depName=https://github.com/MunifTanjim/nui.nvim branch=main
 [[plugins]]
 repo = 'MunifTanjim/nui.nvim'
+commit = 'de740991c12411b663994b2860f1a4fd0937c130'
 
+# renovate: datasource=git-refs depName=https://github.com/y3owk1n/undo-glow.nvim branch=main
 [[plugins]]
 repo = 'y3owk1n/undo-glow.nvim'
+commit = '25314a94cdfd84a3ca62bada1f88ed00982659ac'
 on_event = 'VeryLazy'
 hook_source = '''
 lua << LUA
@@ -460,8 +521,10 @@ end, { desc = 'Paste above with highlight' })
 LUA
 '''
 
+# renovate: datasource=git-refs depName=https://github.com/delphinus/md-render.nvim branch=main
 [[plugins]]
 repo = 'delphinus/md-render.nvim'
+commit = '4af5c3ec6245f523d75f2feafe8043f352b4dca9'
 on_event = ['MdRender', 'MdRenderTab', 'MdRenderDemo', 'MdRenderPager']
 
 
