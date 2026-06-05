@@ -2,7 +2,7 @@
 @google/gemini-cli@0.36.0
 @openai/codex@0.118.0
 @textlint-ja/textlint-rule-preset-ai-writing@1.6.1
-cspell@9.7.0
+cspell@9.8.0
 fixpack@4.0.0
 fx@39.2.0
 honyaku@1.0.1
