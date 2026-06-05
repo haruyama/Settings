@@ -61,7 +61,7 @@ MYSQL_MCP_SERVER_VERSION := 0.3.1
 # renovate: datasource=pypi depName=pyaigis
 PYAIGIS_VERSION := 1.1.8
 # renovate: datasource=pypi depName=pyright
-PYRIGHT_VERSION := 1.1.409
+PYRIGHT_VERSION := 1.1.410
 
 .PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install
 
