@@ -32,7 +32,7 @@ TASK_VERSION := v3.51.1
 # renovate: datasource=go depName=github.com/suzuki-shunsuke/pinact/v3
 PINACT_VERSION := v3.10.1
 # renovate: datasource=go depName=github.com/derailed/k9s
-K9S_VERSION := v0.50.18
+K9S_VERSION := v0.51.0
 
 # NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
 # renovate: datasource=go depName=github.com/golangci/golangci-lint/v2
