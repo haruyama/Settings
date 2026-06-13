@@ -56,6 +56,31 @@ HISTSIZE=1000000
 SAVEHIST=$HISTSIZE
 HISTFILE="$HOME/.zhistory"
 
+# --- $HISTFILE にトークン等の秘密情報を残さない -----------------------
+# zshaddhistory フック: トークン/パスワードらしき行は履歴に保存しない。
+#   return 1 … セッション内にもファイルにも残さない（このフックの挙動）
+#   return 2 … その場の recall は可・.zhistory には書かない（必要なら変更）
+# なお hist_ignore_space は既に有効なので、行頭にスペースを付ければ
+# パターンに関係なくその行は保存されない（手動の確実な回避策）。
+autoload -Uz add-zsh-hook
+_zshaddhistory_no_secrets() {
+        emulate -L zsh
+        setopt local_options extended_glob
+        local line=${1%%$'\n'}
+        local lc=${line:l}
+
+        # 1) 既知のトークン接頭辞（誤検知ほぼ無し）
+        if [[ $line == *(ghp_|gho_|ghu_|ghs_|ghr_|github_pat_|glpat-|gitlab-ci-token|sk-ant-|sk-|xox[abprs]-|xapp-|AKIA|ASIA|AIza|ya29.|npm_)[A-Za-z0-9_./+-]##* ]]; then
+                return 1
+        fi
+        # 2) 秘密らしい変数名/オプションへの代入 (NAME=値, --token=値, "Authorization: Bearer …")
+        if [[ $lc == *(token|secret|passwd|password|api[_-]#key|access[_-]#key|secret[_-]#key|private[_-]#key|client[_-]#secret|credential|bearer|authorization)[a-z0-9_-]#[=:][^[:space:]]##* ]]; then
+                return 1
+        fi
+        return 0
+}
+add-zsh-hook zshaddhistory _zshaddhistory_no_secrets
+
 function history-all { history -E 1 }
 
 if type ruby > /dev/null 2>&1; then
