@@ -10,5 +10,5 @@ deno 2.8.2
 neovim 0.12.2
 zig 0.16.0
 kubectl 1.36.1
-terraform 1.15.5
+terraform 1.15.6
 mkcert 1.4.4
