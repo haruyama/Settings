@@ -1,0 +1,46 @@
+name: Sync pinned SHA256
+
+# Renovate bumps only the *_VERSION lines in the Makefile; it cannot recompute
+# the paired *_SHA256 checksums (uv / rustup / asdf), so they go stale on every
+# bump. This workflow re-derives them from upstream and commits the fix back
+# onto the Renovate branch. Commits pushed with GITHUB_TOKEN do not retrigger
+# `push` workflows, so there is no loop.
+on:
+  push:
+    branches:
+      - 'renovate/**'
+    paths:
+      - 'Makefile'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-sha-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        # push events default to checking out the triggering branch (github.ref),
+        # so no explicit ref: is needed — avoids interpolating a templated value.
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: true
+
+      - name: Recompute SHA256 pins
+        run: bash .github/scripts/sync-pinned-sha256.sh Makefile
+
+      - name: Commit & push if changed
+        run: |
+          if git diff --quiet -- Makefile; then
+            echo "SHA256 pins already in sync."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Makefile
+          git commit -m "fix: sync pinned SHA256 with Renovate version bump"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
