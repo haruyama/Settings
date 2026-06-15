@@ -102,7 +102,7 @@ commit = '3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0'
 # renovate: datasource=git-refs depName=https://github.com/kylechui/nvim-surround branch=main
 [[plugins]]
 repo = 'kylechui/nvim-surround'
-commit = '2e93e154de9ff326def6480a4358bfc149d5da2c'
+commit = '8b47db616ef658b8fc27e61db2896aa2f40134de'
 hook_source = '''
 source ~/.vim/my/plugins/nvim-surround.lua
 '''
