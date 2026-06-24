@@ -57,7 +57,7 @@ TS_LANGSERVER_VERSION := 5.3.0
 # renovate: datasource=pypi depName=flake8
 FLAKE8_VERSION := 7.3.0
 # renovate: datasource=pypi depName=mysql-mcp-server
-MYSQL_MCP_SERVER_VERSION := 0.4.1
+MYSQL_MCP_SERVER_VERSION := 0.4.2
 # renovate: datasource=pypi depName=pyaigis
 PYAIGIS_VERSION := 1.1.11
 # renovate: datasource=pypi depName=pyright
