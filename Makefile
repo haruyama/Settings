@@ -50,7 +50,7 @@ CLAUDE_INSTALL_SCRIPT_SHA256 := b315b46925a9bfb9422f2503dd5aa649f680832f4c076b22
 VIM_JETPACK_SHA := 56558f41c2148120b94526e5c8e46f172864b990
 
 # renovate: datasource=npm depName=intelephense
-INTELEPHENSE_VERSION := 1.18.4
+INTELEPHENSE_VERSION := 1.18.5
 # renovate: datasource=npm depName=typescript-language-server
 TS_LANGSERVER_VERSION := 5.3.0
 
