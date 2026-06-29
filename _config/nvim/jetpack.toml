@@ -166,7 +166,7 @@ commit = 'bdba2a8ad0eec84379d65e7aa9b76a17b11b653a'
 # renovate: datasource=git-refs depName=https://github.com/neovim/nvim-lspconfig branch=master
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
-commit = '229b79051b380377664edc4cbd534930154921a1'
+commit = '3371bf298c1f56efc26771ee961f461176958fb5'
 hook_source = '''
 source ~/.vim/my/plugins/nvim-lspconfig.lua
 '''
