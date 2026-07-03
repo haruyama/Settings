@@ -14,6 +14,16 @@
   internalChecksFilter: 'strict',
   packageRules: [
     {
+      // The asdf manager tracks nodejs with `versioning: node`, whose default
+      // `ignoreUnstable: true` skips every non-LTS (Current) release. We want the
+      // latest stable/Current line (e.g. 26.x before it becomes LTS in Oct 2026),
+      // so opt into unstable node releases. Still node-schedule-aware ordering.
+      description: 'Follow the latest Node.js stable (Current) line, not just LTS, in .tool-versions',
+      matchManagers: ['asdf'],
+      matchDepNames: ['node'],
+      ignoreUnstable: false,
+    },
+    {
       description: 'Disable major bumps for Go modules with /vN in path; major bump also changes the import path and must be done manually',
       matchDatasources: ['go'],
       matchPackageNames: ['/\\/v\\d+$/'],
