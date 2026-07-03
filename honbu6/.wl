@@ -251,8 +251,6 @@
          ("users-info@freeml.com" ."+trash")
          ("info@discount-domain.com"  . "+ml/info-onamae")
          ("info@onamae.com"  . "+ml/info-onamae")
-         ("announce@list.jpcert.or.jp" . "+ml/jpcert-announce")
-         ("announce@jpcert.or.jp" . "+ml/jpcert-announce")
          ("members-ml@unixuser.org" . "+ml/unixuser")
          ("ruby-list@ruby-lang.org" . "+ml/ruby-list")
          ("ruby-ext@ruby-lang.org" . "+ml/ruby-ext")
