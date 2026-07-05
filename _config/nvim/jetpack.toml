@@ -283,7 +283,7 @@ EOF
 # renovate: datasource=git-refs depName=https://github.com/lewis6991/gitsigns.nvim branch=main
 [[plugins]]
 repo = 'lewis6991/gitsigns.nvim'
-commit = '2038c666bd9d8a0b7349a0b6ee00dc83104b9ecf'
+commit = 'eb60cc7b94c46005237fd34170d76f3a089a90aa'
 hook_source = '''
 lua require('gitsigns').setup()
 '''
