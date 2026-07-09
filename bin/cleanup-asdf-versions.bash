@@ -7,7 +7,7 @@ set -e
 TOOL_VERSIONS_FILE="${HOME}/.tool-versions"
 
 # Extra nodejs versions to keep, besides the one in ~/.tool-versions.
-NODEJS_EXTRA_KEEP=("24.14.1")
+NODEJS_EXTRA_KEEP=("24.17.0")
 
 # Check for dry-run mode
 DRY_RUN=false
