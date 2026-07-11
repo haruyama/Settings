@@ -23,7 +23,7 @@ RUSTUP_INIT_SHA256 := 4acc9acc76d5079515b46346a485974457b5a79893cfb01112423c89ae
 # renovate: datasource=go depName=golang.org/x/tools
 GOIMPORTS_VERSION := v0.47.0
 # renovate: datasource=go depName=golang.org/x/tools/gopls
-GOPLS_VERSION := v0.22.0
+GOPLS_VERSION := v0.23.0
 # renovate: datasource=go depName=github.com/rhysd/actionlint
 ACTIONLINT_VERSION := v1.7.12
 # renovate: datasource=go depName=github.com/go-task/task/v3
