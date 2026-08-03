@@ -200,7 +200,7 @@ source ~/.vim/my/plugins/nvim-treesitter-textobjects.lua
 # renovate: datasource=git-refs depName=https://github.com/andersevenrud/nvim_context_vt branch=master
 [[plugins]]
 repo = 'andersevenrud/nvim_context_vt'
-commit = 'b72accf0ba6772c9ae6e37f4540a81f1bc715f1a'
+commit = '8f2a18fb3696bd93a7a9ad85b42b225f63c906ea'
 depends = 'nvim-treesitter'
 
 # renovate: datasource=git-refs depName=https://github.com/kevinhwang91/nvim-bqf branch=main
