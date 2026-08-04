@@ -8,10 +8,10 @@ ASDF_VERSION := v0.20.0
 ASDF_SHA256 := 9c25e1af7cc4c9d59ff3736eba14fd000480c32929258f80d8c5a8b290ebee14
 
 # renovate: datasource=github-releases depName=astral-sh/uv
-UV_VERSION := 0.12.0
+UV_VERSION := 0.12.1
 # SHA256 of uv-x86_64-unknown-linux-gnu.tar.gz from GitHub release assets.
 # Must be updated together with UV_VERSION.
-UV_SHA256 := eaf842262aa1c418d8ecc5605f02ee1ebfd369124fa48548e85f9481a47831a9
+UV_SHA256 := 90b2f223fb69d19db49e117da601f64978593417988530aa733d456141b4bcbb
 
 # renovate: datasource=github-releases depName=rust-lang/rustup
 RUSTUP_VERSION := 1.29.0
