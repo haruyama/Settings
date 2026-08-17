@@ -2,7 +2,7 @@ nodejs 26.7.0
 # renovate: datasource=github-releases depName=junegunn/fzf extractVersion=^v(?<version>.+)$
 fzf 0.74.2
 golang 1.26.6
-gohugo 0.164.0
+gohugo 0.165.0
 hadolint 2.15.1
 nim 2.2.10
 deno 2.9.5
