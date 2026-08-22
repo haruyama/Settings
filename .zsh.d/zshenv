@@ -45,3 +45,9 @@ export SSH_AUTH_SOCK=${SSH_AUTH_SOCK:-${XDG_RUNTIME_DIR:-/run/user/$UID}/openssh
 [ -z "$ld_library_path" ] && typeset -xT LD_LIBRARY_PATH ld_library_path
 [ -z "$include" ] && typeset -xT INCLUDE include
 typeset -U cdpath fpath ld_library_path include
+
+# codex-fugu re-checks SakanaAI/fugu on every interactive launch; accepting its
+# "Update now?" prompt does `git reset --hard origin/main` in ~/.fugu and then runs
+# scripts/install.sh from it. Disable that path — ~/.fugu only moves via the pinned
+# FUGU_SHA in ~/lib/Settings/Makefile (`make codex_fugu_install`).
+export CODEX_FUGU_NO_UPDATE=1

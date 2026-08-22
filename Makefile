@@ -49,6 +49,15 @@ CLAUDE_INSTALL_SCRIPT_SHA256 := b315b46925a9bfb9422f2503dd5aa649f680832f4c076b22
 # renovate: datasource=git-refs depName=https://github.com/tani/vim-jetpack branch=main
 VIM_JETPACK_SHA := 56558f41c2148120b94526e5c8e46f172864b990
 
+# SakanaAI/fugu has no release tags; pin ~/.fugu to a reviewed commit on main.
+# This replaces the upstream `curl -fsSL https://sakana.ai/fugu/install | bash`
+# bootstrap, which clones main unpinned and then runs scripts/ from it.
+# Run `make fugu_diff` and read the scripts/ + configs/ changes before bumping.
+# renovate: datasource=git-refs depName=https://github.com/SakanaAI/fugu branch=main
+FUGU_SHA := 981a4dec601a2be7d4a925a6bba435543a3066a8
+FUGU_HOME := $(HOME)/.fugu
+FUGU_REPO_URL := https://github.com/SakanaAI/fugu.git
+
 # renovate: datasource=npm depName=intelephense
 INTELEPHENSE_VERSION := 1.18.5
 # renovate: datasource=npm depName=typescript-language-server
@@ -63,7 +72,7 @@ PYAIGIS_VERSION := 1.2.0
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.411
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install fugu_fetch fugu_diff claude_fugu_install codex_fugu_install codex_fugu_dry_run
 
 update: asdf_update asdf_install tool_update
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
@@ -129,6 +138,49 @@ claude_install:
 		echo "$(CLAUDE_INSTALL_SCRIPT_SHA256)  $$tmp" | sha256sum -c - && \
 		bash $$tmp && \
 		rm -f $$tmp
+
+# Pin the fugu clone to FUGU_SHA. The commit SHA is the integrity check: git verifies
+# object hashes, so a rewritten upstream main cannot satisfy this checkout.
+fugu_fetch:
+	[ -d $(FUGU_HOME)/.git ] || git clone --quiet $(FUGU_REPO_URL) $(FUGU_HOME)
+	git -C $(FUGU_HOME) fetch --quiet origin
+	git -C $(FUGU_HOME) checkout --quiet --detach $(FUGU_SHA)
+	test "$$(git -C $(FUGU_HOME) rev-parse HEAD)" = "$(FUGU_SHA)"
+
+# Review what a FUGU_SHA bump would pull in. These files run with your privileges.
+fugu_diff:
+	git -C $(FUGU_HOME) fetch --quiet origin main
+	git -C $(FUGU_HOME) log --oneline $(FUGU_SHA)..origin/main
+	git -C $(FUGU_HOME) diff $(FUGU_SHA)..origin/main -- scripts/ configs/
+
+# claude-fugu is a self-contained launcher: it exports ANTHROPIC_BASE_URL /
+# ANTHROPIC_AUTH_TOKEN / model names and execs claude. Copy it directly rather than
+# running scripts/install-claude.sh, whose only extra job is prompting for the key
+# (already stored 0600 in ~/.claude/.fugu-env).
+claude_fugu_install: fugu_fetch
+	install -m 755 $(FUGU_HOME)/scripts/claude-fugu $(HOME)/.local/bin/claude-fugu
+
+# Deploy the fugu config bundle + codex-fugu launcher WITHOUT letting fugu touch the
+# Codex binary. @openai/codex is pinned in .default-npm-packages and owned by Renovate;
+# fugu's own installer would `curl | sh` the openai/codex release installer (no checksum,
+# with a fallback to the unpinned latest one) and can downgrade you to the bundle's target.
+#
+# Passing the *installed* version as FUGU_PINNED_VERSION makes ensure_codex_version()
+# short-circuit on "already installed" before it can download anything. FUGU_FORCE=1 then
+# only lifts deploy_gate_ok(), which otherwise refuses to write configs when Codex is
+# newer than the bundle's BUNDLE_CODEX_VERSION.
+FUGU_INSTALL_ENV = FUGU_PINNED_VERSION="$$ver" FUGU_FORCE=1
+
+codex_fugu_install: fugu_fetch
+	ver=$$(codex --version 2>/dev/null | awk '{print $$2}'); \
+	    [ -n "$$ver" ] || { echo "codex --version unreadable; refusing to run fugu installer" >&2; exit 1; }; \
+	    $(FUGU_INSTALL_ENV) bash $(FUGU_HOME)/scripts/install.sh
+
+# Same, but resolve + print intended actions only. Run this first after a FUGU_SHA bump.
+codex_fugu_dry_run: fugu_fetch
+	ver=$$(codex --version 2>/dev/null | awk '{print $$2}'); \
+	    [ -n "$$ver" ] || { echo "codex --version unreadable; refusing to run fugu installer" >&2; exit 1; }; \
+	    $(FUGU_INSTALL_ENV) FUGU_DRY_RUN=1 bash $(FUGU_HOME)/scripts/install.sh
 
 uv_install:
 	curl -fLo /tmp/uv-$(UV_VERSION).tar.gz \
