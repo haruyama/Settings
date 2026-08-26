@@ -7,7 +7,7 @@ hadolint 2.15.1
 nim 2.2.10
 deno 2.9.5
 # renovate: datasource=github-releases depName=neovim/neovim extractVersion=^v(?<version>.+)$
-neovim 0.12.4
+neovim 0.12.5
 zig 0.16.0
 kubectl 1.36.4
 terraform 1.15.9
