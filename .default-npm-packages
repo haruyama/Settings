@@ -1,5 +1,5 @@
 @biomejs/biome@2.5.10
-@google/gemini-cli@0.56.0
+@google/gemini-cli@0.57.0
 @openai/codex@0.149.1
 @textlint-ja/textlint-rule-preset-ai-writing@1.7.0
 cspell@10.1.1
