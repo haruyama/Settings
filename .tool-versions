@@ -1,4 +1,4 @@
-nodejs 26.8.0
+nodejs 26.8.1
 # renovate: datasource=github-releases depName=junegunn/fzf extractVersion=^v(?<version>.+)$
 fzf 0.74.3
 golang 1.27.0
