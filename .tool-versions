@@ -9,6 +9,6 @@ deno 2.9.5
 # renovate: datasource=github-releases depName=neovim/neovim extractVersion=^v(?<version>.+)$
 neovim 0.12.5
 zig 0.16.0
-kubectl 1.36.4
+kubectl 1.37.0
 terraform 1.16.0
 mkcert 1.4.4
