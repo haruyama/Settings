@@ -36,7 +36,7 @@ K9S_VERSION := v0.51.0
 
 # NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
 # renovate: datasource=go depName=github.com/golangci/golangci-lint/v2
-GOLANGCI_LINT_VERSION := v2.13.1
+GOLANGCI_LINT_VERSION := v2.13.2
 
 # renovate: datasource=crate depName=mcat
 MCAT_VERSION := 0.6.4
