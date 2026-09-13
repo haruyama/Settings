@@ -76,7 +76,7 @@ source ~/.vim/my/plugins/leap.nvim.lua
 # renovate: datasource=git-refs depName=https://github.com/dense-analysis/ale branch=master
 [[plugins]]
 repo = 'dense-analysis/ale'
-commit = 'd0ea94323207abcdee717d76bb57b38d46055664'
+commit = 'e1789bc54483d76ac9ddb40b633d1645c8281914'
 hook_add = '''
 source ~/.vim/my/plugins/ale.vim
 '''
