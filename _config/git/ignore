@@ -68,14 +68,6 @@ gmon.out
 
 .vscode
 
-build
-debug
-profile
-release
-relwithdebinfo
-sanitizer
-native
-
 *.mp3
 *.mp4
 *.pcm
