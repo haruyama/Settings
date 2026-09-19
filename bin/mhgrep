@@ -1,0 +1,155 @@
+#!/usr/bin/env python3
+
+import argparse
+import email
+import email.policy
+import pathlib
+import re
+import sys
+
+
+def decode_part(part):
+    """Decode a MIME text part to Unicode."""
+    try:
+        content = part.get_content()
+        return content if isinstance(content, str) else ""
+    except (LookupError, UnicodeDecodeError):
+        payload = part.get_payload(decode=True)
+        if payload is None:
+            return ""
+
+        charset = part.get_content_charset() or "ascii"
+
+        try:
+            return payload.decode(charset, errors="replace")
+        except LookupError:
+            return payload.decode("ascii", errors="replace")
+
+
+def read_message(path):
+    """Read an MH message and return (message, searchable text)."""
+    with path.open("rb") as f:
+        msg = email.message_from_binary_file(
+            f,
+            policy=email.policy.default,
+        )
+
+    texts = []
+
+    # RFC 2047 encoded Subject is decoded by email.policy.default.
+    subject = msg.get("Subject", "")
+    if subject:
+        texts.append(subject)
+
+    # Search text/plain parts.
+    parts = msg.walk() if msg.is_multipart() else [msg]
+
+    for part in parts:
+        if part.is_multipart():
+            continue
+
+        if part.get_content_type() == "text/plain":
+            texts.append(decode_part(part))
+
+    return msg, "\n".join(texts)
+
+
+def search_message(path, regex):
+    """Return (message, searchable_text, matching_lines)."""
+    try:
+        msg, text = read_message(path)
+    except Exception as e:
+        print(f"mhgrep: {path}: {e}", file=sys.stderr)
+        return None, "", []
+
+    lines = [
+        line for line in text.splitlines()
+        if regex.search(line)
+    ]
+
+    return msg, text, lines
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Search MIME-decoded text in an MH mail folder."
+    )
+
+    parser.add_argument(
+        "pattern",
+        help="regular expression to search for",
+    )
+
+    parser.add_argument(
+        "folder",
+        nargs="?",
+        default=".",
+        help="MH folder (default: current directory)",
+    )
+
+    parser.add_argument(
+        "-i",
+        "--ignore-case",
+        action="store_true",
+        help="ignore case",
+    )
+
+    parser.add_argument(
+        "-n",
+        action="store_true",
+        help="print message number and Subject",
+    )
+
+    parser.add_argument(
+        "-l",
+        action="store_true",
+        help="print matching lines from the message",
+    )
+
+    args = parser.parse_args()
+
+    flags = re.IGNORECASE if args.ignore_case else 0
+
+    try:
+        regex = re.compile(args.pattern, flags)
+    except re.error as e:
+        parser.error(f"invalid regular expression: {e}")
+
+    folder = pathlib.Path(args.folder)
+
+    if not folder.is_dir():
+        parser.error(f"not a directory: {folder}")
+
+    found = 0
+
+    for path in sorted(folder.iterdir(), key=lambda p: int(p.name)
+                       if p.name.isdigit() else float("inf")):
+
+        # MH message files normally have numeric filenames.
+        if not path.is_file() or not path.name.isdigit():
+            continue
+
+        msg, text, matching_lines = search_message(path, regex)
+
+        if msg is None or not matching_lines:
+            continue
+
+        found += 1
+
+        if args.n:
+            subject = msg.get("Subject", "(no subject)")
+            print(f"{path.name}: {subject}")
+
+        elif not args.l:
+            # grep-like default: just print the message number.
+            print(path.name)
+
+        if args.l:
+            for line in matching_lines:
+                print(f"{path.name}:{line}")
+
+    sys.exit(0 if found else 1)
+
+
+if __name__ == "__main__":
+    main()
