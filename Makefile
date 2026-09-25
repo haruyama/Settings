@@ -2,7 +2,7 @@ ASDF_VIM_CONFIG="--with-tlib=ncurses --with-compiledby=asdf --enable-multibyte -
 
 # --- Pinned versions (managed by Renovate in Phase C) ---
 # renovate: datasource=github-releases depName=asdf-vm/asdf
-ASDF_VERSION := v0.20.0
+ASDF_VERSION := v0.20.2
 # SHA256 of asdf-$(ASDF_VERSION)-linux-amd64.tar.gz from GitHub release assets.
 # Must be updated together with ASDF_VERSION.
 ASDF_SHA256 := 9c25e1af7cc4c9d59ff3736eba14fd000480c32929258f80d8c5a8b290ebee14
