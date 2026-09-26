@@ -64,7 +64,7 @@ INTELEPHENSE_VERSION := 1.18.5
 TS_LANGSERVER_VERSION := 6.0.0
 
 # renovate: datasource=pypi depName=flake8
-FLAKE8_VERSION := 7.3.0
+FLAKE8_VERSION := 7.4.0
 # renovate: datasource=pypi depName=mysql-mcp-server
 MYSQL_MCP_SERVER_VERSION := 0.4.4
 # renovate: datasource=pypi depName=pyaigis
