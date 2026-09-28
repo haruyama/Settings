@@ -524,7 +524,7 @@ LUA
 # renovate: datasource=git-refs depName=https://github.com/delphinus/md-render.nvim branch=main
 [[plugins]]
 repo = 'delphinus/md-render.nvim'
-commit = '00a83b8a25b9d2d50dd15efaf4c701c19de21688'
+commit = '865dcce86b98dcbb3a8bc06b5cca060d590cd5c4'
 on_event = ['MdRender', 'MdRenderTab', 'MdRenderDemo', 'MdRenderPager']
 
 
