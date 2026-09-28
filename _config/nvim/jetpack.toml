@@ -68,7 +68,7 @@ commit = '65846025c15494983dafe5e3b46c8f88ab2e9635'
 # renovate: datasource=git-refs depName=https://codeberg.org/andyg/leap.nvim branch=main
 [[plugins]]
 repo = 'https://codeberg.org/andyg/leap.nvim'
-commit = '32bde2e932417e8a065f039f00f0cebdd0da4710'
+commit = '277e04fad21e3af05a55cc414757b09a704f2a92'
 hook_source = '''
 source ~/.vim/my/plugins/leap.nvim.lua
 '''
