@@ -8,7 +8,7 @@ ASDF_VERSION := v0.20.2
 ASDF_SHA256 := 6d45e6fab12f50a259b5643adf06a2e77af30a87300b4402440eda09af467a6d
 
 # renovate: datasource=github-releases depName=astral-sh/uv
-UV_VERSION := 0.12.20
+UV_VERSION := 0.12.21
 # SHA256 of uv-x86_64-unknown-linux-gnu.tar.gz from GitHub release assets.
 # Must be updated together with UV_VERSION.
 UV_SHA256 := 6590717592ace991ff83a63fef799e3ad9d33ecc8f96c5d6bdd732496e79337f
