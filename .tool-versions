@@ -5,7 +5,7 @@ golang 1.27.3
 gohugo 0.168.0
 hadolint 2.15.1
 nim 2.2.12
-deno 2.9.7
+deno 2.9.8
 # renovate: datasource=github-releases depName=neovim/neovim extractVersion=^v(?<version>.+)$
 neovim 0.12.6
 zig 0.16.0
