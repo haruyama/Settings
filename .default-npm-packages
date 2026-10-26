@@ -1,6 +1,6 @@
 @biomejs/biome@2.6.2
 @google/gemini-cli@0.65.0
-@openai/codex@0.163.0
+@openai/codex@0.164.0
 @stoplight/spectral-cli@6.17.0
 @textlint-ja/textlint-rule-preset-ai-writing@1.7.0
 cspell@10.4.0
