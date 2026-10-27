@@ -246,6 +246,7 @@ asdf_plugin:
 	asdf plugin add nodejs
 	asdf plugin add kubectl
 	asdf plugin add mkcert https://github.com/salasrod/asdf-mkcert
+	asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud
 
 asdf_install:
 	asdf install
