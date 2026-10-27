@@ -39,7 +39,7 @@ K9S_VERSION := v0.51.0
 GOLANGCI_LINT_VERSION := v2.15.0
 
 # renovate: datasource=crate depName=mcat
-MCAT_VERSION := 0.6.5
+MCAT_VERSION := 0.6.6
 
 # SHA256 of https://claude.ai/install.sh. Anthropic updates the installer in-place;
 # on mismatch, review the new script and bump this SHA.
