@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+# Check whether the manually installed .deb packages (Slack, Dropbox,
+# Docker Desktop) are up to date with their upstream releases.
+#
+# Exit status: 0 = all up to date, 1 = updates available, 2 = check failed.
+
+set -uo pipefail
+
+outdated=0
+failed=0
+
+installed_version() {
+	dpkg-query -W -f='${Version}' "$1" 2>/dev/null
+}
+
+# label package latest_version download_url
+compare() {
+	local label="$1" pkg="$2" latest="$3" url="$4" current
+	current="$(installed_version "$pkg")"
+	if [ -z "$latest" ]; then
+		printf '%-15s ? failed to fetch latest version\n' "$label"
+		failed=1
+	elif dpkg --compare-versions "$current" lt "$latest"; then
+		printf '%-15s ! %s -> %s\n' "$label" "$current" "$latest"
+		printf '%-15s   %s\n' "" "$url"
+		outdated=1
+	else
+		printf '%-15s ✓ %s\n' "$label" "$current"
+	fi
+}
+
+# label package: report and fail when the package is not installed here.
+is_installed() {
+	if [ -z "$(installed_version "$2")" ]; then
+		printf '%-15s - not installed, skipped\n' "$1"
+		return 1
+	fi
+}
+
+fetch() { curl -fsSL --retry 2 --max-time 30 "$1"; }
+
+# --- Slack: official API returns the latest .deb version as JSON ---
+check_slack() {
+	local json ver url
+	json="$(fetch 'https://slack.com/api/desktop.latestRelease?arch=x64&variant=deb&redirect=false' || true)"
+	ver="$(sed -n -E 's/.*"version":"([^"]+)".*/\1/p' <<<"$json")"
+	url="$(sed -n -E 's/.*"download_url":"([^"]+)".*/\1/p' <<<"$json" | sed 's|\\/|/|g')"
+	compare "Slack" slack-desktop "$ver" "$url"
+}
+
+# --- Dropbox: pick the newest dropbox_*.deb from the package index ---
+check_dropbox() {
+	local deb ver
+	deb="$(fetch https://linux.dropbox.com/packages/ubuntu/ | grep -oE 'dropbox_[0-9.]+_amd64\.deb' | sort -uV | tail -n1 || true)"
+	ver="$(sed -n -E 's/^dropbox_([0-9.]+)_amd64\.deb$/\1/p' <<<"$deb")"
+	compare "Dropbox" dropbox "$ver" "https://linux.dropbox.com/packages/ubuntu/$deb"
+}
+
+# --- Docker Desktop: Sparkle appcast; the deb version is "<short>-<build>" ---
+check_docker_desktop() {
+	local item build short url
+	item="$(fetch https://desktop.docker.com/linux/main/amd64/appcast.xml |
+		sed -n -E 's/.*url="([^"]+)" sparkle:version="([0-9]+)" sparkle:shortVersionString="([^"]+)".*/\2 \3 \1/p' |
+		sort -n | tail -n1 || true)"
+	read -r build short url <<<"$item"
+	compare "Docker Desktop" docker-desktop "${short:+$short-$build}" "${url:-}"
+}
+
+is_installed "Slack" slack-desktop && check_slack
+is_installed "Dropbox" dropbox && check_dropbox
+is_installed "Docker Desktop" docker-desktop && check_docker_desktop
+
+if [ "$failed" -ne 0 ]; then
+	exit 2
+fi
+exit "$outdated"
