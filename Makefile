@@ -72,9 +72,9 @@ PYAIGIS_VERSION := 2.0.1
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.414
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install fugu_fetch fugu_diff claude_fugu_install codex_fugu_install codex_fugu_dry_run
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install fugu_fetch fugu_diff claude_fugu_install codex_fugu_install codex_fugu_dry_run deb_check
 
-update: asdf_update asdf_install tool_update
+update: asdf_update asdf_install tool_update deb_check
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
 
 init: asdf git ssh_init bin_init neovim_init
@@ -126,6 +126,11 @@ tool_update: tool_install
 	claude update
 	uv self update
 	rustup self update
+
+# Report whether manually installed .debs (Slack, Dropbox, Docker Desktop) are
+# up to date. Fails when an update is pending or the check itself fails.
+deb_check:
+	$(CURDIR)/bin/check-deb-updates
 
 tool_install: lsp_update go_tool_install cargo_tool_install
 	pipx install flake8==$(FLAKE8_VERSION) --force
