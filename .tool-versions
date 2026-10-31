@@ -14,4 +14,4 @@ terraform 1.17.0
 mkcert 1.4.4
 # gcloud has no first-class Renovate datasource; the google/cloud-sdk image tags track gcloud releases 1:1.
 # renovate: datasource=docker depName=google/cloud-sdk
-gcloud 590.0.1
+gcloud 591.0.0
