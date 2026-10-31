@@ -10,7 +10,7 @@ deno 2.9.8
 neovim 0.12.6
 zig 0.16.0
 kubectl 1.37.1
-terraform 1.17.0
+terraform 1.17.1
 mkcert 1.4.4
 # gcloud has no first-class Renovate datasource; the google/cloud-sdk image tags track gcloud releases 1:1.
 # renovate: datasource=docker depName=google/cloud-sdk
