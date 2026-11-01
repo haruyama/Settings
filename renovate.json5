@@ -18,10 +18,13 @@
       // `ignoreUnstable: true` skips every non-LTS (Current) release. We want the
       // latest stable/Current line (e.g. 26.x before it becomes LTS in Oct 2026),
       // so opt into unstable node releases. Still node-schedule-aware ordering.
-      description: 'Follow the latest Node.js stable (Current) line, not just LTS, in .tool-versions',
+      // `ignoreUnstable: false` also lets SemVer prereleases through (e.g.
+      // 27.0.0-alpha.0.0.0 from Node's alpha channel), so restrict to plain X.Y.Z.
+      description: 'Follow the latest Node.js stable (Current) line, not just LTS, in .tool-versions; skip prereleases',
       matchManagers: ['asdf'],
       matchDepNames: ['node'],
       ignoreUnstable: false,
+      allowedVersions: '/^\\d+\\.\\d+\\.\\d+$/',
     },
     {
       description: 'Disable major bumps for Go modules with /vN in path; major bump also changes the import path and must be done manually',
