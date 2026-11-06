@@ -23,5 +23,5 @@ textlint-rule-prh@6.1.1
 textlint-rule-spellcheck-tech-word@5.0.0
 tree-sitter-cli@0.27.1
 typescript@7.0.2
-typescript-language-server@6.0.2
+typescript-language-server@6.0.3
 yaml-validator@5.1.0
