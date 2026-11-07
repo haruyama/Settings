@@ -33,6 +33,8 @@ TASK_VERSION := v3.54.0
 PINACT_VERSION := v3.10.1
 # renovate: datasource=go depName=github.com/derailed/k9s
 K9S_VERSION := v0.51.0
+# renovate: datasource=go depName=github.com/hashicorp/terraform-ls
+TERRAFORM_LS_VERSION := v0.39.1
 
 # NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
 # renovate: datasource=go depName=github.com/golangci/golangci-lint/v2
@@ -212,6 +214,7 @@ go_tool_install:
 	go install github.com/go-task/task/v3/cmd/task@$(TASK_VERSION)
 	go install github.com/suzuki-shunsuke/pinact/v3/cmd/pinact@$(PINACT_VERSION)
 	go install github.com/derailed/k9s@$(K9S_VERSION)
+	go install github.com/hashicorp/terraform-ls@$(TERRAFORM_LS_VERSION)
 	go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(GOLANGCI_LINT_VERSION)
 
 cargo_tool_install:
