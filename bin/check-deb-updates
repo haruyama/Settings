@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Check whether the manually installed .deb packages (Slack, Dropbox,
-# Docker Desktop, Docker CLI, GitHub CLI) are up to date with their upstream releases,
+# Docker Desktop, Docker CLI and plugins, GitHub CLI) are up to date with their upstream releases,
 # and that packages from third-party apt repositories (Tailscale, Vivaldi, VSCodium,
 # Chrome, Dropbox) still have an enabled repository after a release upgrade.
 #
@@ -80,27 +80,39 @@ check_gh() {
 	compare "GitHub CLI" gh "$ver" "$url"
 }
 
-# --- Docker CLI: Docker Desktop depends on docker-ce-cli but does not ship it.
-# Read the apt Packages index for this release (Version carries the epoch). ---
-check_docker_cli() {
-	local base=https://download.docker.com/linux/ubuntu codename item ver file
-	# shellcheck disable=SC1091
-	codename="$(. /etc/os-release && echo "${VERSION_CODENAME:-}")"
-	item="$(fetch "$base/dists/$codename/stable/binary-amd64/Packages" |
-		awk '/^Package:/{p=$2} /^Version:/{v=$2} /^Filename:/{f=$2}
-			/^$/{if (p == "docker-ce-cli") print v, f; p = ""}
-			END{if (p == "docker-ce-cli") print v, f}' |
+# --- Docker CLI and its plugins: Docker Desktop depends on docker-ce-cli but does
+# not ship it, and docker-buildx-plugin / docker-compose-plugin may be left over
+# from Docker's apt repo. Read the apt Packages index for this release (Version
+# carries the epoch); it is fetched once and shared by all packages. ---
+docker_base=https://download.docker.com/linux/ubuntu
+docker_packages=
+# label package
+check_docker_repo() {
+	local label="$1" pkg="$2" codename item ver file
+	if [ -z "$docker_packages" ]; then
+		# shellcheck disable=SC1091
+		codename="$(. /etc/os-release && echo "${VERSION_CODENAME:-}")"
+		docker_packages="$(fetch "$docker_base/dists/$codename/stable/binary-amd64/Packages" || true)"
+	fi
+	item="$(awk -v pkg="$pkg" '/^Package:/{p=$2} /^Version:/{v=$2} /^Filename:/{f=$2}
+			/^$/{if (p == pkg) print v, f; p = ""}
+			END{if (p == pkg) print v, f}' <<<"$docker_packages" |
 		sort -V | tail -n1 || true)"
 	read -r ver file <<<"$item"
-	compare "Docker CLI" docker-ce-cli "${ver:-}" "${file:+$base/$file}"
+	compare "$label" "$pkg" "${ver:-}" "${file:+$docker_base/$file}"
 }
 
 # --- Packages that come from third-party apt repositories. A release upgrade
 # disables those sources, after which apt silently stops updating them; report
-# when no repository offers the package any more, or when apt has a newer one. ---
+# when no repository offers the package any more, when apt has a newer one, or
+# when a source still names an older Ubuntu release (e.g. re-enabled by hand
+# without updating the suite). ---
+# shellcheck disable=SC1091
+os_codename="$(. /etc/os-release && echo "${VERSION_CODENAME:-}")"
+ubuntu_codenames="$(cut -d, -f3 /usr/share/distro-info/ubuntu.csv 2>/dev/null | tail -n +2)"
 # label package
 check_apt_repo() {
-	local label="$1" pkg="$2" policy current candidate
+	local label="$1" pkg="$2" policy current candidate suite
 	policy="$(LC_ALL=C apt-cache policy "$pkg" 2>/dev/null)"
 	current="$(installed_version "$pkg")"
 	candidate="$(sed -n -E 's/^ +Candidate: +//p' <<<"$policy")"
@@ -113,12 +125,21 @@ check_apt_repo() {
 	else
 		printf '%-15s ✓ %s (apt)\n' "$label" "$current"
 	fi
+	for suite in $(sed -n -E 's|^ +-?[0-9]+ +https?://[^ ]+ +([^/ ]+)/.*|\1|p' <<<"$policy" | sort -u); do
+		suite="${suite%%-*}"
+		if [ "$suite" != "$os_codename" ] && grep -qxF "$suite" <<<"$ubuntu_codenames"; then
+			printf '%-15s   source still points to %s (this release is %s)\n' "" "$suite" "$os_codename"
+			outdated=1
+		fi
+	done
 }
 
 is_installed "Slack" slack-desktop && check_slack
 is_installed "Dropbox" dropbox && check_dropbox
 is_installed "Docker Desktop" docker-desktop && check_docker_desktop
-is_installed "Docker CLI" docker-ce-cli && check_docker_cli
+is_installed "Docker CLI" docker-ce-cli && check_docker_repo "Docker CLI" docker-ce-cli
+is_installed "Docker Buildx" docker-buildx-plugin && check_docker_repo "Docker Buildx" docker-buildx-plugin
+is_installed "Docker Compose" docker-compose-plugin && check_docker_repo "Docker Compose" docker-compose-plugin
 is_installed "GitHub CLI" gh && check_gh
 
 while read -r label pkg; do
