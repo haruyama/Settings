@@ -127,8 +127,8 @@ tool_update: tool_install
 	uv self update
 	rustup self update
 
-# Report whether manually installed .debs (Slack, Dropbox, Docker Desktop) are
-# up to date. Fails when an update is pending or the check itself fails.
+# Report whether manually installed .debs (Slack, Dropbox, Docker Desktop,
+# GitHub CLI) are up to date. Fails when an update is pending or the check itself fails.
 deb_check:
 	$(CURDIR)/bin/check-deb-updates
 
