@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Check whether the manually installed .deb packages (Slack, Dropbox,
-# Docker Desktop) are up to date with their upstream releases.
+# Docker Desktop, GitHub CLI) are up to date with their upstream releases.
 #
 # Exit status: 0 = all up to date, 1 = updates available, 2 = check failed.
 
@@ -66,9 +66,19 @@ check_docker_desktop() {
 	compare "Docker Desktop" docker-desktop "${short:+$short-$build}" "${url:-}"
 }
 
+# --- GitHub CLI: latest release from the GitHub API (tag is "v<version>") ---
+check_gh() {
+	local json ver url
+	json="$(fetch https://api.github.com/repos/cli/cli/releases/latest || true)"
+	ver="$(sed -n -E 's/.*"tag_name": *"v([^"]+)".*/\1/p' <<<"$json" | head -n1)"
+	url="$(grep -oE 'https://[^"]+_linux_amd64\.deb' <<<"$json" | head -n1 || true)"
+	compare "GitHub CLI" gh "$ver" "$url"
+}
+
 is_installed "Slack" slack-desktop && check_slack
 is_installed "Dropbox" dropbox && check_dropbox
 is_installed "Docker Desktop" docker-desktop && check_docker_desktop
+is_installed "GitHub CLI" gh && check_gh
 
 if [ "$failed" -ne 0 ]; then
 	exit 2
