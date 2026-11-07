@@ -11,8 +11,11 @@ set -uo pipefail
 outdated=0
 failed=0
 
+# Print the version only when the package is actually installed: dpkg keeps a
+# Version for removed packages whose config files remain (status "rc"), too.
 installed_version() {
-	dpkg-query -W -f='${Version}' "$1" 2>/dev/null
+	dpkg-query -W -f='${Status}\t${Version}\n' "$1" 2>/dev/null |
+		awk -F'\t' '$1 ~ / installed$/ {print $2; exit}'
 }
 
 # label package latest_version download_url
