@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Check whether the manually installed .deb packages (Slack, Dropbox,
-# Docker Desktop, GitHub CLI) are up to date with their upstream releases.
+# Docker Desktop, Docker CLI, GitHub CLI) are up to date with their upstream releases,
+# and that packages from third-party apt repositories (Tailscale, Vivaldi, VSCodium,
+# Chrome, Dropbox) still have an enabled repository after a release upgrade.
 #
 # Exit status: 0 = all up to date, 1 = updates available, 2 = check failed.
 
@@ -75,10 +77,56 @@ check_gh() {
 	compare "GitHub CLI" gh "$ver" "$url"
 }
 
+# --- Docker CLI: Docker Desktop depends on docker-ce-cli but does not ship it.
+# Read the apt Packages index for this release (Version carries the epoch). ---
+check_docker_cli() {
+	local base=https://download.docker.com/linux/ubuntu codename item ver file
+	# shellcheck disable=SC1091
+	codename="$(. /etc/os-release && echo "${VERSION_CODENAME:-}")"
+	item="$(fetch "$base/dists/$codename/stable/binary-amd64/Packages" |
+		awk '/^Package:/{p=$2} /^Version:/{v=$2} /^Filename:/{f=$2}
+			/^$/{if (p == "docker-ce-cli") print v, f; p = ""}
+			END{if (p == "docker-ce-cli") print v, f}' |
+		sort -V | tail -n1 || true)"
+	read -r ver file <<<"$item"
+	compare "Docker CLI" docker-ce-cli "${ver:-}" "${file:+$base/$file}"
+}
+
+# --- Packages that come from third-party apt repositories. A release upgrade
+# disables those sources, after which apt silently stops updating them; report
+# when no repository offers the package any more, or when apt has a newer one. ---
+# label package
+check_apt_repo() {
+	local label="$1" pkg="$2" policy current candidate
+	policy="$(LC_ALL=C apt-cache policy "$pkg" 2>/dev/null)"
+	current="$(installed_version "$pkg")"
+	candidate="$(sed -n -E 's/^ +Candidate: +//p' <<<"$policy")"
+	if ! grep -qE '^ +-?[0-9]+ +(https?|file|cdrom):' <<<"$policy"; then
+		printf '%-15s ! %s: no apt repository provides it (source disabled?)\n' "$label" "$current"
+		outdated=1
+	elif dpkg --compare-versions "$current" lt "$candidate"; then
+		printf '%-15s ! %s -> %s (apt upgrade)\n' "$label" "$current" "$candidate"
+		outdated=1
+	else
+		printf '%-15s ✓ %s (apt)\n' "$label" "$current"
+	fi
+}
+
 is_installed "Slack" slack-desktop && check_slack
 is_installed "Dropbox" dropbox && check_dropbox
 is_installed "Docker Desktop" docker-desktop && check_docker_desktop
+is_installed "Docker CLI" docker-ce-cli && check_docker_cli
 is_installed "GitHub CLI" gh && check_gh
+
+while read -r label pkg; do
+	is_installed "$label" "$pkg" && check_apt_repo "$label" "$pkg"
+done <<'EOF'
+Tailscale tailscale
+Vivaldi vivaldi-stable
+VSCodium codium
+Chrome google-chrome-stable
+Dropbox(apt) dropbox
+EOF
 
 if [ "$failed" -ne 0 ]; then
 	exit 2
