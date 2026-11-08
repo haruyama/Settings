@@ -110,7 +110,7 @@ source ~/.vim/my/plugins/nvim-surround.lua
 # renovate: datasource=git-refs depName=https://github.com/gbprod/yanky.nvim branch=main
 [[plugins]]
 repo = 'gbprod/yanky.nvim'
-commit = 'adcabd8512bead30184916fa9277e73c021ef099'
+commit = 'edcbe0f6d693b9e7860626094f886a2d79cfe63b'
 hook_source = '''
 source ~/.vim/my/plugins/yanky.nvim.lua
 '''
