@@ -50,7 +50,7 @@
     <action name="Execute" command="firefox" />
   </item>
   <item label="Chrome">
-    <action name="Execute" command="env GTK_IM_MODULE=fcitx google-chrome" />
+    <action name="Execute" command="google-chrome" />
   </item>
   <item label="KeePassXC">
     <action name="Execute" command="keepassxc" />
@@ -80,7 +80,7 @@
     <action name="Execute" command="firefox" />
   </item>
   <item label="Chrome">
-    <action name="Execute" command="env GTK_IM_MODULE=fcitx google-chrome" />
+    <action name="Execute" command="google-chrome" />
   </item>
   <item label="KeePassXC">
     <action name="Execute" command="keepassxc" />
