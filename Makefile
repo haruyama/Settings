@@ -20,6 +20,13 @@ RUSTUP_VERSION := 1.29.0
 # Must be updated together with RUSTUP_VERSION.
 RUSTUP_INIT_SHA256 := 4acc9acc76d5079515b46346a485974457b5a79893cfb01112423c89aeb5aa10
 
+# renovate: datasource=github-releases depName=UltimateHackingKeyboard/agent
+UHK_AGENT_VERSION := v11.0.0
+# SHA256 of UHK.Agent-<version without v>-linux-x86_64.AppImage from GitHub release assets.
+# Must be updated together with UHK_AGENT_VERSION.
+UHK_AGENT_SHA256 := 75e71dc0690dfddec0e0a35b4222a85a26740821714c3f85e2e90f5b1c364779
+UHK_AGENT_APPIMAGE := $(HOME)/bin/UHK.Agent.AppImage
+
 # renovate: datasource=go depName=golang.org/x/tools
 GOIMPORTS_VERSION := v0.52.0
 # renovate: datasource=go depName=golang.org/x/tools/gopls
@@ -93,7 +100,7 @@ PYAIGIS_VERSION := 2.0.1
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.414
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install fugu_fetch fugu_diff claude_fugu_install codex_fugu_install codex_fugu_dry_run deb_check
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install fugu_fetch fugu_diff claude_fugu_install codex_fugu_install codex_fugu_dry_run deb_check uhk_agent_install
 
 update: asdf_update asdf_install tool_update deb_check
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
@@ -217,6 +224,18 @@ uv_install:
 	install -m 755 /tmp/uv-x86_64-unknown-linux-gnu/uv $(HOME)/.local/bin/uv
 	install -m 755 /tmp/uv-x86_64-unknown-linux-gnu/uvx $(HOME)/.local/bin/uvx
 	rm -rf /tmp/uv-$(UV_VERSION).tar.gz /tmp/uv-x86_64-unknown-linux-gnu
+
+uhk_agent_install:
+	curl -fLo /tmp/UHK.Agent-$(UHK_AGENT_VERSION).AppImage \
+	    https://github.com/UltimateHackingKeyboard/agent/releases/download/$(UHK_AGENT_VERSION)/UHK.Agent-$(UHK_AGENT_VERSION:v%=%)-linux-x86_64.AppImage
+	echo "$(UHK_AGENT_SHA256)  /tmp/UHK.Agent-$(UHK_AGENT_VERSION).AppImage" | sha256sum -c
+	mkdir -p $(HOME)/bin $(HOME)/.local/share/applications
+	install -m 755 /tmp/UHK.Agent-$(UHK_AGENT_VERSION).AppImage $(UHK_AGENT_APPIMAGE)
+	rm -f /tmp/UHK.Agent-$(UHK_AGENT_VERSION).AppImage
+	printf '%s\n' '[Desktop Entry]' 'Type=Application' 'Name=UHK Agent' \
+	    'Exec="$(UHK_AGENT_APPIMAGE)" %U' 'TryExec=$(UHK_AGENT_APPIMAGE)' \
+	    'Icon=appimagekit-uhk-agent' 'Categories=Utility;' \
+	    > $(HOME)/.local/share/applications/appimagekit-uhk-agent.desktop
 
 rustup_install:
 	curl -fLo /tmp/rustup-init-$(RUSTUP_VERSION) \

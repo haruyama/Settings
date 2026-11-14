@@ -58,4 +58,11 @@ asdf_new="$(sha256sum "$work/asdf.tar.gz" | awk '{print $1}')"
 report "ASDF_SHA256 (asdf ${asdf_ver})" "$(get_var ASDF_SHA256)" "$asdf_new"
 set_var ASDF_SHA256 "$asdf_new"
 
+# --- UHK Agent: no upstream .sha256, so compute from the AppImage ---
+uhk_ver="$(get_var UHK_AGENT_VERSION)"
+dl "$work/uhk.AppImage" "https://github.com/UltimateHackingKeyboard/agent/releases/download/${uhk_ver}/UHK.Agent-${uhk_ver#v}-linux-x86_64.AppImage"
+uhk_new="$(sha256sum "$work/uhk.AppImage" | awk '{print $1}')"
+report "UHK_AGENT_SHA256 (UHK Agent ${uhk_ver})" "$(get_var UHK_AGENT_SHA256)" "$uhk_new"
+set_var UHK_AGENT_SHA256 "$uhk_new"
+
 echo "changed=${changed}"
