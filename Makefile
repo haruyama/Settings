@@ -258,7 +258,12 @@ go_tool_install:
 	go install github.com/google/go-licenses/v2@$(GO_LICENSES_VERSION)
 	go install github.com/x-motemen/gore/cmd/gore@$(GORE_VERSION)
 	go install github.com/evilmartians/lefthook/v2@$(LEFTHOOK_VERSION)
-	go install github.com/Shougo/ng/cmd/ng@$(NG_VERSION)
+	@if pkg-config --exists sdl3 freetype2 fontconfig 2>/dev/null; then \
+		echo go install github.com/Shougo/ng/cmd/ng@$(NG_VERSION); \
+		go install github.com/Shougo/ng/cmd/ng@$(NG_VERSION); \
+	else \
+		echo 'skip github.com/Shougo/ng: sdl3, freetype2 or fontconfig (pkg-config) not found'; \
+	fi
 	go install github.com/k1LoW/tbls@$(TBLS_VERSION)
 	go install github.com/schachmat/wego@$(WEGO_SHA)
 
