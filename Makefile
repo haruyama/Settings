@@ -20,6 +20,13 @@ RUSTUP_VERSION := 1.29.0
 # Must be updated together with RUSTUP_VERSION.
 RUSTUP_INIT_SHA256 := 4acc9acc76d5079515b46346a485974457b5a79893cfb01112423c89aeb5aa10
 
+# renovate: datasource=github-releases depName=UltimateHackingKeyboard/agent
+UHK_AGENT_VERSION := v11.0.0
+# SHA256 of UHK.Agent-<version without v>-linux-x86_64.AppImage from GitHub release assets.
+# Must be updated together with UHK_AGENT_VERSION.
+UHK_AGENT_SHA256 := 75e71dc0690dfddec0e0a35b4222a85a26740821714c3f85e2e90f5b1c364779
+UHK_AGENT_APPIMAGE := $(HOME)/bin/UHK.Agent.AppImage
+
 # renovate: datasource=go depName=golang.org/x/tools
 GOIMPORTS_VERSION := v0.52.0
 # renovate: datasource=go depName=golang.org/x/tools/gopls
@@ -39,6 +46,25 @@ TERRAFORM_LS_VERSION := v0.39.1
 # NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
 # renovate: datasource=go depName=github.com/golangci/golangci-lint/v2
 GOLANGCI_LINT_VERSION := v2.15.0
+
+# renovate: datasource=go depName=github.com/klauspost/asmfmt
+ASMFMT_VERSION := v1.3.2
+# NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
+# renovate: datasource=go depName=github.com/google/go-licenses/v2
+GO_LICENSES_VERSION := v2.0.1
+# renovate: datasource=go depName=github.com/x-motemen/gore
+GORE_VERSION := v0.7.0
+# NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
+# renovate: datasource=go depName=github.com/evilmartians/lefthook/v2
+LEFTHOOK_VERSION := v2.2.2
+# renovate: datasource=go depName=github.com/Shougo/ng
+NG_VERSION := v0.8.0
+# renovate: datasource=go depName=github.com/k1LoW/tbls
+TBLS_VERSION := v1.96.1
+
+# schachmat/wego has no release tags; pin to a commit SHA on master.
+# renovate: datasource=git-refs depName=https://github.com/schachmat/wego branch=master
+WEGO_SHA := 14b1e3643badf55963df2889aacd31094a13ac99
 
 # renovate: datasource=crate depName=mcat
 MCAT_VERSION := 0.6.8
@@ -74,7 +100,7 @@ PYAIGIS_VERSION := 2.0.1
 # renovate: datasource=pypi depName=pyright
 PYRIGHT_VERSION := 1.1.414
 
-.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install fugu_fetch fugu_diff claude_fugu_install codex_fugu_install codex_fugu_dry_run deb_check
+.PHONY: update init git neovim gtk3 tmux tool_update tool_instal go_tool_install cargo_tool_install lsp_update lsp_install asdf asdf_plugin asdf_install asdf_update skkdic jetpack test clean all ssh_init ssh_agent bin_init neovim_init claude_install uv_install rustup_install fugu_fetch fugu_diff claude_fugu_install codex_fugu_install codex_fugu_dry_run deb_check uhk_agent_install
 
 update: asdf_update asdf_install tool_update deb_check
 #	vim -N -u ~/.vimrc -c "try | call dein#update() | finally | qall! | endtry" -U NONE -i NONE -V1 -e -s || echo ''
@@ -199,6 +225,18 @@ uv_install:
 	install -m 755 /tmp/uv-x86_64-unknown-linux-gnu/uvx $(HOME)/.local/bin/uvx
 	rm -rf /tmp/uv-$(UV_VERSION).tar.gz /tmp/uv-x86_64-unknown-linux-gnu
 
+uhk_agent_install:
+	curl -fLo /tmp/UHK.Agent-$(UHK_AGENT_VERSION).AppImage \
+	    https://github.com/UltimateHackingKeyboard/agent/releases/download/$(UHK_AGENT_VERSION)/UHK.Agent-$(UHK_AGENT_VERSION:v%=%)-linux-x86_64.AppImage
+	echo "$(UHK_AGENT_SHA256)  /tmp/UHK.Agent-$(UHK_AGENT_VERSION).AppImage" | sha256sum -c
+	mkdir -p $(HOME)/bin $(HOME)/.local/share/applications
+	install -m 755 /tmp/UHK.Agent-$(UHK_AGENT_VERSION).AppImage $(UHK_AGENT_APPIMAGE)
+	rm -f /tmp/UHK.Agent-$(UHK_AGENT_VERSION).AppImage
+	printf '%s\n' '[Desktop Entry]' 'Type=Application' 'Name=UHK Agent' \
+	    'Exec="$(UHK_AGENT_APPIMAGE)" %U' 'TryExec=$(UHK_AGENT_APPIMAGE)' \
+	    'Icon=appimagekit-uhk-agent' 'Categories=Utility;' \
+	    > $(HOME)/.local/share/applications/appimagekit-uhk-agent.desktop
+
 rustup_install:
 	curl -fLo /tmp/rustup-init-$(RUSTUP_VERSION) \
 	    https://static.rust-lang.org/rustup/archive/$(RUSTUP_VERSION)/x86_64-unknown-linux-gnu/rustup-init
@@ -216,6 +254,19 @@ go_tool_install:
 	go install github.com/derailed/k9s@$(K9S_VERSION)
 	go install github.com/hashicorp/terraform-ls@$(TERRAFORM_LS_VERSION)
 	go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(GOLANGCI_LINT_VERSION)
+	go install github.com/klauspost/asmfmt/cmd/asmfmt@$(ASMFMT_VERSION)
+	go install github.com/google/go-licenses/v2@$(GO_LICENSES_VERSION)
+	go install github.com/x-motemen/gore/cmd/gore@$(GORE_VERSION)
+	go install github.com/evilmartians/lefthook/v2@$(LEFTHOOK_VERSION)
+	@if pkg-config --exists sdl3 freetype2 fontconfig 2>/dev/null; then \
+		echo go install github.com/Shougo/ng/cmd/ng@$(NG_VERSION); \
+		go install github.com/Shougo/ng/cmd/ng@$(NG_VERSION); \
+	else \
+		echo 'skip github.com/Shougo/ng: sdl3, freetype2 or fontconfig (pkg-config) not found'; \
+	fi
+	go install github.com/k1LoW/tbls@$(TBLS_VERSION)
+	go install github.com/schachmat/wego@$(WEGO_SHA)
+	asdf reshim golang
 
 cargo_tool_install:
 	cargo install mcat --version $(MCAT_VERSION) --locked
