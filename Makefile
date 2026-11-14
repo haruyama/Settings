@@ -40,6 +40,25 @@ TERRAFORM_LS_VERSION := v0.39.1
 # renovate: datasource=go depName=github.com/golangci/golangci-lint/v2
 GOLANGCI_LINT_VERSION := v2.15.0
 
+# renovate: datasource=go depName=github.com/klauspost/asmfmt
+ASMFMT_VERSION := v1.3.2
+# NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
+# renovate: datasource=go depName=github.com/google/go-licenses/v2
+GO_LICENSES_VERSION := v2.0.1
+# renovate: datasource=go depName=github.com/x-motemen/gore
+GORE_VERSION := v0.7.0
+# NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
+# renovate: datasource=go depName=github.com/evilmartians/lefthook/v2
+LEFTHOOK_VERSION := v2.2.2
+# renovate: datasource=go depName=github.com/Shougo/ng
+NG_VERSION := v0.8.0
+# renovate: datasource=go depName=github.com/k1LoW/tbls
+TBLS_VERSION := v1.96.1
+
+# schachmat/wego has no release tags; pin to a commit SHA on master.
+# renovate: datasource=git-refs depName=https://github.com/schachmat/wego branch=master
+WEGO_SHA := 14b1e3643badf55963df2889aacd31094a13ac99
+
 # renovate: datasource=crate depName=mcat
 MCAT_VERSION := 0.6.8
 
@@ -216,6 +235,13 @@ go_tool_install:
 	go install github.com/derailed/k9s@$(K9S_VERSION)
 	go install github.com/hashicorp/terraform-ls@$(TERRAFORM_LS_VERSION)
 	go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@$(GOLANGCI_LINT_VERSION)
+	go install github.com/klauspost/asmfmt/cmd/asmfmt@$(ASMFMT_VERSION)
+	go install github.com/google/go-licenses/v2@$(GO_LICENSES_VERSION)
+	go install github.com/x-motemen/gore/cmd/gore@$(GORE_VERSION)
+	go install github.com/evilmartians/lefthook/v2@$(LEFTHOOK_VERSION)
+	go install github.com/Shougo/ng/cmd/ng@$(NG_VERSION)
+	go install github.com/k1LoW/tbls@$(TBLS_VERSION)
+	go install github.com/schachmat/wego@$(WEGO_SHA)
 
 cargo_tool_install:
 	cargo install mcat --version $(MCAT_VERSION) --locked
