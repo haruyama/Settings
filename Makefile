@@ -266,6 +266,7 @@ go_tool_install:
 	fi
 	go install github.com/k1LoW/tbls@$(TBLS_VERSION)
 	go install github.com/schachmat/wego@$(WEGO_SHA)
+	asdf reshim golang
 
 cargo_tool_install:
 	cargo install mcat --version $(MCAT_VERSION) --locked
