@@ -493,7 +493,7 @@ on_source = 'ddu.vim'
 # renovate: datasource=git-refs depName=https://github.com/MunifTanjim/nui.nvim branch=main
 [[plugins]]
 repo = 'MunifTanjim/nui.nvim'
-commit = 'de740991c12411b663994b2860f1a4fd0937c130'
+commit = '10fc361835c856ba4233ef5ea135b919bf3dce97'
 
 # renovate: datasource=git-refs depName=https://github.com/y3owk1n/undo-glow.nvim branch=main
 [[plugins]]
