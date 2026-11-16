@@ -11,7 +11,7 @@ ASDF_SHA256 := 6d45e6fab12f50a259b5643adf06a2e77af30a87300b4402440eda09af467a6d
 UV_VERSION := 0.13.8
 # SHA256 of uv-x86_64-unknown-linux-gnu.tar.gz from GitHub release assets.
 # Must be updated together with UV_VERSION.
-UV_SHA256 := c5221ff41b7892bfc223543883600125f6a47fe845093e0f5bdff4f359196d83
+UV_SHA256 := 5acfd9177cfecf0bf87578f059728215ccc884388988f55f7a65041b57387d91
 
 # renovate: datasource=github-releases depName=rust-lang/rustup
 RUSTUP_VERSION := 1.29.0
