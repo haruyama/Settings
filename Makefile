@@ -295,7 +295,7 @@ asdf_plugin:
 	asdf plugin add nim https://github.com/asdf-community/asdf-nim
 	asdf plugin add hadolint https://github.com/looztra/asdf-hadolint
 	asdf plugin add golang https://github.com/kennyp/asdf-golang.git
-	asdf plugin add gohugo
+	asdf plugin add hugo
 	asdf plugin add fzf https://github.com/kompiro/asdf-fzf.git
 	asdf plugin add nodejs
 	asdf plugin add kubectl
