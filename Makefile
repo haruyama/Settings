@@ -89,7 +89,7 @@ FUGU_REPO_URL := https://github.com/SakanaAI/fugu.git
 # renovate: datasource=npm depName=intelephense
 INTELEPHENSE_VERSION := 1.18.5
 # renovate: datasource=npm depName=typescript-language-server
-TS_LANGSERVER_VERSION := 6.0.3
+TS_LANGSERVER_VERSION := 6.1.0
 
 # renovate: datasource=pypi depName=flake8
 FLAKE8_VERSION := 7.5.0
