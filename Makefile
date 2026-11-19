@@ -58,7 +58,7 @@ GORE_VERSION := v0.7.0
 # renovate: datasource=go depName=github.com/evilmartians/lefthook/v2
 LEFTHOOK_VERSION := v2.2.2
 # renovate: datasource=go depName=github.com/Shougo/ng
-NG_VERSION := v0.8.0
+NG_VERSION := v0.9.0
 # renovate: datasource=go depName=github.com/k1LoW/tbls
 TBLS_VERSION := v1.96.1
 
