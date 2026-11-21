@@ -28,7 +28,7 @@ UHK_AGENT_SHA256 := 75e71dc0690dfddec0e0a35b4222a85a26740821714c3f85e2e90f5b1c36
 UHK_AGENT_APPIMAGE := $(HOME)/bin/UHK.Agent.AppImage
 
 # renovate: datasource=go depName=golang.org/x/tools
-GOIMPORTS_VERSION := v0.52.0
+GOIMPORTS_VERSION := v0.53.0
 # renovate: datasource=go depName=golang.org/x/tools/gopls
 GOPLS_VERSION := v0.24.0
 # renovate: datasource=go depName=github.com/rhysd/actionlint
