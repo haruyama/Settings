@@ -67,7 +67,7 @@ TBLS_VERSION := v1.96.1
 WEGO_SHA := 14b1e3643badf55963df2889aacd31094a13ac99
 
 # renovate: datasource=crate depName=mcat
-MCAT_VERSION := 0.6.8
+MCAT_VERSION := 0.6.9
 
 # SHA256 of https://claude.ai/install.sh. Anthropic updates the installer in-place;
 # on mismatch, review the new script and bump this SHA.
