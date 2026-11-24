@@ -60,7 +60,7 @@ LEFTHOOK_VERSION := v2.2.2
 # renovate: datasource=go depName=github.com/Shougo/ng
 NG_VERSION := v0.12.0
 # renovate: datasource=go depName=github.com/k1LoW/tbls
-TBLS_VERSION := v1.96.1
+TBLS_VERSION := v1.97.0
 
 # schachmat/wego has no release tags; pin to a commit SHA on master.
 # renovate: datasource=git-refs depName=https://github.com/schachmat/wego branch=master
