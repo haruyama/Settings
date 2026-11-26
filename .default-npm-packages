@@ -15,7 +15,7 @@ npm-check-updates@23.1.1
 prettier@3.10.1
 textlint@16.1.2
 textlint-filter-rule-comments@1.3.0
-textlint-rule-max-ten@5.0.0
+textlint-rule-max-ten@5.0.1
 textlint-rule-no-mix-dearu-desumasu@6.0.4
 textlint-rule-preset-ja-technical-writing@12.0.2
 textlint-rule-preset-jtf-style@3.1.0
