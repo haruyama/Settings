@@ -56,7 +56,7 @@ GO_LICENSES_VERSION := v2.0.1
 GORE_VERSION := v0.7.0
 # NOTE: on a major-version bump, also update the /v2 segment in go_tool_install below.
 # renovate: datasource=go depName=github.com/evilmartians/lefthook/v2
-LEFTHOOK_VERSION := v2.2.2
+LEFTHOOK_VERSION := v2.2.3
 # renovate: datasource=go depName=github.com/Shougo/ng
 NG_VERSION := v0.12.0
 # renovate: datasource=go depName=github.com/k1LoW/tbls
